@@ -17,6 +17,7 @@ Recieve extra gold when killing a Variant, based off a Multiplier. Values Config
 Each time you kill a Variant, there's a small chance for it to drop an Item which's tier can be White, Green or Red.
 Chances are highly configurable, and each Tier has it's own chances, by default, Common tier variants can only drop white items, while a rare variant might give you a red item if youre lucky enough! (Note: not actually affected by the Luck stat)
 The default values for the Item drops are right below (It is reccomended to check out the "Configuring the Mod" section for an explanation of how the Item drop mechanic works.
+	
 	Common Variants:
 	- 3% for a White item
 	- 0% for a Green item
@@ -48,6 +49,10 @@ To install the addon, simply drag the MonsterVariantsPlus.dll onto your plugins 
 - Have Boss variants drop their Boss item based off Chance.
 
 ##Changelog
+'1.0.5'
+- Added the Github Repository
+- Hopefully fixed a Small formatting error in the readme.md file
+
 '1.0.4'
 - I swear to god if this doesnt fix the error i'll kms
 
