@@ -10,7 +10,7 @@ namespace Nebby1999
 {
     [BepInDependency("com.bepis.r2api")]
     [BepInDependency("com.rob.MonsterVariants")]
-    [BepInPlugin("com.Nebby1999.MonsterVariants+", "Monster Variants +", "1.0.5")]
+    [BepInPlugin("com.Nebby1999.MonsterVariants+", "Monster Variants +", "1.1.0")]
     public class MainPlugin : BaseUnityPlugin
     {
         public void Awake()
@@ -29,6 +29,11 @@ namespace Nebby1999
                     {
                         uint multipliedGold = MultiplyGold.MultiplyMoney(self.goldReward, DamageReport.victimBody); //Multiplies the money given to the player
                         self.goldReward = multipliedGold; //Sets the Gold given to the player the value taken from "multipliedGold"
+                    }
+                    if (ConfigLoader.EnableXPRewards)
+                    {
+                        uint multipliedXP = MultiplyXP.MultiplyExperience(self.expReward, DamageReport.victimBody); //Multiplies the XP given to the player
+                        self.expReward = multipliedXP; //Sets the Gold given to the player the value taken from "multipliedXP"
                     }
                 }
                 orig(self, DamageReport);
