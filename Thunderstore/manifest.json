@@ -1,6 +1,6 @@
 {
     "name": "MonsterVariantsPlus",
-    "version_number": "1.0.5",
+    "version_number": "1.1.0",
     "website_url": "https://github.com/Nebby1999/MonsterVariantsPlus",
     "description": "An Add-On for Rob's Monster Variants mod, Currently just Adds Rewards for killing Variants, from Extra gold to a small chance of dropping an item! Configurable! Now on Github!",
     "dependencies": [

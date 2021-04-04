@@ -2,13 +2,19 @@
 - An Addon for Rob's [MonsterVariants](https://thunderstore.io/package/rob/MonsterVariants/)
 - Killing a Variant now Gives rewards Depending on their Tier (Common, Uncommon & Rare)
 - (Note, Tiers are not mentioned in Rob's page, each Variant has a Tier assigned to it which cannot be changed via configuration.)
-- Rewards include Extra gold based off a Multiplier & a Chance for an item to drop from the Variant (As if the Artifact of Sacrifice was Active)
-- Rewards Mildly Configurable, including the Gold Multiplier and the Item drop chances.
+- Rewards include Extra gold based off a Multiplier, Extra XP based off a Multiplier, & a Chance for an item to drop from the Variant (As if the Artifact of Sacrifice was Active).
+- Rewards Mildly Configurable, including the Gold Multiplier, the XP Multiplier, & the Item drop chances.
 
 ##Features
 
 #Gold Bonus
 Recieve extra gold when killing a Variant, based off a Multiplier. Values Configurable, and the default values are:
+- 1.3 for Common Variants
+- 1.6 for Uncommon Variants
+- 2.0 for Rare Variants
+
+#XP Bonus
+Recieve extra XP when killing a Variant, based off a Multiplier. Values Configurable, and the default values are:
 - 1.3 for Common Variants
 - 1.6 for Uncommon Variants
 - 2.0 for Rare Variants
@@ -44,11 +50,15 @@ This section is for explaining how the Item drop chance mechanic works, since it
 To install the addon, simply drag the MonsterVariantsPlus.dll onto your plugins folder. Make sure Rob's DLL is also there, or else the plugin will not activate.
 
 ## Future Plans
-- Make the player obtain extra experience for killing a Variant
 - Add new variants on top of rob's existing ones
 - Have Boss variants drop their Boss item based off Chance.
 
 ##Changelog
+
+'1.1.0'
+- Updated for the Anniversary Update
+- Added the XP Multiplier System
+
 '1.0.5'
 - Added the Github Repository
 - Hopefully fixed a Small formatting error in the readme.md file
