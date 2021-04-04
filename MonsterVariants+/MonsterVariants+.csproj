@@ -101,15 +101,6 @@
     <Compile Include="SubClasses\ExtraRewards.cs" />
     <Compile Include="SubClasses\MultiplyGold.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="Thunderstore\icon.png" />
-    <Content Include="Thunderstore\MonsterVariantsPlus.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Thunderstore\manifest.json" />
-    <None Include="Thunderstore\MonsterVariants+.zip" />
-    <None Include="Thunderstore\README.md" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
