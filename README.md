@@ -1,7 +1,4 @@
-##This is The BETA Branch.
-Mod might be unstable, altho you can use this to take a peek on what's going on with the mod internally.
-
-## MonsterVariants+
+# MonsterVariants+
 - An Addon for Rob's [MonsterVariants](https://thunderstore.io/package/rob/MonsterVariants/)
 - Killing a Variant now Gives rewards Depending on their Tier (Common, Uncommon & Rare)
 - (Note, Tiers are not mentioned in Rob's page, each Variant has a Tier assigned to it which cannot be changed via configuration.)
