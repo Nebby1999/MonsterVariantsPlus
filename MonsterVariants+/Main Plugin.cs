@@ -10,7 +10,7 @@ namespace Nebby1999
 {
     [BepInDependency("com.bepis.r2api")]
     [BepInDependency("com.rob.MonsterVariants")]
-    [BepInPlugin("com.Nebby1999.MonsterVariants+", "Monster Variants +", "1.1.0")]
+    [BepInPlugin("com.Nebby1999.MonsterVariantsPlus", "Monster Variants +", "1.1.0")]
     public class MainPlugin : BaseUnityPlugin
     {
         public void Awake()
