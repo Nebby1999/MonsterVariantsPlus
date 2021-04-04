@@ -96,6 +96,7 @@
   <ItemGroup>
     <Compile Include="Main Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubClasses\MultiplyXP.cs" />
     <Compile Include="SubClasses\ConfigLoader.cs" />
     <Compile Include="SubClasses\ExtraRewards.cs" />
     <Compile Include="SubClasses\MultiplyGold.cs" />
