@@ -5,8 +5,10 @@
 using BepInEx;
 using RoR2;
 using MonsterVariantsPlus.SubClasses;
+using MonsterVariants;
+using UnityEngine;
 
-namespace Nebby1999
+namespace MonsterVariantsPlus
 {
     [BepInDependency("com.bepis.r2api")]
     [BepInDependency("com.rob.MonsterVariants")]
@@ -21,11 +23,11 @@ namespace Nebby1999
             {
                 if (DamageReport.victimTeamIndex == (TeamIndex)2) //If the Victim was part of the Enemy Team (TeamIndex)2, then proceed forward
                 {
-                    if(ConfigLoader.EnableItemRewards)
+                    if (ConfigLoader.EnableItemRewards)
                     {
                         ExtraRewards.TryExtraReward(DamageReport.victimBody, DamageReport.attackerBody); //Tries to spawn an item
                     }
-                    if(ConfigLoader.EnableGoldRewards)
+                    if (ConfigLoader.EnableGoldRewards)
                     {
                         uint multipliedGold = MultiplyGold.MultiplyMoney(self.goldReward, DamageReport.victimBody); //Multiplies the money given to the player
                         self.goldReward = multipliedGold; //Sets the Gold given to the player the value taken from "multipliedGold"
@@ -38,6 +40,15 @@ namespace Nebby1999
                 }
                 orig(self, DamageReport);
             };
+        }
+        public void Start()
+        {
+            CustomVariants.RegisterCustomVariants(); //Register Variants
+        }
+        internal static void AddVariant(MonsterVariantInfo info)
+        {
+            MonsterVariants.Components.VariantHandler variantHandler = Resources.Load<GameObject>("Prefabs/CharacterBodies" + info.bodyName + "Body").AddComponent<MonsterVariants.Components.VariantHandler>();
+            variantHandler.Init(info);
         }
     }
 }
