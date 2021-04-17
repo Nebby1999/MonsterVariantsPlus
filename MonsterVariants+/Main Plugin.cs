@@ -23,7 +23,7 @@ namespace Nebby1999
                 {
                     if(ConfigLoader.EnableItemRewards)
                     {
-                        ExtraRewards.TryExtraReward(DamageReport.victimBody); //Tries to spawn an item
+                        ExtraRewards.TryExtraReward(DamageReport.victimBody, DamageReport.attackerBody); //Tries to spawn an item
                     }
                     if(ConfigLoader.EnableGoldRewards)
                     {

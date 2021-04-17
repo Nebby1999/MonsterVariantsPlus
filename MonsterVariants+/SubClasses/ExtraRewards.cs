@@ -13,7 +13,7 @@ namespace MonsterVariantsPlus.SubClasses
     public class ExtraRewards
     {
         static readonly float Offset = 2f * Mathf.PI / Run.instance.participatingPlayerCount;
-        public static void TryExtraReward(CharacterBody victimBody)
+        public static void TryExtraReward(CharacterBody victimBody, CharacterBody playerBody)
         {
             foreach (VariantHandler i in victimBody.GetComponents<VariantHandler>())
             {
@@ -28,21 +28,19 @@ namespace MonsterVariantsPlus.SubClasses
                     if (i.tier == MonsterVariantTier.Common)
                     {
                         float rng = Random.Range(0f, 100f);
-//                        Chat.AddMessage("Tier: " + MonsterVariantTier.Common.ToString());
-//                        Chat.AddMessage("RNG: " + rng.ToString());
                         if (rng < ConfigLoader.CommonRedChance) //If RNG is less than the Green chance, spawn a R Item
                         {
-                            CreateDroplet(redItems, nextRedItems, victimBody);
+                            CreateDroplet(redItems, nextRedItems, victimBody, playerBody);
                             break;
                         }
                         else if (rng < ConfigLoader.CommonGreenChance + ConfigLoader.CommonRedChance) //If RNG is less than the Green chance, spawn a G Item
                         {
-                            CreateDroplet(greenItems, nextGreenItems, victimBody);
+                            CreateDroplet(greenItems, nextGreenItems, victimBody, playerBody);
                             break;
                         }
                         else if (rng < ConfigLoader.CommonWhiteChance + ConfigLoader.CommonGreenChance + ConfigLoader.CommonRedChance) //If RNG is less than the White chance, spawn a W Item
                         {
-                            CreateDroplet(whiteItems, nextWhiteItems, victimBody);
+                            CreateDroplet(whiteItems, nextWhiteItems, victimBody, playerBody);
                             break;
                         }
                     }
@@ -53,17 +51,17 @@ namespace MonsterVariantsPlus.SubClasses
 //                        Chat.AddMessage("RNG: " + rng.ToString());
                         if (rng < ConfigLoader.UncommonRedChance) //If RNG is less than the Green chance, spawn a R Item
                         {
-                            CreateDroplet(redItems, nextRedItems, victimBody);
+                            CreateDroplet(redItems, nextRedItems, victimBody, playerBody);
                             break;
                         }
                         else if (rng < ConfigLoader.UncommonGreenChance + ConfigLoader.UncommonRedChance) //If RNG is less than the Green chance, spawn a G Item
                         {
-                            CreateDroplet(greenItems, nextGreenItems, victimBody);
+                            CreateDroplet(greenItems, nextGreenItems, victimBody, playerBody);
                             break;
                         }
                         else if (rng < ConfigLoader.UncommonWhiteChance + ConfigLoader.UncommonGreenChance + ConfigLoader.UncommonRedChance) //If RNG is less than the White chance, spawn a W Item
                         {
-                            CreateDroplet(whiteItems, nextWhiteItems, victimBody);
+                            CreateDroplet(whiteItems, nextWhiteItems, victimBody, playerBody);
                             break;
                         }
                     }
@@ -74,26 +72,33 @@ namespace MonsterVariantsPlus.SubClasses
 //                        Chat.AddMessage("RNG: " + rng.ToString());
                         if (rng < ConfigLoader.RareRedChance) //If RNG is less than the Green chance, spawn a R Item
                         {
-                            CreateDroplet(redItems, nextRedItems, victimBody);
+                            CreateDroplet(redItems, nextRedItems, victimBody, playerBody);
                             break;
                         }
                         else if (rng < ConfigLoader.RareGreenChance + ConfigLoader.RareRedChance) //If RNG is less than the Green chance, spawn a G Item
                         {
-                            CreateDroplet(greenItems, nextGreenItems, victimBody);
+                            CreateDroplet(greenItems, nextGreenItems, victimBody, playerBody);
                             break;
                         }
                         else if (rng < ConfigLoader.RareWhiteChance + ConfigLoader.RareGreenChance + ConfigLoader.RareRedChance) //If RNG is less than the White chance, spawn a W Item
                         {
-                            CreateDroplet(whiteItems, nextWhiteItems, victimBody);
+                            CreateDroplet(whiteItems, nextWhiteItems, victimBody, playerBody);
                             break;
                         }
                     }
                 }
             }
         }
-        private static void CreateDroplet(List<PickupIndex> itemList, int nextItem, CharacterBody victimBody) //Creates a Pickup based off the position of the defeated variant.
+        private static void CreateDroplet(List<PickupIndex> itemList, int nextItem, CharacterBody victimBody, CharacterBody playerBody) //Creates a Pickup based off the position of the defeated variant.
         {
-            PickupDropletController.CreatePickupDroplet(itemList[nextItem], victimBody.transform.position, (Vector3.up * 20f) + (5 * Vector3.right * Mathf.Cos(Offset)) + (5 * Vector3.forward * Mathf.Sin(Offset)));
+            if(ConfigLoader.ItemSpawnsOnPlayer)
+            {
+                PickupDropletController.CreatePickupDroplet(itemList[nextItem], playerBody.transform.position, (Vector3.up * 20f) + (5 * Vector3.right * Mathf.Cos(Offset)) + (5 * Vector3.forward * Mathf.Sin(Offset)));
+            }
+            else
+            {
+                PickupDropletController.CreatePickupDroplet(itemList[nextItem], victimBody.transform.position, (Vector3.up * 20f) + (5 * Vector3.right * Mathf.Cos(Offset)) + (5 * Vector3.forward * Mathf.Sin(Offset)));
+            }
         }
     }
 }
