@@ -16,6 +16,8 @@ namespace MonsterVariantsPlus.SubClasses
         public static bool EnableXPRewards => EnableXPRewardsConfig.Value;
 
         //Item Related Configs
+        private static ConfigEntry<bool> ItemSpawnsOnPlayerConfig { get; set; }
+        public static bool ItemSpawnsOnPlayer => ItemSpawnsOnPlayerConfig.Value;
         private static ConfigEntry<int> CommonWhiteChanceConfig { get; set; }
         public static int CommonWhiteChance => CommonWhiteChanceConfig.Value;
         private static ConfigEntry<int> CommonGreenChanceConfig { get; set; }
@@ -61,6 +63,7 @@ namespace MonsterVariantsPlus.SubClasses
             EnableGoldRewardsConfig = config.Bind<bool>("Gold Rewards", "Enable Gold Rewards", true, "If this is set to True, then Enemy Variants will drop extra gold based off a multiplier. If this is set to False, then the rest of the available options of this category are disabled.");
             EnableXPRewardsConfig = config.Bind<bool>("XP Rewards", "Enable XP Rewards", true, "If this is set to True, then Enemy Variants will drop extra XP based off a multiplier. If this is set to False, then the rest of the available options of this category are disabled.");
 
+            ItemSpawnsOnPlayerConfig = config.Bind<bool>("Item Rewards", "Item Rewards Spawns on Player", false, "Normally the item reward's droplet spawns from the center of the slain Variant. This can cause some issues with killing Variants that are on top of the death plane, or get knocked back onto it, Since the item will be lost in the process.\nSetting this to True causes all Item Rewards to be spawned at the center of the Player who killed the variant.");
 
             CommonWhiteChanceConfig = config.Bind<int>("Item Rewards", "Common Variant White Item Drop Chance", 3, "The chance that a Common variant drops a White item. Accepted values range from 0 to 100. (Set this value to 0 to Disable).");
             CommonGreenChanceConfig = config.Bind<int>("Item Rewards", "Common Variant Green Item Drop Chance", 0, "The chance that a Common variant drops a Green item. Accepted values range from 0 to 100. (Set this value to 0 to Disable).");

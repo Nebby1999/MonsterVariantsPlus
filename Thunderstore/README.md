@@ -55,6 +55,9 @@ To install the addon, simply drag the MonsterVariantsPlus.dll onto your plugins 
 
 ##Changelog
 
+'1.1.1'
+- Added an option for item rewards to spawn based off the player who killed the variant
+
 '1.1.0'
 - Updated for the Anniversary Update
 - Added the XP Multiplier System
