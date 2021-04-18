@@ -53,6 +53,7 @@ If you dont want any new variants, you can also disable the entire section in th
 	- 50% Health
 	- 200% Movement Speed
 	- 200% Attack Speed
+	- 110% Damage
 	
 	Steel Contraption (7% Chance):
 	- 150% Size
@@ -94,6 +95,10 @@ To install the addon, simply drag the MonsterVariantsPlus.dll onto your plugins 
 '1.2.2'
 -Increased the spawn chance of a mosquito wisp to 30%
 - Added Vampiric Templar Variant
+- Slightly Buffed Mosquito Wisps, so theyre more annoying (as a mosquito should be)
+	200% Movement Speed -> 500% Movement Speed
+	200% Attack Speed -> 1000% Attack Speed
+	100% Damage -> 110% Damage
 
 '1.2.1'
 - Added spawn chances to the Readme file.
