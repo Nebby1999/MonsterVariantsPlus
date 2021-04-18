@@ -14,6 +14,8 @@ namespace MonsterVariantsPlus.SubClasses
         public static bool EnableGoldRewards => EnableGoldRewardsConfig.Value;
         private static ConfigEntry<bool> EnableXPRewardsConfig { get; set; }
         public static bool EnableXPRewards => EnableXPRewardsConfig.Value;
+        private static ConfigEntry<bool> EnableCustomVariantsConfig { get; set; }
+        public static bool EnableCustomVariants => EnableCustomVariantsConfig.Value;
 
         //Item Related Configs
         private static ConfigEntry<bool> ItemSpawnsOnPlayerConfig { get; set; }
@@ -53,15 +55,19 @@ namespace MonsterVariantsPlus.SubClasses
         private static ConfigEntry<float> RareXPMultConfig { get; set; }
         public static float RareXPMult => RareXPMultConfig.Value;
 
-        //Other Categories
-        //private static ConfigEntry<bool> EnableDebuggerConfig { get; set; }
-        //public static bool EnableDebugger => EnableDebuggerConfig.Value;
-
+        //Custom Variants
+        private static ConfigEntry<float> MosquitoWispSpawnChanceConfig { get; set; }
+        public static float MosquitoWispSpawnChance => MosquitoWispSpawnChanceConfig.Value;
+        private static ConfigEntry<float> SteelContraptionSpawnCanceConfig { get; set; }
+        public static float SteelContraptionSpawnChance => SteelContraptionSpawnCanceConfig.Value;
+        private static ConfigEntry<float> MortarCrabSpawnChanceConfig { get; set; }
+        public static float MortarCrabSpawnChance => MortarCrabSpawnChanceConfig.Value;
         public static void SetupConfigLoader(ConfigFile config) //Creates the description and some mumbojumbo for the values.
         {
             EnableItemRewardsConfig = config.Bind<bool>("Item Rewards", "Enable Item Rewards", true, "If this is set to True, then Enemy Variants have a chance to drop Items. If this is set to False, then the rest of the available options in this category are disabled.");
             EnableGoldRewardsConfig = config.Bind<bool>("Gold Rewards", "Enable Gold Rewards", true, "If this is set to True, then Enemy Variants will drop extra gold based off a multiplier. If this is set to False, then the rest of the available options of this category are disabled.");
             EnableXPRewardsConfig = config.Bind<bool>("XP Rewards", "Enable XP Rewards", true, "If this is set to True, then Enemy Variants will drop extra XP based off a multiplier. If this is set to False, then the rest of the available options of this category are disabled.");
+            EnableCustomVariantsConfig = config.Bind<bool>("Custom Variants", "Enable Custom Variants", true, "If this is set to True, then new Enemy Variants designed by nebby will begin spawning, all the effects of killing a regular variant also apply to these. If this is set to False, then the rest of the available options in this category are disabled.");
 
             ItemSpawnsOnPlayerConfig = config.Bind<bool>("Item Rewards", "Item Rewards Spawns on Player", false, "Normally the item reward's droplet spawns from the center of the slain Variant. This can cause some issues with killing Variants that are on top of the death plane, or get knocked back onto it, Since the item will be lost in the process.\nSetting this to True causes all Item Rewards to be spawned at the center of the Player who killed the variant.");
 
@@ -84,7 +90,10 @@ namespace MonsterVariantsPlus.SubClasses
             CommonXPMultConfig = config.Bind<float>("XP Rewards", "Common Variant XP Multiplier", 1.3f, "Multiplier that's applied to the XP reward for killing a common Variant. (Set this value to 1.0 to disable, values lower than this number decreases the XP recieved).");
             UncommonXPMultConfig = config.Bind<float>("XP Rewards", "Uncommon Variant XP Multiplier", 1.6f, "Multiplier that's applied to the XP reward for killing an uncommon Variant. (Set this value to 1.0 to disable, values lower than this number decreases the XP recieved).");
             RareXPMultConfig = config.Bind<float>("XP Rewards", "Rare Variant XP Multiplier", 2.0f, "Multiplier that's applied to the XP reward for killing a rare Variant. (Set this value to 1.0 to disable, values lower than this number decreases the XP recieved.");
-            //EnableDebuggerConfig = config.Bind<bool>("Other Configs", "Enable The Debugger", false, "Setting this to True enables an In-Game Debugger of the mod. Logging certain information onto the Game's chat.");
+
+            MosquitoWispSpawnChanceConfig = config.Bind<float>("Custom Variants", "Mosquito Wisp Spawn Chance", 10f, "Chance for a Mosquito Wisp variant to Spawn (percentage, 1-100). Setting this value to 0 will disable this variant from spawning.");
+            SteelContraptionSpawnCanceConfig = config.Bind<float>("Custom Variants", "Steel Contraption Spawn Chance", 7f, "Chance for a Steel Contraption variant to Spawn (percentage, 1-100). Setting this value to 0 will disable this variant from spawning.");
+            MortarCrabSpawnChanceConfig = config.Bind<float>("Custom Variants", "Mortar Crab Spawn Chance", 5f, "Chance for a Mortar Crab variant to Spawn (percentage, 1-100). Setting this value to 0 will disable this variant from spawning.");
         }
     }
 }
