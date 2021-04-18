@@ -41,14 +41,5 @@ namespace MonsterVariantsPlus
                 orig(self, DamageReport);
             };
         }
-        public void Start()
-        {
-            CustomVariants.RegisterCustomVariants(); //Register Variants
-        }
-        internal static void AddVariant(MonsterVariantInfo info)
-        {
-            MonsterVariants.Components.VariantHandler variantHandler = Resources.Load<GameObject>("Prefabs/CharacterBodies" + info.bodyName + "Body").AddComponent<MonsterVariants.Components.VariantHandler>();
-            variantHandler.Init(info);
-        }
     }
 }
