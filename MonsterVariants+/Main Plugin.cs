@@ -93,7 +93,7 @@ namespace MonsterVariantsPlus
                 sizeModifier = GroundSizeModifier(1.5f),
                 healthMultiplier = 1.5f,
                 moveSpeedMultiplier = 0.8f,
-                attackSpeedMultiplier = 1.25f,
+                attackSpeedMultiplier = 0.8f,
                 damageMultiplier = 1.25f,
                 armorMultiplier = 1f,
                 armorBonus = 0f,
