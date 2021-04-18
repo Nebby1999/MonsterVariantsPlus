@@ -48,7 +48,7 @@ The end goal is to have at least one variant per type of enemy.
 Just Like in the Original Monster Variants, their spawn chance can be changed in the config file.
 If you dont want any new variants, you can also disable the entire section in the config file.
 
-	Mosquito Wisp (10% Chance):
+	Mosquito Wisp (30% Chance):
 	- 50% Size
 	- 50% Health
 	- 200% Movement Speed
@@ -63,11 +63,18 @@ If you dont want any new variants, you can also disable the entire section in th
 	
 	Mortar Crab (5% Chance):
 	- 150% Size
-	- 150% Size
+	- 150% Health
 	- 80% Movement Speed
 	- 80% Attack Speed
 	- 125% Damage
 	- Has a Brilliant Behemoth
+
+	Vampiric Templar (5% Chance):
+	- 125% Size
+	- 125% Attack Speed
+	- 90% Damage
+	- Has 5 Tri-Tip Daggers
+	- Has 10 Leeching Seeds
 
 ##Configuring the Mod.
 This section is for explaining how the Item drop chance mechanic works, since it's not based off the normal % chance ROR2 has.
@@ -83,25 +90,33 @@ To install the addon, simply drag the MonsterVariantsPlus.dll onto your plugins 
 - Have Boss variants drop their Boss item based off Chance.
 
 ##Changelog
+
+'1.2.2'
+-Increased the spawn chance of a mosquito wisp to 30%
+- Added Vampiric Templar Variant
+
+'1.2.1'
+- Added spawn chances to the Readme file.
+
 '1.2.0'
-- Added 3 New Variants
-- Steel Contraption
-- Mosquito Wisp
-- Mortar Crab
+- Added 3 New Variants.
+- Steel Contraption.
+- Mosquito Wisp.
+- Mortar Crab.
 
 '1.1.1'
-- Added an option for item rewards to spawn based off the player who killed the variant
+- Added an option for item rewards to spawn based off the player who killed the variant.
 
 '1.1.0'
-- Updated for the Anniversary Update
-- Added the XP Multiplier System
+- Updated for the Anniversary Update.
+- Added the XP Multiplier System.
 
 '1.0.5'
-- Added the Github Repository
-- Hopefully fixed a Small formatting error in the readme.md file
+- Added the Github Repository.
+- Hopefully fixed a Small formatting error in the readme.md file.
 
 '1.0.4'
-- I swear to god if this doesnt fix the error i'll kms
+- I swear to god if this doesnt fix the error i'll kms.
 
 '1.0.3'
 -Actually ACTUALLY fixed the Error.
