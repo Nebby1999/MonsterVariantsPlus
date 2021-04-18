@@ -57,7 +57,7 @@ namespace MonsterVariantsPlus
                 healthMultiplier = 0.5f,
                 moveSpeedMultiplier = 2.0f,
                 attackSpeedMultiplier = 2.0f,
-                damageMultiplier = 2f,
+                damageMultiplier = 1f,
                 armorMultiplier = 1f,
                 armorBonus = 0f,
                 customInventory = null,
