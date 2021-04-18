@@ -91,7 +91,7 @@ namespace MonsterVariantsPlus.SubClasses
             UncommonXPMultConfig = config.Bind<float>("XP Rewards", "Uncommon Variant XP Multiplier", 1.6f, "Multiplier that's applied to the XP reward for killing an uncommon Variant. (Set this value to 1.0 to disable, values lower than this number decreases the XP recieved).");
             RareXPMultConfig = config.Bind<float>("XP Rewards", "Rare Variant XP Multiplier", 2.0f, "Multiplier that's applied to the XP reward for killing a rare Variant. (Set this value to 1.0 to disable, values lower than this number decreases the XP recieved.");
 
-            MosquitoWispSpawnChanceConfig = config.Bind<float>("Custom Variants", "Mosquito Wisp Spawn Chance", 5f, "Chance for a Mosquito Wisp variant to Spawn (percentage, 1-100). Setting this value to 0 will disable this variant from spawning.");
+            MosquitoWispSpawnChanceConfig = config.Bind<float>("Custom Variants", "Mosquito Wisp Spawn Chance", 10f, "Chance for a Mosquito Wisp variant to Spawn (percentage, 1-100). Setting this value to 0 will disable this variant from spawning.");
             SteelContraptionSpawnCanceConfig = config.Bind<float>("Custom Variants", "Steel Contraption Spawn Chance", 7f, "Chance for a Steel Contraption variant to Spawn (percentage, 1-100). Setting this value to 0 will disable this variant from spawning.");
             MortarCrabSpawnChanceConfig = config.Bind<float>("Custom Variants", "Mortar Crab Spawn Chance", 5f, "Chance for a Mortar Crab variant to Spawn (percentage, 1-100). Setting this value to 0 will disable this variant from spawning.");
         }
