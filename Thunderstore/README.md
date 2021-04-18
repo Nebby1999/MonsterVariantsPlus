@@ -1,4 +1,5 @@
-## MonsterVariants+
+
+# MonsterVariants+
 - An Addon for Rob's [MonsterVariants](https://thunderstore.io/package/rob/MonsterVariants/)
 - Adds Custom Variants on top of Rob's Existing Variants
 - Killing a Variant now Gives rewards Depending on their Tier (Common, Uncommon & Rare)
@@ -6,23 +7,23 @@
 - Rewards include Extra gold based off a Multiplier, Extra XP based off a Multiplier, & a Chance for an item to drop from the Variant (As if the Artifact of Sacrifice was Active).
 - Rewards Configurable, including the Gold Multiplier, the XP Multiplier, & the Item drop chances.
 
-##Features
+## Features
 
-#Gold Bonus
+### Gold Bonus
 Recieve extra gold when killing a Variant, based off a Multiplier. Values Configurable, and the default values are:
 	
 	- 1.3 for Common Variants
 	- 1.6 for Uncommon Variants
 	- 2.0 for Rare Variants
 
-#XP Bonus
+### XP Bonus
 Recieve extra XP when killing a Variant, based off a Multiplier. Values Configurable, and the default values are:
 	
 	- 1.3 for Common Variants
 	- 1.6 for Uncommon Variants
 	- 2.0 for Rare Variants
 
-#Item Drops
+### Item Drops
 Each time you kill a Variant, there's a small chance for it to drop an Item which's tier can be White, Green or Red.
 Chances are highly configurable, and each Tier has it's own chances, by default, Common tier variants can only drop white items, while a rare variant might give you a red item if youre lucky enough! (Note: not actually affected by the Luck stat)
 The default values for the Item drops are right below (It is reccomended to check out the "Configuring the Mod" section for an explanation of how the Item drop mechanic works.
@@ -42,7 +43,7 @@ The default values for the Item drops are right below (It is reccomended to chec
 	- 5% for a Green Item
 	- 1% for a Red Item
 
-#New Variants
+### New Variants
 Version 1.2.0 introduces new Variants to the game designed by Nebby.
 The end goal is to have at least one variant per type of enemy.
 Just Like in the Original Monster Variants, their spawn chance can be changed in the config file.
@@ -51,8 +52,8 @@ If you dont want any new variants, you can also disable the entire section in th
 	Mosquito Wisp (30% Chance):
 	- 50% Size
 	- 50% Health
-	- 200% Movement Speed
-	- 200% Attack Speed
+	- 500% Movement Speed
+	- 1000% Attack Speed
 	- 110% Damage
 	
 	Steel Contraption (7% Chance):
@@ -77,20 +78,23 @@ If you dont want any new variants, you can also disable the entire section in th
 	- Has 5 Tri-Tip Daggers
 	- Has 10 Leeching Seeds
 
-##Configuring the Mod.
+## Configuring the Mod.
 This section is for explaining how the Item drop chance mechanic works, since it's not based off the normal % chance ROR2 has.
 - The Chance is determined via first rolling a D100, the result of this roll is a Float (a number with decimals).
 - It then begins checking if the result from the D100 is LOWER than the reward, in the example below, if the D100 rolled a 1 or lower, then the monster will drop a Red item.
 - It First checks for the Red chance, then the Green Chance and then the White chance, so, for example, if the D100 rolled a number that's greater than 6 but less than 10, then it will only drop a white item.
 ![](https://cdn.discordapp.com/attachments/570060692414267397/824472489152741386/thingy.png)
 
-##Installation
+## Installation
 To install the addon, simply drag the MonsterVariantsPlus.dll onto your plugins folder. Make sure Rob's DLL is also there, or else the plugin will not activate.
 
 ## Future Plans
 - Have Boss variants drop their Boss item based off Chance.
 
-##Changelog
+## Changelog
+'1.2.3'
+-Now Ships with this version instead of 1.2.1.
+-Added a missing Semi-Colon in Config Loader that caused the mod to not compile, whoops.
 
 '1.2.2'
 -Increased the spawn chance of a mosquito wisp to 30%
