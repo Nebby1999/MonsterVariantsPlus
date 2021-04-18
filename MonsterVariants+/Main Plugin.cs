@@ -56,9 +56,9 @@ namespace MonsterVariantsPlus
                 variantTier = MonsterVariantTier.Common,
                 sizeModifier = FlyingSizeModifier(0.5f),
                 healthMultiplier = 0.5f,
-                moveSpeedMultiplier = 2.0f,
-                attackSpeedMultiplier = 2.0f,
-                damageMultiplier = 1f,
+                moveSpeedMultiplier = 5.0f,
+                attackSpeedMultiplier = 10.0f,
+                damageMultiplier = 1.1f,
                 armorMultiplier = 1f,
                 armorBonus = 0f,
                 customInventory = null,
@@ -102,12 +102,36 @@ namespace MonsterVariantsPlus
                 materialReplacement = null,
                 skillReplacement = null
             });
+            //Vampiric Templar - Clay Templar with tritip daggers and leeching seeds.
+            AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "ClayBruiserMonster",
+                spawnRate = ConfigLoader.VampiricTemplarSpawnChance,
+                variantTier = MonsterVariantTier.Rare,
+                sizeModifier = GroundSizeModifier(1.25f),
+                healthMultiplier = 1.5f,
+                moveSpeedMultiplier = 1.0f,
+                attackSpeedMultiplier = 1.25f,
+                damageMultiplier = 0.9f,
+                armorMultiplier = 1f,
+                armorBonus = 0f,
+                customInventory = vampiricInventory,
+                meshReplacement = null,
+                materialReplacement = null,
+                skillReplacement = null
+            });
         }
         internal static void AddVariant(MonsterVariantInfo info) //Adds the new variant using monsterVariant's Variant Handler.
         {
             MonsterVariants.Components.VariantHandler variantHandler = Resources.Load<GameObject>("Prefabs/CharacterBodies/" + info.bodyName + "Body").AddComponent<MonsterVariants.Components.VariantHandler>();
             variantHandler.Init(info);
         }
+
+        readonly static ItemInfo[] vampiricInventory = new ItemInfo[]
+        {
+            SimpleItem("Dagger", 2),
+            SimpleItem("Seed", 10)
+        };
         internal static ItemInfo[] SimpleInventory(string itemName, int itemCount) //Creates an inventory for a Variant that has just 1 type of item.
         {
             ItemInfo info = SimpleItem(itemName, itemCount);
