@@ -52,7 +52,7 @@ namespace MonsterVariantsPlus
             {
                 bodyName = "Wisp",
                 spawnRate = 100f,
-                variantTier = MonsterVariantTier.Rare,
+                variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = FlyingSizeModifier(0.5f),
                 healthMultiplier = 0.5f,
                 moveSpeedMultiplier = 2.0f,
