@@ -1,20 +1,23 @@
 ## MonsterVariants+
 - An Addon for Rob's [MonsterVariants](https://thunderstore.io/package/rob/MonsterVariants/)
+- Adds Custom Variants on top of Rob's Existing Variants
 - Killing a Variant now Gives rewards Depending on their Tier (Common, Uncommon & Rare)
 - (Note, Tiers are not mentioned in Rob's page, each Variant has a Tier assigned to it which cannot be changed via configuration.)
 - Rewards include Extra gold based off a Multiplier, Extra XP based off a Multiplier, & a Chance for an item to drop from the Variant (As if the Artifact of Sacrifice was Active).
-- Rewards Mildly Configurable, including the Gold Multiplier, the XP Multiplier, & the Item drop chances.
+- Rewards Configurable, including the Gold Multiplier, the XP Multiplier, & the Item drop chances.
 
 ##Features
 
 #Gold Bonus
 Recieve extra gold when killing a Variant, based off a Multiplier. Values Configurable, and the default values are:
+	
 	- 1.3 for Common Variants
 	- 1.6 for Uncommon Variants
 	- 2.0 for Rare Variants
 
 #XP Bonus
 Recieve extra XP when killing a Variant, based off a Multiplier. Values Configurable, and the default values are:
+	
 	- 1.3 for Common Variants
 	- 1.6 for Uncommon Variants
 	- 2.0 for Rare Variants
@@ -44,20 +47,21 @@ Version 1.2.0 introduces new Variants to the game designed by Nebby.
 The end goal is to have at least one variant per type of enemy.
 Just Like in the Original Monster Variants, their spawn chance can be changed in the config file.
 If you dont want any new variants, you can also disable the entire section in the config file.
-	Mosquito Wisp:
+
+	Mosquito Wisp (10% Chance):
 	- 50% Size
 	- 50% Health
 	- 200% Movement Speed
 	- 200% Attack Speed
 	
-	Steel Contraption:
+	Steel Contraption (7% Chance):
 	- 150% Size
 	- 150% Health
 	- 50% Movement Speed
 	- 50% Attack Speed
 	- 150% Damage
 	
-	Mortar Crab:
+	Mortar Crab (5% Chance):
 	- 150% Size
 	- 150% Size
 	- 80% Movement Speed
