@@ -41,5 +41,43 @@ namespace MonsterVariantsPlus
                 orig(self, DamageReport);
             };
         }
+        public void Start()
+        {
+            RegisterVariants();
+        }
+        internal static void RegisterVariants()
+        {
+            //Mosquito Wisp
+            AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "Wisp",
+                spawnRate = 100f,
+                variantTier = MonsterVariantTier.Rare,
+                sizeModifier = FlyingSizeModifier(0.5f),
+                healthMultiplier = 0.5f,
+                moveSpeedMultiplier = 2.0f,
+                attackSpeedMultiplier = 2.0f,
+                damageMultiplier = 2f,
+                armorMultiplier = 1f,
+                armorBonus = 0f,
+                customInventory = null,
+                meshReplacement = null,
+                materialReplacement = null,
+                skillReplacement = null
+            });
+        }
+        internal static void AddVariant(MonsterVariantInfo info)
+        {
+            MonsterVariants.Components.VariantHandler variantHandler = Resources.Load<GameObject>("Prefabs/CharacterBodies/" + info.bodyName + "Body").AddComponent<MonsterVariants.Components.VariantHandler>();
+            variantHandler.Init(info);
+        }
+        internal static MonsterSizeModifier FlyingSizeModifier(float newSize)
+        {
+            MonsterSizeModifier sizeModifier = ScriptableObject.CreateInstance<MonsterSizeModifier>();
+            sizeModifier.newSize = newSize;
+            sizeModifier.scaleCollider = true;
+
+            return sizeModifier;
+        }
     }
 }
