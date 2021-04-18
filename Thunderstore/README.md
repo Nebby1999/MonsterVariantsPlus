@@ -9,15 +9,15 @@
 
 #Gold Bonus
 Recieve extra gold when killing a Variant, based off a Multiplier. Values Configurable, and the default values are:
-- 1.3 for Common Variants
-- 1.6 for Uncommon Variants
-- 2.0 for Rare Variants
+	- 1.3 for Common Variants
+	- 1.6 for Uncommon Variants
+	- 2.0 for Rare Variants
 
 #XP Bonus
 Recieve extra XP when killing a Variant, based off a Multiplier. Values Configurable, and the default values are:
-- 1.3 for Common Variants
-- 1.6 for Uncommon Variants
-- 2.0 for Rare Variants
+	- 1.3 for Common Variants
+	- 1.6 for Uncommon Variants
+	- 2.0 for Rare Variants
 
 #Item Drops
 Each time you kill a Variant, there's a small chance for it to drop an Item which's tier can be White, Green or Red.
@@ -39,6 +39,32 @@ The default values for the Item drops are right below (It is reccomended to chec
 	- 5% for a Green Item
 	- 1% for a Red Item
 
+#New Variants
+Version 1.2.0 introduces new Variants to the game designed by Nebby.
+The end goal is to have at least one variant per type of enemy.
+Just Like in the Original Monster Variants, their spawn chance can be changed in the config file.
+If you dont want any new variants, you can also disable the entire section in the config file.
+	Mosquito Wisp:
+	- 50% Size
+	- 50% Health
+	- 200% Movement Speed
+	- 200% Attack Speed
+	
+	Steel Contraption:
+	- 150% Size
+	- 150% Health
+	- 50% Movement Speed
+	- 50% Attack Speed
+	- 150% Damage
+	
+	Mortar Crab:
+	- 150% Size
+	- 150% Size
+	- 80% Movement Speed
+	- 80% Attack Speed
+	- 125% Damage
+	- Has a Brilliant Behemoth
+
 ##Configuring the Mod.
 This section is for explaining how the Item drop chance mechanic works, since it's not based off the normal % chance ROR2 has.
 - The Chance is determined via first rolling a D100, the result of this roll is a Float (a number with decimals).
@@ -50,10 +76,14 @@ This section is for explaining how the Item drop chance mechanic works, since it
 To install the addon, simply drag the MonsterVariantsPlus.dll onto your plugins folder. Make sure Rob's DLL is also there, or else the plugin will not activate.
 
 ## Future Plans
-- Add new variants on top of rob's existing ones
 - Have Boss variants drop their Boss item based off Chance.
 
 ##Changelog
+'1.2.0'
+- Added 3 New Variants
+- Steel Contraption
+- Mosquito Wisp
+- Mortar Crab
 
 '1.1.1'
 - Added an option for item rewards to spawn based off the player who killed the variant
