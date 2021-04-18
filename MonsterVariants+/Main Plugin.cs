@@ -7,6 +7,7 @@ using RoR2;
 using MonsterVariantsPlus.SubClasses;
 using MonsterVariants;
 using UnityEngine;
+using System.Collections.Generic;
 
 namespace MonsterVariantsPlus
 {
@@ -41,18 +42,18 @@ namespace MonsterVariantsPlus
                 orig(self, DamageReport);
             };
         }
-        public void Start()
+        public void Start() //As soon as the game begins, register variants
         {
-            RegisterVariants();
+            RegisterCustomVariants();
         }
-        internal static void RegisterVariants()
+        internal static void RegisterCustomVariants() //Registers the new custom variants
         {
-            //Mosquito Wisp
+            //Mosquito Wisp - Low Health, Damage & Size, fast movement and attack speed. meant as an annoyance
             AddVariant(new MonsterVariantInfo
             {
                 bodyName = "Wisp",
-                spawnRate = 100f,
-                variantTier = MonsterVariantTier.Uncommon,
+                spawnRate = ConfigLoader.MosquitoWispSpawnChance,
+                variantTier = MonsterVariantTier.Common,
                 sizeModifier = FlyingSizeModifier(0.5f),
                 healthMultiplier = 0.5f,
                 moveSpeedMultiplier = 2.0f,
@@ -65,11 +66,75 @@ namespace MonsterVariantsPlus
                 materialReplacement = null,
                 skillReplacement = null
             });
+            //Steel Contraption - Higher Size, health and damage, lower movement speed and attack speed. 
+            AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "Bell",
+                spawnRate = ConfigLoader.SteelContraptionSpawnChance,
+                variantTier = MonsterVariantTier.Rare,
+                sizeModifier = FlyingSizeModifier(1.5f),
+                healthMultiplier = 1.5f,
+                moveSpeedMultiplier = 0.5f,
+                attackSpeedMultiplier = 0.5f,
+                damageMultiplier = 1.5f,
+                armorMultiplier = 1f,
+                armorBonus = 0f,
+                customInventory = null,
+                meshReplacement = null,
+                materialReplacement = null,
+                skillReplacement = null
+            });
+            //Mortar Crab - Larger Version of a hermit crab slightly faster in attacking, has a brilliant behemoth.
+            AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "HermitCrab",
+                spawnRate = ConfigLoader.MortarCrabSpawnChance,
+                variantTier = MonsterVariantTier.Uncommon,
+                sizeModifier = GroundSizeModifier(1.5f),
+                healthMultiplier = 1.5f,
+                moveSpeedMultiplier = 0.8f,
+                attackSpeedMultiplier = 1.25f,
+                damageMultiplier = 1.25f,
+                armorMultiplier = 1f,
+                armorBonus = 0f,
+                customInventory = SimpleInventory("Behemoth", 1),
+                meshReplacement = null,
+                materialReplacement = null,
+                skillReplacement = null
+            });
         }
-        internal static void AddVariant(MonsterVariantInfo info)
+        internal static void AddVariant(MonsterVariantInfo info) //Adds the new variant using monsterVariant's Variant Handler.
         {
             MonsterVariants.Components.VariantHandler variantHandler = Resources.Load<GameObject>("Prefabs/CharacterBodies/" + info.bodyName + "Body").AddComponent<MonsterVariants.Components.VariantHandler>();
             variantHandler.Init(info);
+        }
+        internal static ItemInfo[] SimpleInventory(string itemName, int itemCount) //Creates an inventory for a Variant that has just 1 type of item.
+        {
+            ItemInfo info = SimpleItem(itemName, itemCount);
+
+            List<ItemInfo> infos = new List<ItemInfo>();
+
+            infos.Add(info);
+
+            ItemInfo[] newInfos = infos.ToArray();
+
+            return newInfos;
+        }
+        internal static ItemInfo SimpleItem(string itemName, int itemCount)
+        {
+            ItemInfo info = ScriptableObject.CreateInstance<ItemInfo>();
+            info.itemString = itemName;
+            info.count = itemCount;
+
+            return info;
+        }
+        internal static MonsterSizeModifier GroundSizeModifier(float newSize)
+        {
+            MonsterSizeModifier sizeModifier = ScriptableObject.CreateInstance<MonsterSizeModifier>();
+            sizeModifier.newSize = newSize;
+            sizeModifier.scaleCollider = false;
+
+            return sizeModifier;
         }
         internal static MonsterSizeModifier FlyingSizeModifier(float newSize)
         {
