@@ -13,6 +13,7 @@ namespace MonsterVariantsPlus
 {
     [BepInDependency("com.bepis.r2api")]
     [BepInDependency("com.rob.MonsterVariants")]
+    [BepInDependency("Moffein-Clay_Men-1.3.5", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInPlugin("com.Nebby1999.MonsterVariantsPlus", "Monster Variants +", "1.2.4")]
     public class MainPlugin : BaseUnityPlugin
     {
