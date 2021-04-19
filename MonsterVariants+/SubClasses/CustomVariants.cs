@@ -56,7 +56,7 @@ namespace MonsterVariantsPlus.SubClasses
                 healthMultiplier = 1.5f,
                 moveSpeedMultiplier = 0.8f,
                 attackSpeedMultiplier = 0.8f,
-                damageMultiplier = 1.25f,
+                damageMultiplier = 1.0f,
                 armorMultiplier = 1f,
                 armorBonus = 0f,
                 customInventory = SimpleInventory("Behemoth", 1),
