@@ -9,6 +9,7 @@ using MonsterVariantsPlus.SubClasses;
 using MonsterVariants;
 using UnityEngine;
 using System.Collections.Generic;
+using MonsterVariants.Components;
 
 namespace MonsterVariantsPlus
 {
@@ -30,21 +31,24 @@ namespace MonsterVariantsPlus
             }*/
             On.RoR2.DeathRewards.OnKilledServer += (orig, self, DamageReport) =>
             {
-                if (DamageReport.victimTeamIndex == (TeamIndex)2) //If the Victim was part of the Enemy Team (TeamIndex)2, then proceed forward
+                foreach (VariantHandler variant in DamageReport.victimBody.GetComponents<VariantHandler>())
                 {
-                    if (ConfigLoader.EnableItemRewards)
+                    if(variant.isVariant)
                     {
-                        ExtraRewards.TryExtraReward(DamageReport.victimBody, DamageReport.attackerBody); //Tries to spawn an item
-                    }
-                    if (ConfigLoader.EnableGoldRewards)
-                    {
-                        uint multipliedGold = MultiplyGold.MultiplyMoney(self.goldReward, DamageReport.victimBody); //Multiplies the money given to the player
-                        self.goldReward = multipliedGold; //Sets the Gold given to the player the value taken from "multipliedGold"
-                    }
-                    if (ConfigLoader.EnableXPRewards)
-                    {
-                        uint multipliedXP = MultiplyXP.MultiplyExperience(self.expReward, DamageReport.victimBody); //Multiplies the XP given to the player
-                        self.expReward = multipliedXP; //Sets the Gold given to the player the value taken from "multipliedXP"
+                        if (ConfigLoader.EnableItemRewards)
+                        {
+                            ExtraRewards.TryExtraReward(DamageReport.victimBody, DamageReport.attackerBody); //Tries to spawn an item
+                        }
+                        if (ConfigLoader.EnableGoldRewards)
+                        {
+                            uint multipliedGold = MultiplyGold.MultiplyMoney(self.goldReward, DamageReport.victimBody); //Multiplies the money given to the player
+                            self.goldReward = multipliedGold; //Sets the Gold given to the player the value taken from "multipliedGold"
+                        }
+                        if (ConfigLoader.EnableXPRewards)
+                        {
+                            uint multipliedXP = MultiplyXP.MultiplyExperience(self.expReward, DamageReport.victimBody); //Multiplies the XP given to the player
+                            self.expReward = multipliedXP; //Sets the Gold given to the player the value taken from "multipliedXP"
+                        }
                     }
                 }
                 orig(self, DamageReport);
