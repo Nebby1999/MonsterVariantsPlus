@@ -121,6 +121,27 @@ namespace MonsterVariantsPlus
                 materialReplacement = null,
                 skillReplacement = null
             });
+            //Clay Soldier
+            if (ClayManCompat.enabled)
+            {
+            AddVariant(new MonsterVariantInfo
+                {
+                    bodyName = "MoffeinClayMan",
+                    spawnRate = 100,
+                    variantTier = MonsterVariantTier.Rare,
+                    sizeModifier = GroundSizeModifier(1.25f),
+                    healthMultiplier = 10f,
+                    moveSpeedMultiplier = 0.5f,
+                    attackSpeedMultiplier = 10f,
+                    damageMultiplier = 0.5f,
+                    armorMultiplier = 1f,
+                    armorBonus = 0f,
+                    customInventory = null,
+                    meshReplacement = null,
+                    materialReplacement = null,
+                    skillReplacement = null
+                });
+            }
         }
         internal static void AddVariant(MonsterVariantInfo info) //Adds the new variant using monsterVariant's Variant Handler.
         {
