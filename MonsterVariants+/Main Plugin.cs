@@ -14,7 +14,7 @@ namespace MonsterVariantsPlus
 {
     [BepInDependency("com.bepis.r2api")]
     [BepInDependency("com.rob.MonsterVariants")]
-    //[BepInDependency("com.Moffein.ClayMen", BepInDependency.DependencyFlags.SoftDependency)]
+//    [BepInDependency("com.Moffein.ClayMen", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInPlugin("com.Nebby1999.MonsterVariantsPlus", "Monster Variants +", "1.2.4")]
     public class MainPlugin : BaseUnityPlugin
     {
@@ -128,12 +128,12 @@ namespace MonsterVariantsPlus
                 materialReplacement = null,
                 skillReplacement = null
             });
-            /*Clay Soldier
-            if (hasClayMan)
+            //Clay Soldier
+            /*if (hasClayMan)
             {
                 AddVariant(new MonsterVariantInfo
                 {
-                    bodyName = "clayObject",
+                    bodyName = "MoffeinClayMan",
                     spawnRate = 100,
                     variantTier = MonsterVariantTier.Rare,
                     sizeModifier = GroundSizeModifier(1.25f),
