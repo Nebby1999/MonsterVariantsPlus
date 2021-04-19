@@ -112,7 +112,7 @@ namespace MonsterVariantsPlus
                 healthMultiplier = 1.5f,
                 moveSpeedMultiplier = 1.0f,
                 attackSpeedMultiplier = 1.25f,
-                damageMultiplier = 0.9f,
+                damageMultiplier = 0.5f,
                 armorMultiplier = 1f,
                 armorBonus = 0f,
                 customInventory = vampiricInventory,
@@ -129,8 +129,8 @@ namespace MonsterVariantsPlus
 
         readonly static ItemInfo[] vampiricInventory = new ItemInfo[]
         {
-            SimpleItem("Dagger", 10),
-            SimpleItem("Seed", 20)
+                SimpleItem("CritGlasses", 10),
+                SimpleItem("HealOnCrit", 10),
         };
         internal static ItemInfo[] SimpleInventory(string itemName, int itemCount) //Creates an inventory for a Variant that has just 1 type of item.
         {
