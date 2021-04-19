@@ -1,5 +1,6 @@
 
-# MonsterVariants+
+
+# MonsterVariantsPlus
 - An Addon for Rob's [MonsterVariants](https://thunderstore.io/package/rob/MonsterVariants/)
 - Adds Custom Variants on top of Rob's Existing Variants
 - Killing a Variant now Gives rewards Depending on their Tier (Common, Uncommon & Rare)
@@ -10,14 +11,14 @@
 ## Features
 
 ### Gold Bonus
-Recieve extra gold when killing a Variant, based off a Multiplier. Values Configurable, and the default values are:
+Receive extra gold when killing a Variant, based off a Multiplier. Values Configurable, and the default values are:
 	
 	- 1.3 for Common Variants
 	- 1.6 for Uncommon Variants
 	- 2.0 for Rare Variants
 
 ### XP Bonus
-Recieve extra XP when killing a Variant, based off a Multiplier. Values Configurable, and the default values are:
+Receive extra XP when killing a Variant, based off a Multiplier. Values Configurable, and the default values are:
 	
 	- 1.3 for Common Variants
 	- 1.6 for Uncommon Variants
@@ -25,8 +26,8 @@ Recieve extra XP when killing a Variant, based off a Multiplier. Values Configur
 
 ### Item Drops
 Each time you kill a Variant, there's a small chance for it to drop an Item which's tier can be White, Green or Red.
-Chances are highly configurable, and each Tier has it's own chances, by default, Common tier variants can only drop white items, while a rare variant might give you a red item if youre lucky enough! (Note: not actually affected by the Luck stat)
-The default values for the Item drops are right below (It is reccomended to check out the "Configuring the Mod" section for an explanation of how the Item drop mechanic works.
+Chances are highly configurable, and each Tier has it's own chances, by default, Common tier variants can only drop white items, while a rare variant might give you a red item if you're lucky enough! (Note: not actually affected by the Luck stat)
+The default values for the Item drops are right below (It is recommended to check out the "Configuring the Mod" section for an explanation of how the Item drop mechanic works.
 	
 	Common Variants:
 	- 3% for a White item
@@ -47,20 +48,21 @@ The default values for the Item drops are right below (It is reccomended to chec
 Version 1.2.0 introduces new Variants to the game designed by Nebby.
 The end goal is to have at least one variant per type of enemy.
 Just Like in the Original Monster Variants, their spawn chance can be changed in the config file.
-If you dont want any new variants, you can also disable the entire section in the config file.
+If you don't want any new variants, you can also disable the entire section in the config file.
 
-	Mosquito Wisp (30% Chance):
+	Mosquito Wisp (7% Chance):
 	- 50% Size
 	- 50% Health
 	- 500% Movement Speed
-	- 1000% Attack Speed
+	- 500% Attack Speed
 	- 110% Damage
+	- Has 4 Alien Heads
 	
 	Steel Contraption (7% Chance):
-	- 150% Size
+	- 100% Size
 	- 150% Health
 	- 50% Movement Speed
-	- 50% Attack Speed
+	- 75% Attack Speed
 	- 150% Damage
 	
 	Mortar Crab (5% Chance):
@@ -74,9 +76,10 @@ If you dont want any new variants, you can also disable the entire section in th
 	Vampiric Templar (5% Chance):
 	- 125% Size
 	- 125% Attack Speed
-	- 90% Damage
-	- Has 5 Tri-Tip Daggers
-	- Has 10 Leeching Seeds
+	- 150% Health
+	- 50% Damage
+	- Has 10 Lensmarker Glasses
+	- Has 20 Harvester Scythes
 
 ## Configuring the Mod.
 This section is for explaining how the Item drop chance mechanic works, since it's not based off the normal % chance ROR2 has.
@@ -90,24 +93,44 @@ To install the addon, simply drag the MonsterVariantsPlus.dll onto your plugins 
 
 ## Future Plans
 - Have Boss variants drop their Boss item based off Chance.
+- Move the Custom Variants code to it's own class instead of being in the main class.
 
+## Contacting
+In case you need to contact me regarding a Bug, please create an issue in the Github's Issue Tracker found [Here](https://github.com/Nebby1999/MonsterVariantsPlus/issues)
+I also hang out in the Official [Risk of Rain 2 Modding](https://discord.gg/5MbXZvd) Discord server under the name of "Nebby" in case you want to contact me for other purposes, such as suggestions or feedback. I Always appreciate any kind of feedback.
 ## Changelog
-'1.2.3'
--Now Ships with this version instead of 1.2.1.
--Added a missing Semi-Colon in Config Loader that caused the mod to not compile, whoops.
+'1.2.4' Variant Rebalance Update
+- Changed the Mosquito Wisp.
+	-- Common Tier -> Uncommon	Tier
+	-- 30% Spawn Chance -> 7% Spawn Chance
+	-- 1000% Attack Speed -> 500% Attack Speed
+	-- Now Spawns with 5 Alien Heads, causing it's Attack cooldown to be 1 second instead of 4.
+- Changed the Steel Contraption.
+	-- 150% Size -> 100% Size
+	-- 150% Health -> 175% Health
+	-- 50% Attack Speed -> 75% Attack Speed
+	-- Removal of Size was because it caused problems with the Contraption's Aiming, Expect another easy way to differentiate them in the future.
+- Changed the Vampiric Templar
+	-- 90% Damage -> 50% Damage
+	-- Replaced 5 Tri-Tip Daggers with 10 Lensmarker Glasses (Effective Damage is the same as a regular Templar.)
+	-- Replaced 10 Leeching Seeds with 20 Harvester Scythes (4.4HP+ per hit)
 
-'1.2.2'
--Increased the spawn chance of a mosquito wisp to 30%
-- Added Vampiric Templar Variant
-- Slightly Buffed Mosquito Wisps, so theyre more annoying (as a mosquito should be)
-	200% Movement Speed -> 500% Movement Speed
-	200% Attack Speed -> 1000% Attack Speed
-	100% Damage -> 110% Damage
+'1.2.3'
+- Now Ships with this version instead of 1.2.1.
+- Added a missing Semi-Colon in Config Loader that caused the mod to not compile, whoops.
+
+'1.2.2' Vampiric Templar Update
+- Increased the spawn chance of a mosquito wisp to 30%
+-  Added Vampiric Templar Variant
+-  Slightly Buffed Mosquito Wisps, so theyre more annoying (as a mosquito should be)
+	-- 200% Movement Speed -> 500% Movement Speed
+	-- 200% Attack Speed -> 1000% Attack Speed
+	-- 100% Damage -> 110% Damage
 
 '1.2.1'
 - Added spawn chances to the Readme file.
 
-'1.2.0'
+'1.2.0' Custom Variants Update
 - Added 3 New Variants.
 - Steel Contraption.
 - Mosquito Wisp.
@@ -116,7 +139,7 @@ To install the addon, simply drag the MonsterVariantsPlus.dll onto your plugins 
 '1.1.1'
 - Added an option for item rewards to spawn based off the player who killed the variant.
 
-'1.1.0'
+'1.1.0' Anniversary Update
 - Updated for the Anniversary Update.
 - Added the XP Multiplier System.
 
