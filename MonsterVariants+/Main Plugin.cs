@@ -3,6 +3,7 @@
  * Class initializes the Config files, and it's main purpose is checking if the killed monster was a Variant.
 */
 using BepInEx;
+using BepInEx.Logging;
 using RoR2;
 using MonsterVariantsPlus.SubClasses;
 using MonsterVariants;
@@ -13,14 +14,20 @@ namespace MonsterVariantsPlus
 {
     [BepInDependency("com.bepis.r2api")]
     [BepInDependency("com.rob.MonsterVariants")]
-    [BepInDependency("Moffein-Clay_Men-1.3.5", BepInDependency.DependencyFlags.SoftDependency)]
+    //[BepInDependency("com.Moffein.ClayMen", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInPlugin("com.Nebby1999.MonsterVariantsPlus", "Monster Variants +", "1.2.4")]
     public class MainPlugin : BaseUnityPlugin
     {
+        //private static bool hasClayMan;
+
         public void Awake()
         {
             ConfigLoader.SetupConfigLoader(Config); //Initializes the Config
-
+            /*if(BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.Moffein.ClayMen"))
+            {
+                hasClayMan = true;
+                Logger.LogMessage("Moffein's Clayman has been detected, enabling Clayman Variant(s).");
+            }*/
             On.RoR2.DeathRewards.OnKilledServer += (orig, self, DamageReport) =>
             {
                 if (DamageReport.victimTeamIndex == (TeamIndex)2) //If the Victim was part of the Enemy Team (TeamIndex)2, then proceed forward
@@ -121,32 +128,33 @@ namespace MonsterVariantsPlus
                 materialReplacement = null,
                 skillReplacement = null
             });
-            //Clay Soldier
-            if (ClayManCompat.enabled)
+            /*Clay Soldier
+            if (hasClayMan)
             {
-            AddVariant(new MonsterVariantInfo
+                AddVariant(new MonsterVariantInfo
                 {
-                    bodyName = "MoffeinClayMan",
+                    bodyName = "clayObject",
                     spawnRate = 100,
                     variantTier = MonsterVariantTier.Rare,
                     sizeModifier = GroundSizeModifier(1.25f),
                     healthMultiplier = 10f,
                     moveSpeedMultiplier = 0.5f,
-                    attackSpeedMultiplier = 10f,
+                    attackSpeedMultiplier = 5f,
                     damageMultiplier = 0.5f,
                     armorMultiplier = 1f,
                     armorBonus = 0f,
-                    customInventory = null,
+                    customInventory = SimpleInventory("AlienHead", 5),
                     meshReplacement = null,
                     materialReplacement = null,
                     skillReplacement = null
                 });
-            }
+            }*/
         }
         internal static void AddVariant(MonsterVariantInfo info) //Adds the new variant using monsterVariant's Variant Handler.
         {
-            MonsterVariants.Components.VariantHandler variantHandler = Resources.Load<GameObject>("Prefabs/CharacterBodies/" + info.bodyName + "Body").AddComponent<MonsterVariants.Components.VariantHandler>();
+            MonsterVariants.Components.VariantHandler variantHandler = Resources.Load<GameObject>("prefabs/characterbodies/" + info.bodyName + "Body").AddComponent<MonsterVariants.Components.VariantHandler>();
             variantHandler.Init(info);
+            
         }
 
         readonly static ItemInfo[] vampiricInventory = new ItemInfo[]
