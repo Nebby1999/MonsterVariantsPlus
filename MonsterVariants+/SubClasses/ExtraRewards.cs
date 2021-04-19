@@ -13,79 +13,60 @@ namespace MonsterVariantsPlus.SubClasses
     public class ExtraRewards
     {
         static readonly float Offset = 2f * Mathf.PI / Run.instance.participatingPlayerCount;
-        public static void TryExtraReward(CharacterBody victimBody, CharacterBody playerBody)
+        public static void TryExtraReward(VariantHandler enemyVariant,CharacterBody victimBody, CharacterBody playerBody)
         {
-            foreach (VariantHandler i in victimBody.GetComponents<VariantHandler>())
+            var whiteItems = Run.instance.availableTier1DropList; //Grabs all the possible white items.
+            var nextWhiteItems = Run.instance.treasureRng.RangeInt(0, whiteItems.Count); //Picks a random white item from the list above
+            var greenItems = Run.instance.availableTier2DropList; //Grabs all the possible Green items.
+            var nextGreenItems = Run.instance.treasureRng.RangeInt(0, greenItems.Count); //Picks a random Green item from the list above
+            var redItems = Run.instance.availableTier3DropList; //Grabs all the possible Red items
+            var nextRedItems = Run.instance.treasureRng.RangeInt(0, redItems.Count); //Picks a random Red item from the list above
+            if (enemyVariant.tier == MonsterVariantTier.Common)
             {
-                var whiteItems = Run.instance.availableTier1DropList; //Grabs all the possible white items.
-                var nextWhiteItems = Run.instance.treasureRng.RangeInt(0, whiteItems.Count); //Picks a random white item from the list above
-                var greenItems = Run.instance.availableTier2DropList; //Grabs all the possible Green items.
-                var nextGreenItems = Run.instance.treasureRng.RangeInt(0, greenItems.Count); //Picks a random Green item from the list above
-                var redItems = Run.instance.availableTier3DropList; //Grabs all the possible Red items
-                var nextRedItems = Run.instance.treasureRng.RangeInt(0, redItems.Count); //Picks a random Red item from the list above
-                if (i.isVariant)
+                float rng = Random.Range(0f, 100f);
+                if (rng < ConfigLoader.CommonRedChance) //If RNG is less than the Green chance, spawn a R Item
                 {
-                    if (i.tier == MonsterVariantTier.Common)
-                    {
-                        float rng = Random.Range(0f, 100f);
-                        if (rng < ConfigLoader.CommonRedChance) //If RNG is less than the Green chance, spawn a R Item
-                        {
-                            CreateDroplet(redItems, nextRedItems, victimBody, playerBody);
-                            break;
-                        }
-                        else if (rng < ConfigLoader.CommonGreenChance + ConfigLoader.CommonRedChance) //If RNG is less than the Green chance, spawn a G Item
-                        {
-                            CreateDroplet(greenItems, nextGreenItems, victimBody, playerBody);
-                            break;
-                        }
-                        else if (rng < ConfigLoader.CommonWhiteChance + ConfigLoader.CommonGreenChance + ConfigLoader.CommonRedChance) //If RNG is less than the White chance, spawn a W Item
-                        {
-                            CreateDroplet(whiteItems, nextWhiteItems, victimBody, playerBody);
-                            break;
-                        }
-                    }
-                    if (i.tier == MonsterVariantTier.Uncommon)
-                    {
-                        float rng = Random.Range(0f, 100f);
-//                        Chat.AddMessage("Tier: " + MonsterVariantTier.Uncommon.ToString());
-//                        Chat.AddMessage("RNG: " + rng.ToString());
-                        if (rng < ConfigLoader.UncommonRedChance) //If RNG is less than the Green chance, spawn a R Item
-                        {
-                            CreateDroplet(redItems, nextRedItems, victimBody, playerBody);
-                            break;
-                        }
-                        else if (rng < ConfigLoader.UncommonGreenChance + ConfigLoader.UncommonRedChance) //If RNG is less than the Green chance, spawn a G Item
-                        {
-                            CreateDroplet(greenItems, nextGreenItems, victimBody, playerBody);
-                            break;
-                        }
-                        else if (rng < ConfigLoader.UncommonWhiteChance + ConfigLoader.UncommonGreenChance + ConfigLoader.UncommonRedChance) //If RNG is less than the White chance, spawn a W Item
-                        {
-                            CreateDroplet(whiteItems, nextWhiteItems, victimBody, playerBody);
-                            break;
-                        }
-                    }
-                    if (i.tier == MonsterVariantTier.Rare)
-                    {
-                        float rng = Random.Range(0f, 100f);
-//                        Chat.AddMessage("Tier: " + MonsterVariantTier.Rare.ToString());
-//                        Chat.AddMessage("RNG: " + rng.ToString());
-                        if (rng < ConfigLoader.RareRedChance) //If RNG is less than the Green chance, spawn a R Item
-                        {
-                            CreateDroplet(redItems, nextRedItems, victimBody, playerBody);
-                            break;
-                        }
-                        else if (rng < ConfigLoader.RareGreenChance + ConfigLoader.RareRedChance) //If RNG is less than the Green chance, spawn a G Item
-                        {
-                            CreateDroplet(greenItems, nextGreenItems, victimBody, playerBody);
-                            break;
-                        }
-                        else if (rng < ConfigLoader.RareWhiteChance + ConfigLoader.RareGreenChance + ConfigLoader.RareRedChance) //If RNG is less than the White chance, spawn a W Item
-                        {
-                            CreateDroplet(whiteItems, nextWhiteItems, victimBody, playerBody);
-                            break;
-                        }
-                    }
+                    CreateDroplet(redItems, nextRedItems, victimBody, playerBody);
+                }
+                else if (rng < ConfigLoader.CommonGreenChance + ConfigLoader.CommonRedChance) //If RNG is less than the Green chance, spawn a G Item
+                {
+                    CreateDroplet(greenItems, nextGreenItems, victimBody, playerBody);
+                }
+                else if (rng < ConfigLoader.CommonWhiteChance + ConfigLoader.CommonGreenChance + ConfigLoader.CommonRedChance) //If RNG is less than the White chance, spawn a W Item
+                {
+                    CreateDroplet(whiteItems, nextWhiteItems, victimBody, playerBody);
+                }
+            }
+            if (enemyVariant.tier == MonsterVariantTier.Uncommon)
+            {
+                float rng = Random.Range(0f, 100f);
+                if (rng < ConfigLoader.UncommonRedChance) //If RNG is less than the Green chance, spawn a R Item
+                {
+                    CreateDroplet(redItems, nextRedItems, victimBody, playerBody);
+                }
+                else if (rng < ConfigLoader.UncommonGreenChance + ConfigLoader.UncommonRedChance) //If RNG is less than the Green chance, spawn a G Item
+                {
+                    CreateDroplet(greenItems, nextGreenItems, victimBody, playerBody);
+                }
+                else if (rng < ConfigLoader.UncommonWhiteChance + ConfigLoader.UncommonGreenChance + ConfigLoader.UncommonRedChance) //If RNG is less than the White chance, spawn a W Item
+                {
+                    CreateDroplet(whiteItems, nextWhiteItems, victimBody, playerBody);
+                }
+            }
+            if (enemyVariant.tier == MonsterVariantTier.Rare)
+            {
+                float rng = Random.Range(0f, 100f);
+                if (rng < ConfigLoader.RareRedChance) //If RNG is less than the Green chance, spawn a R Item
+                {
+                    CreateDroplet(redItems, nextRedItems, victimBody, playerBody);
+                }
+                else if (rng < ConfigLoader.RareGreenChance + ConfigLoader.RareRedChance) //If RNG is less than the Green chance, spawn a G Item
+                {
+                    CreateDroplet(greenItems, nextGreenItems, victimBody, playerBody);
+                }
+                else if (rng < ConfigLoader.RareWhiteChance + ConfigLoader.RareGreenChance + ConfigLoader.RareRedChance) //If RNG is less than the White chance, spawn a W Item
+                {
+                    CreateDroplet(whiteItems, nextWhiteItems, victimBody, playerBody);
                 }
             }
         }

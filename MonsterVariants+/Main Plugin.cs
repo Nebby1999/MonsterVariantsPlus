@@ -31,22 +31,22 @@ namespace MonsterVariantsPlus
             }*/
             On.RoR2.DeathRewards.OnKilledServer += (orig, self, DamageReport) =>
             {
-                foreach (VariantHandler variant in DamageReport.victimBody.GetComponents<VariantHandler>())
+                foreach (VariantHandler enemy in DamageReport.victimBody.GetComponents<VariantHandler>())
                 {
-                    if(variant.isVariant)
+                    if(enemy.isVariant)
                     {
                         if (ConfigLoader.EnableItemRewards)
                         {
-                            ExtraRewards.TryExtraReward(DamageReport.victimBody, DamageReport.attackerBody); //Tries to spawn an item
+                            ExtraRewards.TryExtraReward(enemy, DamageReport.victimBody, DamageReport.attackerBody); //Tries to spawn an item
                         }
                         if (ConfigLoader.EnableGoldRewards)
                         {
-                            uint multipliedGold = MultiplyGold.MultiplyMoney(self.goldReward, DamageReport.victimBody); //Multiplies the money given to the player
+                            uint multipliedGold = MultiplyGold.MultiplyMoney(self.goldReward, enemy); //Multiplies the money given to the player
                             self.goldReward = multipliedGold; //Sets the Gold given to the player the value taken from "multipliedGold"
                         }
                         if (ConfigLoader.EnableXPRewards)
                         {
-                            uint multipliedXP = MultiplyXP.MultiplyExperience(self.expReward, DamageReport.victimBody); //Multiplies the XP given to the player
+                            uint multipliedXP = MultiplyXP.MultiplyExperience(self.expReward, enemy); //Multiplies the XP given to the player
                             self.expReward = multipliedXP; //Sets the Gold given to the player the value taken from "multipliedXP"
                         }
                     }
