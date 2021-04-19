@@ -72,9 +72,9 @@ namespace MonsterVariantsPlus
                 bodyName = "Bell",
                 spawnRate = ConfigLoader.SteelContraptionSpawnChance,
                 variantTier = MonsterVariantTier.Rare,
-                sizeModifier = FlyingSizeModifier(1.5f),
-                healthMultiplier = 1.5f,
-                moveSpeedMultiplier = 0.75f,
+                sizeModifier = FlyingSizeModifier(1.0f),
+                healthMultiplier = 2.0f,
+                moveSpeedMultiplier = 0.5f,
                 attackSpeedMultiplier = 0.75f,
                 damageMultiplier = 1.5f,
                 armorMultiplier = 1f,
@@ -129,8 +129,8 @@ namespace MonsterVariantsPlus
 
         readonly static ItemInfo[] vampiricInventory = new ItemInfo[]
         {
-            SimpleItem("Dagger", 2),
-            SimpleItem("Seed", 10)
+            SimpleItem("Dagger", 10),
+            SimpleItem("Seed", 20)
         };
         internal static ItemInfo[] SimpleInventory(string itemName, int itemCount) //Creates an inventory for a Variant that has just 1 type of item.
         {
