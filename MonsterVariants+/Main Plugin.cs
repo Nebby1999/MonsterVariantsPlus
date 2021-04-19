@@ -61,7 +61,7 @@ namespace MonsterVariantsPlus
                 damageMultiplier = 1.1f,
                 armorMultiplier = 1f,
                 armorBonus = 0f,
-                customInventory = null,
+                customInventory = SimpleInventory("AlienHead", 5),
                 meshReplacement = null,
                 materialReplacement = null,
                 skillReplacement = null
@@ -74,8 +74,8 @@ namespace MonsterVariantsPlus
                 variantTier = MonsterVariantTier.Rare,
                 sizeModifier = FlyingSizeModifier(1.5f),
                 healthMultiplier = 1.5f,
-                moveSpeedMultiplier = 0.5f,
-                attackSpeedMultiplier = 0.5f,
+                moveSpeedMultiplier = 0.75f,
+                attackSpeedMultiplier = 0.75f,
                 damageMultiplier = 1.5f,
                 armorMultiplier = 1f,
                 armorBonus = 0f,
@@ -105,7 +105,7 @@ namespace MonsterVariantsPlus
             //Vampiric Templar - Clay Templar with tritip daggers and leeching seeds.
             AddVariant(new MonsterVariantInfo
             {
-                bodyName = "ClayBruiserMonster",
+                bodyName = "ClayBruiser",
                 spawnRate = ConfigLoader.VampiricTemplarSpawnChance,
                 variantTier = MonsterVariantTier.Rare,
                 sizeModifier = GroundSizeModifier(1.25f),
