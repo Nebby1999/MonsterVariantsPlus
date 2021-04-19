@@ -13,7 +13,7 @@ namespace MonsterVariantsPlus
 {
     [BepInDependency("com.bepis.r2api")]
     [BepInDependency("com.rob.MonsterVariants")]
-    [BepInPlugin("com.Nebby1999.MonsterVariantsPlus", "Monster Variants +", "1.2.3")]
+    [BepInPlugin("com.Nebby1999.MonsterVariantsPlus", "Monster Variants +", "1.2.4")]
     public class MainPlugin : BaseUnityPlugin
     {
         public void Awake()
@@ -53,11 +53,11 @@ namespace MonsterVariantsPlus
             {
                 bodyName = "Wisp",
                 spawnRate = ConfigLoader.MosquitoWispSpawnChance,
-                variantTier = MonsterVariantTier.Common,
+                variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = FlyingSizeModifier(0.5f),
                 healthMultiplier = 0.5f,
                 moveSpeedMultiplier = 5.0f,
-                attackSpeedMultiplier = 10.0f,
+                attackSpeedMultiplier = 5.0f,
                 damageMultiplier = 1.1f,
                 armorMultiplier = 1f,
                 armorBonus = 0f,
@@ -73,7 +73,7 @@ namespace MonsterVariantsPlus
                 spawnRate = ConfigLoader.SteelContraptionSpawnChance,
                 variantTier = MonsterVariantTier.Rare,
                 sizeModifier = FlyingSizeModifier(1.0f),
-                healthMultiplier = 2.0f,
+                healthMultiplier = 1.75f,
                 moveSpeedMultiplier = 0.5f,
                 attackSpeedMultiplier = 0.75f,
                 damageMultiplier = 1.5f,
@@ -107,7 +107,7 @@ namespace MonsterVariantsPlus
             {
                 bodyName = "ClayBruiser",
                 spawnRate = ConfigLoader.VampiricTemplarSpawnChance,
-                variantTier = MonsterVariantTier.Rare,
+                variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = GroundSizeModifier(1.25f),
                 healthMultiplier = 1.5f,
                 moveSpeedMultiplier = 1.0f,
@@ -130,7 +130,7 @@ namespace MonsterVariantsPlus
         readonly static ItemInfo[] vampiricInventory = new ItemInfo[]
         {
                 SimpleItem("CritGlasses", 10),
-                SimpleItem("HealOnCrit", 10),
+                SimpleItem("HealOnCrit", 20),
         };
         internal static ItemInfo[] SimpleInventory(string itemName, int itemCount) //Creates an inventory for a Variant that has just 1 type of item.
         {
