@@ -66,10 +66,14 @@ namespace MonsterVariantsPlus.SubClasses
         public static float VampiricTemplarSpawnChance => VampiricTemplarSpawnChanceConfig.Value;
         private static ConfigEntry<float> ADShroomSpawnChanceConfig { get; set; }
         public static float ADShroomSpawnChance => ADShroomSpawnChanceConfig.Value;
-        /*private static ConfigEntry<float> TeenagerSpawnChanceConfig { get; set; }
+        private static ConfigEntry<float> TeenagerSpawnChanceConfig { get; set; }
         public static float TeenagerSpawnChance => TeenagerSpawnChanceConfig.Value;
         private static ConfigEntry<float> ChildSpawnChanceConfig { get; set; }
-        public static float ChildSpawnChance => ChildSpawnChanceConfig.Value;*/
+        public static float ChildSpawnChance => ChildSpawnChanceConfig.Value;
+        private static ConfigEntry<float> BruiserImpSpawnChanceConfig { get; set; }
+        public static float BruiserImpSpawnChance => BruiserImpSpawnChanceConfig.Value;
+        private static ConfigEntry<float> ClaySoldierSpawnChanceConfig { get; set; }
+        public static float ClaySoldierSpawnChance => ClaySoldierSpawnChanceConfig.Value;
 
         public static void SetupConfigLoader(ConfigFile config) //Creates the description and some mumbojumbo for the values.
         {
@@ -105,8 +109,10 @@ namespace MonsterVariantsPlus.SubClasses
             MortarCrabSpawnChanceConfig = config.Bind<float>("Custom Variants", "Mortar Crab Spawn Chance", 5f, "Chance for a Mortar Crab variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
             VampiricTemplarSpawnChanceConfig = config.Bind<float>("Custom Variants", "Vampiric Templar Spawn Chance", 5, "Chance for a Vampiric Templar variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
             ADShroomSpawnChanceConfig = config.Bind<float>("Custom Variants", "ADShroom Spawn Chance", 6, "Chance for an ADShroom (Area of Denial Shroom) variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant form spawning.");
-            /*TeenagerSpawnChanceConfig = config.Bind<float>("Custom Variants", "Teenager Spawn Chance", 20, "Chance for a Teenager Variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
-            ChildSpawnChanceConfig = config.Bind<float>("Custom Variants", "Child Spawn Chance", 5, "Chance for a Child Variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");*/
+            TeenagerSpawnChanceConfig = config.Bind<float>("Custom Variants", "Teenager Spawn Chance", 20, "Chance for a Teenager Variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
+            ChildSpawnChanceConfig = config.Bind<float>("Custom Variants", "Child Spawn Chance", 5, "Chance for a Child Variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
+            BruiserImpSpawnChanceConfig = config.Bind<float>("Custom Variants", "Bruiser Imp Spawn Chance", 10, "Chance for a Bruiser Imp Variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
+            ClaySoldierSpawnChanceConfig = config.Bind<float>("Custom Variants", "Clay Soldier Spawn Chance", 15, "Chance for a Clay Soldier Variant to Spawn (percentage, 0-100)\nOnly Spawns if Moffein's ClayMen mod is Installed.\nSetting this value to 0 will disable this variant from spawning.");
         }
     }
 }
