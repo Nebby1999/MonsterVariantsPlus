@@ -100,6 +100,48 @@ namespace MonsterVariantsPlus.SubClasses
                 materialReplacement = MonsterVariants.MainPlugin.SimpleMaterialReplacement(MainPlugin.MainAssets.LoadAsset<Material>("ADShroom")),
                 skillReplacement = null
             });
+            //BruiserImp
+            AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "Imp",
+                spawnRate = ConfigLoader.BruiserImpSpawnChance
+            });
+            //Teenager
+            AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "Parent",
+                spawnRate = ConfigLoader.TeenagerSpawnChance,
+                variantTier = MonsterVariantTier.Common,
+                sizeModifier = GroundSizeModifier(0.75f),
+                healthMultiplier = 1.25f,
+                moveSpeedMultiplier = 1.0f,
+                attackSpeedMultiplier = 1.2f,
+                damageMultiplier = 0.8f,
+                armorMultiplier = 1f,
+                armorBonus = 0f,
+                customInventory = SimpleInventory("HealWhileSafe", 10),
+                meshReplacement = null,
+                materialReplacement = null,
+                skillReplacement = null
+            });
+            //Child
+            AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "Parent",
+                spawnRate = ConfigLoader.ChildSpawnChance,
+                variantTier = MonsterVariantTier.Uncommon,
+                sizeModifier = GroundSizeModifier(0.5f),
+                healthMultiplier = 0.5f,
+                moveSpeedMultiplier = 1.75f,
+                attackSpeedMultiplier = 2.0f,
+                damageMultiplier = 0.6f,
+                armorMultiplier = 1f,
+                armorBonus = 0f,
+                customInventory = SimpleInventory("AlienHead", 5),
+                meshReplacement = null,
+                materialReplacement = null,
+                skillReplacement = null
+            });
         }
         internal static void AddVariant(MonsterVariantInfo info)
         {
