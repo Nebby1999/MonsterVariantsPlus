@@ -10,7 +10,7 @@ namespace MonsterVariantsPlus.SubClasses
     {
         internal static void RegisterCustomVariants()
         {
-            //Mosquito Wisp - Low Health, Damage & Size, fast movement and attack speed. meant as an annoyance
+            //Mosquito Wisp
             AddVariant(new MonsterVariantInfo
             {
                 bodyName = "Wisp",
@@ -28,7 +28,7 @@ namespace MonsterVariantsPlus.SubClasses
                 materialReplacement = null,
                 skillReplacement = null
             });
-            //Steel Contraption - Higher Size, health and damage, lower movement speed and attack speed. 
+            //Steel Contraption
             AddVariant(new MonsterVariantInfo
             {
                 bodyName = "Bell",
@@ -46,7 +46,7 @@ namespace MonsterVariantsPlus.SubClasses
                 materialReplacement = null,
                 skillReplacement = null
             });
-            //Mortar Crab - Larger Version of a hermit crab slightly faster in attacking, has a brilliant behemoth.
+            //Mortar Crab
             AddVariant(new MonsterVariantInfo
             {
                 bodyName = "HermitCrab",
@@ -64,7 +64,7 @@ namespace MonsterVariantsPlus.SubClasses
                 materialReplacement = null,
                 skillReplacement = null
             });
-            //Vampiric Templar - Clay Templar with tritip daggers and leeching seeds.
+            //Vampiric Templar
             AddVariant(new MonsterVariantInfo
             {
                 bodyName = "ClayBruiser",
@@ -82,7 +82,7 @@ namespace MonsterVariantsPlus.SubClasses
                 materialReplacement = null,
                 skillReplacement = null
             });
-            //AD-Shroom
+            //AD-Shroom (Area of Denial Shroom)
             AddVariant(new MonsterVariantInfo
             {
                 bodyName = "MiniMushroom",
@@ -101,7 +101,7 @@ namespace MonsterVariantsPlus.SubClasses
                 skillReplacement = null
             });
         }
-        internal static void AddVariant(MonsterVariantInfo info) //Adds the new variant using monsterVariant's Variant Handler.
+        internal static void AddVariant(MonsterVariantInfo info)
         {
             VariantHandler variantHandler = Resources.Load<GameObject>("prefabs/characterbodies/" + info.bodyName + "Body").AddComponent<VariantHandler>();
             variantHandler.Init(info);
@@ -113,7 +113,7 @@ namespace MonsterVariantsPlus.SubClasses
                 SimpleItem("CritGlasses", 10),
                 SimpleItem("HealOnCrit", 20),
         };
-        internal static ItemInfo[] SimpleInventory(string itemName, int itemCount) //Creates an inventory for a Variant that has just 1 type of item.
+        internal static ItemInfo[] SimpleInventory(string itemName, int itemCount)
         {
             ItemInfo info = SimpleItem(itemName, itemCount);
 
@@ -149,5 +149,11 @@ namespace MonsterVariantsPlus.SubClasses
 
             return sizeModifier;
         }
+        //Steel Contraption Material
+        /*internal static CreateMaterials()
+        {
+            var steelContraptionMaterial = new Material(Shader.Find("hgstandard"));
+            steelContraptionMaterial.SetTexture("_MainTex", )
+        }*/
     }
 }
