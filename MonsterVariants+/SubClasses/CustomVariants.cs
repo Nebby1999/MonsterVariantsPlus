@@ -1,8 +1,6 @@
-﻿
-using MV = MonsterVariants.MainPlugin;
+﻿using MV = MonsterVariants.MainPlugin;
 using UnityEngine;
 using MonsterVariants;
-using System.Collections.Generic;
 
 namespace MonsterVariantsPlus.SubClasses
 {
@@ -102,7 +100,7 @@ namespace MonsterVariantsPlus.SubClasses
                 skillReplacement = null
             });
             //Teenager
-            /*MV.AddVariant(new MonsterVariantInfo
+            MV.AddVariant(new MonsterVariantInfo
             {
                 bodyName = "Parent",
                 spawnRate = ConfigLoader.TeenagerSpawnChance,
@@ -136,7 +134,46 @@ namespace MonsterVariantsPlus.SubClasses
                 meshReplacement = null,
                 materialReplacement = null,
                 skillReplacement = null
-            });*/
+            });
+            //Bruiser Imp
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "Imp",
+                spawnRate = ConfigLoader.BruiserImpSpawnChance,
+                variantTier = MonsterVariantTier.Uncommon,
+                sizeModifier = MV.GroundSizeModifier(1.25f),
+                healthMultiplier = 0.8f,
+                moveSpeedMultiplier = 1.1f,
+                attackSpeedMultiplier = 2.0f,
+                damageMultiplier = 1.0f,
+                armorMultiplier = 1f,
+                armorBonus = 0f,
+                customInventory = MV.SimpleInventory("AlienHead", 5),
+                meshReplacement = null,
+                materialReplacement = null,
+                skillReplacement = MV.SecondaryReplacement(null)
+            });
+            if (MainPlugin.hasClayMan)
+            {
+                //Clay Soldier
+                MV.AddModdedVariant(new MonsterVariantInfo
+                {
+                    bodyName = "Parent",
+                    spawnRate = ConfigLoader.ClaySoldierSpawnChance,
+                    variantTier = MonsterVariantTier.Common,
+                    sizeModifier = MV.GroundSizeModifier(1.125f),
+                    healthMultiplier = 1.25f,
+                    moveSpeedMultiplier = 0.9f,
+                    attackSpeedMultiplier = 1.5f,
+                    damageMultiplier = 1.0f,
+                    armorMultiplier = 1f,
+                    armorBonus = 0f,
+                    customInventory = MV.SimpleInventory("AlienHead", 1),
+                    meshReplacement = null,
+                    materialReplacement = null,
+                    skillReplacement = null
+                });
+            }
         }
         readonly static ItemInfo[] vampiricInventory = new ItemInfo[]
         {
