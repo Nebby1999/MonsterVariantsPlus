@@ -100,7 +100,7 @@ To install the addon, simply drag the MonsterVariantsPlus.dll onto your plugins 
 
 ## Future Plans
 - Have Boss variants drop their Boss item based off Chance.
-- Move the Custom Variants code to it's own class instead of being in the main class.
+- Have Variants of Modded Enemies, such as Moffein's [ClayMen](https://thunderstore.io/package/Moffein/Clay_Men/)
 
 ## Contacting
 In case you need to contact me regarding a Bug, please create an issue in the Github's Issue Tracker found [Here](https://github.com/Nebby1999/MonsterVariantsPlus/issues)
@@ -111,6 +111,10 @@ Rob, for making his MonsterVariants mod
 KomradeSpectre, for helping me a ton with making the variants have custom skins.
 
 ## Changelog
+'1.2.6' Public Methods baybeeee Update
+- Updated MonsterVariants Dependency to version 1.3.7
+- Removed a lot of now unecesary methods since Rob made a lot of his methods public instead of internal (Thanks rob, very cool <3)
+
 '1.2.5' Variant Identification Update
 - A Lot of internal changes, too many to write down, lol.
 - Nerfed the Mortar Crab, shouldnt one-shot players now (i hope)
