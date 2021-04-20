@@ -5,168 +5,72 @@
 using BepInEx;
 using RoR2;
 using MonsterVariantsPlus.SubClasses;
-using MonsterVariants;
 using UnityEngine;
 using System.Collections.Generic;
+using MonsterVariants.Components;
+using System.Reflection;
 
 namespace MonsterVariantsPlus
 {
     [BepInDependency("com.bepis.r2api")]
     [BepInDependency("com.rob.MonsterVariants")]
-    [BepInPlugin("com.Nebby1999.MonsterVariantsPlus", "Monster Variants +", "1.2.4")]
+//    [BepInDependency("com.Moffein.ClayMen", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInPlugin("com.Nebby1999.MonsterVariantsPlus", "Monster Variants +", "1.2.5")]
     public class MainPlugin : BaseUnityPlugin
     {
+        //private static bool hasClayMan;
+        public static AssetBundle MainAssets; //Needed to load custom assets
+        public static Dictionary<string, string> ShaderLookup = new Dictionary<string, string>()
+        {
+            {"stubbed hopoo games/deferred/standard", "shaders/deferred/hgstandard"}
+        };
         public void Awake()
         {
+            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("MonsterVariantsPlus.monstervariantsplus_assets"))
+            {
+                MainAssets = AssetBundle.LoadFromStream(stream);
+            }
+            var materialAssets = MainPlugin.MainAssets.LoadAllAssets<Material>();
+            foreach (Material material in materialAssets)
+            {
+                if (!material.shader.name.StartsWith("Stubbed")) { continue; }
+                var replacementShader = Resources.Load<Shader>(ShaderLookup[material.shader.name.ToLower()]);
+                if (replacementShader) { material.shader = replacementShader; }
+            }
             ConfigLoader.SetupConfigLoader(Config); //Initializes the Config
-
+            /*if(BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.Moffein.ClayMen"))
+            {
+                hasClayMan = true;
+                Logger.LogMessage("Moffein's Clayman has been detected, enabling Clayman Variant(s).");
+            }*/
             On.RoR2.DeathRewards.OnKilledServer += (orig, self, DamageReport) =>
             {
-                if (DamageReport.victimTeamIndex == (TeamIndex)2) //If the Victim was part of the Enemy Team (TeamIndex)2, then proceed forward
+                foreach (VariantHandler enemy in DamageReport.victimBody.GetComponents<VariantHandler>())
                 {
-                    if (ConfigLoader.EnableItemRewards)
+                    if(enemy.isVariant)
                     {
-                        ExtraRewards.TryExtraReward(DamageReport.victimBody, DamageReport.attackerBody); //Tries to spawn an item
-                    }
-                    if (ConfigLoader.EnableGoldRewards)
-                    {
-                        uint multipliedGold = MultiplyGold.MultiplyMoney(self.goldReward, DamageReport.victimBody); //Multiplies the money given to the player
-                        self.goldReward = multipliedGold; //Sets the Gold given to the player the value taken from "multipliedGold"
-                    }
-                    if (ConfigLoader.EnableXPRewards)
-                    {
-                        uint multipliedXP = MultiplyXP.MultiplyExperience(self.expReward, DamageReport.victimBody); //Multiplies the XP given to the player
-                        self.expReward = multipliedXP; //Sets the Gold given to the player the value taken from "multipliedXP"
+                        if (ConfigLoader.EnableItemRewards)
+                        {
+                            ExtraRewards.TryExtraReward(enemy, DamageReport.victimBody, DamageReport.attackerBody);
+                        }
+                        if (ConfigLoader.EnableGoldRewards)
+                        {
+                            uint multipliedGold = MultiplyGold.MultiplyMoney(self.goldReward, enemy);
+                            self.goldReward = multipliedGold;
+                        }
+                        if (ConfigLoader.EnableXPRewards)
+                        {
+                            uint multipliedXP = MultiplyXP.MultiplyExperience(self.expReward, enemy);
+                            self.expReward = multipliedXP;
+                        }
                     }
                 }
                 orig(self, DamageReport);
             };
         }
-        public void Start() //As soon as the game begins, register variants
+        public void Start()
         {
-            RegisterCustomVariants();
-        }
-        internal static void RegisterCustomVariants() //Registers the new custom variants
-        {
-            //Mosquito Wisp - Low Health, Damage & Size, fast movement and attack speed. meant as an annoyance
-            AddVariant(new MonsterVariantInfo
-            {
-                bodyName = "Wisp",
-                spawnRate = ConfigLoader.MosquitoWispSpawnChance,
-                variantTier = MonsterVariantTier.Uncommon,
-                sizeModifier = FlyingSizeModifier(0.5f),
-                healthMultiplier = 0.5f,
-                moveSpeedMultiplier = 5.0f,
-                attackSpeedMultiplier = 5.0f,
-                damageMultiplier = 1.1f,
-                armorMultiplier = 1f,
-                armorBonus = 0f,
-                customInventory = SimpleInventory("AlienHead", 5),
-                meshReplacement = null,
-                materialReplacement = null,
-                skillReplacement = null
-            });
-            //Steel Contraption - Higher Size, health and damage, lower movement speed and attack speed. 
-            AddVariant(new MonsterVariantInfo
-            {
-                bodyName = "Bell",
-                spawnRate = ConfigLoader.SteelContraptionSpawnChance,
-                variantTier = MonsterVariantTier.Rare,
-                sizeModifier = FlyingSizeModifier(1.0f),
-                healthMultiplier = 1.75f,
-                moveSpeedMultiplier = 0.5f,
-                attackSpeedMultiplier = 0.75f,
-                damageMultiplier = 1.5f,
-                armorMultiplier = 1f,
-                armorBonus = 0f,
-                customInventory = null,
-                meshReplacement = null,
-                materialReplacement = null,
-                skillReplacement = null
-            });
-            //Mortar Crab - Larger Version of a hermit crab slightly faster in attacking, has a brilliant behemoth.
-            AddVariant(new MonsterVariantInfo
-            {
-                bodyName = "HermitCrab",
-                spawnRate = ConfigLoader.MortarCrabSpawnChance,
-                variantTier = MonsterVariantTier.Uncommon,
-                sizeModifier = GroundSizeModifier(1.5f),
-                healthMultiplier = 1.5f,
-                moveSpeedMultiplier = 0.8f,
-                attackSpeedMultiplier = 0.8f,
-                damageMultiplier = 1.25f,
-                armorMultiplier = 1f,
-                armorBonus = 0f,
-                customInventory = SimpleInventory("Behemoth", 1),
-                meshReplacement = null,
-                materialReplacement = null,
-                skillReplacement = null
-            });
-            //Vampiric Templar - Clay Templar with tritip daggers and leeching seeds.
-            AddVariant(new MonsterVariantInfo
-            {
-                bodyName = "ClayBruiser",
-                spawnRate = ConfigLoader.VampiricTemplarSpawnChance,
-                variantTier = MonsterVariantTier.Uncommon,
-                sizeModifier = GroundSizeModifier(1.25f),
-                healthMultiplier = 1.5f,
-                moveSpeedMultiplier = 1.0f,
-                attackSpeedMultiplier = 1.25f,
-                damageMultiplier = 0.5f,
-                armorMultiplier = 1f,
-                armorBonus = 0f,
-                customInventory = vampiricInventory,
-                meshReplacement = null,
-                materialReplacement = null,
-                skillReplacement = null
-            });
-        }
-        internal static void AddVariant(MonsterVariantInfo info) //Adds the new variant using monsterVariant's Variant Handler.
-        {
-            MonsterVariants.Components.VariantHandler variantHandler = Resources.Load<GameObject>("Prefabs/CharacterBodies/" + info.bodyName + "Body").AddComponent<MonsterVariants.Components.VariantHandler>();
-            variantHandler.Init(info);
-        }
-
-        readonly static ItemInfo[] vampiricInventory = new ItemInfo[]
-        {
-                SimpleItem("CritGlasses", 10),
-                SimpleItem("HealOnCrit", 20),
-        };
-        internal static ItemInfo[] SimpleInventory(string itemName, int itemCount) //Creates an inventory for a Variant that has just 1 type of item.
-        {
-            ItemInfo info = SimpleItem(itemName, itemCount);
-
-            List<ItemInfo> infos = new List<ItemInfo>();
-
-            infos.Add(info);
-
-            ItemInfo[] newInfos = infos.ToArray();
-
-            return newInfos;
-        }
-        internal static ItemInfo SimpleItem(string itemName, int itemCount)
-        {
-            ItemInfo info = ScriptableObject.CreateInstance<ItemInfo>();
-            info.itemString = itemName;
-            info.count = itemCount;
-
-            return info;
-        }
-        internal static MonsterSizeModifier GroundSizeModifier(float newSize)
-        {
-            MonsterSizeModifier sizeModifier = ScriptableObject.CreateInstance<MonsterSizeModifier>();
-            sizeModifier.newSize = newSize;
-            sizeModifier.scaleCollider = false;
-
-            return sizeModifier;
-        }
-        internal static MonsterSizeModifier FlyingSizeModifier(float newSize)
-        {
-            MonsterSizeModifier sizeModifier = ScriptableObject.CreateInstance<MonsterSizeModifier>();
-            sizeModifier.newSize = newSize;
-            sizeModifier.scaleCollider = true;
-
-            return sizeModifier;
+            CustomVariants.RegisterCustomVariants();
         }
     }
 }
