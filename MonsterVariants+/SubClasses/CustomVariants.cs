@@ -97,7 +97,7 @@ namespace MonsterVariantsPlus.SubClasses
                 armorBonus = 0f,
                 customInventory = SimpleInventory("AlienHead", 5),
                 meshReplacement = null,
-                materialReplacement = null,
+                materialReplacement = MonsterVariants.MainPlugin.SimpleMaterialReplacement(MainPlugin.MainAssets.LoadAsset<Material>("ADShroom")),
                 skillReplacement = null
             });
         }

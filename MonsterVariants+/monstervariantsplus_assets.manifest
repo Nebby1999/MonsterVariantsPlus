@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3905335580
+CRC: 1073465850
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: f7a1841225575c341a780779731f9dee
+    Hash: 39670c95791a688e46e65ef27fbeee3b
   TypeTreeHash:
     serializedVersion: 2
     Hash: fe397485c3cec1106b49e9ff95e8f8a2
@@ -17,6 +17,9 @@ ClassTypes:
   Script: {instanceID: 0}
 Assets:
 - Assets/Materials/steelContraption.mat
+- Assets/Textures/ADShroomEmmision.png
+- Assets/Textures/ADShroom.png
 - Assets/Shaders/hgstandard.shader
+- Assets/Materials/ADShroom.mat
 - Assets/Textures/SteelContraption.png
 Dependencies: []

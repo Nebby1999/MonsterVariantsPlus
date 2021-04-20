@@ -22,25 +22,20 @@ namespace MonsterVariantsPlus
         public static AssetBundle MainAssets; //Needed to load custom assets
         public static Dictionary<string, string> ShaderLookup = new Dictionary<string, string>()
         {
-            {"stubbed hopoo games/deferred/hgstandard", "shaders/deferred/hgstandard"}
+            {"stubbed hopoo games/deferred/standard", "shaders/deferred/hgstandard"}
         };
         public void Awake()
         {
-
-            var materialAssets = MainPlugin.MainAssets.LoadAllAssets<Material>();
             using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("MonsterVariantsPlus.monstervariantsplus_assets"))
             {
                 MainAssets = AssetBundle.LoadFromStream(stream);
-
-
-                foreach (Material material in materialAssets)
-                {
-                    if (!material.shader.name.StartsWith("Stubbed")) { continue; }
-
-                    var replacementShader = Resources.Load<Shader>(ShaderLookup[material.shader.name.ToLower()]);
-                    if (replacementShader) { material.shader = replacementShader; }
-
-                }
+            }
+            var materialAssets = MainPlugin.MainAssets.LoadAllAssets<Material>();
+            foreach (Material material in materialAssets)
+            {
+                if (!material.shader.name.StartsWith("Stubbed")) { continue; }
+                var replacementShader = Resources.Load<Shader>(ShaderLookup[material.shader.name.ToLower()]);
+                if (replacementShader) { material.shader = replacementShader; }
             }
             ConfigLoader.SetupConfigLoader(Config); //Initializes the Config
             /*if(BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.Moffein.ClayMen"))
@@ -56,24 +51,24 @@ namespace MonsterVariantsPlus
                     {
                         if (ConfigLoader.EnableItemRewards)
                         {
-                            ExtraRewards.TryExtraReward(enemy, DamageReport.victimBody, DamageReport.attackerBody); //Tries to spawn an item
+                            ExtraRewards.TryExtraReward(enemy, DamageReport.victimBody, DamageReport.attackerBody);
                         }
                         if (ConfigLoader.EnableGoldRewards)
                         {
-                            uint multipliedGold = MultiplyGold.MultiplyMoney(self.goldReward, enemy); //Multiplies the money given to the player
-                            self.goldReward = multipliedGold; //Sets the Gold given to the player the value taken from "multipliedGold"
+                            uint multipliedGold = MultiplyGold.MultiplyMoney(self.goldReward, enemy);
+                            self.goldReward = multipliedGold;
                         }
                         if (ConfigLoader.EnableXPRewards)
                         {
-                            uint multipliedXP = MultiplyXP.MultiplyExperience(self.expReward, enemy); //Multiplies the XP given to the player
-                            self.expReward = multipliedXP; //Sets the Gold given to the player the value taken from "multipliedXP"
+                            uint multipliedXP = MultiplyXP.MultiplyExperience(self.expReward, enemy);
+                            self.expReward = multipliedXP;
                         }
                     }
                 }
                 orig(self, DamageReport);
             };
         }
-        public void Start() //As soon as the game begins, register variants
+        public void Start()
         {
             CustomVariants.RegisterCustomVariants();
         }
