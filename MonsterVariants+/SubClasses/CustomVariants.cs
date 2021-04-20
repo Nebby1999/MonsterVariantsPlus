@@ -1,5 +1,5 @@
 ﻿
-using MonsterVariants.Components;
+using MV = MonsterVariants.MainPlugin;
 using UnityEngine;
 using MonsterVariants;
 using System.Collections.Generic;
@@ -8,33 +8,34 @@ namespace MonsterVariantsPlus.SubClasses
 {
     public class CustomVariants
     {
+        
         internal static void RegisterCustomVariants()
         {
             //Mosquito Wisp
-            AddVariant(new MonsterVariantInfo
+            MV.AddVariant(new MonsterVariantInfo
             {
                 bodyName = "Wisp",
                 spawnRate = ConfigLoader.MosquitoWispSpawnChance,
                 variantTier = MonsterVariantTier.Uncommon,
-                sizeModifier = FlyingSizeModifier(0.5f),
+                sizeModifier = MV.FlyingSizeModifier(0.5f),
                 healthMultiplier = 0.5f,
                 moveSpeedMultiplier = 5.0f,
                 attackSpeedMultiplier = 5.0f,
                 damageMultiplier = 1.1f,
                 armorMultiplier = 1f,
                 armorBonus = 0f,
-                customInventory = SimpleInventory("AlienHead", 5),
+                customInventory = MV.SimpleInventory("AlienHead", 5),
                 meshReplacement = null,
                 materialReplacement = null,
                 skillReplacement = null
             });
             //Steel Contraption
-            AddVariant(new MonsterVariantInfo
+            MV.AddVariant(new MonsterVariantInfo
             {
                 bodyName = "Bell",
                 spawnRate = ConfigLoader.SteelContraptionSpawnChance,
                 variantTier = MonsterVariantTier.Rare,
-                sizeModifier = FlyingSizeModifier(1.0f),
+                sizeModifier = MV.FlyingSizeModifier(1.0f),
                 healthMultiplier = 1.75f,
                 moveSpeedMultiplier = 0.5f,
                 attackSpeedMultiplier = 0.75f,
@@ -43,34 +44,34 @@ namespace MonsterVariantsPlus.SubClasses
                 armorBonus = 0f,
                 customInventory = null,
                 meshReplacement = null,
-                materialReplacement = MonsterVariants.MainPlugin.SimpleMaterialReplacement(MainPlugin.MainAssets.LoadAsset<Material>("steelContraption")),
+                materialReplacement = MV.SimpleMaterialReplacement(MainPlugin.MainAssets.LoadAsset<Material>("steelContraption")),
                 skillReplacement = null
             });
             //Mortar Crab
-            AddVariant(new MonsterVariantInfo
+            MV.AddVariant(new MonsterVariantInfo
             {
                 bodyName = "HermitCrab",
                 spawnRate = ConfigLoader.MortarCrabSpawnChance,
                 variantTier = MonsterVariantTier.Uncommon,
-                sizeModifier = GroundSizeModifier(1.5f),
+                sizeModifier = MV.GroundSizeModifier(1.5f),
                 healthMultiplier = 1.5f,
                 moveSpeedMultiplier = 0.8f,
                 attackSpeedMultiplier = 0.8f,
                 damageMultiplier = 1.0f,
                 armorMultiplier = 1f,
                 armorBonus = 0f,
-                customInventory = SimpleInventory("Behemoth", 1),
+                customInventory = MV.SimpleInventory("Behemoth", 1),
                 meshReplacement = null,
                 materialReplacement = null,
                 skillReplacement = null
             });
             //Vampiric Templar
-            AddVariant(new MonsterVariantInfo
+            MonsterVariants.MainPlugin.AddVariant(new MonsterVariantInfo
             {
                 bodyName = "ClayBruiser",
                 spawnRate = ConfigLoader.VampiricTemplarSpawnChance,
                 variantTier = MonsterVariantTier.Uncommon,
-                sizeModifier = GroundSizeModifier(1.25f),
+                sizeModifier = MV.GroundSizeModifier(1.25f),
                 healthMultiplier = 1.5f,
                 moveSpeedMultiplier = 1.0f,
                 attackSpeedMultiplier = 1.25f,
@@ -83,113 +84,64 @@ namespace MonsterVariantsPlus.SubClasses
                 skillReplacement = null
             });
             //AD-Shroom (Area of Denial Shroom)
-            AddVariant(new MonsterVariantInfo
+            MV.AddVariant(new MonsterVariantInfo
             {
                 bodyName = "MiniMushroom",
                 spawnRate = ConfigLoader.ADShroomSpawnChance,
                 variantTier = MonsterVariantTier.Uncommon,
-                sizeModifier = GroundSizeModifier(0.75f),
+                sizeModifier = MV.GroundSizeModifier(0.75f),
                 healthMultiplier = 1.25f,
                 moveSpeedMultiplier = 1.0f,
                 attackSpeedMultiplier = 5.0f,
                 damageMultiplier = 0.062f,
                 armorMultiplier = 1f,
                 armorBonus = 0f,
-                customInventory = SimpleInventory("AlienHead", 5),
+                customInventory = MV.SimpleInventory("AlienHead", 5),
                 meshReplacement = null,
-                materialReplacement = MonsterVariants.MainPlugin.SimpleMaterialReplacement(MainPlugin.MainAssets.LoadAsset<Material>("ADShroom")),
+                materialReplacement = MV.SimpleMaterialReplacement(MainPlugin.MainAssets.LoadAsset<Material>("ADShroom")),
                 skillReplacement = null
             });
-            //BruiserImp
-            AddVariant(new MonsterVariantInfo
-            {
-                bodyName = "Imp",
-                spawnRate = ConfigLoader.BruiserImpSpawnChance
-            });
             //Teenager
-            AddVariant(new MonsterVariantInfo
+            /*MV.AddVariant(new MonsterVariantInfo
             {
                 bodyName = "Parent",
                 spawnRate = ConfigLoader.TeenagerSpawnChance,
                 variantTier = MonsterVariantTier.Common,
-                sizeModifier = GroundSizeModifier(0.75f),
+                sizeModifier = MV.GroundSizeModifier(0.75f),
                 healthMultiplier = 1.25f,
                 moveSpeedMultiplier = 1.0f,
                 attackSpeedMultiplier = 1.2f,
                 damageMultiplier = 0.8f,
                 armorMultiplier = 1f,
                 armorBonus = 0f,
-                customInventory = SimpleInventory("HealWhileSafe", 10),
+                customInventory = MV.SimpleInventory("HealWhileSafe", 10),
                 meshReplacement = null,
                 materialReplacement = null,
                 skillReplacement = null
             });
             //Child
-            AddVariant(new MonsterVariantInfo
+            MV.AddVariant(new MonsterVariantInfo
             {
                 bodyName = "Parent",
                 spawnRate = ConfigLoader.ChildSpawnChance,
                 variantTier = MonsterVariantTier.Uncommon,
-                sizeModifier = GroundSizeModifier(0.5f),
+                sizeModifier = MV.GroundSizeModifier(0.5f),
                 healthMultiplier = 0.5f,
                 moveSpeedMultiplier = 1.75f,
                 attackSpeedMultiplier = 2.0f,
                 damageMultiplier = 0.6f,
                 armorMultiplier = 1f,
                 armorBonus = 0f,
-                customInventory = SimpleInventory("AlienHead", 5),
+                customInventory = MV.SimpleInventory("AlienHead", 5),
                 meshReplacement = null,
                 materialReplacement = null,
                 skillReplacement = null
-            });
+            });*/
         }
-        internal static void AddVariant(MonsterVariantInfo info)
-        {
-            VariantHandler variantHandler = Resources.Load<GameObject>("prefabs/characterbodies/" + info.bodyName + "Body").AddComponent<VariantHandler>();
-            variantHandler.Init(info);
-
-        }
-
         readonly static ItemInfo[] vampiricInventory = new ItemInfo[]
         {
-                SimpleItem("CritGlasses", 10),
-                SimpleItem("HealOnCrit", 20),
+                MV.SimpleItem("CritGlasses", 10),
+                MV.SimpleItem("HealOnCrit", 20),
         };
-        internal static ItemInfo[] SimpleInventory(string itemName, int itemCount)
-        {
-            ItemInfo info = SimpleItem(itemName, itemCount);
-
-            List<ItemInfo> infos = new List<ItemInfo>();
-
-            infos.Add(info);
-
-            ItemInfo[] newInfos = infos.ToArray();
-
-            return newInfos;
-        }
-        internal static ItemInfo SimpleItem(string itemName, int itemCount)
-        {
-            ItemInfo info = ScriptableObject.CreateInstance<ItemInfo>();
-            info.itemString = itemName;
-            info.count = itemCount;
-
-            return info;
-        }
-        internal static MonsterSizeModifier GroundSizeModifier(float newSize)
-        {
-            MonsterSizeModifier sizeModifier = ScriptableObject.CreateInstance<MonsterSizeModifier>();
-            sizeModifier.newSize = newSize;
-            sizeModifier.scaleCollider = false;
-
-            return sizeModifier;
-        }
-        internal static MonsterSizeModifier FlyingSizeModifier(float newSize)
-        {
-            MonsterSizeModifier sizeModifier = ScriptableObject.CreateInstance<MonsterSizeModifier>();
-            sizeModifier.newSize = newSize;
-            sizeModifier.scaleCollider = true;
-
-            return sizeModifier;
-        }
     }
 }
