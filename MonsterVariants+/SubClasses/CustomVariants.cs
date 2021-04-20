@@ -82,6 +82,24 @@ namespace MonsterVariantsPlus.SubClasses
                 materialReplacement = null,
                 skillReplacement = null
             });
+            //AD-Shroom
+            AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "MiniMushroom",
+                spawnRate = ConfigLoader.ADShroomSpawnChance,
+                variantTier = MonsterVariantTier.Uncommon,
+                sizeModifier = GroundSizeModifier(0.75f),
+                healthMultiplier = 1.25f,
+                moveSpeedMultiplier = 1.0f,
+                attackSpeedMultiplier = 5.0f,
+                damageMultiplier = 0.062f,
+                armorMultiplier = 1f,
+                armorBonus = 0f,
+                customInventory = SimpleInventory("AlienHead", 5),
+                meshReplacement = null,
+                materialReplacement = null,
+                skillReplacement = null
+            });
         }
         internal static void AddVariant(MonsterVariantInfo info) //Adds the new variant using monsterVariant's Variant Handler.
         {
