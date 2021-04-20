@@ -10,6 +10,7 @@ using MonsterVariants;
 using UnityEngine;
 using System.Collections.Generic;
 using MonsterVariants.Components;
+using System.Reflection;
 
 namespace MonsterVariantsPlus
 {
@@ -20,9 +21,14 @@ namespace MonsterVariantsPlus
     public class MainPlugin : BaseUnityPlugin
     {
         //private static bool hasClayMan;
-
+        public static AssetBundle MainAssets; //Needed to load custom assets
         public void Awake()
         {
+
+            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("MonsterVariantsPlus.monstervariantsplus_assets"))
+            {
+                MainAssets = AssetBundle.LoadFromStream(stream);
+            }
             ConfigLoader.SetupConfigLoader(Config); //Initializes the Config
             /*if(BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.Moffein.ClayMen"))
             {
