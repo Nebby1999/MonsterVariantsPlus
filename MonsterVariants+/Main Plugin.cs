@@ -3,10 +3,8 @@
  * Class initializes the Config files, and it's main purpose is checking if the killed monster was a Variant.
 */
 using BepInEx;
-using BepInEx.Logging;
 using RoR2;
 using MonsterVariantsPlus.SubClasses;
-using MonsterVariants;
 using UnityEngine;
 using System.Collections.Generic;
 using MonsterVariants.Components;
@@ -22,12 +20,27 @@ namespace MonsterVariantsPlus
     {
         //private static bool hasClayMan;
         public static AssetBundle MainAssets; //Needed to load custom assets
+        public static Dictionary<string, string> ShaderLookup = new Dictionary<string, string>()
+        {
+            {"stubbed hopoo games/deferred/hgstandard", "shaders/deferred/hgstandard"}
+        };
         public void Awake()
         {
 
+            var materialAssets = MainPlugin.MainAssets.LoadAllAssets<Material>();
             using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("MonsterVariantsPlus.monstervariantsplus_assets"))
             {
                 MainAssets = AssetBundle.LoadFromStream(stream);
+
+
+                foreach (Material material in materialAssets)
+                {
+                    if (!material.shader.name.StartsWith("Stubbed")) { continue; }
+
+                    var replacementShader = Resources.Load<Shader>(ShaderLookup[material.shader.name.ToLower()]);
+                    if (replacementShader) { material.shader = replacementShader; }
+
+                }
             }
             ConfigLoader.SetupConfigLoader(Config); //Initializes the Config
             /*if(BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.Moffein.ClayMen"))

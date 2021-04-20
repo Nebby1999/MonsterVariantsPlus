@@ -43,7 +43,7 @@ namespace MonsterVariantsPlus.SubClasses
                 armorBonus = 0f,
                 customInventory = null,
                 meshReplacement = null,
-                materialReplacement = null,
+                materialReplacement = MonsterVariants.MainPlugin.SimpleMaterialReplacement(MainPlugin.MainAssets.LoadAsset<Material>("steelContraption")),
                 skillReplacement = null
             });
             //Mortar Crab

@@ -108,7 +108,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="monstervariantsplus_assets" />
+    <EmbeddedResource Include="monstervariantsplus_assets" />
     <None Include="monstervariantsplus_assets.manifest" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
