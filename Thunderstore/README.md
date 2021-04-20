@@ -1,5 +1,3 @@
-
-
 # MonsterVariantsPlus
 - An Addon for Rob's [MonsterVariants](https://thunderstore.io/package/rob/MonsterVariants/)
 - Adds Custom Variants on top of Rob's Existing Variants
@@ -45,6 +43,10 @@ The default values for the Item drops are right below (It is recommended to chec
 	- 1% for a Red Item
 
 ### New Variants
+Steel Contraption
+![](https://cdn.discordapp.com/attachments/570060692414267397/834156504697274430/SteelContraption.png)
+AD-Shroom
+![](https://cdn.discordapp.com/attachments/570060692414267397/834156508047736882/ADShroom.png)
 Version 1.2.0 introduces new Variants to the game designed by Nebby.
 The end goal is to have at least one variant per type of enemy.
 Just Like in the Original Monster Variants, their spawn chance can be changed in the config file.
@@ -70,7 +72,6 @@ If you don't want any new variants, you can also disable the entire section in t
 	- 150% Health
 	- 80% Movement Speed
 	- 80% Attack Speed
-	- 125% Damage
 	- Has a Brilliant Behemoth
 
 	Vampiric Templar (5% Chance):
@@ -80,6 +81,12 @@ If you don't want any new variants, you can also disable the entire section in t
 	- 50% Damage
 	- Has 10 Lensmarker Glasses
 	- Has 20 Harvester Scythes
+
+	AD-Shroom (Area of Denial Shroom) (6% Chance):
+	- 75% Size
+	- 500% Attack Speed
+	- 6.2% Damage
+	- Has 5 Alien Heads
 
 ## Configuring the Mod.
 This section is for explaining how the Item drop chance mechanic works, since it's not based off the normal % chance ROR2 has.
@@ -98,7 +105,21 @@ To install the addon, simply drag the MonsterVariantsPlus.dll onto your plugins 
 ## Contacting
 In case you need to contact me regarding a Bug, please create an issue in the Github's Issue Tracker found [Here](https://github.com/Nebby1999/MonsterVariantsPlus/issues)
 I also hang out in the Official [Risk of Rain 2 Modding](https://discord.gg/5MbXZvd) Discord server under the name of "Nebby" in case you want to contact me for other purposes, such as suggestions or feedback. I Always appreciate any kind of feedback.
+
+## Special Thanks
+Rob, for making his MonsterVariants mod
+KomradeSpectre, for helping me a ton with making the variants have custom skins.
+
 ## Changelog
+'1.2.5' Variant Identification Update
+- A Lot of internal changes, too many to write down, lol.
+- Nerfed the Mortar Crab, shouldnt one-shot players now (i hope)
+	-- 125% Damage -> 100% Damage
+- Added AD-Shroom Variant
+- Added Unique skins for custom variants.
+- Added a new Skin for Steel Contraption
+- Added a new Skin for AD-Shroom Variant
+
 '1.2.4' Variant Rebalance Update
 - Changed the Mosquito Wisp.
 	-- Common Tier -> Uncommon	Tier
