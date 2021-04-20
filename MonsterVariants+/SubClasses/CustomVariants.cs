@@ -149,11 +149,5 @@ namespace MonsterVariantsPlus.SubClasses
 
             return sizeModifier;
         }
-        //Steel Contraption Material
-        /*internal static CreateMaterials()
-        {
-            var steelContraptionMaterial = new Material(Shader.Find("hgstandard"));
-            steelContraptionMaterial.SetTexture("_MainTex", )
-        }*/
     }
 }
