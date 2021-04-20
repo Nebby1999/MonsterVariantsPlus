@@ -41,7 +41,7 @@ namespace MonsterVariantsPlus
             if(BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.Moffein.ClayMen"))
             {
                 hasClayMan = true;
-                Logger.LogMessage("Moffein's Clayman has been detected, enabling Clayman Variant(s).");
+                //Logger.LogMessage("Moffein's Clayman has been detected, enabling Clayman Variant(s).");
             }
             On.RoR2.DeathRewards.OnKilledServer += (orig, self, DamageReport) =>
             {
