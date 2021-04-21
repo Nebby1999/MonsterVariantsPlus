@@ -52,7 +52,9 @@ The end goal is to have at least one variant per type of enemy.
 Just Like in the Original Monster Variants, their spawn chance can be changed in the config file.
 If you don't want any new variants, you can also disable the entire section in the config file.
 
-	Mosquito Wisp (7% Chance):
+Since Version 1.3.7 of MonsterVariants, modded variants are now possible to create.
+
+	Mosquito Wisp (Lesser Wisp)(7% Chance):
 	- 50% Size
 	- 50% Health
 	- 500% Movement Speed
@@ -60,21 +62,21 @@ If you don't want any new variants, you can also disable the entire section in t
 	- 110% Damage
 	- Has 4 Alien Heads
 	
-	Steel Contraption (7% Chance):
+	Steel Contraption (Brass Contraption)(7% Chance):
 	- 100% Size
 	- 150% Health
 	- 50% Movement Speed
 	- 75% Attack Speed
 	- 150% Damage
 	
-	Mortar Crab (5% Chance):
+	Mortar Crab (Hermit Crab)(5% Chance):
 	- 150% Size
 	- 150% Health
 	- 80% Movement Speed
 	- 80% Attack Speed
 	- Has a Brilliant Behemoth
 
-	Vampiric Templar (5% Chance):
+	Vampiric Templar (Clay Templar)(5% Chance):
 	- 125% Size
 	- 125% Attack Speed
 	- 150% Health
@@ -82,11 +84,72 @@ If you don't want any new variants, you can also disable the entire section in t
 	- Has 10 Lensmarker Glasses
 	- Has 20 Harvester Scythes
 
-	AD-Shroom (Area of Denial Shroom) (6% Chance):
+	AD-Shroom (MiniMushroom)(6% Chance):
 	- 75% Size
 	- 500% Attack Speed
 	- 6.2% Damage
 	- Has 5 Alien Heads
+
+	Adolescent (Parent)(4% Chance):
+	- 75% Size
+	- 10% Health
+	- 120% Attack Speed
+	- 200 Armor Bonus
+	- Has 1 Medkit
+	- Has 1 Hardlight Afterburner
+	- Has 3 Alien Heads
+	- Has 1 N'kuhana's Opinion
+	- Has 10 Personal Shield Generators
+
+	Child (Parent)(6% Chance):
+	- 50% Size
+	- 300% Movement Speed
+	- 600% Attack Speed
+	- 50% Damage
+	- Has 1 Alien Head
+	- Cannot Teleport
+
+	Bruiser Imp (Imp)(10% Chance):
+	- 125% Size
+	- 80% Health
+	- 200% Movement Speed
+	- 200% Attack Speed
+	- Has 5 Alien Heads
+	- Has 2 Crowbars
+	- Cannot Teleport
+
+	Alpha Bison (Bighorn Bison)(5% Chance):
+	- 125% Size
+	- 75% Health
+	- 200% Movement Speed
+	- 200% Attack Speed
+	- 70% Damage
+	- Has 2 Brilliant Behemoths
+
+	Hoarder (Scavenger)(8% Chance):
+	- 75% Size
+	- 75% Health
+	- 125% Movement Speed
+	- 125% Attack Speed
+	- 90% Damage
+	- It's skill to obtain an item from his backpack has a cooldown of 10 seconds instead of the usual 20.
+
+	Devourer Dunestrider (Clay Dunestrider)(5% Chance):
+	- 125% Size
+	- 120% Movement Speed
+	- 110% Attack Speed
+	- Has 2 Rejuvination Racks
+	- Its Recovery Skill has Twice the Cooldown, Lasts Twice as Long, the Tethers are Twice as Long, and the Dunestrider no longer gains Armor.
+
+	Clay Soldier (ClayMen)(Requires Moffein's [ClayMen](https://thunderstore.io/package/Moffein/Clay_Men/))(15% Spawn Chance)
+	- 112.5% Size
+	- 125% Health
+	- 90% Movement Speed
+	- 150% Attack Speed
+	- 50% Damage
+	- Has 1 Alien Head
+
+
 
 ## Configuring the Mod.
 This section is for explaining how the Item drop chance mechanic works, since it's not based off the normal % chance ROR2 has.
@@ -100,7 +163,7 @@ To install the addon, simply drag the MonsterVariantsPlus.dll onto your plugins 
 
 ## Future Plans
 - Have Boss variants drop their Boss item based off Chance.
-- Have Variants of Modded Enemies, such as Moffein's [ClayMen](https://thunderstore.io/package/Moffein/Clay_Men/)
+- Polish up the code because rn it's becoming spaghetti code
 
 ## Contacting
 In case you need to contact me regarding a Bug, please create an issue in the Github's Issue Tracker found [Here](https://github.com/Nebby1999/MonsterVariantsPlus/issues)
@@ -111,6 +174,10 @@ Rob, for making his MonsterVariants mod
 KomradeSpectre, for helping me a ton with making the variants have custom skins.
 
 ## Changelog
+'1.2.7' Whoops, All Variants! Update
+- Added Adolescent, Child, Bruiser Imp, Alpha Bison, Hoarder, Devourer Dunestrider & Clay Soldier Variants.
+- Probably forgot about something, feedback is greatly appreciated when confronting these new monsters.
+
 '1.2.6' Public Methods baybeeee Update
 - Updated MonsterVariants Dependency to version 1.3.7
 - Removed a lot of now unecesary methods since Rob made a lot of his methods public instead of internal (Thanks rob, very cool <3)

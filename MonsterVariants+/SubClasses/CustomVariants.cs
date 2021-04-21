@@ -179,7 +179,7 @@ namespace MonsterVariantsPlus.SubClasses
                 bodyName = "Scav",
                 spawnRate = ConfigLoader.HoarderSpawnChance,
                 variantTier = MonsterVariantTier.Uncommon,
-                sizeModifier = MV.GroundSizeModifier(0.5f),
+                sizeModifier = MV.GroundSizeModifier(0.75f),
                 healthMultiplier = 0.75f,
                 moveSpeedMultiplier = 1.25f,
                 attackSpeedMultiplier = 1.25f,

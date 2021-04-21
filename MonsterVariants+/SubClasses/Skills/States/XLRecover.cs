@@ -18,7 +18,7 @@ namespace MonsterVariantsPlus.SubClasses.Skills.States
 
         public static float duration = 30f;
 
-        public static float maxTetherDistance = 40f;
+        public static float maxTetherDistance = 80f;
 
         public static float tetherMulchDistance = 5f;
 

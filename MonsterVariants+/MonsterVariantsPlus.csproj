@@ -111,6 +111,8 @@
     <Compile Include="SubClasses\ConfigLoader.cs" />
     <Compile Include="SubClasses\ExtraRewards.cs" />
     <Compile Include="SubClasses\MultiplyGold.cs" />
+    <Compile Include="SubClasses\Skills\States\XLRecover.cs" />
+    <Compile Include="SubClasses\Skills\States\HoarderSit.cs" />
     <Compile Include="SubClasses\Skills\States\MultiSlam.cs" />
     <Compile Include="SubClasses\Skills\States\EmptySkill.cs" />
   </ItemGroup>
