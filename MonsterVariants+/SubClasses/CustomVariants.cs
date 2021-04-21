@@ -44,7 +44,7 @@ namespace MonsterVariantsPlus.SubClasses
                 armorBonus = 0f,
                 customInventory = null,
                 meshReplacement = null,
-                materialReplacement = MV.SimpleMaterialReplacement(MainPlugin.MainAssets.LoadAsset<Material>("steelContraption")),
+                materialReplacement = MV.SimpleMaterialReplacement(MainPlugin.MainAssets.LoadAsset<Material>("SteelContraption")),
                 skillReplacement = null
             });
             //Mortar Crab
@@ -159,7 +159,19 @@ namespace MonsterVariantsPlus.SubClasses
             MV.AddVariant(new MonsterVariantInfo
             {
                 bodyName = "Bison",
-                spawnRate = 
+                spawnRate = ConfigLoader.AlphaBisonSpawnChance,
+                variantTier = MonsterVariantTier.Uncommon,
+                sizeModifier = MV.GroundSizeModifier(1.25f),
+                healthMultiplier = 0.75f,
+                moveSpeedMultiplier = 2.0f,
+                attackSpeedMultiplier = 2.0f,
+                damageMultiplier = 0.7f,
+                armorMultiplier = 1f,
+                armorBonus = 0f,
+                customInventory = MV.SimpleInventory("Behemoth", 1),
+                meshReplacement = null,
+                materialReplacement = MV.SimpleMaterialReplacement(MainPlugin.MainAssets.LoadAsset<Material>("AlphaBison")),
+                skillReplacement = null,
             })
             if (MainPlugin.hasClayMan)
             {
