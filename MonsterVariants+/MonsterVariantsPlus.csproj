@@ -100,7 +100,6 @@
   <ItemGroup>
     <Compile Include="Main Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SubClasses\Skills\CustomSkills\emptySkill.cs" />
     <Compile Include="SubClasses\Skills\Loadouts.cs" />
     <Compile Include="SubClasses\Skills\Skills.cs" />
     <Compile Include="SubClasses\CustomVariants.cs" />

@@ -1,5 +1,5 @@
 ﻿using EntityStates;
-using MonsterVariantsPlus.SubClasses.Skills.CustomSkills;
+using RoR2;
 using RoR2.Skills;
 using UnityEngine;
 
@@ -10,9 +10,7 @@ namespace MonsterVariantsPlus.SubClasses.Skills
         internal static SkillDef emptySkillDef;
         internal static void RegisterSkills()
         {
-            Loadouts.AddSkill(typeof(emptySkill));
-
-            emptySkillDef = NewSkillDef(new SerializableEntityStateType(typeof(emptySkill)), "Body");
+            emptySkillDef = Resources.Load<GameObject>("Prefabs/CharacterBodies/CommandoBody").GetComponent<SkillLocator>().primary.skillFamily.variants[0].skillDef;
 
             emptySkillDef.baseMaxStock = 0;
             emptySkillDef.requiredStock = 1;
