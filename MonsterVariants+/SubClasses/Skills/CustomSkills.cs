@@ -9,14 +9,19 @@ namespace MonsterVariantsPlus.SubClasses.Skills
     internal class CustomSkills
     {
         public static SkillDef emptySkillDef;
+        public static SkillDef multiSlamDef;
         internal static void RegisterSkills()
         {
             Loadouts.AddSkill(typeof(EmptySkill));
+            Loadouts.AddSkill(typeof(MultiSlam));
 
             //Skill that does absolutely nothing, useful for getting variants without a certain skill (No teleporting imps/parents)
             emptySkillDef = NewSkillDef(new SerializableEntityStateType(typeof(EmptySkill)), "Body");
+            //An Attempt at a modified parent slam attack
+            multiSlamDef = NewSkillDef(new SerializableEntityStateType(typeof(MultiSlam)), "Body");
+
             emptySkillDef.baseMaxStock = 0;
-            emptySkillDef.requiredStock = 100;
+            emptySkillDef.requiredStock = 1000;
         }
         private static SkillDef NewSkillDef(SerializableEntityStateType state, string stateMachine)
         {
