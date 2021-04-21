@@ -9,6 +9,7 @@ namespace MonsterVariantsPlus.SubClasses.Skills.States
         public override void OnEnter()
         {
             base.OnEnter();
+            
         }
         public override void OnExit()
         {
@@ -16,8 +17,8 @@ namespace MonsterVariantsPlus.SubClasses.Skills.States
         }
         public override void FixedUpdate()
         {
-            this.outer.SetNextStateToMain();
             base.FixedUpdate();
+            this.outer.SetNextStateToMain();
         }
         public override InterruptPriority GetMinimumInterruptPriority()
         {
