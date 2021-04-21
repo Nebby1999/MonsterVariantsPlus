@@ -151,14 +151,14 @@ namespace MonsterVariantsPlus.SubClasses
                 customInventory = MV.SimpleInventory("AlienHead", 5),
                 meshReplacement = null,
                 materialReplacement = null,
-                skillReplacement = MV.SecondaryReplacement(null)
+                skillReplacement = null,
             });
             if (MainPlugin.hasClayMan)
             {
                 //Clay Soldier
                 MV.AddModdedVariant(new MonsterVariantInfo
                 {
-                    bodyName = "Parent",
+                    bodyName = "MoffeinClayMan",
                     spawnRate = ConfigLoader.ClaySoldierSpawnChance,
                     variantTier = MonsterVariantTier.Common,
                     sizeModifier = MV.GroundSizeModifier(1.125f),
