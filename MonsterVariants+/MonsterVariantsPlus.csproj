@@ -86,6 +86,10 @@
     <Reference Include="UnityEngine">
       <HintPath>..\..\..\SteamGames\steamapps\common\Risk of Rain 2\Risk of Rain 2_Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\SteamGames\steamapps\common\Risk of Rain 2\Risk of Rain 2_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.AssetBundleModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\SteamGames\steamapps\common\Risk of Rain 2\Risk of Rain 2_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
@@ -107,6 +111,7 @@
     <Compile Include="SubClasses\ConfigLoader.cs" />
     <Compile Include="SubClasses\ExtraRewards.cs" />
     <Compile Include="SubClasses\MultiplyGold.cs" />
+    <Compile Include="SubClasses\Skills\States\MultiSlam.cs" />
     <Compile Include="SubClasses\Skills\States\EmptySkill.cs" />
   </ItemGroup>
   <ItemGroup />

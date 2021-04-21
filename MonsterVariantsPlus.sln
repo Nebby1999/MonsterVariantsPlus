@@ -14,6 +14,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Thunderstore", "Thunderstor
 		Thunderstore\README.md = Thunderstore\README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CustomMaterials", "CustomMaterials", "{3F934280-7E2F-46CA-80D4-4041D288F3E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ADShroom", "ADShroom", "{98C94BFD-53A6-49DF-892C-6D65B68F157C}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\INSTITUTE\OwnProjects\MonsterVariants+\Assets\Materials\ADShroom.mat = ..\..\INSTITUTE\OwnProjects\MonsterVariants+\Assets\Materials\ADShroom.mat
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SteelContraption", "SteelContraption", "{C240F1F3-0273-4BC5-9232-7424763B0A0E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AlphaBison", "AlphaBison", "{E22871D8-4F9F-4989-B6DF-C3627ED44D51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +38,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{98C94BFD-53A6-49DF-892C-6D65B68F157C} = {3F934280-7E2F-46CA-80D4-4041D288F3E0}
+		{C240F1F3-0273-4BC5-9232-7424763B0A0E} = {3F934280-7E2F-46CA-80D4-4041D288F3E0}
+		{E22871D8-4F9F-4989-B6DF-C3627ED44D51} = {3F934280-7E2F-46CA-80D4-4041D288F3E0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B0142633-C6E9-49CD-88D9-D98C3E562443}
