@@ -159,8 +159,19 @@ namespace MonsterVariantsPlus.SubClasses
             MV.AddVariant(new MonsterVariantInfo
             {
                 bodyName = "Bison",
-                spawnRate = 
-            })
+                spawnRate = ConfigLoader.AlphaBisonSpawnChance,
+                variantTier = MonsterVariantTier.Uncommon,
+                sizeModifier = MV.GroundSizeModifier(1.5f),
+                healthMultiplier = 0.7f,
+                moveSpeedMultiplier = 1.75f,
+                attackSpeedMultiplier = 1.75f,
+                damageMultiplier = 0.5f,
+                customInventory = MV.SimpleInventory("Behemoth", 3),
+                meshReplacement = null,
+                materialReplacement = MV.SimpleMaterialReplacement(MainPlugin.MainAssets.LoadAsset<Material>("AlphaBison")),
+                skillReplacement = null,
+
+            });
             if (MainPlugin.hasClayMan)
             {
                 //Clay Soldier
