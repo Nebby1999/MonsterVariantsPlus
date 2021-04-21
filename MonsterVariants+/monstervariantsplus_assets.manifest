@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1073465850
+CRC: 4043445966
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 39670c95791a688e46e65ef27fbeee3b
+    Hash: c73b995a2a427171370926d848179685
   TypeTreeHash:
     serializedVersion: 2
     Hash: fe397485c3cec1106b49e9ff95e8f8a2
@@ -16,10 +16,15 @@ ClassTypes:
 - Class: 48
   Script: {instanceID: 0}
 Assets:
-- Assets/Materials/steelContraption.mat
-- Assets/Textures/ADShroomEmmision.png
-- Assets/Textures/ADShroom.png
-- Assets/Shaders/hgstandard.shader
+- Assets/Materials/SteelContraption.mat
+- Assets/Textures/ADShroom/ADShroomEmmision.png
+- Assets/Textures/ADShroom/ADShroom.png
+- Assets/Textures/SteelContraption/SteelContraption_Normal.png
 - Assets/Materials/ADShroom.mat
-- Assets/Textures/SteelContraption.png
+- Assets/Textures/AlphaBison/AlphaBison.png
+- Assets/Textures/SteelContraption/SteelContraption.png
+- Assets/Textures/AlphaBison/AlphaBison_Hair.png
+- Assets/Textures/AlphaBison/AlphaBison_Normal.png
+- Assets/Materials/AlphaBison.mat
+- Assets/Textures/ADShroom/ADShroom_Normal.png
 Dependencies: []

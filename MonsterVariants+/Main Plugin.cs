@@ -15,10 +15,10 @@ namespace MonsterVariantsPlus
     [BepInDependency("com.bepis.r2api")]
     [BepInDependency("com.rob.MonsterVariants")]
     [BepInDependency("com.Moffein.ClayMen", BepInDependency.DependencyFlags.SoftDependency)]
-    [BepInPlugin("com.Nebby1999.MonsterVariantsPlus", "Monster Variants +", "1.2.6")]
+    [BepInPlugin("com.Nebby1999.MonsterVariantsPlus", "Monster Variants +", "1.2.7")]
     public class MainPlugin : BaseUnityPlugin
     {
-        private static bool hasClayMan;
+        internal static bool hasClayMan;
         public static AssetBundle MainAssets; //Needed to load custom assets
         public static Dictionary<string, string> ShaderLookup = new Dictionary<string, string>()
         {
@@ -38,10 +38,11 @@ namespace MonsterVariantsPlus
                 if (replacementShader) { material.shader = replacementShader; }
             }
             ConfigLoader.SetupConfigLoader(Config); //Initializes the Config
+            SubClasses.Skills.CustomSkills.RegisterSkills();
             if(BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.Moffein.ClayMen"))
             {
                 hasClayMan = true;
-                //Logger.LogMessage("Moffein's Clayman has been detected, enabling Clayman Variant(s).");
+                Logger.LogMessage("Moffein's Clayman has been detected, enabling Clayman Variant(s).");
             }
             On.RoR2.DeathRewards.OnKilledServer += (orig, self, DamageReport) =>
             {
