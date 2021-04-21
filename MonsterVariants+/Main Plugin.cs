@@ -38,7 +38,7 @@ namespace MonsterVariantsPlus
                 if (replacementShader) { material.shader = replacementShader; }
             }
             ConfigLoader.SetupConfigLoader(Config); //Initializes the Config
-            SubClasses.EmptySkillGenerator.Skills.RegisterSkills();
+            SubClasses.EmptySkillGenerator.RegisterSkills();
             if(BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.Moffein.ClayMen"))
             {
                 hasClayMan = true;

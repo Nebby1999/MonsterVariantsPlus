@@ -7,12 +7,11 @@ namespace MonsterVariantsPlus.SubClasses
 {
     internal class EmptySkillGenerator
     {
-        internal static SkillDef emptySkillDef;
+        public static SkillDef emptySkillDef;
         internal static void RegisterSkills()
         {
             emptySkillDef = Resources.Load<GameObject>("Prefabs/CharacterBodies/CommandoBody").GetComponent<SkillLocator>().primary.skillFamily.variants[0].skillDef;
             emptySkillDef.baseMaxStock = 0;
-            emptySkillDef.requiredStock = 1;
         }
     }
 }
