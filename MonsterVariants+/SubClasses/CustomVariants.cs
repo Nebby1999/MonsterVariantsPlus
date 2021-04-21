@@ -172,7 +172,7 @@ namespace MonsterVariantsPlus.SubClasses
                 meshReplacement = null,
                 materialReplacement = MV.SimpleMaterialReplacement(MainPlugin.MainAssets.LoadAsset<Material>("AlphaBison")),
                 skillReplacement = null,
-            })
+            });
             if (MainPlugin.hasClayMan)
             {
                 //Clay Soldier
