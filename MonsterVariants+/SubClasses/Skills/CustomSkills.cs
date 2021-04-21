@@ -10,6 +10,7 @@ namespace MonsterVariantsPlus.SubClasses.Skills
     {
         public static SkillDef emptySkillDef;
         public static SkillDef multiSlamDef;
+        public static SkillDef hoarderSitDef;
         internal static void RegisterSkills()
         {
             Loadouts.AddSkill(typeof(EmptySkill));
@@ -19,9 +20,16 @@ namespace MonsterVariantsPlus.SubClasses.Skills
             emptySkillDef = NewSkillDef(new SerializableEntityStateType(typeof(EmptySkill)), "Body");
             //An Attempt at a modified parent slam attack
             multiSlamDef = NewSkillDef(new SerializableEntityStateType(typeof(MultiSlam)), "Body");
+            //Used for the hoarder scavanger.
+            hoarderSitDef = NewSkillDef(new SerializableEntityStateType(typeof(HoarderSit)), "Body");
 
             emptySkillDef.baseMaxStock = 0;
             emptySkillDef.requiredStock = 1000;
+
+            hoarderSitDef.baseMaxStock = 1;
+            hoarderSitDef.baseRechargeInterval = 24f;
+            hoarderSitDef.requiredStock = 1;
+            hoarderSitDef.stockToConsume = 1;
         }
         private static SkillDef NewSkillDef(SerializableEntityStateType state, string stateMachine)
         {
