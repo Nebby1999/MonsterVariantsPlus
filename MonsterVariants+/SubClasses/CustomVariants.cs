@@ -151,7 +151,7 @@ namespace MonsterVariantsPlus.SubClasses
                 customInventory = MV.SimpleInventory("AlienHead", 5),
                 meshReplacement = null,
                 materialReplacement = null,
-                skillReplacement = null,
+                skillReplacement = MV.UtilityReplacement(Skills.Skills.emptySkillDef),
             });
             if (MainPlugin.hasClayMan)
             {
