@@ -1,6 +1,7 @@
 ﻿using MV = MonsterVariants.MainPlugin;
 using UnityEngine;
 using MonsterVariants;
+using MonsterVariantsPlus.SubClasses.Skills;
 
 namespace MonsterVariantsPlus.SubClasses
 {
@@ -151,7 +152,7 @@ namespace MonsterVariantsPlus.SubClasses
                 customInventory = MV.SimpleInventory("AlienHead", 5),
                 meshReplacement = null,
                 materialReplacement = null,
-                skillReplacement = MV.UtilityReplacement(EmptySkillGenerator.emptySkillDef),
+                skillReplacement = MV.UtilityReplacement(CustomSkills.emptySkillDef),
             });
             if (MainPlugin.hasClayMan)
             {
