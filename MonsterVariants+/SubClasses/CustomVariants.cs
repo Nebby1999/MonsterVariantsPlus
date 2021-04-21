@@ -2,6 +2,7 @@
 using UnityEngine;
 using MonsterVariants;
 using MonsterVariantsPlus.SubClasses.Skills;
+using RoR2.Skills;
 
 namespace MonsterVariantsPlus.SubClasses
 {
@@ -100,20 +101,20 @@ namespace MonsterVariantsPlus.SubClasses
                 materialReplacement = MV.SimpleMaterialReplacement(MainPlugin.MainAssets.LoadAsset<Material>("ADShroom")),
                 skillReplacement = null
             });
-            //Teenager
+            //Adolescent
             MV.AddVariant(new MonsterVariantInfo
             {
                 bodyName = "Parent",
-                spawnRate = ConfigLoader.TeenagerSpawnChance,
-                variantTier = MonsterVariantTier.Common,
+                spawnRate = ConfigLoader.AdolescentSpawnChance,
+                variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.GroundSizeModifier(0.75f),
-                healthMultiplier = 1.25f,
+                healthMultiplier = 0.1f,
                 moveSpeedMultiplier = 1.0f,
                 attackSpeedMultiplier = 1.2f,
-                damageMultiplier = 0.8f,
+                damageMultiplier = 1.0f,
                 armorMultiplier = 1f,
                 armorBonus = 0f,
-                customInventory = MV.SimpleInventory("HealWhileSafe", 10),
+                customInventory = adolescentInventory,
                 meshReplacement = null,
                 materialReplacement = null,
                 skillReplacement = null
@@ -126,15 +127,15 @@ namespace MonsterVariantsPlus.SubClasses
                 variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.GroundSizeModifier(0.5f),
                 healthMultiplier = 0.5f,
-                moveSpeedMultiplier = 1.75f,
-                attackSpeedMultiplier = 2.0f,
-                damageMultiplier = 0.6f,
+                moveSpeedMultiplier = 3.0f,
+                attackSpeedMultiplier = 6.0f,
+                damageMultiplier = 0.5f,
                 armorMultiplier = 1f,
                 armorBonus = 0f,
-                customInventory = MV.SimpleInventory("AlienHead", 5),
+                customInventory = MV.SimpleInventory("AlienHead", 1),
                 meshReplacement = null,
                 materialReplacement = null,
-                skillReplacement = null
+                skillReplacement = primaryUtilityReplacement(CustomSkills.multiSlamDef, CustomSkills.emptySkillDef)
             });
             //Bruiser Imp
             MV.AddVariant(new MonsterVariantInfo
@@ -144,16 +145,22 @@ namespace MonsterVariantsPlus.SubClasses
                 variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.GroundSizeModifier(1.25f),
                 healthMultiplier = 0.8f,
-                moveSpeedMultiplier = 1.1f,
+                moveSpeedMultiplier = 2.0f,
                 attackSpeedMultiplier = 2.0f,
                 damageMultiplier = 1.0f,
                 armorMultiplier = 1f,
                 armorBonus = 0f,
-                customInventory = MV.SimpleInventory("AlienHead", 5),
+                customInventory = bruiserInventory,
                 meshReplacement = null,
                 materialReplacement = null,
                 skillReplacement = MV.UtilityReplacement(CustomSkills.emptySkillDef),
             });
+            //Alpha Bison
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "Bison",
+                spawnRate = 
+            })
             if (MainPlugin.hasClayMan)
             {
                 //Clay Soldier
@@ -166,7 +173,7 @@ namespace MonsterVariantsPlus.SubClasses
                     healthMultiplier = 1.25f,
                     moveSpeedMultiplier = 0.9f,
                     attackSpeedMultiplier = 1.5f,
-                    damageMultiplier = 1.0f,
+                    damageMultiplier = 0.5f,
                     armorMultiplier = 1f,
                     armorBonus = 0f,
                     customInventory = MV.SimpleInventory("AlienHead", 1),
@@ -181,5 +188,36 @@ namespace MonsterVariantsPlus.SubClasses
                 MV.SimpleItem("CritGlasses", 10),
                 MV.SimpleItem("HealOnCrit", 20),
         };
+        readonly static ItemInfo[] bruiserInventory = new ItemInfo[]
+        {
+            MV.SimpleItem("AlienHead", 5),
+            MV.SimpleItem("Crowbar", 2),
+        };
+        readonly static ItemInfo[] adolescentInventory = new ItemInfo[]
+        {
+            MV.SimpleItem("Medkit", 1),
+            MV.SimpleItem("UtilitySkillMagazine", 1),
+            MV.SimpleItem("AlienHead", 3),
+            MV.SimpleItem("NovaOnHeal", 1),
+            MV.SimpleItem("PersonalShield", 20)
+
+        };
+        internal static MonsterSkillReplacement[] primaryUtilityReplacement(SkillDef primarySkill, SkillDef utilitySkill)
+        {
+            MonsterSkillReplacement primaryReplacement = ScriptableObject.CreateInstance<MonsterSkillReplacement>();
+            MonsterSkillReplacement utilityReplacement = ScriptableObject.CreateInstance<MonsterSkillReplacement>();
+
+            primaryReplacement.skillSlot = RoR2.SkillSlot.Primary;
+            utilityReplacement.skillSlot = RoR2.SkillSlot.Utility;
+
+            primaryReplacement.skillDef = primarySkill;
+            utilityReplacement.skillDef = utilitySkill;
+
+            return new MonsterSkillReplacement[]
+            {
+                primaryReplacement,
+                utilityReplacement
+            };
+        }
     }
 }
