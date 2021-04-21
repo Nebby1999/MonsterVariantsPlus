@@ -113,7 +113,7 @@ namespace MonsterVariantsPlus.SubClasses
                 attackSpeedMultiplier = 1.2f,
                 damageMultiplier = 1.0f,
                 armorMultiplier = 1f,
-                armorBonus = 0f,
+                armorBonus = 200,
                 customInventory = adolescentInventory,
                 meshReplacement = null,
                 materialReplacement = null,
@@ -168,10 +168,44 @@ namespace MonsterVariantsPlus.SubClasses
                 damageMultiplier = 0.7f,
                 armorMultiplier = 1f,
                 armorBonus = 0f,
-                customInventory = MV.SimpleInventory("Behemoth", 1),
+                customInventory = MV.SimpleInventory("Behemoth", 2),
                 meshReplacement = null,
                 materialReplacement = MV.SimpleMaterialReplacement(MainPlugin.MainAssets.LoadAsset<Material>("AlphaBison")),
                 skillReplacement = null,
+            });
+            //Hoarder
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "Scav",
+                spawnRate = ConfigLoader.HoarderSpawnChance,
+                variantTier = MonsterVariantTier.Uncommon,
+                sizeModifier = MV.GroundSizeModifier(0.5f),
+                healthMultiplier = 0.75f,
+                moveSpeedMultiplier = 1.25f,
+                attackSpeedMultiplier = 1.25f,
+                damageMultiplier = 0.9f,
+                armorBonus = 0f,
+                customInventory = null,
+                meshReplacement = null,
+                materialReplacement = null,
+                skillReplacement = MV.UtilityReplacement(CustomSkills.hoarderSitDef),
+            });
+            //Devourer Dunestrider
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "ClayBoss",
+                spawnRate = ConfigLoader.DevourerDunestriderSpawnChance,
+                variantTier = MonsterVariantTier.Uncommon,
+                sizeModifier = MV.GroundSizeModifier(1.25f),
+                healthMultiplier = 1.0f,
+                moveSpeedMultiplier = 1.2f,
+                attackSpeedMultiplier = 1.1f,
+                damageMultiplier = 1.0f,
+                armorBonus = 1.0f,
+                customInventory = MV.SimpleInventory("RepeatHeal", 2),
+                meshReplacement = null,
+                materialReplacement = null,
+                skillReplacement = MV.SpecialReplacement(CustomSkills.xlRecoverDef),
             });
             if (MainPlugin.hasClayMan)
             {
@@ -211,8 +245,13 @@ namespace MonsterVariantsPlus.SubClasses
             MV.SimpleItem("UtilitySkillMagazine", 1),
             MV.SimpleItem("AlienHead", 3),
             MV.SimpleItem("NovaOnHeal", 1),
-            MV.SimpleItem("PersonalShield", 20)
+            MV.SimpleItem("PersonalShield", 10),
 
+        };
+        readonly static ItemInfo[] devourerInventory = new ItemInfo[]
+        {
+            MV.SimpleItem("RepeatHeal", 2),
+            MV.SimpleItem("BarrierOnOverHeal", 2)
         };
         internal static MonsterSkillReplacement[] primaryUtilityReplacement(SkillDef primarySkill, SkillDef utilitySkill)
         {
