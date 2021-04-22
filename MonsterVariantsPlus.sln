@@ -14,81 +14,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Thunderstore", "Thunderstor
 		Thunderstore\README.md = Thunderstore\README.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unity", "Unity", "{4FBB5C13-1587-4B31-8DFF-82675F6DB637}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assets", "Assets", "{CB26B12B-95CF-4AA8-8B12-F47FB4485AC3}"
-	ProjectSection(SolutionItems) = preProject
-		Unity\Assets\Materials.meta = Unity\Assets\Materials.meta
-		Unity\Assets\Meshes.meta = Unity\Assets\Meshes.meta
-		Unity\Assets\Scenes.meta = Unity\Assets\Scenes.meta
-		Unity\Assets\Shaders.meta = Unity\Assets\Shaders.meta
-		Unity\Assets\Textures.meta = Unity\Assets\Textures.meta
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Materials", "Materials", "{261A81C4-B4FF-4DF6-8CFA-B2164301BE6F}"
-	ProjectSection(SolutionItems) = preProject
-		Unity\Assets\Materials\ADShroom.mat = Unity\Assets\Materials\ADShroom.mat
-		Unity\Assets\Materials\ADShroom.mat.meta = Unity\Assets\Materials\ADShroom.mat.meta
-		Unity\Assets\Materials\AlphaBison.mat = Unity\Assets\Materials\AlphaBison.mat
-		Unity\Assets\Materials\AlphaBison.mat.meta = Unity\Assets\Materials\AlphaBison.mat.meta
-		Unity\Assets\Materials\HealerShroom.mat = Unity\Assets\Materials\HealerShroom.mat
-		Unity\Assets\Materials\HealerShroom.mat.meta = Unity\Assets\Materials\HealerShroom.mat.meta
-		Unity\Assets\Materials\SteelContraption.mat = Unity\Assets\Materials\SteelContraption.mat
-		Unity\Assets\Materials\SteelContraption.mat.meta = Unity\Assets\Materials\SteelContraption.mat.meta
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shaders", "Shaders", "{593C287F-7003-4FFD-8210-488D6C2F02D3}"
-	ProjectSection(SolutionItems) = preProject
-		Unity\Assets\Shaders\hgstandard.shader = Unity\Assets\Shaders\hgstandard.shader
-		Unity\Assets\Shaders\hgstandard.shader.meta = Unity\Assets\Shaders\hgstandard.shader.meta
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Textures", "Textures", "{830FC4D3-8B84-44DD-9F9D-76E17B77F1A8}"
-	ProjectSection(SolutionItems) = preProject
-		Unity\Assets\Textures\ADShroom.meta = Unity\Assets\Textures\ADShroom.meta
-		Unity\Assets\Textures\AlphaBison.meta = Unity\Assets\Textures\AlphaBison.meta
-		Unity\Assets\Textures\HealerShroom.meta = Unity\Assets\Textures\HealerShroom.meta
-		Unity\Assets\Textures\SteelContraption.meta = Unity\Assets\Textures\SteelContraption.meta
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ADShroom", "ADShroom", "{012C09C6-7040-43B7-A34B-347FA95A52B1}"
-	ProjectSection(SolutionItems) = preProject
-		Unity\Assets\Textures\ADShroom\ADShroom.png = Unity\Assets\Textures\ADShroom\ADShroom.png
-		Unity\Assets\Textures\ADShroom\ADShroom.png.meta = Unity\Assets\Textures\ADShroom\ADShroom.png.meta
-		Unity\Assets\Textures\ADShroom\ADShroom_Normal.png = Unity\Assets\Textures\ADShroom\ADShroom_Normal.png
-		Unity\Assets\Textures\ADShroom\ADShroom_Normal.png.meta = Unity\Assets\Textures\ADShroom\ADShroom_Normal.png.meta
-		Unity\Assets\Textures\ADShroom\ADShroomEmmision.png = Unity\Assets\Textures\ADShroom\ADShroomEmmision.png
-		Unity\Assets\Textures\ADShroom\ADShroomEmmision.png.meta = Unity\Assets\Textures\ADShroom\ADShroomEmmision.png.meta
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AlphaBison", "AlphaBison", "{BFA04BEA-814D-44BC-A237-55DA678858D8}"
-	ProjectSection(SolutionItems) = preProject
-		Unity\Assets\Textures\AlphaBison\AlphaBison.png = Unity\Assets\Textures\AlphaBison\AlphaBison.png
-		Unity\Assets\Textures\AlphaBison\AlphaBison.png.meta = Unity\Assets\Textures\AlphaBison\AlphaBison.png.meta
-		Unity\Assets\Textures\AlphaBison\AlphaBison_Hair.png = Unity\Assets\Textures\AlphaBison\AlphaBison_Hair.png
-		Unity\Assets\Textures\AlphaBison\AlphaBison_Hair.png.meta = Unity\Assets\Textures\AlphaBison\AlphaBison_Hair.png.meta
-		Unity\Assets\Textures\AlphaBison\AlphaBison_Normal.png = Unity\Assets\Textures\AlphaBison\AlphaBison_Normal.png
-		Unity\Assets\Textures\AlphaBison\AlphaBison_Normal.png.meta = Unity\Assets\Textures\AlphaBison\AlphaBison_Normal.png.meta
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HealerShroom", "HealerShroom", "{8CA2B1AB-8C70-4C90-81C0-D88B33F479CE}"
-	ProjectSection(SolutionItems) = preProject
-		Unity\Assets\Textures\HealerShroom\HealerShroom.png = Unity\Assets\Textures\HealerShroom\HealerShroom.png
-		Unity\Assets\Textures\HealerShroom\HealerShroom.png.meta = Unity\Assets\Textures\HealerShroom\HealerShroom.png.meta
-		Unity\Assets\Textures\HealerShroom\HealerShroomEmmision.png = Unity\Assets\Textures\HealerShroom\HealerShroomEmmision.png
-		Unity\Assets\Textures\HealerShroom\HealerShroomEmmision.png.meta = Unity\Assets\Textures\HealerShroom\HealerShroomEmmision.png.meta
-		Unity\Assets\Textures\HealerShroom\HealerShroomNormal.png = Unity\Assets\Textures\HealerShroom\HealerShroomNormal.png
-		Unity\Assets\Textures\HealerShroom\HealerShroomNormal.png.meta = Unity\Assets\Textures\HealerShroom\HealerShroomNormal.png.meta
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SteelContraption", "SteelContraption", "{22EFF69A-9D86-4A37-ABFE-2AB3A02DDB9F}"
-	ProjectSection(SolutionItems) = preProject
-		Unity\Assets\Textures\SteelContraption\SteelContraption.png = Unity\Assets\Textures\SteelContraption\SteelContraption.png
-		Unity\Assets\Textures\SteelContraption\SteelContraption.png.meta = Unity\Assets\Textures\SteelContraption\SteelContraption.png.meta
-		Unity\Assets\Textures\SteelContraption\SteelContraption_Normal.png = Unity\Assets\Textures\SteelContraption\SteelContraption_Normal.png
-		Unity\Assets\Textures\SteelContraption\SteelContraption_Normal.png.meta = Unity\Assets\Textures\SteelContraption\SteelContraption_Normal.png.meta
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -102,16 +27,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{CB26B12B-95CF-4AA8-8B12-F47FB4485AC3} = {4FBB5C13-1587-4B31-8DFF-82675F6DB637}
-		{261A81C4-B4FF-4DF6-8CFA-B2164301BE6F} = {CB26B12B-95CF-4AA8-8B12-F47FB4485AC3}
-		{593C287F-7003-4FFD-8210-488D6C2F02D3} = {CB26B12B-95CF-4AA8-8B12-F47FB4485AC3}
-		{830FC4D3-8B84-44DD-9F9D-76E17B77F1A8} = {CB26B12B-95CF-4AA8-8B12-F47FB4485AC3}
-		{012C09C6-7040-43B7-A34B-347FA95A52B1} = {830FC4D3-8B84-44DD-9F9D-76E17B77F1A8}
-		{BFA04BEA-814D-44BC-A237-55DA678858D8} = {830FC4D3-8B84-44DD-9F9D-76E17B77F1A8}
-		{8CA2B1AB-8C70-4C90-81C0-D88B33F479CE} = {830FC4D3-8B84-44DD-9F9D-76E17B77F1A8}
-		{22EFF69A-9D86-4A37-ABFE-2AB3A02DDB9F} = {830FC4D3-8B84-44DD-9F9D-76E17B77F1A8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B0142633-C6E9-49CD-88D9-D98C3E562443}
