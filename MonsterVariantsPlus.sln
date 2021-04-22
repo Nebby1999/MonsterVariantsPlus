@@ -14,6 +14,570 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Thunderstore", "Thunderstor
 		Thunderstore\README.md = Thunderstore\README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unity", "Unity", "{4FBB5C13-1587-4B31-8DFF-82675F6DB637}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assets", "Assets", "{CB26B12B-95CF-4AA8-8B12-F47FB4485AC3}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Assets\Materials.meta = Unity\Assets\Materials.meta
+		Unity\Assets\Meshes.meta = Unity\Assets\Meshes.meta
+		Unity\Assets\Scenes.meta = Unity\Assets\Scenes.meta
+		Unity\Assets\Shaders.meta = Unity\Assets\Shaders.meta
+		Unity\Assets\Textures.meta = Unity\Assets\Textures.meta
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Materials", "Materials", "{261A81C4-B4FF-4DF6-8CFA-B2164301BE6F}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Assets\Materials\ADShroom.mat = Unity\Assets\Materials\ADShroom.mat
+		Unity\Assets\Materials\ADShroom.mat.meta = Unity\Assets\Materials\ADShroom.mat.meta
+		Unity\Assets\Materials\AlphaBison.mat = Unity\Assets\Materials\AlphaBison.mat
+		Unity\Assets\Materials\AlphaBison.mat.meta = Unity\Assets\Materials\AlphaBison.mat.meta
+		Unity\Assets\Materials\HealerShroom.mat = Unity\Assets\Materials\HealerShroom.mat
+		Unity\Assets\Materials\HealerShroom.mat.meta = Unity\Assets\Materials\HealerShroom.mat.meta
+		Unity\Assets\Materials\SteelContraption.mat = Unity\Assets\Materials\SteelContraption.mat
+		Unity\Assets\Materials\SteelContraption.mat.meta = Unity\Assets\Materials\SteelContraption.mat.meta
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Meshes", "Meshes", "{A96A8BD8-E5C2-4063-BDE2-5F6E7387FBD9}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Assets\Meshes\BellMesh.obj = Unity\Assets\Meshes\BellMesh.obj
+		Unity\Assets\Meshes\BellMesh.obj.meta = Unity\Assets\Meshes\BellMesh.obj.meta
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scenes", "Scenes", "{28611502-1782-46E8-BA6B-26FCF00CEA27}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Assets\Scenes\SampleScene.unity = Unity\Assets\Scenes\SampleScene.unity
+		Unity\Assets\Scenes\SampleScene.unity.meta = Unity\Assets\Scenes\SampleScene.unity.meta
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shaders", "Shaders", "{593C287F-7003-4FFD-8210-488D6C2F02D3}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Assets\Shaders\hgstandard.shader = Unity\Assets\Shaders\hgstandard.shader
+		Unity\Assets\Shaders\hgstandard.shader.meta = Unity\Assets\Shaders\hgstandard.shader.meta
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Textures", "Textures", "{830FC4D3-8B84-44DD-9F9D-76E17B77F1A8}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Assets\Textures\ADShroom.meta = Unity\Assets\Textures\ADShroom.meta
+		Unity\Assets\Textures\AlphaBison.meta = Unity\Assets\Textures\AlphaBison.meta
+		Unity\Assets\Textures\HealerShroom.meta = Unity\Assets\Textures\HealerShroom.meta
+		Unity\Assets\Textures\SteelContraption.meta = Unity\Assets\Textures\SteelContraption.meta
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ADShroom", "ADShroom", "{012C09C6-7040-43B7-A34B-347FA95A52B1}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Assets\Textures\ADShroom\ADShroom.png = Unity\Assets\Textures\ADShroom\ADShroom.png
+		Unity\Assets\Textures\ADShroom\ADShroom.png.meta = Unity\Assets\Textures\ADShroom\ADShroom.png.meta
+		Unity\Assets\Textures\ADShroom\ADShroom_Normal.png = Unity\Assets\Textures\ADShroom\ADShroom_Normal.png
+		Unity\Assets\Textures\ADShroom\ADShroom_Normal.png.meta = Unity\Assets\Textures\ADShroom\ADShroom_Normal.png.meta
+		Unity\Assets\Textures\ADShroom\ADShroomEmmision.png = Unity\Assets\Textures\ADShroom\ADShroomEmmision.png
+		Unity\Assets\Textures\ADShroom\ADShroomEmmision.png.meta = Unity\Assets\Textures\ADShroom\ADShroomEmmision.png.meta
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AlphaBison", "AlphaBison", "{BFA04BEA-814D-44BC-A237-55DA678858D8}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Assets\Textures\AlphaBison\AlphaBison.png = Unity\Assets\Textures\AlphaBison\AlphaBison.png
+		Unity\Assets\Textures\AlphaBison\AlphaBison.png.meta = Unity\Assets\Textures\AlphaBison\AlphaBison.png.meta
+		Unity\Assets\Textures\AlphaBison\AlphaBison_Hair.png = Unity\Assets\Textures\AlphaBison\AlphaBison_Hair.png
+		Unity\Assets\Textures\AlphaBison\AlphaBison_Hair.png.meta = Unity\Assets\Textures\AlphaBison\AlphaBison_Hair.png.meta
+		Unity\Assets\Textures\AlphaBison\AlphaBison_Normal.png = Unity\Assets\Textures\AlphaBison\AlphaBison_Normal.png
+		Unity\Assets\Textures\AlphaBison\AlphaBison_Normal.png.meta = Unity\Assets\Textures\AlphaBison\AlphaBison_Normal.png.meta
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HealerShroom", "HealerShroom", "{8CA2B1AB-8C70-4C90-81C0-D88B33F479CE}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Assets\Textures\HealerShroom\HealerShroom.png = Unity\Assets\Textures\HealerShroom\HealerShroom.png
+		Unity\Assets\Textures\HealerShroom\HealerShroom.png.meta = Unity\Assets\Textures\HealerShroom\HealerShroom.png.meta
+		Unity\Assets\Textures\HealerShroom\HealerShroomEmmision.png = Unity\Assets\Textures\HealerShroom\HealerShroomEmmision.png
+		Unity\Assets\Textures\HealerShroom\HealerShroomEmmision.png.meta = Unity\Assets\Textures\HealerShroom\HealerShroomEmmision.png.meta
+		Unity\Assets\Textures\HealerShroom\HealerShroomNormal.png = Unity\Assets\Textures\HealerShroom\HealerShroomNormal.png
+		Unity\Assets\Textures\HealerShroom\HealerShroomNormal.png.meta = Unity\Assets\Textures\HealerShroom\HealerShroomNormal.png.meta
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SteelContraption", "SteelContraption", "{22EFF69A-9D86-4A37-ABFE-2AB3A02DDB9F}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Assets\Textures\SteelContraption\SteelContraption.png = Unity\Assets\Textures\SteelContraption\SteelContraption.png
+		Unity\Assets\Textures\SteelContraption\SteelContraption.png.meta = Unity\Assets\Textures\SteelContraption\SteelContraption.png.meta
+		Unity\Assets\Textures\SteelContraption\SteelContraption_Normal.png = Unity\Assets\Textures\SteelContraption\SteelContraption_Normal.png
+		Unity\Assets\Textures\SteelContraption\SteelContraption_Normal.png.meta = Unity\Assets\Textures\SteelContraption\SteelContraption_Normal.png.meta
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Package Resources", "Package Resources", "{AAFB8E26-1DCD-4C95-B46C-17FBAEACEDE6}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Package Resources\TMP Essential Resources.unitypackage = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Package Resources\TMP Essential Resources.unitypackage
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Package Resources\TMP Essential Resources.unitypackage.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Package Resources\TMP Essential Resources.unitypackage.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Package Resources\TMP Examples & Extras.unitypackage = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Package Resources\TMP Examples & Extras.unitypackage
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Package Resources\TMP Examples & Extras.unitypackage.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Package Resources\TMP Examples & Extras.unitypackage.meta
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{C8739579-92E5-4623-BB57-818ABDC73A22}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime.meta
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Editor", "Editor", "{42B32ACF-1437-44BD-87CE-93F008D54133}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\DropdownOptionListDrawer.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\DropdownOptionListDrawer.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\DropdownOptionListDrawer.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\DropdownOptionListDrawer.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\GlyphInfoDrawer.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\GlyphInfoDrawer.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\GlyphInfoDrawer.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\GlyphInfoDrawer.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\GlyphMetricsPropertyDrawer.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\GlyphMetricsPropertyDrawer.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\GlyphMetricsPropertyDrawer.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\GlyphMetricsPropertyDrawer.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\GlyphRectPropertyDrawer.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\GlyphRectPropertyDrawer.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\GlyphRectPropertyDrawer.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\GlyphRectPropertyDrawer.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_BaseEditorPanel.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_BaseEditorPanel.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_BaseEditorPanel.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_BaseEditorPanel.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_BaseShaderGUI.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_BaseShaderGUI.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_BaseShaderGUI.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_BaseShaderGUI.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_BitmapShaderGUI.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_BitmapShaderGUI.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_BitmapShaderGUI.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_BitmapShaderGUI.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_CharacterPropertyDrawer.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_CharacterPropertyDrawer.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_CharacterPropertyDrawer.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_CharacterPropertyDrawer.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_ColorGradientAssetMenu.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_ColorGradientAssetMenu.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_ColorGradientAssetMenu.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_ColorGradientAssetMenu.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_ColorGradientEditor.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_ColorGradientEditor.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_ColorGradientEditor.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_ColorGradientEditor.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_DropdownEditor.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_DropdownEditor.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_DropdownEditor.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_DropdownEditor.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_EditorCoroutine.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_EditorCoroutine.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_EditorCoroutine.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_EditorCoroutine.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_EditorPanel.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_EditorPanel.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_EditorPanel.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_EditorPanel.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_EditorUtility.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_EditorUtility.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_EditorUtility.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_EditorUtility.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_FontAsset_CreationMenu.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_FontAsset_CreationMenu.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_FontAsset_CreationMenu.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_FontAsset_CreationMenu.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_FontAssetEditor.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_FontAssetEditor.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_FontAssetEditor.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_FontAssetEditor.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_GlyphPairAdjustmentRecordPropertyDrawer.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_GlyphPairAdjustmentRecordPropertyDrawer.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_GlyphPairAdjustmentRecordPropertyDrawer.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_GlyphPairAdjustmentRecordPropertyDrawer.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_GlyphPropertyDrawer.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_GlyphPropertyDrawer.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_GlyphPropertyDrawer.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_GlyphPropertyDrawer.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_InputFieldEditor.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_InputFieldEditor.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_InputFieldEditor.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_InputFieldEditor.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_MeshRendererEditor.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_MeshRendererEditor.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_MeshRendererEditor.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_MeshRendererEditor.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_PackageUtilities.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_PackageUtilities.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_PackageUtilities.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_PackageUtilities.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_PostBuildProcessHandler.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_PostBuildProcessHandler.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_PostBuildProcessHandler.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_PostBuildProcessHandler.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_ProjectTextSettings.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_ProjectTextSettings.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_ProjectTextSettings.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_ProjectTextSettings.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_ResourcesLoader.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_ResourcesLoader.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_ResourcesLoader.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_ResourcesLoader.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SDFShaderGUI.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SDFShaderGUI.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SDFShaderGUI.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SDFShaderGUI.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SerializedPropertyHolder.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SerializedPropertyHolder.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SerializedPropertyHolder.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SerializedPropertyHolder.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SettingsEditor.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SettingsEditor.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SettingsEditor.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SettingsEditor.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SpriteAssetEditor.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SpriteAssetEditor.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SpriteAssetEditor.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SpriteAssetEditor.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SpriteAssetImporter.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SpriteAssetImporter.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SpriteAssetImporter.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SpriteAssetImporter.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SpriteAssetMenu.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SpriteAssetMenu.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SpriteAssetMenu.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SpriteAssetMenu.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SpriteCharacterPropertyDrawer.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SpriteCharacterPropertyDrawer.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SpriteCharacterPropertyDrawer.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SpriteCharacterPropertyDrawer.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SpriteGlyphPropertyDrawer.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SpriteGlyphPropertyDrawer.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SpriteGlyphPropertyDrawer.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SpriteGlyphPropertyDrawer.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_StyleAssetMenu.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_StyleAssetMenu.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_StyleAssetMenu.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_StyleAssetMenu.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_StyleSheetEditor.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_StyleSheetEditor.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_StyleSheetEditor.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_StyleSheetEditor.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SubMesh_Editor.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SubMesh_Editor.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SubMesh_Editor.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SubMesh_Editor.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SubMeshUI_Editor.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SubMeshUI_Editor.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SubMeshUI_Editor.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_SubMeshUI_Editor.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_TextAlignmentDrawer.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_TextAlignmentDrawer.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_TextAlignmentDrawer.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_TextAlignmentDrawer.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_UiEditorPanel.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_UiEditorPanel.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_UiEditorPanel.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_UiEditorPanel.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_UIStyleManager.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_UIStyleManager.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_UIStyleManager.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMP_UIStyleManager.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_ContextMenus.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_ContextMenus.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_ContextMenus.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_ContextMenus.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_CreateObjectMenu.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_CreateObjectMenu.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_CreateObjectMenu.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_CreateObjectMenu.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_EditorShaderUtilities.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_EditorShaderUtilities.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_EditorShaderUtilities.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_EditorShaderUtilities.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_FontAssetCreatorWindow.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_FontAssetCreatorWindow.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_FontAssetCreatorWindow.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_FontAssetCreatorWindow.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_FontPlugin.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_FontPlugin.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_FontPlugin.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_FontPlugin.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_SortingLayerHelper.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_SortingLayerHelper.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_SortingLayerHelper.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_SortingLayerHelper.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_TextContainerEditor.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_TextContainerEditor.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_TextContainerEditor.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_TextContainerEditor.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_TexturePostProcessor.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_TexturePostProcessor.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_TexturePostProcessor.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\TMPro_TexturePostProcessor.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\Unity.TextMeshPro.Editor.asmdef = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\Unity.TextMeshPro.Editor.asmdef
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\Unity.TextMeshPro.Editor.asmdef.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Editor\Unity.TextMeshPro.Editor.asmdef.meta
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Runtime", "Runtime", "{4D2A10E4-5405-41BE-BAA8-66B21B1189F1}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\AssemblyInfo.cs.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\AssemblyInfo.cs.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\AssemblyInfo.cs.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\AssemblyInfo.cs.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\FastAction.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\FastAction.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\FastAction.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\FastAction.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\MaterialReferenceManager.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\MaterialReferenceManager.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\MaterialReferenceManager.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\MaterialReferenceManager.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TextContainer.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TextContainer.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TextContainer.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TextContainer.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TextMeshPro.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TextMeshPro.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TextMeshPro.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TextMeshPro.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TextMeshProUGUI.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TextMeshProUGUI.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TextMeshProUGUI.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TextMeshProUGUI.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_Asset.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_Asset.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_Asset.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_Asset.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_Character.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_Character.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_Character.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_Character.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_CharacterInfo.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_CharacterInfo.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_CharacterInfo.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_CharacterInfo.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_ColorGradient.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_ColorGradient.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_ColorGradient.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_ColorGradient.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_CoroutineTween.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_CoroutineTween.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_CoroutineTween.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_CoroutineTween.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_DefaultControls.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_DefaultControls.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_DefaultControls.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_DefaultControls.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_Dropdown.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_Dropdown.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_Dropdown.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_Dropdown.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_EditorResourceManager.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_EditorResourceManager.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_EditorResourceManager.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_EditorResourceManager.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_FontAsset.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_FontAsset.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_FontAsset.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_FontAsset.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_FontAssetCommon.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_FontAssetCommon.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_FontAssetCommon.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_FontAssetCommon.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_FontAssetUtilities.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_FontAssetUtilities.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_FontAssetUtilities.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_FontAssetUtilities.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_FontFeaturesCommon.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_FontFeaturesCommon.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_FontFeaturesCommon.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_FontFeaturesCommon.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_FontFeatureTable.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_FontFeatureTable.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_FontFeatureTable.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_FontFeatureTable.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_InputField.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_InputField.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_InputField.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_InputField.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_InputValidator.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_InputValidator.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_InputValidator.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_InputValidator.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_LineInfo.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_LineInfo.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_LineInfo.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_LineInfo.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_ListPool.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_ListPool.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_ListPool.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_ListPool.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_MaterialManager.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_MaterialManager.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_MaterialManager.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_MaterialManager.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_MeshInfo.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_MeshInfo.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_MeshInfo.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_MeshInfo.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_ObjectPool.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_ObjectPool.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_ObjectPool.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_ObjectPool.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_PackageResourceImporter.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_PackageResourceImporter.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_PackageResourceImporter.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_PackageResourceImporter.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_RichTextTagsCommon.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_RichTextTagsCommon.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_RichTextTagsCommon.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_RichTextTagsCommon.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_RichTextTagStack.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_RichTextTagStack.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_RichTextTagStack.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_RichTextTagStack.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_ScrollbarEventHandler.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_ScrollbarEventHandler.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_ScrollbarEventHandler.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_ScrollbarEventHandler.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SelectionCaret.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SelectionCaret.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SelectionCaret.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SelectionCaret.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_Settings.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_Settings.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_Settings.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_Settings.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_ShaderUtilities.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_ShaderUtilities.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_ShaderUtilities.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_ShaderUtilities.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_Sprite.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_Sprite.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_Sprite.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_Sprite.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SpriteAnimator.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SpriteAnimator.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SpriteAnimator.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SpriteAnimator.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SpriteAsset.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SpriteAsset.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SpriteAsset.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SpriteAsset.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SpriteAssetImportFormats.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SpriteAssetImportFormats.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SpriteAssetImportFormats.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SpriteAssetImportFormats.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SpriteCharacter.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SpriteCharacter.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SpriteCharacter.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SpriteCharacter.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SpriteGlyph.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SpriteGlyph.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SpriteGlyph.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SpriteGlyph.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_Style.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_Style.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_Style.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_Style.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_StyleSheet.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_StyleSheet.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_StyleSheet.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_StyleSheet.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SubMesh.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SubMesh.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SubMesh.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SubMesh.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SubMeshUI.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SubMeshUI.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SubMeshUI.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_SubMeshUI.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_Text.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_Text.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_Text.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_Text.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_TextElement.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_TextElement.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_TextElement.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_TextElement.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_TextElement_Legacy.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_TextElement_Legacy.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_TextElement_Legacy.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_TextElement_Legacy.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_TextInfo.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_TextInfo.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_TextInfo.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_TextInfo.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_TextParsingUtilities.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_TextParsingUtilities.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_TextParsingUtilities.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_TextParsingUtilities.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_TextUtilities.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_TextUtilities.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_TextUtilities.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_TextUtilities.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_UpdateManager.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_UpdateManager.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_UpdateManager.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_UpdateManager.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_UpdateRegistery.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_UpdateRegistery.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_UpdateRegistery.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMP_UpdateRegistery.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMPro_EventManager.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMPro_EventManager.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMPro_EventManager.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMPro_EventManager.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMPro_ExtensionMethods.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMPro_ExtensionMethods.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMPro_ExtensionMethods.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMPro_ExtensionMethods.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMPro_MeshUtilities.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMPro_MeshUtilities.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMPro_MeshUtilities.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMPro_MeshUtilities.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMPro_Private.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMPro_Private.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMPro_Private.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMPro_Private.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMPro_UGUI_Private.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMPro_UGUI_Private.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMPro_UGUI_Private.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\TMPro_UGUI_Private.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\Unity.TextMeshPro.asmdef = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\Unity.TextMeshPro.asmdef
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\Unity.TextMeshPro.asmdef.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Scripts\Runtime\Unity.TextMeshPro.asmdef.meta
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{519AB686-DEF4-493B-AE36-F429D2F95969}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Tests\Editor.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Tests\Editor.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Tests\Runtime.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Tests\Runtime.meta
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Editor", "Editor", "{4803C604-6249-412C-891A-6FA0997F1DD6}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Tests\Editor\TMP_EditorTests.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Tests\Editor\TMP_EditorTests.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Tests\Editor\TMP_EditorTests.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Tests\Editor\TMP_EditorTests.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Tests\Editor\Unity.TextMeshPro.Editor.Tests.asmdef = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Tests\Editor\Unity.TextMeshPro.Editor.Tests.asmdef
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Tests\Editor\Unity.TextMeshPro.Editor.Tests.asmdef.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Tests\Editor\Unity.TextMeshPro.Editor.Tests.asmdef.meta
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Runtime", "Runtime", "{4872193D-F0E7-4CBE-963F-8C8F7BCC4E9A}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Tests\Runtime\TMP_RuntimeTests.cs = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Tests\Runtime\TMP_RuntimeTests.cs
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Tests\Runtime\TMP_RuntimeTests.cs.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Tests\Runtime\TMP_RuntimeTests.cs.meta
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Tests\Runtime\Unity.TextMeshPro.Tests.asmdef = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Tests\Runtime\Unity.TextMeshPro.Tests.asmdef
+		Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Tests\Runtime\Unity.TextMeshPro.Tests.asmdef.meta = Unity\Library\PackageCache\com.unity.textmeshpro@1.4.1\Tests\Runtime\Unity.TextMeshPro.Tests.asmdef.meta
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ScriptAssemblies", "ScriptAssemblies", "{0176732C-18C4-4715-B5E8-AA779EB61B55}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Library\ScriptAssemblies\BuiltinAssemblies.stamp = Unity\Library\ScriptAssemblies\BuiltinAssemblies.stamp
+		Unity\Library\ScriptAssemblies\Unity.Analytics.DataPrivacy.dll = Unity\Library\ScriptAssemblies\Unity.Analytics.DataPrivacy.dll
+		Unity\Library\ScriptAssemblies\Unity.Analytics.DataPrivacy.pdb = Unity\Library\ScriptAssemblies\Unity.Analytics.DataPrivacy.pdb
+		Unity\Library\ScriptAssemblies\Unity.AssetBundleBrowser.Editor.dll = Unity\Library\ScriptAssemblies\Unity.AssetBundleBrowser.Editor.dll
+		Unity\Library\ScriptAssemblies\Unity.AssetBundleBrowser.Editor.pdb = Unity\Library\ScriptAssemblies\Unity.AssetBundleBrowser.Editor.pdb
+		Unity\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll = Unity\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+		Unity\Library\ScriptAssemblies\Unity.CollabProxy.Editor.pdb = Unity\Library\ScriptAssemblies\Unity.CollabProxy.Editor.pdb
+		Unity\Library\ScriptAssemblies\Unity.PackageManagerUI.Editor.dll = Unity\Library\ScriptAssemblies\Unity.PackageManagerUI.Editor.dll
+		Unity\Library\ScriptAssemblies\Unity.PackageManagerUI.Editor.pdb = Unity\Library\ScriptAssemblies\Unity.PackageManagerUI.Editor.pdb
+		Unity\Library\ScriptAssemblies\Unity.TextMeshPro.dll = Unity\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+		Unity\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll = Unity\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+		Unity\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.pdb = Unity\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.pdb
+		Unity\Library\ScriptAssemblies\Unity.TextMeshPro.pdb = Unity\Library\ScriptAssemblies\Unity.TextMeshPro.pdb
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShaderCache", "ShaderCache", "{CC6F163F-3119-4630-9A88-4A8DDF7F0C1C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0", "0", "{BA32A895-CF42-4EA3-AB14-84DCDB47E943}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Library\ShaderCache\0\03b0f48d34e00992d2094715fb3afa84.bin = Unity\Library\ShaderCache\0\03b0f48d34e00992d2094715fb3afa84.bin
+		Unity\Library\ShaderCache\0\07ab5b5d91f14aa01ee37cc10518ab53.bin = Unity\Library\ShaderCache\0\07ab5b5d91f14aa01ee37cc10518ab53.bin
+		Unity\Library\ShaderCache\0\083809fa0d4815006bc953aacb78999e.bin = Unity\Library\ShaderCache\0\083809fa0d4815006bc953aacb78999e.bin
+		Unity\Library\ShaderCache\0\0aa0b54f6151c9a9fbecf92dbaf2f279.bin = Unity\Library\ShaderCache\0\0aa0b54f6151c9a9fbecf92dbaf2f279.bin
+		Unity\Library\ShaderCache\0\0c6d22a8f1bfbf047d020830dd6c5b4e.bin = Unity\Library\ShaderCache\0\0c6d22a8f1bfbf047d020830dd6c5b4e.bin
+		Unity\Library\ShaderCache\0\0e070edd167f8e168fbf68f0171240bb.bin = Unity\Library\ShaderCache\0\0e070edd167f8e168fbf68f0171240bb.bin
+		Unity\Library\ShaderCache\0\0ea2a900e5bd2e19961ff99a1b88840c.bin = Unity\Library\ShaderCache\0\0ea2a900e5bd2e19961ff99a1b88840c.bin
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1", "1", "{13CEA485-3C38-4E8D-8491-AD6DAA8FE461}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Library\ShaderCache\1\11211fc199bc810e44aca1c090c3f088.bin = Unity\Library\ShaderCache\1\11211fc199bc810e44aca1c090c3f088.bin
+		Unity\Library\ShaderCache\1\12aac14ddee7ffbcbaa04ffd1d0a8aa1.bin = Unity\Library\ShaderCache\1\12aac14ddee7ffbcbaa04ffd1d0a8aa1.bin
+		Unity\Library\ShaderCache\1\12c4bcaba0f1ee32773d038567e38a9f.bin = Unity\Library\ShaderCache\1\12c4bcaba0f1ee32773d038567e38a9f.bin
+		Unity\Library\ShaderCache\1\138cfa478d666fba7ef91fbb5777747a.bin = Unity\Library\ShaderCache\1\138cfa478d666fba7ef91fbb5777747a.bin
+		Unity\Library\ShaderCache\1\154b4d06af9b0b4944b5207150373e64.bin = Unity\Library\ShaderCache\1\154b4d06af9b0b4944b5207150373e64.bin
+		Unity\Library\ShaderCache\1\167ad4d064fb8f358d33d2047a435c71.bin = Unity\Library\ShaderCache\1\167ad4d064fb8f358d33d2047a435c71.bin
+		Unity\Library\ShaderCache\1\17bda9bd8f84f11a7b6fb814b91c56c1.bin = Unity\Library\ShaderCache\1\17bda9bd8f84f11a7b6fb814b91c56c1.bin
+		Unity\Library\ShaderCache\1\185dc94a2253cc7227d7bf792e910344.bin = Unity\Library\ShaderCache\1\185dc94a2253cc7227d7bf792e910344.bin
+		Unity\Library\ShaderCache\1\1ee8cd1a5a2bdaf3432ce92003b42983.bin = Unity\Library\ShaderCache\1\1ee8cd1a5a2bdaf3432ce92003b42983.bin
+		Unity\Library\ShaderCache\1\1fff3fcca17e3fdd0caa72a91d57068e.bin = Unity\Library\ShaderCache\1\1fff3fcca17e3fdd0caa72a91d57068e.bin
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2", "2", "{14587B66-3E3C-4F87-AB9A-180BE8CF44CB}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Library\ShaderCache\2\214bb5ab5f404974590ac0bb59ce0a79.bin = Unity\Library\ShaderCache\2\214bb5ab5f404974590ac0bb59ce0a79.bin
+		Unity\Library\ShaderCache\2\2342a991db8d7299ab6f2879d7e6ff92.bin = Unity\Library\ShaderCache\2\2342a991db8d7299ab6f2879d7e6ff92.bin
+		Unity\Library\ShaderCache\2\24ed39e9e00c3b59af6cca1f666ee2d7.bin = Unity\Library\ShaderCache\2\24ed39e9e00c3b59af6cca1f666ee2d7.bin
+		Unity\Library\ShaderCache\2\253d8286f87e96d9a718203e71dc5c79.bin = Unity\Library\ShaderCache\2\253d8286f87e96d9a718203e71dc5c79.bin
+		Unity\Library\ShaderCache\2\260c445a95ea6beb9bc00258a52a386f.bin = Unity\Library\ShaderCache\2\260c445a95ea6beb9bc00258a52a386f.bin
+		Unity\Library\ShaderCache\2\26429000d2b6173907687b9f57eadd54.bin = Unity\Library\ShaderCache\2\26429000d2b6173907687b9f57eadd54.bin
+		Unity\Library\ShaderCache\2\27aedbbbf0a329dc4aa24fcdb4f7d704.bin = Unity\Library\ShaderCache\2\27aedbbbf0a329dc4aa24fcdb4f7d704.bin
+		Unity\Library\ShaderCache\2\2a146bf247372fc038e1af94e3f6294d.bin = Unity\Library\ShaderCache\2\2a146bf247372fc038e1af94e3f6294d.bin
+		Unity\Library\ShaderCache\2\2c0180765d8a68b33ebd4033b229d925.bin = Unity\Library\ShaderCache\2\2c0180765d8a68b33ebd4033b229d925.bin
+		Unity\Library\ShaderCache\2\2e76da28c40b56fdce4a9c56b8effe23.bin = Unity\Library\ShaderCache\2\2e76da28c40b56fdce4a9c56b8effe23.bin
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3", "3", "{836303ED-E558-4051-B874-BA0D9979E35F}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Library\ShaderCache\3\3138485018eafd4dd7ccf2f96086d3f6.bin = Unity\Library\ShaderCache\3\3138485018eafd4dd7ccf2f96086d3f6.bin
+		Unity\Library\ShaderCache\3\3192adad62fbb81d98123cbac2eb4f89.bin = Unity\Library\ShaderCache\3\3192adad62fbb81d98123cbac2eb4f89.bin
+		Unity\Library\ShaderCache\3\33d8b91146c431be64c4b3b161eeaf13.bin = Unity\Library\ShaderCache\3\33d8b91146c431be64c4b3b161eeaf13.bin
+		Unity\Library\ShaderCache\3\34c8cf30cc075d69b23ffcab2d9a68de.bin = Unity\Library\ShaderCache\3\34c8cf30cc075d69b23ffcab2d9a68de.bin
+		Unity\Library\ShaderCache\3\36cd7791bcdd6d87f6630101432ebe96.bin = Unity\Library\ShaderCache\3\36cd7791bcdd6d87f6630101432ebe96.bin
+		Unity\Library\ShaderCache\3\3847d6b094b384a406ac872a5d2f596f.bin = Unity\Library\ShaderCache\3\3847d6b094b384a406ac872a5d2f596f.bin
+		Unity\Library\ShaderCache\3\384ec7e2ddfe01f6107ff9b187189fad.bin = Unity\Library\ShaderCache\3\384ec7e2ddfe01f6107ff9b187189fad.bin
+		Unity\Library\ShaderCache\3\39a6a28d980d3ca42248ec13046c89b9.bin = Unity\Library\ShaderCache\3\39a6a28d980d3ca42248ec13046c89b9.bin
+		Unity\Library\ShaderCache\3\3b3ed97cf8325f3f193e5f98ab342517.bin = Unity\Library\ShaderCache\3\3b3ed97cf8325f3f193e5f98ab342517.bin
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4", "4", "{3F0B86FA-304B-4BEF-A40C-351B2AB27F43}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Library\ShaderCache\4\41d5830c2ee6b66246ddc4d559bfe18c.bin = Unity\Library\ShaderCache\4\41d5830c2ee6b66246ddc4d559bfe18c.bin
+		Unity\Library\ShaderCache\4\433dbc6d7a704535e5b6169251c4b644.bin = Unity\Library\ShaderCache\4\433dbc6d7a704535e5b6169251c4b644.bin
+		Unity\Library\ShaderCache\4\4384ca6579a8515e668f03bbea3c016a.bin = Unity\Library\ShaderCache\4\4384ca6579a8515e668f03bbea3c016a.bin
+		Unity\Library\ShaderCache\4\44eae6e727a3d25b9db8c3a1f0c6e71d.bin = Unity\Library\ShaderCache\4\44eae6e727a3d25b9db8c3a1f0c6e71d.bin
+		Unity\Library\ShaderCache\4\4693bf969be43b028618064f80a6dfd1.bin = Unity\Library\ShaderCache\4\4693bf969be43b028618064f80a6dfd1.bin
+		Unity\Library\ShaderCache\4\485d6654ca3bd5a01ec6975a5fcb7e62.bin = Unity\Library\ShaderCache\4\485d6654ca3bd5a01ec6975a5fcb7e62.bin
+		Unity\Library\ShaderCache\4\49ca25e0c7228ebf41725d6e19f5e930.bin = Unity\Library\ShaderCache\4\49ca25e0c7228ebf41725d6e19f5e930.bin
+		Unity\Library\ShaderCache\4\4ac508c16f3a2dc60f5778988060c02f.bin = Unity\Library\ShaderCache\4\4ac508c16f3a2dc60f5778988060c02f.bin
+		Unity\Library\ShaderCache\4\4e8970435553f1059976b3a30acfd669.bin = Unity\Library\ShaderCache\4\4e8970435553f1059976b3a30acfd669.bin
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5", "5", "{F8593BC3-D384-445A-A1D1-82BD92DB11DF}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Library\ShaderCache\5\500c4caddadb52e3e35a59338fbaddd6.bin = Unity\Library\ShaderCache\5\500c4caddadb52e3e35a59338fbaddd6.bin
+		Unity\Library\ShaderCache\5\5163c288f32ee3d829c447103301eb86.bin = Unity\Library\ShaderCache\5\5163c288f32ee3d829c447103301eb86.bin
+		Unity\Library\ShaderCache\5\55661277df07926cea2801fce5d3724b.bin = Unity\Library\ShaderCache\5\55661277df07926cea2801fce5d3724b.bin
+		Unity\Library\ShaderCache\5\5626aad7f51b081d70543b386be4f195.bin = Unity\Library\ShaderCache\5\5626aad7f51b081d70543b386be4f195.bin
+		Unity\Library\ShaderCache\5\56ea302b005d117f635800dd05388543.bin = Unity\Library\ShaderCache\5\56ea302b005d117f635800dd05388543.bin
+		Unity\Library\ShaderCache\5\5a814996350b2956c844244d915db904.bin = Unity\Library\ShaderCache\5\5a814996350b2956c844244d915db904.bin
+		Unity\Library\ShaderCache\5\5b9fd37d32571ea1f83fc952df82cebf.bin = Unity\Library\ShaderCache\5\5b9fd37d32571ea1f83fc952df82cebf.bin
+		Unity\Library\ShaderCache\5\5c6ee42bde1b6fec041da5f647dbe9bf.bin = Unity\Library\ShaderCache\5\5c6ee42bde1b6fec041da5f647dbe9bf.bin
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6", "6", "{0139510D-CF1C-4D51-8B40-B85517AD97D9}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Library\ShaderCache\6\6520c2e074ca0723fac9841b2954154f.bin = Unity\Library\ShaderCache\6\6520c2e074ca0723fac9841b2954154f.bin
+		Unity\Library\ShaderCache\6\65919698781b46a25a3980890b8facba.bin = Unity\Library\ShaderCache\6\65919698781b46a25a3980890b8facba.bin
+		Unity\Library\ShaderCache\6\68c457e329bd8ffdb03b16d8b7060f79.bin = Unity\Library\ShaderCache\6\68c457e329bd8ffdb03b16d8b7060f79.bin
+		Unity\Library\ShaderCache\6\6a3eb346a207f5afa9f02670638a1a2e.bin = Unity\Library\ShaderCache\6\6a3eb346a207f5afa9f02670638a1a2e.bin
+		Unity\Library\ShaderCache\6\6a42d28e7ef140e1c6a88282295d89fc.bin = Unity\Library\ShaderCache\6\6a42d28e7ef140e1c6a88282295d89fc.bin
+		Unity\Library\ShaderCache\6\6b338927cb898693b4ecd44cf1319eea.bin = Unity\Library\ShaderCache\6\6b338927cb898693b4ecd44cf1319eea.bin
+		Unity\Library\ShaderCache\6\6e0b2c7d98e998d2f3f8ac1253d527d3.bin = Unity\Library\ShaderCache\6\6e0b2c7d98e998d2f3f8ac1253d527d3.bin
+		Unity\Library\ShaderCache\6\6f40a0ef7db0f6555726661eb9573ded.bin = Unity\Library\ShaderCache\6\6f40a0ef7db0f6555726661eb9573ded.bin
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7", "7", "{8BAC6CFD-4259-4EC6-A700-5FBB0E237355}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Library\ShaderCache\7\72ff61e1bf23f1898a9e372a62b768f8.bin = Unity\Library\ShaderCache\7\72ff61e1bf23f1898a9e372a62b768f8.bin
+		Unity\Library\ShaderCache\7\7379a78999b891a9d0647c8b7f3b60de.bin = Unity\Library\ShaderCache\7\7379a78999b891a9d0647c8b7f3b60de.bin
+		Unity\Library\ShaderCache\7\7582f779a33383eb9314499ff7e0b739.bin = Unity\Library\ShaderCache\7\7582f779a33383eb9314499ff7e0b739.bin
+		Unity\Library\ShaderCache\7\778999c9dd11cfd497412130f6c5dff8.bin = Unity\Library\ShaderCache\7\778999c9dd11cfd497412130f6c5dff8.bin
+		Unity\Library\ShaderCache\7\789f0166f2096994d76c09d630c87f3c.bin = Unity\Library\ShaderCache\7\789f0166f2096994d76c09d630c87f3c.bin
+		Unity\Library\ShaderCache\7\78fdedef248c906ccf5709d970f7c4f2.bin = Unity\Library\ShaderCache\7\78fdedef248c906ccf5709d970f7c4f2.bin
+		Unity\Library\ShaderCache\7\7abc33ed21f06174d3cc5211e32e6707.bin = Unity\Library\ShaderCache\7\7abc33ed21f06174d3cc5211e32e6707.bin
+		Unity\Library\ShaderCache\7\7e0bd146e6c0e8226498337ec110a443.bin = Unity\Library\ShaderCache\7\7e0bd146e6c0e8226498337ec110a443.bin
+		Unity\Library\ShaderCache\7\7e2a71be3366185446df6db83aba9efb.bin = Unity\Library\ShaderCache\7\7e2a71be3366185446df6db83aba9efb.bin
+		Unity\Library\ShaderCache\7\7e8e92ecb647a94fc83c125a770bdb27.bin = Unity\Library\ShaderCache\7\7e8e92ecb647a94fc83c125a770bdb27.bin
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "8", "8", "{583A0E55-EF43-4193-80A7-1BDFC904AFF1}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Library\ShaderCache\8\8373b95dcb38a3f0b04433f7f76cb79f.bin = Unity\Library\ShaderCache\8\8373b95dcb38a3f0b04433f7f76cb79f.bin
+		Unity\Library\ShaderCache\8\871f3bfa4096fdab3cfca7d353d7ebfc.bin = Unity\Library\ShaderCache\8\871f3bfa4096fdab3cfca7d353d7ebfc.bin
+		Unity\Library\ShaderCache\8\880ad43237edf09be5e2686e424927bb.bin = Unity\Library\ShaderCache\8\880ad43237edf09be5e2686e424927bb.bin
+		Unity\Library\ShaderCache\8\8b3b92e67bae73edc0941f9cfd21093c.bin = Unity\Library\ShaderCache\8\8b3b92e67bae73edc0941f9cfd21093c.bin
+		Unity\Library\ShaderCache\8\8c8a1bbae702387e086091cc5cb54dc3.bin = Unity\Library\ShaderCache\8\8c8a1bbae702387e086091cc5cb54dc3.bin
+		Unity\Library\ShaderCache\8\8ca6d51de589268c7f131d0034397f4b.bin = Unity\Library\ShaderCache\8\8ca6d51de589268c7f131d0034397f4b.bin
+		Unity\Library\ShaderCache\8\8e2ae1348ea30f5b743103bba4ed345c.bin = Unity\Library\ShaderCache\8\8e2ae1348ea30f5b743103bba4ed345c.bin
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9", "9", "{741821F4-3B0C-41EB-B98F-B2520E93EF78}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Library\ShaderCache\9\9086ad79242f5eee1aa56bceebeb2205.bin = Unity\Library\ShaderCache\9\9086ad79242f5eee1aa56bceebeb2205.bin
+		Unity\Library\ShaderCache\9\962958d3fcfdc96ddb28469438daf545.bin = Unity\Library\ShaderCache\9\962958d3fcfdc96ddb28469438daf545.bin
+		Unity\Library\ShaderCache\9\9c88a4556ee4f585b965ba15c67fa2a6.bin = Unity\Library\ShaderCache\9\9c88a4556ee4f585b965ba15c67fa2a6.bin
+		Unity\Library\ShaderCache\9\9ca4229ef142336dc5742b6589c5fe47.bin = Unity\Library\ShaderCache\9\9ca4229ef142336dc5742b6589c5fe47.bin
+		Unity\Library\ShaderCache\9\9df55f1804f8c6f13cfb6623771330a1.bin = Unity\Library\ShaderCache\9\9df55f1804f8c6f13cfb6623771330a1.bin
+		Unity\Library\ShaderCache\9\9e71b3003095651680030d969358b0d5.bin = Unity\Library\ShaderCache\9\9e71b3003095651680030d969358b0d5.bin
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "a", "a", "{6FDA4E3E-EC22-476B-ABAA-F2740547B457}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Library\ShaderCache\a\a1fe6882af15348a53746376245c47fc.bin = Unity\Library\ShaderCache\a\a1fe6882af15348a53746376245c47fc.bin
+		Unity\Library\ShaderCache\a\a5de18666187467e01c85b92fdd15605.bin = Unity\Library\ShaderCache\a\a5de18666187467e01c85b92fdd15605.bin
+		Unity\Library\ShaderCache\a\aac7e18b28d36e30b9f37d90fba6ed60.bin = Unity\Library\ShaderCache\a\aac7e18b28d36e30b9f37d90fba6ed60.bin
+		Unity\Library\ShaderCache\a\ae025a824856e7654371dec3a652e44b.bin = Unity\Library\ShaderCache\a\ae025a824856e7654371dec3a652e44b.bin
+		Unity\Library\ShaderCache\a\ae724b5b73af360a8faa9be8eb0ae4c4.bin = Unity\Library\ShaderCache\a\ae724b5b73af360a8faa9be8eb0ae4c4.bin
+		Unity\Library\ShaderCache\a\aeea04e58bad53500246c8f4f276519a.bin = Unity\Library\ShaderCache\a\aeea04e58bad53500246c8f4f276519a.bin
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "b", "b", "{FBDED803-EA0C-408D-94DC-2ABDB60464BF}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Library\ShaderCache\b\b012a75e540df3a5283c5de11c9f4b14.bin = Unity\Library\ShaderCache\b\b012a75e540df3a5283c5de11c9f4b14.bin
+		Unity\Library\ShaderCache\b\b2c9c2efa4c6098177bd7908744c16f7.bin = Unity\Library\ShaderCache\b\b2c9c2efa4c6098177bd7908744c16f7.bin
+		Unity\Library\ShaderCache\b\b324ed9725d02a9015c85ca2cf97a3b3.bin = Unity\Library\ShaderCache\b\b324ed9725d02a9015c85ca2cf97a3b3.bin
+		Unity\Library\ShaderCache\b\b3369ad922d9216f52759f1a35e869c9.bin = Unity\Library\ShaderCache\b\b3369ad922d9216f52759f1a35e869c9.bin
+		Unity\Library\ShaderCache\b\b4e426078d772b7455b1ca15f20d9628.bin = Unity\Library\ShaderCache\b\b4e426078d772b7455b1ca15f20d9628.bin
+		Unity\Library\ShaderCache\b\b9a727221284edf200991ccfa972c292.bin = Unity\Library\ShaderCache\b\b9a727221284edf200991ccfa972c292.bin
+		Unity\Library\ShaderCache\b\bd900af2bf9f9d722bed1519db196cd4.bin = Unity\Library\ShaderCache\b\bd900af2bf9f9d722bed1519db196cd4.bin
+		Unity\Library\ShaderCache\b\bdcca50c5a04ada017fe879a58617656.bin = Unity\Library\ShaderCache\b\bdcca50c5a04ada017fe879a58617656.bin
+		Unity\Library\ShaderCache\b\be5b6c117cb9e32d8b7eef6bb72497dd.bin = Unity\Library\ShaderCache\b\be5b6c117cb9e32d8b7eef6bb72497dd.bin
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "c", "c", "{84263F47-1B3D-4FA8-A9EA-959C9B8DA47A}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Library\ShaderCache\c\c1886f09b156ace96d2146bd2d1537d0.bin = Unity\Library\ShaderCache\c\c1886f09b156ace96d2146bd2d1537d0.bin
+		Unity\Library\ShaderCache\c\c352a49114490331f02eda26c7dd6bf9.bin = Unity\Library\ShaderCache\c\c352a49114490331f02eda26c7dd6bf9.bin
+		Unity\Library\ShaderCache\c\c641e2b1fcc55ef85c39ca01908cb56f.bin = Unity\Library\ShaderCache\c\c641e2b1fcc55ef85c39ca01908cb56f.bin
+		Unity\Library\ShaderCache\c\c7f628d8937e958ecd63b87108c92a0e.bin = Unity\Library\ShaderCache\c\c7f628d8937e958ecd63b87108c92a0e.bin
+		Unity\Library\ShaderCache\c\c910755dddc2cceecfb8145a5229c548.bin = Unity\Library\ShaderCache\c\c910755dddc2cceecfb8145a5229c548.bin
+		Unity\Library\ShaderCache\c\c9a1493efbc65913a5df79b10c2c37d9.bin = Unity\Library\ShaderCache\c\c9a1493efbc65913a5df79b10c2c37d9.bin
+		Unity\Library\ShaderCache\c\ce0f1933661a6b9eb7ff0d417e0f5757.bin = Unity\Library\ShaderCache\c\ce0f1933661a6b9eb7ff0d417e0f5757.bin
+		Unity\Library\ShaderCache\c\ce48ab19e2aef98732602112199f3661.bin = Unity\Library\ShaderCache\c\ce48ab19e2aef98732602112199f3661.bin
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d", "d", "{6FFACAF8-1E14-426D-9D9A-3C1E7C897930}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Library\ShaderCache\d\d4a80d84489e90a59e50c3a04585407c.bin = Unity\Library\ShaderCache\d\d4a80d84489e90a59e50c3a04585407c.bin
+		Unity\Library\ShaderCache\d\d9ec6e3e29d454e6635c32a80552dfd2.bin = Unity\Library\ShaderCache\d\d9ec6e3e29d454e6635c32a80552dfd2.bin
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "e", "e", "{6E71C8CD-B246-4CB2-8CA8-1694FC882349}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Library\ShaderCache\e\e0038325d917bae84ef8bc6ab42d2d16.bin = Unity\Library\ShaderCache\e\e0038325d917bae84ef8bc6ab42d2d16.bin
+		Unity\Library\ShaderCache\e\e09fdb0bbce92a42d59e0dd639c61da8.bin = Unity\Library\ShaderCache\e\e09fdb0bbce92a42d59e0dd639c61da8.bin
+		Unity\Library\ShaderCache\e\e0ff2a1464fedf5975858555a3353b81.bin = Unity\Library\ShaderCache\e\e0ff2a1464fedf5975858555a3353b81.bin
+		Unity\Library\ShaderCache\e\e1fec830602bfade9ba812a14e1152c9.bin = Unity\Library\ShaderCache\e\e1fec830602bfade9ba812a14e1152c9.bin
+		Unity\Library\ShaderCache\e\e2e001c34ce64254c6e4f3c229761bc1.bin = Unity\Library\ShaderCache\e\e2e001c34ce64254c6e4f3c229761bc1.bin
+		Unity\Library\ShaderCache\e\e772dcaf949fbe61fae798f92fd886f0.bin = Unity\Library\ShaderCache\e\e772dcaf949fbe61fae798f92fd886f0.bin
+		Unity\Library\ShaderCache\e\e8614f97a49bb1def7659940dea369b9.bin = Unity\Library\ShaderCache\e\e8614f97a49bb1def7659940dea369b9.bin
+		Unity\Library\ShaderCache\e\ec0c3b1a409224d1d9fed46282fad569.bin = Unity\Library\ShaderCache\e\ec0c3b1a409224d1d9fed46282fad569.bin
+		Unity\Library\ShaderCache\e\ee7a95f1346b2f3d0feb283a7d0eb0c4.bin = Unity\Library\ShaderCache\e\ee7a95f1346b2f3d0feb283a7d0eb0c4.bin
+		Unity\Library\ShaderCache\e\eead40664e2ecb01f42f0af66cf0f8a1.bin = Unity\Library\ShaderCache\e\eead40664e2ecb01f42f0af66cf0f8a1.bin
+		Unity\Library\ShaderCache\e\efff8896274fbabfd6025eaca168b38e.bin = Unity\Library\ShaderCache\e\efff8896274fbabfd6025eaca168b38e.bin
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "f", "f", "{E9EB2487-5A08-4B11-B745-409802F24493}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Library\ShaderCache\f\f01373be3bd41f641bc31a5e7d1a2942.bin = Unity\Library\ShaderCache\f\f01373be3bd41f641bc31a5e7d1a2942.bin
+		Unity\Library\ShaderCache\f\f40f4ca505e75672b44f2272fb37c016.bin = Unity\Library\ShaderCache\f\f40f4ca505e75672b44f2272fb37c016.bin
+		Unity\Library\ShaderCache\f\f73b8b31b706f0ba1edf4de42fbdd2f5.bin = Unity\Library\ShaderCache\f\f73b8b31b706f0ba1edf4de42fbdd2f5.bin
+		Unity\Library\ShaderCache\f\f772e66eca233c29c3da7ed9b13ab200.bin = Unity\Library\ShaderCache\f\f772e66eca233c29c3da7ed9b13ab200.bin
+		Unity\Library\ShaderCache\f\f8dc5be829b0e716f82d5582e993a280.bin = Unity\Library\ShaderCache\f\f8dc5be829b0e716f82d5582e993a280.bin
+		Unity\Library\ShaderCache\f\fb9281404d37f8077204b710fca0c5ff.bin = Unity\Library\ShaderCache\f\fb9281404d37f8077204b710fca0c5ff.bin
+		Unity\Library\ShaderCache\f\fd6b1907980170c973a2cf7c6c732f72.bin = Unity\Library\ShaderCache\f\fd6b1907980170c973a2cf7c6c732f72.bin
+		Unity\Library\ShaderCache\f\fe16eb4ca6590209c1ed3fb8dfb9e97b.bin = Unity\Library\ShaderCache\f\fe16eb4ca6590209c1ed3fb8dfb9e97b.bin
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StateCache", "StateCache", "{4ED2A7E4-4761-472D-9BC0-D8DF085C179D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hierarchy", "Hierarchy", "{0C203804-79E4-4B12-B3F0-E3ACB528FAC6}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Library\StateCache\Hierarchy\79910c-mainStage.json = Unity\Library\StateCache\Hierarchy\79910c-mainStage.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SceneView", "SceneView", "{D0F9491C-8DDA-4779-A10E-209DD397A9E4}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Library\StateCache\SceneView\0bd02e-mainStage.json = Unity\Library\StateCache\SceneView\0bd02e-mainStage.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +591,40 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CB26B12B-95CF-4AA8-8B12-F47FB4485AC3} = {4FBB5C13-1587-4B31-8DFF-82675F6DB637}
+		{261A81C4-B4FF-4DF6-8CFA-B2164301BE6F} = {CB26B12B-95CF-4AA8-8B12-F47FB4485AC3}
+		{A96A8BD8-E5C2-4063-BDE2-5F6E7387FBD9} = {CB26B12B-95CF-4AA8-8B12-F47FB4485AC3}
+		{28611502-1782-46E8-BA6B-26FCF00CEA27} = {CB26B12B-95CF-4AA8-8B12-F47FB4485AC3}
+		{593C287F-7003-4FFD-8210-488D6C2F02D3} = {CB26B12B-95CF-4AA8-8B12-F47FB4485AC3}
+		{830FC4D3-8B84-44DD-9F9D-76E17B77F1A8} = {CB26B12B-95CF-4AA8-8B12-F47FB4485AC3}
+		{012C09C6-7040-43B7-A34B-347FA95A52B1} = {830FC4D3-8B84-44DD-9F9D-76E17B77F1A8}
+		{BFA04BEA-814D-44BC-A237-55DA678858D8} = {830FC4D3-8B84-44DD-9F9D-76E17B77F1A8}
+		{8CA2B1AB-8C70-4C90-81C0-D88B33F479CE} = {830FC4D3-8B84-44DD-9F9D-76E17B77F1A8}
+		{22EFF69A-9D86-4A37-ABFE-2AB3A02DDB9F} = {830FC4D3-8B84-44DD-9F9D-76E17B77F1A8}
+		{42B32ACF-1437-44BD-87CE-93F008D54133} = {C8739579-92E5-4623-BB57-818ABDC73A22}
+		{4D2A10E4-5405-41BE-BAA8-66B21B1189F1} = {C8739579-92E5-4623-BB57-818ABDC73A22}
+		{4803C604-6249-412C-891A-6FA0997F1DD6} = {519AB686-DEF4-493B-AE36-F429D2F95969}
+		{4872193D-F0E7-4CBE-963F-8C8F7BCC4E9A} = {519AB686-DEF4-493B-AE36-F429D2F95969}
+		{BA32A895-CF42-4EA3-AB14-84DCDB47E943} = {CC6F163F-3119-4630-9A88-4A8DDF7F0C1C}
+		{13CEA485-3C38-4E8D-8491-AD6DAA8FE461} = {CC6F163F-3119-4630-9A88-4A8DDF7F0C1C}
+		{14587B66-3E3C-4F87-AB9A-180BE8CF44CB} = {CC6F163F-3119-4630-9A88-4A8DDF7F0C1C}
+		{836303ED-E558-4051-B874-BA0D9979E35F} = {CC6F163F-3119-4630-9A88-4A8DDF7F0C1C}
+		{3F0B86FA-304B-4BEF-A40C-351B2AB27F43} = {CC6F163F-3119-4630-9A88-4A8DDF7F0C1C}
+		{F8593BC3-D384-445A-A1D1-82BD92DB11DF} = {CC6F163F-3119-4630-9A88-4A8DDF7F0C1C}
+		{0139510D-CF1C-4D51-8B40-B85517AD97D9} = {CC6F163F-3119-4630-9A88-4A8DDF7F0C1C}
+		{8BAC6CFD-4259-4EC6-A700-5FBB0E237355} = {CC6F163F-3119-4630-9A88-4A8DDF7F0C1C}
+		{583A0E55-EF43-4193-80A7-1BDFC904AFF1} = {CC6F163F-3119-4630-9A88-4A8DDF7F0C1C}
+		{741821F4-3B0C-41EB-B98F-B2520E93EF78} = {CC6F163F-3119-4630-9A88-4A8DDF7F0C1C}
+		{6FDA4E3E-EC22-476B-ABAA-F2740547B457} = {CC6F163F-3119-4630-9A88-4A8DDF7F0C1C}
+		{FBDED803-EA0C-408D-94DC-2ABDB60464BF} = {CC6F163F-3119-4630-9A88-4A8DDF7F0C1C}
+		{84263F47-1B3D-4FA8-A9EA-959C9B8DA47A} = {CC6F163F-3119-4630-9A88-4A8DDF7F0C1C}
+		{6FFACAF8-1E14-426D-9D9A-3C1E7C897930} = {CC6F163F-3119-4630-9A88-4A8DDF7F0C1C}
+		{6E71C8CD-B246-4CB2-8CA8-1694FC882349} = {CC6F163F-3119-4630-9A88-4A8DDF7F0C1C}
+		{E9EB2487-5A08-4B11-B745-409802F24493} = {CC6F163F-3119-4630-9A88-4A8DDF7F0C1C}
+		{0C203804-79E4-4B12-B3F0-E3ACB528FAC6} = {4ED2A7E4-4761-472D-9BC0-D8DF085C179D}
+		{D0F9491C-8DDA-4779-A10E-209DD397A9E4} = {4ED2A7E4-4761-472D-9BC0-D8DF085C179D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B0142633-C6E9-49CD-88D9-D98C3E562443}
