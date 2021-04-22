@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 4043445966
+CRC: 3841157755
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: c73b995a2a427171370926d848179685
+    Hash: 5fcb172289dc78bace1c1ca7ea2d86bc
   TypeTreeHash:
     serializedVersion: 2
     Hash: fe397485c3cec1106b49e9ff95e8f8a2
@@ -20,11 +20,15 @@ Assets:
 - Assets/Textures/ADShroom/ADShroomEmmision.png
 - Assets/Textures/ADShroom/ADShroom.png
 - Assets/Textures/SteelContraption/SteelContraption_Normal.png
+- Assets/Textures/HealerShroom/HealerShroomEmmision.png
 - Assets/Materials/ADShroom.mat
+- Assets/Materials/HealerShroom.mat
 - Assets/Textures/AlphaBison/AlphaBison.png
 - Assets/Textures/SteelContraption/SteelContraption.png
 - Assets/Textures/AlphaBison/AlphaBison_Hair.png
 - Assets/Textures/AlphaBison/AlphaBison_Normal.png
+- Assets/Textures/HealerShroom/HealerShroom.png
 - Assets/Materials/AlphaBison.mat
 - Assets/Textures/ADShroom/ADShroom_Normal.png
+- Assets/Textures/HealerShroom/HealerShroomNormal.png
 Dependencies: []
