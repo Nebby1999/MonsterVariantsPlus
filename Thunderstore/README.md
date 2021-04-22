@@ -52,7 +52,8 @@ The end goal is to have at least one variant per type of enemy.
 Just Like in the Original Monster Variants, their spawn chance can be changed in the config file.
 If you don't want any new variants, you can also disable the entire section in the config file.
 
-Since Version 1.3.7 of MonsterVariants, modded variants are now possible to create.
+Since Version 1.3.7 of MonsterVariants, modded variants are now possible to create. Currently it only supports Moffein's Claymen
+Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names to showcase their abilities.
 
 	Mosquito Wisp (Lesser Wisp)(7% Chance):
 	- 50% Size
@@ -90,16 +91,21 @@ Since Version 1.3.7 of MonsterVariants, modded variants are now possible to crea
 	- 6.2% Damage
 	- Has 5 Alien Heads
 
-	Adolescent (Parent)(4% Chance):
+	-Healer-Shroom (MiniMushroom)(10% Chance):
+	- 50% Size
+	- 200% Movement Speed
+	- 50% Attack Speed
+	- 50% Damage
+	- Has 2 Bustling Fungus
+
+	Adolescent (Parent)(8% Chance):
 	- 75% Size
-	- 10% Health
+	- 75% Health
 	- 120% Attack Speed
-	- 200 Armor Bonus
 	- Has 1 Medkit
+	- Has 1 Planula
 	- Has 1 Hardlight Afterburner
 	- Has 3 Alien Heads
-	- Has 1 N'kuhana's Opinion
-	- Has 10 Personal Shield Generators
 
 	Child (Parent)(6% Chance):
 	- 50% Size
@@ -126,29 +132,37 @@ Since Version 1.3.7 of MonsterVariants, modded variants are now possible to crea
 	- 70% Damage
 	- Has 2 Brilliant Behemoths
 
+	Sun Priest (GrandParent)(3% Chance):
+	- Can use Solar Flare at any point in time.
+	- -50 Armor
+
 	Hoarder (Scavenger)(8% Chance):
 	- 75% Size
 	- 75% Health
 	- 125% Movement Speed
 	- 125% Attack Speed
 	- 90% Damage
-	- It's skill to obtain an item from his backpack has a cooldown of 10 seconds instead of the usual 20.
+	- Its skill to obtain an item from his backpack has a cooldown of 10 seconds instead of the usual 20.
 
-	Devourer Dunestrider (Clay Dunestrider)(5% Chance):
+	Starving Dunestrider (Clay Dunestrider)(4% Chance):
+	- Can use Life Draining Tendrils at any point in time.
+	- -50 Armor
+
+	Devourer Dunestrider (Clay Dunestrider)(2% Chance):
 	- 125% Size
 	- 120% Movement Speed
 	- 110% Attack Speed
 	- Has 2 Rejuvination Racks
+	- Has 2 Aegis
 	- Its Recovery Skill has Twice the Cooldown, Lasts Twice as Long, the Tethers are Twice as Long, and the Dunestrider no longer gains Armor.
 
-	Clay Soldier (ClayMen)(Requires Moffein's [ClayMen](https://thunderstore.io/package/Moffein/Clay_Men/))(15% Spawn Chance)
+	Clay Soldier (ClayMen)(Requires Moffein's ClayMen)(15% Spawn Chance)
 	- 112.5% Size
 	- 125% Health
 	- 90% Movement Speed
 	- 150% Attack Speed
 	- 50% Damage
 	- Has 1 Alien Head
-
 
 
 ## Configuring the Mod.
@@ -174,6 +188,17 @@ Rob, for making his MonsterVariants mod
 KomradeSpectre, for helping me a ton with making the variants have custom skins.
 
 ## Changelog
+'1.2.8'
+- Nerfed the Adolescent, no longer has nkhunna's opinion
+	-- 10% Health -> 75% Health
+	-- Changed it's inventory to now have 1 Medkit and 1 Planula instead of nkhunna's opinion.
+- The Devourer Dunestrider now properly has it's inventory, which adds 2 Aegis alongside the 2 Rejuvination Racks.
+- Added Healershroom
+- Added Sun Worshipper
+- Added Starving Dunestrider
+- Added nameOverride strings so Variants now are properly named in-game
+- A bunch of internal code changes.
+
 '1.2.7' Whoops, All Variants! Update
 - Added Adolescent, Child, Bruiser Imp, Alpha Bison, Hoarder, Devourer Dunestrider & Clay Soldier Variants.
 - Probably forgot about something, feedback is greatly appreciated when confronting these new monsters.
