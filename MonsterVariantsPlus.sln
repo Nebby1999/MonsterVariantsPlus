@@ -15,88 +15,57 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Thunderstore", "Thunderstor
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assets", "Assets", "{E51F5C3A-ED5E-45E8-9295-AEE2B14EC051}"
-	ProjectSection(SolutionItems) = preProject
-		Unity\Assets\Materials.meta = Unity\Assets\Materials.meta
-		Unity\Assets\Meshes.meta = Unity\Assets\Meshes.meta
-		Unity\Assets\Scenes.meta = Unity\Assets\Scenes.meta
-		Unity\Assets\Shaders.meta = Unity\Assets\Shaders.meta
-		Unity\Assets\Textures.meta = Unity\Assets\Textures.meta
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Materials", "Materials", "{241B210F-6F3C-47A8-8245-A08C23430ACA}"
 	ProjectSection(SolutionItems) = preProject
 		Unity\Assets\Materials\ADShroom.mat = Unity\Assets\Materials\ADShroom.mat
-		Unity\Assets\Materials\ADShroom.mat.meta = Unity\Assets\Materials\ADShroom.mat.meta
 		Unity\Assets\Materials\AlphaBison.mat = Unity\Assets\Materials\AlphaBison.mat
-		Unity\Assets\Materials\AlphaBison.mat.meta = Unity\Assets\Materials\AlphaBison.mat.meta
 		Unity\Assets\Materials\HealerShroom.mat = Unity\Assets\Materials\HealerShroom.mat
-		Unity\Assets\Materials\HealerShroom.mat.meta = Unity\Assets\Materials\HealerShroom.mat.meta
 		Unity\Assets\Materials\SteelContraption.mat = Unity\Assets\Materials\SteelContraption.mat
-		Unity\Assets\Materials\SteelContraption.mat.meta = Unity\Assets\Materials\SteelContraption.mat.meta
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Meshes", "Meshes", "{E38345BF-0C36-4A53-AA6E-AF4533C38F68}"
 	ProjectSection(SolutionItems) = preProject
 		Unity\Assets\Meshes\BellMesh.obj = Unity\Assets\Meshes\BellMesh.obj
-		Unity\Assets\Meshes\BellMesh.obj.meta = Unity\Assets\Meshes\BellMesh.obj.meta
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scenes", "Scenes", "{2D61199E-E9CA-4EF7-B152-3D915A6CC0DF}"
 	ProjectSection(SolutionItems) = preProject
 		Unity\Assets\Scenes\SampleScene.unity = Unity\Assets\Scenes\SampleScene.unity
-		Unity\Assets\Scenes\SampleScene.unity.meta = Unity\Assets\Scenes\SampleScene.unity.meta
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shaders", "Shaders", "{A1D5449A-DB24-445A-A1F9-C5A6DE7F0CA4}"
 	ProjectSection(SolutionItems) = preProject
 		Unity\Assets\Shaders\hgstandard.shader = Unity\Assets\Shaders\hgstandard.shader
-		Unity\Assets\Shaders\hgstandard.shader.meta = Unity\Assets\Shaders\hgstandard.shader.meta
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Textures", "Textures", "{C545788F-0718-4E3B-8D38-71C81B0460BB}"
-	ProjectSection(SolutionItems) = preProject
-		Unity\Assets\Textures\ADShroom.meta = Unity\Assets\Textures\ADShroom.meta
-		Unity\Assets\Textures\AlphaBison.meta = Unity\Assets\Textures\AlphaBison.meta
-		Unity\Assets\Textures\HealerShroom.meta = Unity\Assets\Textures\HealerShroom.meta
-		Unity\Assets\Textures\SteelContraption.meta = Unity\Assets\Textures\SteelContraption.meta
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ADShroom", "ADShroom", "{A857EDA8-5E7D-4B20-9C52-E32D39DA93F6}"
 	ProjectSection(SolutionItems) = preProject
 		Unity\Assets\Textures\ADShroom\ADShroom.png = Unity\Assets\Textures\ADShroom\ADShroom.png
-		Unity\Assets\Textures\ADShroom\ADShroom.png.meta = Unity\Assets\Textures\ADShroom\ADShroom.png.meta
 		Unity\Assets\Textures\ADShroom\ADShroom_Normal.png = Unity\Assets\Textures\ADShroom\ADShroom_Normal.png
-		Unity\Assets\Textures\ADShroom\ADShroom_Normal.png.meta = Unity\Assets\Textures\ADShroom\ADShroom_Normal.png.meta
 		Unity\Assets\Textures\ADShroom\ADShroomEmmision.png = Unity\Assets\Textures\ADShroom\ADShroomEmmision.png
-		Unity\Assets\Textures\ADShroom\ADShroomEmmision.png.meta = Unity\Assets\Textures\ADShroom\ADShroomEmmision.png.meta
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AlphaBison", "AlphaBison", "{D617AE4B-6A00-4851-B3EA-05AAD1FBCDDF}"
 	ProjectSection(SolutionItems) = preProject
 		Unity\Assets\Textures\AlphaBison\AlphaBison.png = Unity\Assets\Textures\AlphaBison\AlphaBison.png
-		Unity\Assets\Textures\AlphaBison\AlphaBison.png.meta = Unity\Assets\Textures\AlphaBison\AlphaBison.png.meta
 		Unity\Assets\Textures\AlphaBison\AlphaBison_Hair.png = Unity\Assets\Textures\AlphaBison\AlphaBison_Hair.png
-		Unity\Assets\Textures\AlphaBison\AlphaBison_Hair.png.meta = Unity\Assets\Textures\AlphaBison\AlphaBison_Hair.png.meta
 		Unity\Assets\Textures\AlphaBison\AlphaBison_Normal.png = Unity\Assets\Textures\AlphaBison\AlphaBison_Normal.png
-		Unity\Assets\Textures\AlphaBison\AlphaBison_Normal.png.meta = Unity\Assets\Textures\AlphaBison\AlphaBison_Normal.png.meta
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HealerShroom", "HealerShroom", "{6574E9B5-B2BF-457A-B252-8092C79E54AF}"
 	ProjectSection(SolutionItems) = preProject
 		Unity\Assets\Textures\HealerShroom\HealerShroom.png = Unity\Assets\Textures\HealerShroom\HealerShroom.png
-		Unity\Assets\Textures\HealerShroom\HealerShroom.png.meta = Unity\Assets\Textures\HealerShroom\HealerShroom.png.meta
 		Unity\Assets\Textures\HealerShroom\HealerShroomEmmision.png = Unity\Assets\Textures\HealerShroom\HealerShroomEmmision.png
-		Unity\Assets\Textures\HealerShroom\HealerShroomEmmision.png.meta = Unity\Assets\Textures\HealerShroom\HealerShroomEmmision.png.meta
 		Unity\Assets\Textures\HealerShroom\HealerShroomNormal.png = Unity\Assets\Textures\HealerShroom\HealerShroomNormal.png
-		Unity\Assets\Textures\HealerShroom\HealerShroomNormal.png.meta = Unity\Assets\Textures\HealerShroom\HealerShroomNormal.png.meta
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SteelContraption", "SteelContraption", "{4FEB17A0-60B5-43D5-A8AD-C07988B376E5}"
 	ProjectSection(SolutionItems) = preProject
 		Unity\Assets\Textures\SteelContraption\SteelContraption.png = Unity\Assets\Textures\SteelContraption\SteelContraption.png
-		Unity\Assets\Textures\SteelContraption\SteelContraption.png.meta = Unity\Assets\Textures\SteelContraption\SteelContraption.png.meta
 		Unity\Assets\Textures\SteelContraption\SteelContraption_Normal.png = Unity\Assets\Textures\SteelContraption\SteelContraption_Normal.png
-		Unity\Assets\Textures\SteelContraption\SteelContraption_Normal.png.meta = Unity\Assets\Textures\SteelContraption\SteelContraption_Normal.png.meta
 	EndProjectSection
 EndProject
 Global
