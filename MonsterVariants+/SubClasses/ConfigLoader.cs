@@ -73,8 +73,8 @@ namespace MonsterVariantsPlus.SubClasses
         public static float BruiserImpSpawnChance => BruiserImpSpawnChanceConfig.Value;
         private static ConfigEntry<float> AlphaBisonSpawnChanceConfig { get; set; }
         public static float AlphaBisonSpawnChance => AlphaBisonSpawnChanceConfig.Value;
-        private static ConfigEntry<float> KamikazeReaverSpawnChanceConfig { get; set; }
-        public static float KamikazeReaverSpawnChance => KamikazeReaverSpawnChanceConfig.Value;
+        //private static ConfigEntry<float> KamikazeReaverSpawnChanceConfig { get; set; }
+        //public static float KamikazeReaverSpawnChance => KamikazeReaverSpawnChanceConfig.Value;
         private static ConfigEntry<float> SunPriestSpawnChanceConfig { get; set; }
         public static float SunPriestSpawnChance => SunPriestSpawnChanceConfig.Value;
         private static ConfigEntry<float> HoarderSpawnChanceConfig { get; set; }
@@ -125,7 +125,7 @@ namespace MonsterVariantsPlus.SubClasses
             ChildSpawnChanceConfig = config.Bind<float>("Custom Variants", "Child Spawn Chance", 6, "Chance for a Child Variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
             BruiserImpSpawnChanceConfig = config.Bind<float>("Custom Variants", "Bruiser Imp Spawn Chance", 10, "Chance for a Bruiser Imp Variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
             AlphaBisonSpawnChanceConfig = config.Bind<float>("Custom Variants", "Alpha Bison Spawn Chance", 5, "Chance for an Alpha Bison Variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
-            KamikazeReaverSpawnChanceConfig = config.Bind<float>("CustomVariants", "Kamikaze Reaver Spawn chance", 3, "Chance for a Kamikaze Reaver Variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
+            //KamikazeReaverSpawnChanceConfig = config.Bind<float>("Custom Variants", "Kamikaze Reaver Spawn chance", 3, "Chance for a Kamikaze Reaver Variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
             SunPriestSpawnChanceConfig = config.Bind<float>("Custom Variants", "Sun Priest Spawn Chance", 3, "Chance for a Sun Priest Variant to Spawn, (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
             HoarderSpawnChanceConfig = config.Bind<float>("Custom Variants", "Hoarder Scavenger Spawn Chance", 8, "Chance for a Hoarder Scavenger Variant to Spawn (percentage, 0-100)\nSetting this value to 0 will disable this variant from spawning.");
             StarvingDunestriderSpawnChanceConfig = config.Bind<float>("Custom Variants", "Starving Dunestrider Spawn Chance", 4, "Chance for a Starving Dunestrider to Spawn (percentage, 0-100)\nSetting this value to 0 will disable this variant from spawning.");

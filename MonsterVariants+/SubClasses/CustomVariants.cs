@@ -202,22 +202,23 @@ namespace MonsterVariantsPlus.SubClasses
                 skillReplacement = null,
             });
             //Kamikaze Reaver
-            MV.AddVariant(new MonsterVariantInfo
+            /*MV.AddVariant(new MonsterVariantInfo
             {
                 bodyName = "Nullifier",
                 overrideName = "Kamikaze Reaver",
+                spawnRate = ConfigLoader.KamikazeReaverSpawnChance,
                 variantTier = MonsterVariantTier.Rare,
                 sizeModifier = MV.GroundSizeModifier(1.2f),
                 healthMultiplier = 0.5f,
-                moveSpeedMultiplier = 3,
+                moveSpeedMultiplier = 10.0f,
                 attackSpeedMultiplier = 1.2f,
                 damageMultiplier = 1,
                 armorBonus = 0,
-                customInventory = MV.SimpleInventory("HealthDecay", 1),
+                customInventory = MV.SimpleInventory("HealthDecay", 15),
                 meshReplacement = null,
                 materialReplacement = null,
-                skillReplacement = null,
-            });
+                skillReplacement = MV.PrimaryReplacement(CustomSkills.kamikazeBlinkDef),
+            });*/
             //Sun Priest
             MV.AddVariant(new MonsterVariantInfo
             {

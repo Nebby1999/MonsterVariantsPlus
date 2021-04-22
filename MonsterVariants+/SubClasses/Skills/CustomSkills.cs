@@ -12,12 +12,14 @@ namespace MonsterVariantsPlus.SubClasses.Skills
         public static SkillDef multiSlamDef;
         public static SkillDef hoarderSitDef;
         public static SkillDef xlRecoverDef;
+        public static SkillDef kamikazeBlinkDef;
         internal static void RegisterSkills()
         {
             Loadouts.AddSkill(typeof(EmptySkill));
             Loadouts.AddSkill(typeof(MultiSlam));
             Loadouts.AddSkill(typeof(HoarderSit));
             Loadouts.AddSkill(typeof(XLRecover));
+            Loadouts.AddSkill(typeof(KamikazeBlink));
 
             //Skill that does absolutely nothing, useful for getting variants without a certain skill (No teleporting imps/parents)
             emptySkillDef = NewSkillDef(new SerializableEntityStateType(typeof(EmptySkill)), "Body");
@@ -26,22 +28,25 @@ namespace MonsterVariantsPlus.SubClasses.Skills
             //Used for the hoarder scavanger.
             hoarderSitDef = NewSkillDef(new SerializableEntityStateType(typeof(HoarderSit)), "Body");
             xlRecoverDef = NewSkillDef(new SerializableEntityStateType(typeof(XLRecover)), "Body");
+            kamikazeBlinkDef = NewSkillDef(new SerializableEntityStateType(typeof(KamikazeBlink)), "body");
 
             emptySkillDef.baseMaxStock = 0;
             emptySkillDef.requiredStock = 1000;
-
-            multiSlamDef.skillName = "PEEPEE POOPOO";
 
             hoarderSitDef.baseMaxStock = 1;
             hoarderSitDef.baseRechargeInterval = 10f;
             hoarderSitDef.requiredStock = 1;
             hoarderSitDef.stockToConsume = 1;
-            hoarderSitDef.skillName = "HAHA YES";
 
             xlRecoverDef.baseMaxStock = 1;
             xlRecoverDef.baseRechargeInterval = 90f;
             xlRecoverDef.requiredStock = 1;
             xlRecoverDef.stockToConsume = 1;
+
+            kamikazeBlinkDef.baseMaxStock = 2;
+            kamikazeBlinkDef.baseRechargeInterval = 8f;
+            kamikazeBlinkDef.requiredStock = 1;
+            kamikazeBlinkDef.stockToConsume = 1;
         }
         private static SkillDef NewSkillDef(SerializableEntityStateType state, string stateMachine)
         {
