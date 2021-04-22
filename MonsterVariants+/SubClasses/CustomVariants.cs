@@ -120,7 +120,7 @@ namespace MonsterVariantsPlus.SubClasses
                 damageMultiplier = 0.5f,
                 armorMultiplier = 1f,
                 armorBonus = 0,
-                customInventory = null,
+                customInventory = MV.SimpleInventory("Mushroom", 2),
                 meshReplacement = null,
                 materialReplacement = MV.SimpleMaterialReplacement(MainPlugin.MainAssets.LoadAsset<Material>("HealerShroom")),
                 skillReplacement = null,
@@ -314,7 +314,8 @@ namespace MonsterVariantsPlus.SubClasses
         };
         readonly static ItemInfo[] adolescentInventory = new ItemInfo[]
         {
-            MV.SimpleItem("Medkit", 5),
+            MV.SimpleItem("ParentEgg", 1),
+            MV.SimpleItem("Medkit", 1),
             MV.SimpleItem("UtilitySkillMagazine", 1),
             MV.SimpleItem("AlienHead", 3),
         };
