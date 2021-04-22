@@ -201,6 +201,23 @@ namespace MonsterVariantsPlus.SubClasses
                 materialReplacement = MV.SimpleMaterialReplacement(MainPlugin.MainAssets.LoadAsset<Material>("AlphaBison")),
                 skillReplacement = null,
             });
+            //Kamikaze Reaver
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "Nullifier",
+                overrideName = "Kamikaze Reaver",
+                variantTier = MonsterVariantTier.Rare,
+                sizeModifier = MV.GroundSizeModifier(1.2f),
+                healthMultiplier = 0.5f,
+                moveSpeedMultiplier = 3,
+                attackSpeedMultiplier = 1.2f,
+                damageMultiplier = 1,
+                armorBonus = 0,
+                customInventory = MV.SimpleInventory("HealthDecay", 1),
+                meshReplacement = null,
+                materialReplacement = null,
+                skillReplacement = null,
+            });
             //Sun Priest
             MV.AddVariant(new MonsterVariantInfo
             {
