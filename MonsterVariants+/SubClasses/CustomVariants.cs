@@ -324,6 +324,7 @@ namespace MonsterVariantsPlus.SubClasses
             MV.SimpleItem("RepeatHeal", 2),
             MV.SimpleItem("BarrierOnOverHeal", 2)
         };
+        //Method to replace a monster's primary and utility skills. used for Child.
         internal static MonsterSkillReplacement[] primaryUtilityReplacement(SkillDef primarySkill, SkillDef utilitySkill)
         {
             MonsterSkillReplacement primaryReplacement = ScriptableObject.CreateInstance<MonsterSkillReplacement>();
