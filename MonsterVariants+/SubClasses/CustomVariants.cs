@@ -245,7 +245,7 @@ namespace MonsterVariantsPlus.SubClasses
             {
                 bodyName = "ClayBoss",
                 overrideName = "Starving Dunestrider",
-                spawnRate = ConfigLoader.DevourerDunestriderSpawnChance,
+                spawnRate = ConfigLoader.StarvingDunestriderSpawnChance,
                 variantTier = MonsterVariantTier.Uncommon,
                 aiModifier = MonsterVariantAIModifier.Unstable,
                 sizeModifier = null,
