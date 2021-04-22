@@ -15,6 +15,7 @@ namespace MonsterVariantsPlus.SubClasses
             MV.AddVariant(new MonsterVariantInfo
             {
                 bodyName = "Wisp",
+                overrideName = "Mosquito Wisp",
                 spawnRate = ConfigLoader.MosquitoWispSpawnChance,
                 variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.FlyingSizeModifier(0.5f),
@@ -33,6 +34,7 @@ namespace MonsterVariantsPlus.SubClasses
             MV.AddVariant(new MonsterVariantInfo
             {
                 bodyName = "Bell",
+                overrideName = "Steel Contraption",
                 spawnRate = ConfigLoader.SteelContraptionSpawnChance,
                 variantTier = MonsterVariantTier.Rare,
                 sizeModifier = MV.FlyingSizeModifier(1.0f),
@@ -51,6 +53,7 @@ namespace MonsterVariantsPlus.SubClasses
             MV.AddVariant(new MonsterVariantInfo
             {
                 bodyName = "HermitCrab",
+                overrideName = "Mortar Crab",
                 spawnRate = ConfigLoader.MortarCrabSpawnChance,
                 variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.GroundSizeModifier(1.5f),
@@ -66,9 +69,10 @@ namespace MonsterVariantsPlus.SubClasses
                 skillReplacement = null
             });
             //Vampiric Templar
-            MonsterVariants.MainPlugin.AddVariant(new MonsterVariantInfo
+            MV.AddVariant(new MonsterVariantInfo
             {
                 bodyName = "ClayBruiser",
+                overrideName = "Vampiric Templar",
                 spawnRate = ConfigLoader.VampiricTemplarSpawnChance,
                 variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.GroundSizeModifier(1.25f),
@@ -87,6 +91,7 @@ namespace MonsterVariantsPlus.SubClasses
             MV.AddVariant(new MonsterVariantInfo
             {
                 bodyName = "MiniMushroom",
+                overrideName = "AD-Shroom",
                 spawnRate = ConfigLoader.ADShroomSpawnChance,
                 variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.GroundSizeModifier(0.75f),
@@ -95,25 +100,46 @@ namespace MonsterVariantsPlus.SubClasses
                 attackSpeedMultiplier = 5.0f,
                 damageMultiplier = 0.062f,
                 armorMultiplier = 1f,
-                armorBonus = 0f,
+                armorBonus = 0,
                 customInventory = MV.SimpleInventory("AlienHead", 5),
                 meshReplacement = null,
                 materialReplacement = MV.SimpleMaterialReplacement(MainPlugin.MainAssets.LoadAsset<Material>("ADShroom")),
                 skillReplacement = null
             });
+            //Healer-Shroom
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "MiniMushroom",
+                overrideName = "Healer-Shroom",
+                spawnRate = ConfigLoader.HealerShroomSpawnChance,
+                variantTier = MonsterVariantTier.Uncommon,
+                sizeModifier = MV.GroundSizeModifier(0.5f),
+                healthMultiplier = 1.0f,
+                moveSpeedMultiplier = 2.0f,
+                attackSpeedMultiplier = 0.5f,
+                damageMultiplier = 0.5f,
+                armorMultiplier = 1f,
+                armorBonus = 0,
+                customInventory = null,
+                meshReplacement = null,
+                materialReplacement = MV.SimpleMaterialReplacement(MainPlugin.MainAssets.LoadAsset<Material>("HealerShroom")),
+                skillReplacement = null,
+            });
             //Adolescent
             MV.AddVariant(new MonsterVariantInfo
             {
                 bodyName = "Parent",
+                overrideName = "Adolescent",
                 spawnRate = ConfigLoader.AdolescentSpawnChance,
                 variantTier = MonsterVariantTier.Uncommon,
+                aiModifier = MonsterVariantAIModifier.Unstable,
                 sizeModifier = MV.GroundSizeModifier(0.75f),
-                healthMultiplier = 0.1f,
+                healthMultiplier = 0.75f,
                 moveSpeedMultiplier = 1.0f,
                 attackSpeedMultiplier = 1.2f,
                 damageMultiplier = 1.0f,
                 armorMultiplier = 1f,
-                armorBonus = 200,
+                armorBonus = 50,
                 customInventory = adolescentInventory,
                 meshReplacement = null,
                 materialReplacement = null,
@@ -123,6 +149,7 @@ namespace MonsterVariantsPlus.SubClasses
             MV.AddVariant(new MonsterVariantInfo
             {
                 bodyName = "Parent",
+                overrideName = "Child",
                 spawnRate = ConfigLoader.ChildSpawnChance,
                 variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.GroundSizeModifier(0.5f),
@@ -141,6 +168,7 @@ namespace MonsterVariantsPlus.SubClasses
             MV.AddVariant(new MonsterVariantInfo
             {
                 bodyName = "Imp",
+                overrideName = "Bruiser Imp",
                 spawnRate = ConfigLoader.BruiserImpSpawnChance,
                 variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.GroundSizeModifier(1.25f),
@@ -159,6 +187,7 @@ namespace MonsterVariantsPlus.SubClasses
             MV.AddVariant(new MonsterVariantInfo
             {
                 bodyName = "Bison",
+                overrideName = "Alpha Bison",
                 spawnRate = ConfigLoader.AlphaBisonSpawnChance,
                 variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.GroundSizeModifier(1.25f),
@@ -173,10 +202,31 @@ namespace MonsterVariantsPlus.SubClasses
                 materialReplacement = MV.SimpleMaterialReplacement(MainPlugin.MainAssets.LoadAsset<Material>("AlphaBison")),
                 skillReplacement = null,
             });
+            //Sun Priest
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "GrandParent",
+                overrideName = "Sun Priest",
+                spawnRate = ConfigLoader.SunPriestSpawnChance,
+                variantTier = MonsterVariantTier.Uncommon,
+                aiModifier = MonsterVariantAIModifier.Unstable,
+                sizeModifier = null,
+                healthMultiplier = 1,
+                moveSpeedMultiplier = 1,
+                attackSpeedMultiplier = 1,
+                damageMultiplier = 1,
+                armorMultiplier = 1,
+                armorBonus = 1,
+                customInventory = null,
+                meshReplacement = null,
+                materialReplacement = null,
+                skillReplacement = null,
+            });
             //Hoarder
             MV.AddVariant(new MonsterVariantInfo
             {
                 bodyName = "Scav",
+                overrideName = "Hoarder",
                 spawnRate = ConfigLoader.HoarderSpawnChance,
                 variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.GroundSizeModifier(0.75f),
@@ -190,19 +240,41 @@ namespace MonsterVariantsPlus.SubClasses
                 materialReplacement = null,
                 skillReplacement = MV.UtilityReplacement(CustomSkills.hoarderSitDef),
             });
+            //Starving Dunestrider
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "ClayBoss",
+                overrideName = "Starving Dunestrider",
+                spawnRate = ConfigLoader.DevourerDunestriderSpawnChance,
+                variantTier = MonsterVariantTier.Uncommon,
+                aiModifier = MonsterVariantAIModifier.Unstable,
+                sizeModifier = null,
+                healthMultiplier = 1,
+                moveSpeedMultiplier = 1,
+                attackSpeedMultiplier = 1,
+                damageMultiplier = 1,
+                armorMultiplier = 1,
+                armorBonus = 1,
+                customInventory = null,
+                meshReplacement = null,
+                materialReplacement = null,
+                skillReplacement = null
+            });
             //Devourer Dunestrider
             MV.AddVariant(new MonsterVariantInfo
             {
                 bodyName = "ClayBoss",
+                overrideName = "Devourer Dunestrider",
                 spawnRate = ConfigLoader.DevourerDunestriderSpawnChance,
-                variantTier = MonsterVariantTier.Uncommon,
+                variantTier = MonsterVariantTier.Rare,
                 sizeModifier = MV.GroundSizeModifier(1.25f),
                 healthMultiplier = 1.0f,
-                moveSpeedMultiplier = 1.2f,
-                attackSpeedMultiplier = 1.1f,
+                moveSpeedMultiplier = 1.25f,
+                attackSpeedMultiplier = 1.25f,
                 damageMultiplier = 1.0f,
+                armorMultiplier = 1.0f,
                 armorBonus = 1.0f,
-                customInventory = MV.SimpleInventory("RepeatHeal", 2),
+                customInventory = pitInventory,
                 meshReplacement = null,
                 materialReplacement = null,
                 skillReplacement = MV.SpecialReplacement(CustomSkills.xlRecoverDef),
@@ -213,6 +285,7 @@ namespace MonsterVariantsPlus.SubClasses
                 MV.AddModdedVariant(new MonsterVariantInfo
                 {
                     bodyName = "MoffeinClayMan",
+                    overrideName = "Clay Soldier",
                     spawnRate = ConfigLoader.ClaySoldierSpawnChance,
                     variantTier = MonsterVariantTier.Common,
                     sizeModifier = MV.GroundSizeModifier(1.125f),
@@ -241,14 +314,11 @@ namespace MonsterVariantsPlus.SubClasses
         };
         readonly static ItemInfo[] adolescentInventory = new ItemInfo[]
         {
-            MV.SimpleItem("Medkit", 1),
+            MV.SimpleItem("Medkit", 5),
             MV.SimpleItem("UtilitySkillMagazine", 1),
             MV.SimpleItem("AlienHead", 3),
-            MV.SimpleItem("NovaOnHeal", 1),
-            MV.SimpleItem("PersonalShield", 10),
-
         };
-        readonly static ItemInfo[] devourerInventory = new ItemInfo[]
+        readonly static ItemInfo[] pitInventory = new ItemInfo[]
         {
             MV.SimpleItem("RepeatHeal", 2),
             MV.SimpleItem("BarrierOnOverHeal", 2)
