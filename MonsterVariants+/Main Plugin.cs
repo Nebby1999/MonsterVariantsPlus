@@ -1,8 +1,4 @@
-﻿/*
- * Main plugin class, tells Bepinex that this is a Mod.
- * Class initializes the Config files, and it's main purpose is checking if the killed monster was a Variant.
-*/
-using BepInEx;
+﻿using BepInEx;
 using RoR2;
 using MonsterVariantsPlus.SubClasses;
 using UnityEngine;
@@ -15,27 +11,30 @@ namespace MonsterVariantsPlus
     [BepInDependency("com.bepis.r2api")]
     [BepInDependency("com.rob.MonsterVariants")]
     [BepInDependency("com.Moffein.ClayMen", BepInDependency.DependencyFlags.SoftDependency)]
-    [BepInPlugin("com.Nebby1999.MonsterVariantsPlus", "Monster Variants +", "1.2.7")]
+    [BepInPlugin("com.Nebby1999.MonsterVariantsPlus", "Monster Variants +", "1.2.8")]
     public class MainPlugin : BaseUnityPlugin
     {
         internal static bool hasClayMan;
-        public static AssetBundle MainAssets; //Needed to load custom assets
+        public static AssetBundle MainAssets; //Contains custom assets
         public static Dictionary<string, string> ShaderLookup = new Dictionary<string, string>()
         {
-            {"stubbed hopoo games/deferred/standard", "shaders/deferred/hgstandard"}
+            {"stubbed hopoo games/deferred/standard", "shaders/deferred/hgstandard"} //Dictionary for checking the default shader values
         };
         public void Awake()
         {
-            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("MonsterVariantsPlus.monstervariantsplus_assets"))
+            //Asset Loading shenanigans, special thanks to Komrade for helping a tone with this.
             {
-                MainAssets = AssetBundle.LoadFromStream(stream);
-            }
-            var materialAssets = MainPlugin.MainAssets.LoadAllAssets<Material>();
-            foreach (Material material in materialAssets)
-            {
-                if (!material.shader.name.StartsWith("Stubbed")) { continue; }
-                var replacementShader = Resources.Load<Shader>(ShaderLookup[material.shader.name.ToLower()]);
-                if (replacementShader) { material.shader = replacementShader; }
+                using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("MonsterVariantsPlus.monstervariantsplus_assets"))
+                {
+                    MainAssets = AssetBundle.LoadFromStream(stream);
+                }
+                var materialAssets = MainPlugin.MainAssets.LoadAllAssets<Material>();
+                foreach (Material material in materialAssets)
+                {
+                    if (!material.shader.name.StartsWith("Stubbed")) { continue; }
+                    var replacementShader = Resources.Load<Shader>(ShaderLookup[material.shader.name.ToLower()]);
+                    if (replacementShader) { material.shader = replacementShader; }
+                }
             }
             ConfigLoader.SetupConfigLoader(Config); //Initializes the Config
             SubClasses.Skills.CustomSkills.RegisterSkills();
