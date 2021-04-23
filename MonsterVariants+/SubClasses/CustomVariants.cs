@@ -36,7 +36,7 @@ namespace MonsterVariantsPlus.SubClasses
                 bodyName = "Bell",
                 overrideName = "Steel Contraption",
                 spawnRate = ConfigLoader.SteelContraptionSpawnChance,
-                variantTier = MonsterVariantTier.Rare,
+                variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.FlyingSizeModifier(1.0f),
                 healthMultiplier = 1.75f,
                 moveSpeedMultiplier = 0.5f,
@@ -48,6 +48,25 @@ namespace MonsterVariantsPlus.SubClasses
                 meshReplacement = null,
                 materialReplacement = MV.SimpleMaterialReplacement(MainPlugin.MainAssets.LoadAsset<Material>("SteelContraption")),
                 skillReplacement = null
+            });
+            //Aluminum Contraption
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "Bell",
+                overrideName = "Aluminum Contraption",
+                spawnRate = ConfigLoader.AluminumContraptionSpawnChance,
+                variantTier = MonsterVariantTier.Uncommon,
+                sizeModifier = MV.FlyingSizeModifier(0.5f),
+                healthMultiplier = 0.5f,
+                moveSpeedMultiplier = 2.0f,
+                attackSpeedMultiplier = 2.0f,
+                damageMultiplier = 0.5f,
+                armorMultiplier = 1f,
+                armorBonus = 0f,
+                customInventory = null,
+                meshReplacement = null,
+                materialReplacement = MV.SimpleMaterialReplacement(MainPlugin.MainAssets.LoadAsset<Material>("AluminumContraption")),
+                skillReplacement = null,
             });
             //Mortar Crab
             MV.AddVariant(new MonsterVariantInfo
