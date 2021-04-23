@@ -28,7 +28,7 @@ namespace MonsterVariantsPlus.SubClasses.Skills
             //Used for the hoarder scavanger.
             hoarderSitDef = NewSkillDef(new SerializableEntityStateType(typeof(HoarderSit)), "Body");
             xlRecoverDef = NewSkillDef(new SerializableEntityStateType(typeof(XLRecover)), "Body");
-            kamikazeBlinkDef = NewSkillDef(new SerializableEntityStateType(typeof(KamikazeBlink)), "body");
+            kamikazeBlinkDef = NewSkillDef(new SerializableEntityStateType(typeof(KamikazeBlink)), "Body");
 
             emptySkillDef.baseMaxStock = 0;
             emptySkillDef.requiredStock = 1000;
@@ -42,11 +42,6 @@ namespace MonsterVariantsPlus.SubClasses.Skills
             xlRecoverDef.baseRechargeInterval = 90f;
             xlRecoverDef.requiredStock = 1;
             xlRecoverDef.stockToConsume = 1;
-
-            kamikazeBlinkDef.baseMaxStock = 2;
-            kamikazeBlinkDef.baseRechargeInterval = 8f;
-            kamikazeBlinkDef.requiredStock = 1;
-            kamikazeBlinkDef.stockToConsume = 1;
         }
         private static SkillDef NewSkillDef(SerializableEntityStateType state, string stateMachine)
         {
