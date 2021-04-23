@@ -55,8 +55,10 @@ namespace MonsterVariantsPlus.SubClasses
         //Custom Variants
         private static ConfigEntry<float> MosquitoWispSpawnChanceConfig { get; set; }
         public static float MosquitoWispSpawnChance => MosquitoWispSpawnChanceConfig.Value;
-        private static ConfigEntry<float> SteelContraptionSpawnCanceConfig { get; set; }
-        public static float SteelContraptionSpawnChance => SteelContraptionSpawnCanceConfig.Value;
+        private static ConfigEntry<float> SteelContraptionSpawnChanceConfig { get; set; }
+        public static float SteelContraptionSpawnChance => SteelContraptionSpawnChanceConfig.Value;
+        private static ConfigEntry<float> AluminumContraptionSpawnChanceConfig { get; set; }
+        public static float AluminumContraptionSpawnChance => AluminumContraptionSpawnChanceConfig.Value;
         private static ConfigEntry<float> MortarCrabSpawnChanceConfig { get; set; }
         public static float MortarCrabSpawnChance => MortarCrabSpawnChanceConfig.Value;
         private static ConfigEntry<float> VampiricTemplarSpawnChanceConfig { get; set; }
@@ -116,7 +118,8 @@ namespace MonsterVariantsPlus.SubClasses
             RareXPMultConfig = config.Bind<float>("XP Rewards", "Rare Variant XP Multiplier", 2.0f, "Multiplier that's applied to the XP reward for killing a rare Variant.\n(Set this value to 1.0 to disable, values lower than this number decreases the XP recieved.");
 
             MosquitoWispSpawnChanceConfig = config.Bind<float>("Custom Variants", "Mosquito Wisp Spawn Chance", 7f, "Chance for a Mosquito Wisp variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
-            SteelContraptionSpawnCanceConfig = config.Bind<float>("Custom Variants", "Steel Contraption Spawn Chance", 7f, "Chance for a Steel Contraption variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
+            SteelContraptionSpawnChanceConfig = config.Bind<float>("Custom Variants", "Steel Contraption Spawn Chance", 7f, "Chance for a Steel Contraption variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
+            AluminumContraptionSpawnChanceConfig = config.Bind<float>("Custom Variants", "Aluminum Contraption Spawn Chance", 7, "Chance for an Aluminum Contraption Variant to Spawn (percentage, 0-100)\nSetting this value to 0 will disable this variant from spawning.");
             MortarCrabSpawnChanceConfig = config.Bind<float>("Custom Variants", "Mortar Crab Spawn Chance", 5f, "Chance for a Mortar Crab variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
             VampiricTemplarSpawnChanceConfig = config.Bind<float>("Custom Variants", "Vampiric Templar Spawn Chance", 5, "Chance for a Vampiric Templar variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
             ADShroomSpawnChanceConfig = config.Bind<float>("Custom Variants", "ADShroom Spawn Chance", 6, "Chance for an ADShroom (Area of Denial Shroom) variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant form spawning.");
