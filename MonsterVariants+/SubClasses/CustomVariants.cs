@@ -3,14 +3,18 @@ using UnityEngine;
 using MonsterVariants;
 using MonsterVariantsPlus.SubClasses.Skills;
 using RoR2.Skills;
+using System.Collections.Generic;
+using RoR2;
 
 namespace MonsterVariantsPlus.SubClasses
 {
     public class CustomVariants
     {
-        
         internal static void RegisterCustomVariants()
         {
+            //Gathers vanilla materials
+            Material wispFlameMat = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/WispBody").GetComponentInChildren<CharacterModel>().baseRendererInfos[1].defaultMaterial);
+            Material greaterWispBodyMat = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/GreaterWispBody").GetComponentInChildren<CharacterModel>().baseRendererInfos[0].defaultMaterial);
             //Mosquito Wisp
             MV.AddVariant(new MonsterVariantInfo
             {
@@ -238,6 +242,23 @@ namespace MonsterVariantsPlus.SubClasses
                 materialReplacement = null,
                 skillReplacement = MV.PrimaryReplacement(CustomSkills.kamikazeBlinkDef),
             });*/
+            //Wisp Amalgamate
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "GreaterWisp",
+                overrideName = "Wisp Amalgamate",
+                spawnRate = ConfigLoader.WispAmalgamateSpawnChance,
+                variantTier = MonsterVariantTier.Uncommon,
+                sizeModifier = MV.FlyingSizeModifier(0.75f),
+                healthMultiplier = 1,
+                moveSpeedMultiplier = 1,
+                attackSpeedMultiplier = 1,
+                damageMultiplier = 1,
+                armorBonus = 0,
+                customInventory = null,
+                meshReplacement = null,
+                materialReplacement = MV.MultiMaterialReplacement(new Dictionary<int, Material> { { 0, greaterWispBodyMat}, { 1, wispFlameMat} })
+            });
             //Sun Priest
             MV.AddVariant(new MonsterVariantInfo
             {
@@ -335,6 +356,30 @@ namespace MonsterVariantsPlus.SubClasses
                     meshReplacement = null,
                     materialReplacement = null,
                     skillReplacement = null
+                });
+            }
+            if (MainPlugin.hasAncientWisp)
+            {
+                //Enraged Wisp
+                MV.AddModdedVariant(new MonsterVariantInfo
+                {
+                    bodyName = "MoffeinAncientWisp",
+                    overrideName = "Enraged Wisp",
+                    spawnRate = ConfigLoader.EnragedWispSpawnChance,
+                    variantTier = MonsterVariantTier.Common,
+                    aiModifier = MonsterVariantAIModifier.Unstable,
+                    sizeModifier = null,
+                    healthMultiplier = 1,
+                    moveSpeedMultiplier = 1,
+                    attackSpeedMultiplier = 1,
+                    damageMultiplier = 1,
+                    armorMultiplier = 1,
+                    armorBonus = 1,
+                    customInventory = null,
+                    meshReplacement = null,
+                    materialReplacement = null,
+                    skillReplacement = null,
+                    
                 });
             }
         }
