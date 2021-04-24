@@ -13,6 +13,8 @@ namespace MonsterVariantsPlus.SubClasses.Skills
         public static SkillDef hoarderSitDef;
         public static SkillDef xlRecoverDef;
         public static SkillDef kamikazeBlinkDef;
+        public static SkillDef WispAmalgamateDef;
+
         internal static void RegisterSkills()
         {
             Loadouts.AddSkill(typeof(EmptySkill));
@@ -20,6 +22,8 @@ namespace MonsterVariantsPlus.SubClasses.Skills
             Loadouts.AddSkill(typeof(HoarderSit));
             Loadouts.AddSkill(typeof(XLRecover));
             Loadouts.AddSkill(typeof(KamikazeBlink));
+
+            Loadouts.AddSkill(typeof(WispAmalgamateCharge));
 
             //Skill that does absolutely nothing, useful for getting variants without a certain skill (No teleporting imps/parents)
             emptySkillDef = NewSkillDef(new SerializableEntityStateType(typeof(EmptySkill)), "Body");
@@ -29,6 +33,8 @@ namespace MonsterVariantsPlus.SubClasses.Skills
             hoarderSitDef = NewSkillDef(new SerializableEntityStateType(typeof(HoarderSit)), "Body");
             xlRecoverDef = NewSkillDef(new SerializableEntityStateType(typeof(XLRecover)), "Body");
             kamikazeBlinkDef = NewSkillDef(new SerializableEntityStateType(typeof(KamikazeBlink)), "Body");
+
+            WispAmalgamateDef = NewSkillDef(new SerializableEntityStateType(typeof(WispAmalgamateCharge)), "Body");
 
             emptySkillDef.baseMaxStock = 0;
             emptySkillDef.requiredStock = 1000;

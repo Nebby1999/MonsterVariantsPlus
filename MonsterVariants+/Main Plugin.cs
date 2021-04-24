@@ -71,6 +71,31 @@ namespace MonsterVariantsPlus
                         }
                     }
                 }
+                //Remove this once rob implements deathState replacements.
+                if (DamageReport.victimBody.baseNameToken == "Wisp Amalgamate")
+                {
+                    for (int i = 0; i < 3; i++)
+                    {
+                        Vector3 position = DamageReport.victimBody.corePosition + (2f * UnityEngine.Random.insideUnitSphere);
+
+                        DirectorSpawnRequest directorSpawnRequest = new DirectorSpawnRequest((SpawnCard)Resources.Load(string.Format("SpawnCards/CharacterSpawnCards/cscLesserWisp")), new DirectorPlacementRule
+                        {
+                            placementMode = DirectorPlacementRule.PlacementMode.Direct,
+                            minDistance = 0f,
+                            maxDistance = 0f,
+                            position = position
+                        }, RoR2Application.rng);
+
+                        directorSpawnRequest.summonerBodyObject = DamageReport.victimBody.gameObject;
+
+                        GameObject jelly = DirectorCore.instance.TrySpawnObject(directorSpawnRequest);
+                        if (jelly)
+                        {
+                            CharacterMaster master = jelly.GetComponent<CharacterMaster>();
+                            jelly.GetComponent<Inventory>().SetEquipmentIndex(DamageReport.victimBody.inventory.currentEquipmentIndex);
+                        }
+                    }
+                }
                 orig(self, DamageReport);
             };
         }

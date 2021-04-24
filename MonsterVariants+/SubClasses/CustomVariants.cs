@@ -14,7 +14,7 @@ namespace MonsterVariantsPlus.SubClasses
         {
             //Gathers vanilla materials
             Material wispFlameMat = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/WispBody").GetComponentInChildren<CharacterModel>().baseRendererInfos[1].defaultMaterial);
-            Material greaterWispBodyMat = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/GreaterWispBody").GetComponentInChildren<CharacterModel>().baseRendererInfos[0].defaultMaterial);
+            Material wispBodyMat = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/WispBody").GetComponentInChildren<CharacterModel>().baseRendererInfos[0].defaultMaterial);
             //Mosquito Wisp
             MV.AddVariant(new MonsterVariantInfo
             {
@@ -67,7 +67,7 @@ namespace MonsterVariantsPlus.SubClasses
                 damageMultiplier = 0.5f,
                 armorMultiplier = 1f,
                 armorBonus = 0f,
-                customInventory = null,
+                customInventory = MV.SimpleInventory("AlienHead", 1),
                 meshReplacement = null,
                 materialReplacement = MV.SimpleMaterialReplacement(MainPlugin.MainAssets.LoadAsset<Material>("AluminumContraption")),
                 skillReplacement = null,
@@ -257,7 +257,8 @@ namespace MonsterVariantsPlus.SubClasses
                 armorBonus = 0,
                 customInventory = null,
                 meshReplacement = null,
-                materialReplacement = MV.MultiMaterialReplacement(new Dictionary<int, Material> { { 0, greaterWispBodyMat}, { 1, wispFlameMat} })
+                materialReplacement = MV.MultiMaterialReplacement(new Dictionary<int, Material> { { 0, wispBodyMat}, { 1, wispFlameMat}}),
+                skillReplacement = MV.PrimaryReplacement(CustomSkills.WispAmalgamateDef)
             });
             //Sun Priest
             MV.AddVariant(new MonsterVariantInfo
