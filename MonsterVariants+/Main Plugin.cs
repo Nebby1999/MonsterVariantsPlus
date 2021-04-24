@@ -15,6 +15,7 @@ namespace MonsterVariantsPlus
     public class MainPlugin : BaseUnityPlugin
     {
         internal static bool hasClayMan;
+        internal static bool hasAncientWisp;
         public static AssetBundle MainAssets; //Contains custom assets
         public static Dictionary<string, string> ShaderLookup = new Dictionary<string, string>()
         {
@@ -42,6 +43,11 @@ namespace MonsterVariantsPlus
             {
                 hasClayMan = true;
                 Logger.LogMessage("Moffein's Clayman has been detected, enabling Clayman Variant(s).");
+            }
+            if(BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.Moffein.AncientWisp"))
+            {
+                hasAncientWisp = true;
+                Logger.LogMessage("Moffein's Ancient Wisp has been detected, enabling Ancient Wisp Variant(s).");
             }
             On.RoR2.DeathRewards.OnKilledServer += (orig, self, DamageReport) =>
             {
