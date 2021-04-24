@@ -375,7 +375,7 @@ namespace MonsterVariantsPlus.SubClasses
                     attackSpeedMultiplier = 1,
                     damageMultiplier = 1,
                     armorMultiplier = 1,
-                    armorBonus = 1,
+                    armorBonus = -50,
                     customInventory = null,
                     meshReplacement = null,
                     materialReplacement = null,
