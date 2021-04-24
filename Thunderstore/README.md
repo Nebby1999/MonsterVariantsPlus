@@ -70,6 +70,14 @@ Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names t
 	- 75% Attack Speed
 	- 150% Damage
 	
+	Aluminum Contraption (Brass Contraption)(7% Chance):
+	- 50% Size
+	- 50% Health
+	- 200% Movement Speed
+	- 200% Attack Speed
+	- 50% Damage
+	- Has 1 Alien Head
+	
 	Mortar Crab (Hermit Crab)(5% Chance):
 	- 150% Size
 	- 150% Health
@@ -132,6 +140,11 @@ Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names t
 	- 70% Damage
 	- Has 2 Brilliant Behemoths
 
+	Wisp Amalgamate (Greater Wisp)(10% Chance)
+	- 75% Size
+	- Attacks with a hitscan attack, much like the regular wisp
+	- Spawns Wisps upon Death
+
 	Sun Priest (GrandParent)(3% Chance):
 	- Can use Solar Flare at any point in time.
 	- -50 Armor
@@ -154,7 +167,7 @@ Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names t
 	- 110% Attack Speed
 	- Has 2 Rejuvination Racks
 	- Has 2 Aegis
-	- Its Recovery Skill has Twice the Cooldown, Lasts Twice as Long, the Tethers are Twice as Long, and the Dunestrider no longer gains Armor.
+	- Life Draining Tendrils has Twice the Cooldown, Lasts Twice as Long, the Tethers are Twice as Long, and the Dunestrider no longer gains Armor.
 
 	Clay Soldier (ClayMen)(Requires Moffein's ClayMen)(15% Spawn Chance)
 	- 112.5% Size
@@ -163,6 +176,10 @@ Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names t
 	- 150% Attack Speed
 	- 50% Damage
 	- Has 1 Alien Head
+
+	Enraged Wisp (Ancient Wisp)(Requires Moffein's Ancient Wisp') (2% Chance)
+	-Can use it's enrage ability at any point in time
+	- -50 Armor
 
 
 ## Configuring the Mod.
@@ -178,16 +195,24 @@ To install the addon, simply drag the MonsterVariantsPlus.dll onto your plugins 
 ## Future Plans
 - Have Boss variants drop their Boss item based off Chance.
 - Polish up the code because rn it's becoming spaghetti code
+- Create actually pleasing to the eyes textures for the variants instead of the awful look of some of them *cough cough* Alpha Bison *cough cough*
+- Wait for Rob to implement DeathState replacers to replace the Wisp Amalgamate's death behavior instead of using a hook, which would increase performance overall.
+- Make some wizardry to improve the Wisp Amalgamate's Death explosion & it's light emmiting properties so they arent green.
 
 ## Contacting
 In case you need to contact me regarding a Bug, please create an issue in the Github's Issue Tracker found [Here](https://github.com/Nebby1999/MonsterVariantsPlus/issues)
 I also hang out in the Official [Risk of Rain 2 Modding](https://discord.gg/5MbXZvd) Discord server under the name of "Nebby" in case you want to contact me for other purposes, such as suggestions or feedback. I Always appreciate any kind of feedback.
 
 ## Special Thanks
-Rob, for making his MonsterVariants mod
+Rob, for making his MonsterVariants mod and helping me a lot with questions i've had
 KomradeSpectre, for helping me a ton with making the variants have custom skins.
 
 ## Changelog
+'1.2.9' Wispception update
+- Added the Wisp Amalgamate
+- Added the Aluminum Contraption
+- Added the Enraged Wisp
+
 '1.2.8'
 - Nerfed the Adolescent, no longer has nkhunna's opinion
 	-- 10% Health -> 75% Health

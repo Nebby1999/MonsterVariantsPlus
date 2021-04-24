@@ -55,8 +55,10 @@ namespace MonsterVariantsPlus.SubClasses
         //Custom Variants
         private static ConfigEntry<float> MosquitoWispSpawnChanceConfig { get; set; }
         public static float MosquitoWispSpawnChance => MosquitoWispSpawnChanceConfig.Value;
-        private static ConfigEntry<float> SteelContraptionSpawnCanceConfig { get; set; }
-        public static float SteelContraptionSpawnChance => SteelContraptionSpawnCanceConfig.Value;
+        private static ConfigEntry<float> SteelContraptionSpawnChanceConfig { get; set; }
+        public static float SteelContraptionSpawnChance => SteelContraptionSpawnChanceConfig.Value;
+        private static ConfigEntry<float> AluminumContraptionSpawnChanceConfig { get; set; }
+        public static float AluminumContraptionSpawnChance => AluminumContraptionSpawnChanceConfig.Value;
         private static ConfigEntry<float> MortarCrabSpawnChanceConfig { get; set; }
         public static float MortarCrabSpawnChance => MortarCrabSpawnChanceConfig.Value;
         private static ConfigEntry<float> VampiricTemplarSpawnChanceConfig { get; set; }
@@ -73,6 +75,10 @@ namespace MonsterVariantsPlus.SubClasses
         public static float BruiserImpSpawnChance => BruiserImpSpawnChanceConfig.Value;
         private static ConfigEntry<float> AlphaBisonSpawnChanceConfig { get; set; }
         public static float AlphaBisonSpawnChance => AlphaBisonSpawnChanceConfig.Value;
+        /*private static ConfigEntry<float> KamikazeReaverSpawnChanceConfig { get; set; }
+        public static float KamikazeReaverSpawnChance => KamikazeReaverSpawnChanceConfig.Value;*/
+        private static ConfigEntry<float> WispAmalgamateSpawnChanceConfig { get; set; }
+        public static float WispAmalgamateSpawnChance => WispAmalgamateSpawnChanceConfig.Value;
         private static ConfigEntry<float> SunPriestSpawnChanceConfig { get; set; }
         public static float SunPriestSpawnChance => SunPriestSpawnChanceConfig.Value;
         private static ConfigEntry<float> HoarderSpawnChanceConfig { get; set; }
@@ -83,6 +89,8 @@ namespace MonsterVariantsPlus.SubClasses
         public static float DevourerDunestriderSpawnChance => DevourerDunestriderspawnChanceConfig.Value;
         private static ConfigEntry<float> ClaySoldierSpawnChanceConfig { get; set; }
         public static float ClaySoldierSpawnChance => ClaySoldierSpawnChanceConfig.Value;
+        private static ConfigEntry<float> EnragedWispSpawnChanceConfig { get; set; }
+        public static float EnragedWispSpawnChance => EnragedWispSpawnChanceConfig.Value;
 
         public static void SetupConfigLoader(ConfigFile config) //Creates the description and some mumbojumbo for the values.
         {
@@ -114,7 +122,8 @@ namespace MonsterVariantsPlus.SubClasses
             RareXPMultConfig = config.Bind<float>("XP Rewards", "Rare Variant XP Multiplier", 2.0f, "Multiplier that's applied to the XP reward for killing a rare Variant.\n(Set this value to 1.0 to disable, values lower than this number decreases the XP recieved.");
 
             MosquitoWispSpawnChanceConfig = config.Bind<float>("Custom Variants", "Mosquito Wisp Spawn Chance", 7f, "Chance for a Mosquito Wisp variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
-            SteelContraptionSpawnCanceConfig = config.Bind<float>("Custom Variants", "Steel Contraption Spawn Chance", 7f, "Chance for a Steel Contraption variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
+            SteelContraptionSpawnChanceConfig = config.Bind<float>("Custom Variants", "Steel Contraption Spawn Chance", 7f, "Chance for a Steel Contraption variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
+            AluminumContraptionSpawnChanceConfig = config.Bind<float>("Custom Variants", "Aluminum Contraption Spawn Chance", 8, "Chance for an Aluminum Contraption Variant to Spawn (percentage, 0-100)\nSetting this value to 0 will disable this variant from spawning.");
             MortarCrabSpawnChanceConfig = config.Bind<float>("Custom Variants", "Mortar Crab Spawn Chance", 5f, "Chance for a Mortar Crab variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
             VampiricTemplarSpawnChanceConfig = config.Bind<float>("Custom Variants", "Vampiric Templar Spawn Chance", 5, "Chance for a Vampiric Templar variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
             ADShroomSpawnChanceConfig = config.Bind<float>("Custom Variants", "ADShroom Spawn Chance", 6, "Chance for an ADShroom (Area of Denial Shroom) variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant form spawning.");
@@ -123,11 +132,14 @@ namespace MonsterVariantsPlus.SubClasses
             ChildSpawnChanceConfig = config.Bind<float>("Custom Variants", "Child Spawn Chance", 6, "Chance for a Child Variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
             BruiserImpSpawnChanceConfig = config.Bind<float>("Custom Variants", "Bruiser Imp Spawn Chance", 10, "Chance for a Bruiser Imp Variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
             AlphaBisonSpawnChanceConfig = config.Bind<float>("Custom Variants", "Alpha Bison Spawn Chance", 5, "Chance for an Alpha Bison Variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
+            //KamikazeReaverSpawnChanceConfig = config.Bind<float>("Custom Variants", "Kamikaze Reaver Spawn chance", 100, "Chance for a Kamikaze Reaver Variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
+            WispAmalgamateSpawnChanceConfig = config.Bind<float>("Custom Variants", "Wisp Amalgamate Spawn Chance", 10, "Chance for a Wisp Amalgamate Variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning");
             SunPriestSpawnChanceConfig = config.Bind<float>("Custom Variants", "Sun Priest Spawn Chance", 3, "Chance for a Sun Priest Variant to Spawn, (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
             HoarderSpawnChanceConfig = config.Bind<float>("Custom Variants", "Hoarder Scavenger Spawn Chance", 8, "Chance for a Hoarder Scavenger Variant to Spawn (percentage, 0-100)\nSetting this value to 0 will disable this variant from spawning.");
             StarvingDunestriderSpawnChanceConfig = config.Bind<float>("Custom Variants", "Starving Dunestrider Spawn Chance", 4, "Chance for a Starving Dunestrider to Spawn (percentage, 0-100)\nSetting this value to 0 will disable this variant from spawning.");
             DevourerDunestriderspawnChanceConfig = config.Bind<float>("Custom Variants", "Devourer Dunestrider Spawn Chance", 2, "Chance for a Devourer Dunestrider to Spawn (percentage, 0-100)\nSetting this value to 0 will disable this variant form spawning.");
             ClaySoldierSpawnChanceConfig = config.Bind<float>("Custom Variants", "Clay Soldier Spawn Chance", 15, "Chance for a Clay Soldier Variant to Spawn (percentage, 0-100)\nOnly Spawns if Moffein's ClayMen mod is Installed.\nSetting this value to 0 will disable this variant from spawning.");
+            EnragedWispSpawnChanceConfig = config.Bind<float>("Custom Variants", "Enraged Wisp Spawn Chance", 2, "Chance for an Enraged Wisp Variant to Spawn (percentage, 0-100)\nOnly Spawns if Moffein's Ancient Wisp mod is Installed.\nSetting this value to 0 will disable this variant from spawning.");
         }
     }
 }

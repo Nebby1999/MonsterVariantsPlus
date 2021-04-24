@@ -11,10 +11,11 @@ namespace MonsterVariantsPlus
     [BepInDependency("com.bepis.r2api")]
     [BepInDependency("com.rob.MonsterVariants")]
     [BepInDependency("com.Moffein.ClayMen", BepInDependency.DependencyFlags.SoftDependency)]
-    [BepInPlugin("com.Nebby1999.MonsterVariantsPlus", "Monster Variants +", "1.2.8")]
+    [BepInPlugin("com.Nebby1999.MonsterVariantsPlus", "Monster Variants +", "1.2.9")]
     public class MainPlugin : BaseUnityPlugin
     {
         internal static bool hasClayMan;
+        internal static bool hasAncientWisp;
         public static AssetBundle MainAssets; //Contains custom assets
         public static Dictionary<string, string> ShaderLookup = new Dictionary<string, string>()
         {
@@ -43,6 +44,11 @@ namespace MonsterVariantsPlus
                 hasClayMan = true;
                 Logger.LogMessage("Moffein's Clayman has been detected, enabling Clayman Variant(s).");
             }
+            if(BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.Moffein.AncientWisp"))
+            {
+                hasAncientWisp = true;
+                Logger.LogMessage("Moffein's Ancient Wisp has been detected, enabling Ancient Wisp Variant(s).");
+            }
             On.RoR2.DeathRewards.OnKilledServer += (orig, self, DamageReport) =>
             {
                 foreach (VariantHandler enemy in DamageReport.victimBody.GetComponents<VariantHandler>())
@@ -62,6 +68,31 @@ namespace MonsterVariantsPlus
                         {
                             uint multipliedXP = MultiplyXP.MultiplyExperience(self.expReward, enemy);
                             self.expReward = multipliedXP;
+                        }
+                    }
+                }
+                //Remove this once rob implements deathState replacements.
+                if (DamageReport.victimBody.baseNameToken == "Wisp Amalgamate")
+                {
+                    for (int i = 0; i < 3; i++)
+                    {
+                        Vector3 position = DamageReport.victimBody.corePosition + (2f * UnityEngine.Random.insideUnitSphere);
+
+                        DirectorSpawnRequest directorSpawnRequest = new DirectorSpawnRequest((SpawnCard)Resources.Load(string.Format("SpawnCards/CharacterSpawnCards/cscLesserWisp")), new DirectorPlacementRule
+                        {
+                            placementMode = DirectorPlacementRule.PlacementMode.Direct,
+                            minDistance = 0f,
+                            maxDistance = 0f,
+                            position = position
+                        }, RoR2Application.rng);
+
+                        directorSpawnRequest.summonerBodyObject = DamageReport.victimBody.gameObject;
+
+                        GameObject jelly = DirectorCore.instance.TrySpawnObject(directorSpawnRequest);
+                        if (jelly)
+                        {
+                            CharacterMaster master = jelly.GetComponent<CharacterMaster>();
+                            jelly.GetComponent<Inventory>().SetEquipmentIndex(DamageReport.victimBody.inventory.currentEquipmentIndex);
                         }
                     }
                 }
