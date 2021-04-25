@@ -1,3 +1,4 @@
+
 # MonsterVariantsPlus
 - An Addon for Rob's [MonsterVariants](https://thunderstore.io/package/rob/MonsterVariants/)
 - Adds Custom Variants on top of Rob's Existing Variants
@@ -52,7 +53,7 @@ The end goal is to have at least one variant per type of enemy.
 Just Like in the Original Monster Variants, their spawn chance can be changed in the config file.
 If you don't want any new variants, you can also disable the entire section in the config file.
 
-Since Version 1.3.7 of MonsterVariants, modded variants are now possible to create. Currently it only supports Moffein's Claymen
+Since Version 1.3.7 of MonsterVariants, Modded variants are now possible to create. Currently it only supports Moffein's ClayMen & AncientWisp
 Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names to showcase their abilities.
 
 	Mosquito Wisp (Lesser Wisp)(7% Chance):
@@ -167,9 +168,17 @@ Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names t
 	- 110% Attack Speed
 	- Has 2 Rejuvination Racks
 	- Has 2 Aegis
-	- Life Draining Tendrils has Twice the Cooldown, Lasts Twice as Long, the Tethers are Twice as Long, and the Dunestrider no longer gains Armor.
+	- Life Draining Tendrils has a 90 Second Cooldown, Lasts Twice as Long, the Tethers are Twice as Long, and the Dunestrider no longer gains Armor.
 
-	Clay Soldier (ClayMen)(Requires Moffein's ClayMen)(15% Spawn Chance)
+	Malfunctioning Solus Control Unit (Solus Control Unit)(4% Chance):
+	- Can use Solus Charged Detonation at any point in time.
+	- -50 Armor
+
+	Malfunctioning Alloy Worship Unit (Alloy Worship Unit)(4% Chance):
+	- Can use Alloy Supercharged Detonation at any point in time.
+	- -50 Armor
+	
+	Clay Soldier (ClayMen)(Requires Moffeins ClayMen)(15% Spawn Chance)
 	- 112.5% Size
 	- 125% Health
 	- 90% Movement Speed
@@ -177,10 +186,43 @@ Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names t
 	- 50% Damage
 	- Has 1 Alien Head
 
-	Enraged Wisp (Ancient Wisp)(Requires Moffein's Ancient Wisp') (2% Chance)
+	Enraged Wisp (Ancient Wisp)(Requires Moffeins Ancient Wisp)(2% Chance)
 	-Can use it's enrage ability at any point in time
 	- -50 Armor
 
+## Other Variants
+A new adition from update 1.3.0, Other variants include a list of potentially helpful Creature variants.
+Currently only adds variants for 2 Creatures, the Beetleguards from the Queen's Gland item (Taken directly from Rob's Original mod) & the Squid Turrets from the Squid Polyp
+All of these variants can be toggled OFF with a simple boolean switch, found at the top of the "5 - Other Variants" Category in the Config File.
+If you wish to disable specific variants, just like regular variants, their spawn chances can be set to 0 to disable them from spawning.
+While these might sound like they'll give you the advantage in combat, keep in mind that these variants are not Team dependant, so enemies like KipKip the Gentle can spawn with Beetle Guard Variants!
+
+	Beetle Guard Brute - QueensGland (Beetle Guard)(25% chance)
+	- 110% Size
+	- 200% Health
+	- 50% Movement speed
+	- 90% Attack speed
+	- 140% Damage
+	- +10 Armor
+	
+	Beetle Guard Sharpshooter - QueensGland (Beetle Guard)(2% chance)
+	- 80% Size
+	- 80% Health
+	- 60% Movement speed
+	- 300% Attack speed
+	- 40% Damage
+	- Has 10 Alien Heads
+
+	Sniper Squid (Squid Turret)(2% Chance)
+	- 125% Size
+	- 10% Attack Speed
+	- 1000% Damage
+	- -100 Armor
+
+	Chaingun Squid (Squid Turret)(10% Chance)
+	- 50% Size
+	- 500% Attack Speed
+	- 30% Damage
 
 ## Configuring the Mod.
 This section is for explaining how the Item drop chance mechanic works, since it's not based off the normal % chance ROR2 has.
@@ -194,7 +236,6 @@ To install the addon, simply drag the MonsterVariantsPlus.dll onto your plugins 
 
 ## Future Plans
 - Have Boss variants drop their Boss item based off Chance.
-- Polish up the code because rn it's becoming spaghetti code
 - Create actually pleasing to the eyes textures for the variants instead of the awful look of some of them *cough cough* Alpha Bison *cough cough*
 - Wait for Rob to implement DeathState replacers to replace the Wisp Amalgamate's death behavior instead of using a hook, which would increase performance overall.
 - Make some wizardry to improve the Wisp Amalgamate's Death explosion & it's light emmiting properties so they arent green.
@@ -208,6 +249,16 @@ Rob, for making his MonsterVariants mod and helping me a lot with questions i've
 KomradeSpectre, for helping me a ton with making the variants have custom skins.
 
 ## Changelog
+'1.3.0' Code Cleanup & Other Variants Update
+- Refractored how the config file is generated, it's EXTREMELY advised that you delete your existing config file so the new one generates without any errors!
+- Added the Malfunctioning Solus Control Unit
+- Added the Malfunctioning Alloy Worship Unit,
+- Added Other Variants. Variants that not necesarily belong to the Enemy Team.
+- Added the Beetle Guard Brute - Gland
+- Added the Beetle Guard Sharpshooter - Gland
+- Added the Sniper Squid
+- Added the Chaingun Squid.
+
 '1.2.9' Wispception update
 - Added the Wisp Amalgamate
 - Added the Aluminum Contraption
