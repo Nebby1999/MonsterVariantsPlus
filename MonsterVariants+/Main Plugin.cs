@@ -14,6 +14,7 @@ namespace MonsterVariantsPlus
     [BepInPlugin("com.Nebby1999.MonsterVariantsPlus", "Monster Variants +", "1.2.9")]
     public class MainPlugin : BaseUnityPlugin
     {
+        public static MainPlugin instance;
         internal static bool hasClayMan;
         internal static bool hasAncientWisp;
         public static AssetBundle MainAssets; //Contains custom assets
