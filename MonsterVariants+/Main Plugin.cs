@@ -39,6 +39,7 @@ namespace MonsterVariantsPlus
                 }
             }
             ConfigLoader.SetupConfigLoader(Config); //Initializes the Config
+            ConfigLoader.ReadConfig(Config);
             SubClasses.Skills.CustomSkills.RegisterSkills();
             if(BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.Moffein.ClayMen"))
             {
@@ -50,11 +51,12 @@ namespace MonsterVariantsPlus
                 hasAncientWisp = true;
                 Logger.LogMessage("Moffein's Ancient Wisp has been detected, enabling Ancient Wisp Variant(s).");
             }
+            //hook
             On.RoR2.DeathRewards.OnKilledServer += (orig, self, DamageReport) =>
             {
                 foreach (VariantHandler enemy in DamageReport.victimBody.GetComponents<VariantHandler>())
                 {
-                    if(enemy.isVariant)
+                    if(enemy.isVariant && (DamageReport.victimTeamIndex == (TeamIndex)2))
                     {
                         if (ConfigLoader.EnableItemRewards)
                         {
