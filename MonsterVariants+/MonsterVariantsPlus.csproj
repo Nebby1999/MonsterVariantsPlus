@@ -111,12 +111,12 @@
     <Compile Include="SubClasses\ConfigLoader.cs" />
     <Compile Include="SubClasses\ExtraRewards.cs" />
     <Compile Include="SubClasses\MultiplyGold.cs" />
-    <Compile Include="SubClasses\Skills\States\WispAmalgamateFire.cs" />
-    <Compile Include="SubClasses\Skills\States\WispAmalgamateCharge.cs" />
-    <Compile Include="SubClasses\Skills\States\KamikazeBlink.cs" />
-    <Compile Include="SubClasses\Skills\States\XLRecover.cs" />
-    <Compile Include="SubClasses\Skills\States\HoarderSit.cs" />
-    <Compile Include="SubClasses\Skills\States\MultiSlam.cs" />
+    <Compile Include="SubClasses\Skills\States\GreaterWisp\WispAmalgamateFire.cs" />
+    <Compile Include="SubClasses\Skills\States\GreaterWisp\WispAmalgamateCharge.cs" />
+    <Compile Include="SubClasses\Skills\States\VoidReaver\KamikazeBlink.cs" />
+    <Compile Include="SubClasses\Skills\States\ClayDunestrider\XLRecover.cs" />
+    <Compile Include="SubClasses\Skills\States\Scavenger\HoarderSit.cs" />
+    <Compile Include="SubClasses\Skills\States\Parent\MultiSlam.cs" />
     <Compile Include="SubClasses\Skills\States\EmptySkill.cs" />
   </ItemGroup>
   <ItemGroup />

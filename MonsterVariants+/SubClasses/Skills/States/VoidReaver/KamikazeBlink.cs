@@ -6,7 +6,7 @@ using RoR2.Navigation;
 using RoR2.Projectile;
 using UnityEngine;
 
-namespace MonsterVariantsPlus.SubClasses.Skills.States
+namespace MonsterVariantsPlus.SubClasses.Skills.States.VoidReaver
 {
     public class KamikazeBlink : BaseState
     {

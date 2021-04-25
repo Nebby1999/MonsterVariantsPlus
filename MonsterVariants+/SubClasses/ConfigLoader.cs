@@ -56,6 +56,7 @@ namespace MonsterVariantsPlus.SubClasses
         public static float RareXPMult => RareXPMultConfig.Value;
 
         //Custom Variants
+        //Enemy Variants
         public static ConfigEntry<float> MosquitoWispSpawnChance;
         public static ConfigEntry<float> SteelContraptionSpawnChance;
         public static ConfigEntry<float> AluminumContraptionSpawnChance;
@@ -69,12 +70,15 @@ namespace MonsterVariantsPlus.SubClasses
         public static ConfigEntry<float> AlphaBisonSpawnChance;
         //public static ConfigEntry<float> KamikazeReaverSpawnChance;
         public static ConfigEntry<float> WispAmalgamateSpawnChance;
+        public static ConfigEntry<float> IncineratingElderLemurianSpawnChance;
+        //Boss Variants
         public static ConfigEntry<float> SunPriestSpawnChance;
         public static ConfigEntry<float> HoarderSpawnChance;
         public static ConfigEntry<float> StarvingDunestriderSpawnChance;
         public static ConfigEntry<float> DevourerDunestriderspawnChance;
         public static ConfigEntry<float> MalfunctioningSolusControlUnitSpawnChance;
         public static ConfigEntry<float> MalfunctioningAlloyWorshipUnitSpawnChance;
+        //Modded Variants
         public static ConfigEntry<float> ClaySoldierSpawnChance;
         public static ConfigEntry<float> EnragedWispSpawnChance;
 
@@ -128,13 +132,18 @@ namespace MonsterVariantsPlus.SubClasses
             BruiserImpSpawnChance = SpawnRateConfig("4 - Custom", "Bruiser Imp", 10, config);
             AlphaBisonSpawnChance = SpawnRateConfig("4 - Custom", "Alpha Bison", 5, config);
             //KamikazeReaverSpawnChance = SpawnRateConfig("4 - Custom", "Kamikaze Reaver", 5, config);
-            WispAmalgamateSpawnChance = SpawnRateConfig("4 - Custom", "Wisp Amalgamate", 10f, config);
+            WispAmalgamateSpawnChance = SpawnRateConfig("4 - Custom", "Wisp Amalgamate", 5f, config);
+            IncineratingElderLemurianSpawnChance = SpawnRateConfig("4 - Custom", "Incinerating Elder Lemurian", 5f, config);
+            //Bosses
+
             SunPriestSpawnChance = SpawnRateConfig("4 - Custom", "Sun Priest", 4, config);
             HoarderSpawnChance = SpawnRateConfig("4 - Custom", "Hoarder", 8, config);
             StarvingDunestriderSpawnChance = SpawnRateConfig("4 - Custom", "Starving Dunestrider", 4, config);
             DevourerDunestriderspawnChance = SpawnRateConfig("4 - Custom", "Devourer Dunestrider", 2, config);
             MalfunctioningSolusControlUnitSpawnChance = SpawnRateConfig("4 - Custom", "Malfunctioning Solus Control Unit", 4, config);
             MalfunctioningAlloyWorshipUnitSpawnChance = SpawnRateConfig("4 - Custom", "Malfunctioning Alloy Worship Unit", 4, config);
+
+            //Modded
             ClaySoldierSpawnChance = SpawnRateConfig("4 - Custom", "Clay Soldier", 15, "Moffein", "ClayMen", config);
             EnragedWispSpawnChance = SpawnRateConfig("4 - Custom", "Enraged Wisp", 4, "Moffein", "AncientWisp", config);
 

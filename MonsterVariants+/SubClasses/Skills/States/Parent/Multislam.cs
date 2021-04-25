@@ -2,7 +2,7 @@
 using RoR2;
 using UnityEngine;
 
-namespace MonsterVariantsPlus.SubClasses.Skills.States
+namespace MonsterVariantsPlus.SubClasses.Skills.States.Parent
 {
     public class MultiSlam : BaseState
     {

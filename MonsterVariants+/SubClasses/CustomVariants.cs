@@ -13,8 +13,10 @@ namespace MonsterVariantsPlus.SubClasses
         internal static void RegisterCustomVariants()
         {
             //Gathers vanilla materials
+            ItemDisplayRuleSet itemDisplayRuleSet = Resources.Load<GameObject>("Prefabs/CharacterBodies/CommandoBody").GetComponent<ModelLocator>().modelTransform.GetComponent<CharacterModel>().itemDisplayRuleSet;
             Material wispFlameMat = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/WispBody").GetComponentInChildren<CharacterModel>().baseRendererInfos[1].defaultMaterial);
             Material wispBodyMat = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/WispBody").GetComponentInChildren<CharacterModel>().baseRendererInfos[0].defaultMaterial);
+            Material perforatorMat = UnityEngine.Object.Instantiate(itemDisplayRuleSet.FindDisplayRuleGroup(RoR2Content.Items.FireballsOnHit).rules[0].followerPrefab.GetComponentInChildren<MeshRenderer>().material);
             //Mosquito Wisp
             MV.AddVariant(new MonsterVariantInfo
             {
@@ -184,7 +186,7 @@ namespace MonsterVariantsPlus.SubClasses
                 customInventory = MV.SimpleInventory("AlienHead", 1),
                 meshReplacement = null,
                 materialReplacement = null,
-                skillReplacement = primaryUtilityReplacement(CustomSkills.multiSlamDef, CustomSkills.emptySkillDef)
+                skillReplacement = PrimaryUtilityReplacement(CustomSkills.multiSlamDef, CustomSkills.emptySkillDef)
             });
             //Bruiser Imp
             MV.AddVariant(new MonsterVariantInfo
@@ -260,6 +262,24 @@ namespace MonsterVariantsPlus.SubClasses
                 materialReplacement = MV.MultiMaterialReplacement(new Dictionary<int, Material> { { 0, wispBodyMat}, { 1, wispFlameMat}}),
                 skillReplacement = MV.PrimaryReplacement(CustomSkills.WispAmalgamateDef)
             });
+            //Incinerating Elder Lemurian
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "LemurianBruiser",
+                overrideName = "Incinerating Elder Lemurian",
+                spawnRate = ConfigLoader.IncineratingElderLemurianSpawnChance.Value,
+                variantTier = MonsterVariantTier.Rare,
+                sizeModifier = MV.GroundSizeModifier(1.25f),
+                healthMultiplier = 0.75f,
+                moveSpeedMultiplier = 1.5f,
+                attackSpeedMultiplier = 30f,
+                damageMultiplier = 10,
+                armorBonus = 0,
+                customInventory = MV.SimpleInventory("Behemoth", 5),
+                meshReplacement  = null,
+                materialReplacement = MV.SimpleMaterialReplacement(perforatorMat),
+                skillReplacement = MV.PrimaryReplacement(CustomSkills.emptySkillDef)
+            });
             //Sun Priest
             MV.AddVariant(new MonsterVariantInfo
             {
@@ -313,7 +333,7 @@ namespace MonsterVariantsPlus.SubClasses
                 damageMultiplier = 1,
                 armorMultiplier = 1,
                 armorBonus =-50,
-                customInventory = MV.SimpleInventory("AlienHead", 1),
+                customInventory = null,
                 meshReplacement = null,
                 materialReplacement = null,
                 skillReplacement = null
@@ -524,7 +544,7 @@ namespace MonsterVariantsPlus.SubClasses
             MV.SimpleItem("BarrierOnOverHeal", 2)
         };
         //Method to replace a monster's primary and utility skills. used for Child.
-        internal static MonsterSkillReplacement[] primaryUtilityReplacement(SkillDef primarySkill, SkillDef utilitySkill)
+        internal static MonsterSkillReplacement[] PrimaryUtilityReplacement(SkillDef primarySkill, SkillDef utilitySkill)
         {
             MonsterSkillReplacement primaryReplacement = ScriptableObject.CreateInstance<MonsterSkillReplacement>();
             MonsterSkillReplacement utilityReplacement = ScriptableObject.CreateInstance<MonsterSkillReplacement>();
@@ -539,6 +559,24 @@ namespace MonsterVariantsPlus.SubClasses
             {
                 primaryReplacement,
                 utilityReplacement
+            };
+            //Method to replace a monster's primary and utility skills. used for Child.
+        }
+        internal static MonsterSkillReplacement[] PrimarySecondarySkillReplacement(SkillDef primarySkill, SkillDef secondarySkill)
+        {
+            MonsterSkillReplacement primaryReplacement = ScriptableObject.CreateInstance<MonsterSkillReplacement>();
+            MonsterSkillReplacement secondaryReplacement = ScriptableObject.CreateInstance<MonsterSkillReplacement>();
+
+            primaryReplacement.skillSlot = RoR2.SkillSlot.Primary;
+            secondaryReplacement.skillSlot = RoR2.SkillSlot.Secondary;
+
+            primaryReplacement.skillDef = primarySkill;
+            secondaryReplacement.skillDef = secondarySkill;
+
+            return new MonsterSkillReplacement[]
+            {
+            primaryReplacement,
+            secondaryReplacement,
             };
         }
     }

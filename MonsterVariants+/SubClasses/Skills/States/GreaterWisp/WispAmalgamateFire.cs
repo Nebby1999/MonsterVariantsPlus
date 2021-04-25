@@ -4,7 +4,7 @@ using RoR2;
 using UnityEngine;
 using EntityStates.Wisp1Monster;
 
-namespace MonsterVariantsPlus.SubClasses.Skills.States
+namespace MonsterVariantsPlus.SubClasses.Skills.States.GreaterWisp
 {
     public class WispAmalgamateFire : BaseState
     {
