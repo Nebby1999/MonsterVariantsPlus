@@ -20,7 +20,7 @@ namespace MonsterVariantsPlus.SubClasses
             {
                 bodyName = "Wisp",
                 overrideName = "Mosquito Wisp",
-                spawnRate = ConfigLoader.MosquitoWispSpawnChance,
+                spawnRate = ConfigLoader.MosquitoWispSpawnChance.Value ,
                 variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.FlyingSizeModifier(0.5f),
                 healthMultiplier = 0.5f,
@@ -39,7 +39,7 @@ namespace MonsterVariantsPlus.SubClasses
             {
                 bodyName = "Bell",
                 overrideName = "Steel Contraption",
-                spawnRate = ConfigLoader.SteelContraptionSpawnChance,
+                spawnRate = ConfigLoader.SteelContraptionSpawnChance.Value,
                 variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.FlyingSizeModifier(1.0f),
                 healthMultiplier = 1.75f,
@@ -58,7 +58,7 @@ namespace MonsterVariantsPlus.SubClasses
             {
                 bodyName = "Bell",
                 overrideName = "Aluminum Contraption",
-                spawnRate = ConfigLoader.AluminumContraptionSpawnChance,
+                spawnRate = ConfigLoader.AluminumContraptionSpawnChance.Value,
                 variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.FlyingSizeModifier(0.5f),
                 healthMultiplier = 0.5f,
@@ -77,7 +77,7 @@ namespace MonsterVariantsPlus.SubClasses
             {
                 bodyName = "HermitCrab",
                 overrideName = "Mortar Crab",
-                spawnRate = ConfigLoader.MortarCrabSpawnChance,
+                spawnRate = ConfigLoader.MortarCrabSpawnChance.Value,
                 variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.GroundSizeModifier(1.5f),
                 healthMultiplier = 1.5f,
@@ -96,7 +96,7 @@ namespace MonsterVariantsPlus.SubClasses
             {
                 bodyName = "ClayBruiser",
                 overrideName = "Vampiric Templar",
-                spawnRate = ConfigLoader.VampiricTemplarSpawnChance,
+                spawnRate = ConfigLoader.VampiricTemplarSpawnChance.Value,
                 variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.GroundSizeModifier(1.25f),
                 healthMultiplier = 1.5f,
@@ -115,7 +115,7 @@ namespace MonsterVariantsPlus.SubClasses
             {
                 bodyName = "MiniMushroom",
                 overrideName = "AD-Shroom",
-                spawnRate = ConfigLoader.ADShroomSpawnChance,
+                spawnRate = ConfigLoader.ADShroomSpawnChance.Value,
                 variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.GroundSizeModifier(0.75f),
                 healthMultiplier = 1.25f,
@@ -134,7 +134,7 @@ namespace MonsterVariantsPlus.SubClasses
             {
                 bodyName = "MiniMushroom",
                 overrideName = "Healer-Shroom",
-                spawnRate = ConfigLoader.HealerShroomSpawnChance,
+                spawnRate = ConfigLoader.HealerShroomSpawnChance.Value,
                 variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.GroundSizeModifier(0.5f),
                 healthMultiplier = 1.0f,
@@ -153,7 +153,7 @@ namespace MonsterVariantsPlus.SubClasses
             {
                 bodyName = "Parent",
                 overrideName = "Adolescent",
-                spawnRate = ConfigLoader.AdolescentSpawnChance,
+                spawnRate = ConfigLoader.AdolescentSpawnChance.Value,
                 variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.GroundSizeModifier(0.75f),
                 healthMultiplier = 0.75f,
@@ -172,7 +172,7 @@ namespace MonsterVariantsPlus.SubClasses
             {
                 bodyName = "Parent",
                 overrideName = "Child",
-                spawnRate = ConfigLoader.ChildSpawnChance,
+                spawnRate = ConfigLoader.ChildSpawnChance.Value,
                 variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.GroundSizeModifier(0.5f),
                 healthMultiplier = 0.5f,
@@ -191,7 +191,7 @@ namespace MonsterVariantsPlus.SubClasses
             {
                 bodyName = "Imp",
                 overrideName = "Bruiser Imp",
-                spawnRate = ConfigLoader.BruiserImpSpawnChance,
+                spawnRate = ConfigLoader.BruiserImpSpawnChance.Value,
                 variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.GroundSizeModifier(1.25f),
                 healthMultiplier = 0.8f,
@@ -210,7 +210,7 @@ namespace MonsterVariantsPlus.SubClasses
             {
                 bodyName = "Bison",
                 overrideName = "Alpha Bison",
-                spawnRate = ConfigLoader.AlphaBisonSpawnChance,
+                spawnRate = ConfigLoader.AlphaBisonSpawnChance.Value,
                 variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.GroundSizeModifier(1.25f),
                 healthMultiplier = 0.75f,
@@ -229,7 +229,7 @@ namespace MonsterVariantsPlus.SubClasses
             {
                 bodyName = "Nullifier",
                 overrideName = "Kamikaze Reaver",
-                spawnRate = ConfigLoader.KamikazeReaverSpawnChance,
+                spawnRate = ConfigLoader.KamikazeReaverSpawnChance.Value,
                 variantTier = MonsterVariantTier.Rare,
                 sizeModifier = MV.GroundSizeModifier(1.2f),
                 healthMultiplier = 0.5f,
@@ -247,7 +247,7 @@ namespace MonsterVariantsPlus.SubClasses
             {
                 bodyName = "GreaterWisp",
                 overrideName = "Wisp Amalgamate",
-                spawnRate = ConfigLoader.WispAmalgamateSpawnChance,
+                spawnRate = ConfigLoader.WispAmalgamateSpawnChance.Value,
                 variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.FlyingSizeModifier(0.75f),
                 healthMultiplier = 1,
@@ -265,7 +265,7 @@ namespace MonsterVariantsPlus.SubClasses
             {
                 bodyName = "GrandParent",
                 overrideName = "Sun Priest",
-                spawnRate = ConfigLoader.SunPriestSpawnChance,
+                spawnRate = ConfigLoader.SunPriestSpawnChance.Value,
                 variantTier = MonsterVariantTier.Common,
                 aiModifier = MonsterVariantAIModifier.Unstable,
                 sizeModifier = null,
@@ -285,7 +285,7 @@ namespace MonsterVariantsPlus.SubClasses
             {
                 bodyName = "Scav",
                 overrideName = "Hoarder",
-                spawnRate = ConfigLoader.HoarderSpawnChance,
+                spawnRate = ConfigLoader.HoarderSpawnChance.Value,
                 variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.GroundSizeModifier(0.75f),
                 healthMultiplier = 0.75f,
@@ -303,7 +303,7 @@ namespace MonsterVariantsPlus.SubClasses
             {
                 bodyName = "ClayBoss",
                 overrideName = "Starving Dunestrider",
-                spawnRate = ConfigLoader.StarvingDunestriderSpawnChance,
+                spawnRate = ConfigLoader.StarvingDunestriderSpawnChance.Value,
                 variantTier = MonsterVariantTier.Common,
                 aiModifier = MonsterVariantAIModifier.Unstable,
                 sizeModifier = null,
@@ -323,7 +323,7 @@ namespace MonsterVariantsPlus.SubClasses
             {
                 bodyName = "ClayBoss",
                 overrideName = "Devourer Dunestrider",
-                spawnRate = ConfigLoader.DevourerDunestriderSpawnChance,
+                spawnRate = ConfigLoader.DevourerDunestriderspawnChance.Value,
                 variantTier = MonsterVariantTier.Rare,
                 sizeModifier = MV.GroundSizeModifier(1.25f),
                 healthMultiplier = 1.0f,
@@ -331,11 +331,51 @@ namespace MonsterVariantsPlus.SubClasses
                 attackSpeedMultiplier = 1.25f,
                 damageMultiplier = 1.0f,
                 armorMultiplier = 1.0f,
-                armorBonus = 1.0f,
+                armorBonus = 0.0f,
                 customInventory = devourerInventory,
                 meshReplacement = null,
                 materialReplacement = null,
                 skillReplacement = MV.SpecialReplacement(CustomSkills.xlRecoverDef),
+            });
+            //Malfunctioning Solus Control Unit
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "RoboBallBoss",
+                overrideName = "Malfunctioning Solus Control Unit",
+                spawnRate = ConfigLoader.MalfunctioningSolusControlUnitSpawnChance.Value,
+                variantTier = MonsterVariantTier.Common,
+                aiModifier = MonsterVariantAIModifier.Unstable,
+                sizeModifier = MV.GroundSizeModifier(1.0f),
+                healthMultiplier = 1.0f,
+                moveSpeedMultiplier = 1.0f,
+                attackSpeedMultiplier = 1.0f,
+                damageMultiplier = 1.0f,
+                armorMultiplier = 1.0f,
+                armorBonus = -50f,
+                customInventory = null,
+                meshReplacement = null,
+                materialReplacement = null,
+                skillReplacement = null,
+            });
+            //Malfunctioning Alloy Worship Unit
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "SuperRoboBallBoss",
+                overrideName = "Malfunctioning Alloy Worship Unit",
+                spawnRate = ConfigLoader.MalfunctioningAlloyWorshipUnitSpawnChance.Value,
+                variantTier = MonsterVariantTier.Common,
+                aiModifier = MonsterVariantAIModifier.Unstable,
+                sizeModifier = MV.GroundSizeModifier(1.0f),
+                healthMultiplier = 1.0f,
+                moveSpeedMultiplier = 1.0f,
+                attackSpeedMultiplier = 1.0f,
+                damageMultiplier = 1.0f,
+                armorMultiplier = 1.0f,
+                armorBonus = -50f,
+                customInventory = null,
+                meshReplacement = null,
+                materialReplacement = null,
+                skillReplacement = null,
             });
             if (MainPlugin.hasClayMan)
             {
@@ -344,7 +384,7 @@ namespace MonsterVariantsPlus.SubClasses
                 {
                     bodyName = "MoffeinClayMan",
                     overrideName = "Clay Soldier",
-                    spawnRate = ConfigLoader.ClaySoldierSpawnChance,
+                    spawnRate = ConfigLoader.ClaySoldierSpawnChance.Value,
                     variantTier = MonsterVariantTier.Common,
                     sizeModifier = MV.GroundSizeModifier(1.125f),
                     healthMultiplier = 1.25f,
@@ -366,7 +406,7 @@ namespace MonsterVariantsPlus.SubClasses
                 {
                     bodyName = "MoffeinAncientWisp",
                     overrideName = "Enraged Wisp",
-                    spawnRate = ConfigLoader.EnragedWispSpawnChance,
+                    spawnRate = ConfigLoader.EnragedWispSpawnChance.Value,
                     variantTier = MonsterVariantTier.Common,
                     aiModifier = MonsterVariantAIModifier.Unstable,
                     sizeModifier = null,
@@ -381,6 +421,83 @@ namespace MonsterVariantsPlus.SubClasses
                     materialReplacement = null,
                     skillReplacement = null,
                     
+                });
+            }
+            if (ConfigLoader.EnableOtherVariants)
+            {
+                //Gland - Beetle Guard Brute
+                MV.AddVariant(new MonsterVariantInfo
+                {
+                    bodyName = "BeetleGuardAlly",
+                    overrideName = "Beetle Guard Brute",
+                    spawnRate = ConfigLoader.GlandBeetleGuardBruteSpawnChance.Value,
+                    variantTier = MonsterVariantTier.Uncommon,
+                    sizeModifier = MV.GroundSizeModifier(1.1f),
+                    healthMultiplier = 2f,
+                    moveSpeedMultiplier = 0.5f,
+                    attackSpeedMultiplier = 0.9f,
+                    damageMultiplier = 1.4f,
+                    armorMultiplier = 1f,
+                    armorBonus = 10f,
+                    customInventory = null,
+                    meshReplacement = null,
+                    materialReplacement = null,
+                    skillReplacement = null,
+                });;
+                //Gland - Beetle Guard Sharpshooter
+                MV.AddVariant(new MonsterVariantInfo
+                {
+                    bodyName = "BeetleGuardAlly",
+                    spawnRate = ConfigLoader.GlandBeetleGuardSharpshooterSpawnChance.Value,
+                    overrideName = "Beetle Guard Sharpshooter",
+                    variantTier = MonsterVariantTier.Common,
+                    sizeModifier = MV.GroundSizeModifier(0.8f),
+                    healthMultiplier = 0.8f,
+                    moveSpeedMultiplier = 0.6f,
+                    attackSpeedMultiplier = 3f,
+                    damageMultiplier = 0.4f,
+                    armorMultiplier = 1f,
+                    armorBonus = 0f,
+                    customInventory = MV.SimpleInventory("AlienHead", 10),
+                    meshReplacement = null,
+                    materialReplacement = null,
+                    skillReplacement = null
+                });
+                //Squid Chaingun
+                MV.AddVariant(new MonsterVariantInfo
+                {
+                    bodyName = "SquidTurret",
+                    spawnRate = ConfigLoader.SquidChaingunSpawnChance.Value,
+                    overrideName = "Chaingun Squid",
+                    variantTier = MonsterVariantTier.Common,
+                    sizeModifier = MV.GroundSizeModifier(0.5f),
+                    healthMultiplier = 1f,
+                    attackSpeedMultiplier = 2f,
+                    damageMultiplier = 0.75f,
+                    armorMultiplier = 1f,
+                    armorBonus = 0f,
+                    customInventory = null,
+                    meshReplacement = null,
+                    materialReplacement = null,
+                    skillReplacement = null,
+                });
+                //Sniper Squid
+                MV.AddVariant(new MonsterVariantInfo
+                {
+                    bodyName = "SquidTurret",
+                    spawnRate = ConfigLoader.SquidChaingunSpawnChance.Value,
+                    overrideName = "Squid Sniper",
+                    variantTier = MonsterVariantTier.Common,
+                    sizeModifier = MV.GroundSizeModifier(1.25f),
+                    healthMultiplier = 1f,
+                    attackSpeedMultiplier = 0.1f,
+                    damageMultiplier = 10f,
+                    armorMultiplier = 0f,
+                    armorBonus = -50f,
+                    customInventory = null,
+                    meshReplacement = null,
+                    materialReplacement = null,
+                    skillReplacement = null,
                 });
             }
         }
