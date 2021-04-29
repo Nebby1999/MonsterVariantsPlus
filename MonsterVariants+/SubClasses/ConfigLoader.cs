@@ -57,7 +57,8 @@ namespace MonsterVariantsPlus.SubClasses
 
         //Custom Variants
         //Enemy Variants
-        public static ConfigEntry<float> MosquitoWispSpawnChance;
+        public static ConfigEntry<float> LeastestWispSpawnChance;
+        public static ConfigEntry<float> AlmostButNotQuiteArchaicWispSpawnChance;
         public static ConfigEntry<float> SteelContraptionSpawnChance;
         public static ConfigEntry<float> AluminumContraptionSpawnChance;
         public static ConfigEntry<float> MortarCrabSpawnChance;
@@ -70,17 +71,24 @@ namespace MonsterVariantsPlus.SubClasses
         public static ConfigEntry<float> AlphaBisonSpawnChance;
         //public static ConfigEntry<float> KamikazeReaverSpawnChance;
         public static ConfigEntry<float> WispAmalgamateSpawnChance;
+        public static ConfigEntry<float> KindaGreatButNotGreaterWispSpawnChance;
         public static ConfigEntry<float> IncineratingElderLemurianSpawnChance;
+        public static ConfigEntry<float> SwarmerProbeSpawnChance;
         //Boss Variants
         public static ConfigEntry<float> SunPriestSpawnChance;
         public static ConfigEntry<float> HoarderSpawnChance;
         public static ConfigEntry<float> StarvingDunestriderSpawnChance;
         public static ConfigEntry<float> DevourerDunestriderspawnChance;
         public static ConfigEntry<float> MalfunctioningSolusControlUnitSpawnChance;
+        //public static ConfigEntry<float> SolusSwarmingUnitSpawnChance;
         public static ConfigEntry<float> MalfunctioningAlloyWorshipUnitSpawnChance;
+        //public static ConfigEntry<float> AlloySwarmingUnitSpawnChance;
         //Modded Variants
         public static ConfigEntry<float> ClaySoldierSpawnChance;
         public static ConfigEntry<float> EnragedWispSpawnChance;
+        public static ConfigEntry<float> AmalgamatedAncientWispSpawnChance;
+        public static ConfigEntry<float> AeonicWispSpawnChance;
+        public static ConfigEntry<float> KindaArchaicWispSpawnChance;
 
         //Other Variants
         public static ConfigEntry<float> GlandBeetleGuardBruteSpawnChance;
@@ -120,45 +128,68 @@ namespace MonsterVariantsPlus.SubClasses
         }
         public static void ReadConfig(ConfigFile config)
         {
-            MosquitoWispSpawnChance = SpawnRateConfig("4 - Custom", "Mosquito Wisp", 7, config);
-            SteelContraptionSpawnChance = SpawnRateConfig("4 - Custom", "Steel Contraption", 7, config);
-            AluminumContraptionSpawnChance = SpawnRateConfig("4 - Custom","Aluminum Contraption", 7, config);
-            MortarCrabSpawnChance = SpawnRateConfig("4 - Custom", "Mortar Crab", 5, config);
-            VampiricTemplarSpawnChance = SpawnRateConfig("4 - Custom", "Vampiric Templar", 5, config);
-            ADShroomSpawnChance = SpawnRateConfig("4 - Custom", "AD-Shroom (Area of Denial Shroom)", 6, config);
-            HealerShroomSpawnChance = SpawnRateConfig("4 - Custom", "Healer Shroom", 10, config);
-            AdolescentSpawnChance = SpawnRateConfig("4 - Custom", "Adolescent", 8, config);
-            ChildSpawnChance = SpawnRateConfig("4 - Custom", "Child", 6, config);
-            BruiserImpSpawnChance = SpawnRateConfig("4 - Custom", "Bruiser Imp", 10, config);
-            AlphaBisonSpawnChance = SpawnRateConfig("4 - Custom", "Alpha Bison", 5, config);
-            //KamikazeReaverSpawnChance = SpawnRateConfig("4 - Custom", "Kamikaze Reaver", 5, config);
-            WispAmalgamateSpawnChance = SpawnRateConfig("4 - Custom", "Wisp Amalgamate", 5f, config);
-            IncineratingElderLemurianSpawnChance = SpawnRateConfig("4 - Custom", "Incinerating Elder Lemurian", 5f, config);
+            LeastestWispSpawnChance = SpawnRateConfig(false, "Leastest Wisp", 7, config);
+            AlmostButNotQuiteArchaicWispSpawnChance = SpawnRateConfig(false, "Almost-But-Not-Quite-Archaic-Wisp", 4, config);
+            SteelContraptionSpawnChance = SpawnRateConfig(false, "Steel Contraption", 7, config);
+            AluminumContraptionSpawnChance = SpawnRateConfig(false,"Aluminum Contraption", 7, config);
+            MortarCrabSpawnChance = SpawnRateConfig(false, "Mortar Crab", 5, config);
+            VampiricTemplarSpawnChance = SpawnRateConfig(false, "Vampiric Templar", 5, config);
+            ADShroomSpawnChance = SpawnRateConfig(false, "AD-Shroom (Area of Denial Shroom)", 6, config);
+            HealerShroomSpawnChance = SpawnRateConfig(false, "Healer Shroom", 10, config);
+            AdolescentSpawnChance = SpawnRateConfig(false, "Adolescent", 8, config);
+            ChildSpawnChance = SpawnRateConfig(false, "Child", 6, config);
+            BruiserImpSpawnChance = SpawnRateConfig(false, "Bruiser Imp", 10, config);
+            AlphaBisonSpawnChance = SpawnRateConfig(false, "Alpha Bison", 5, config);
+            //KamikazeReaverSpawnChance = SpawnRateConfig(false, "Kamikaze Reaver", 5, config);
+            WispAmalgamateSpawnChance = SpawnRateConfig(false, "Wisp Amalgamate", 5, config);
+            KindaGreatButNotGreaterWispSpawnChance = SpawnRateConfig(false, "Kinda-Great-But-Not-Greater Wisp", 7, config);
+            IncineratingElderLemurianSpawnChance = SpawnRateConfig(false, "Incinerating Elder Lemurian", 5, config);
+            SwarmerProbeSpawnChance = SpawnRateConfig(false, "Swarmer Probe", 7, config);
+            
             //Bosses
-
-            SunPriestSpawnChance = SpawnRateConfig("4 - Custom", "Sun Priest", 4, config);
-            HoarderSpawnChance = SpawnRateConfig("4 - Custom", "Hoarder", 8, config);
-            StarvingDunestriderSpawnChance = SpawnRateConfig("4 - Custom", "Starving Dunestrider", 4, config);
-            DevourerDunestriderspawnChance = SpawnRateConfig("4 - Custom", "Devourer Dunestrider", 2, config);
-            MalfunctioningSolusControlUnitSpawnChance = SpawnRateConfig("4 - Custom", "Malfunctioning Solus Control Unit", 4, config);
-            MalfunctioningAlloyWorshipUnitSpawnChance = SpawnRateConfig("4 - Custom", "Malfunctioning Alloy Worship Unit", 4, config);
+            SunPriestSpawnChance = SpawnRateConfig(false, "Sun Priest", 4, config);
+            HoarderSpawnChance = SpawnRateConfig(false, "Hoarder", 8, config);
+            StarvingDunestriderSpawnChance = SpawnRateConfig(false, "Starving Dunestrider", 4, config);
+            DevourerDunestriderspawnChance = SpawnRateConfig(false, "Devourer Dunestrider", 2, config);
+            MalfunctioningSolusControlUnitSpawnChance = SpawnRateConfig(false, "Malfunctioning Solus Control Unit", 4, config);
+            //SolusSwarmingUnitSpawnChance = SpawnRateConfig(false, "Solus Swarming Unit", 100, config);
+            MalfunctioningAlloyWorshipUnitSpawnChance = SpawnRateConfig(false, "Malfunctioning Alloy Worship Unit", 4, config);
+            //AlloySwarmingUnitSpawnChance = SpawnRateConfig(false, "Alloy Swarming Unit", 100, config);
 
             //Modded
-            ClaySoldierSpawnChance = SpawnRateConfig("4 - Custom", "Clay Soldier", 15, "Moffein", "ClayMen", config);
-            EnragedWispSpawnChance = SpawnRateConfig("4 - Custom", "Enraged Wisp", 4, "Moffein", "AncientWisp", config);
+            ClaySoldierSpawnChance = SpawnRateConfig(false, "Clay Soldier", 15, "Moffein", "ClayMen", config);
+            EnragedWispSpawnChance = SpawnRateConfig(false, "Enraged Wisp", 4, "Moffein", "AncientWisp", config);
+            AmalgamatedAncientWispSpawnChance = SpawnRateConfig(false, "Amalgamated Ancient Wisp", 2, "Moffein", "AncientWisp", config);
+            AeonicWispSpawnChance = SpawnRateConfig(false, "Aeonic Wisp", 4, "Nebby", "ArchaicWisp", config);
+            KindaArchaicWispSpawnChance = SpawnRateConfig(false, "Kinda-Archaic-Wisp", 7, "Nebby", "ArchaicWisp", config);
 
-            GlandBeetleGuardBruteSpawnChance = SpawnRateConfig("5 - Other", "Beetle Guard Brute - Gland", 25, config);
-            GlandBeetleGuardSharpshooterSpawnChance = SpawnRateConfig("5 - Other", "Beetle Guard Sharpshooter - Gland", 2, config);
-            SquidChaingunSpawnChance = SpawnRateConfig("5 - Other", "Squid Chaingun", 10, config);
-            SquidSniperSpawnChance = SpawnRateConfig("5 - Other", "Squid Sniper", 2, config);
+            //Other Variants
+            GlandBeetleGuardBruteSpawnChance = SpawnRateConfig(true, "Beetle Guard Brute - Gland", 25, config);
+            GlandBeetleGuardSharpshooterSpawnChance = SpawnRateConfig(true, "Beetle Guard Sharpshooter - Gland", 2, config);
+            SquidChaingunSpawnChance = SpawnRateConfig(true, "Squid Chaingun", 10, config);
+            SquidSniperSpawnChance = SpawnRateConfig(true, "Squid Sniper", 2, config);
         }
-        private static ConfigEntry<float> SpawnRateConfig (string variantType, string enemyName, float defaultValue, ConfigFile config)
+        private static ConfigEntry<float> SpawnRateConfig (bool isOther, string enemyName, float defaultValue, ConfigFile config)
         {
-            return config.Bind<float>(new ConfigDefinition(variantType + " Variants", enemyName), defaultValue, new ConfigDescription("Chance for the " + enemyName + " variant to spawn (percentage, 0-100)\nSetting this value to 0 will disable this variant from spawning.", null, Array.Empty<object>()));
+            if (!isOther)
+            {
+                return config.Bind<float>(new ConfigDefinition("4 - Custom Variants", enemyName), defaultValue, new ConfigDescription("Chance for the " + enemyName + " variant to spawn (percentage, 0-100)\nSetting this value to 0 will disable this variant from spawning.", null, Array.Empty<object>()));
+            }
+            else
+            {
+                return config.Bind<float>(new ConfigDefinition("5 - Other Variants", enemyName), defaultValue, new ConfigDescription("Chance for the " + enemyName + " variant to spawn (percentage, 0-100)\nSetting this value to 0 will disable this variant from spawning.", null, Array.Empty<object>()));
+            }
         }
-        private static ConfigEntry<float> SpawnRateConfig (string variantType, string enemyName, float defaultValue, string authorName, string modName, ConfigFile config)
+        private static ConfigEntry<float> SpawnRateConfig (bool isOther, string enemyName, float defaultValue, string authorName, string modName, ConfigFile config)
         {
-            return config.Bind<float>(new ConfigDefinition(variantType + " Variants", enemyName), defaultValue, new ConfigDescription("Chance for the " + enemyName + " variant to spawn (percentage, 0-100)\nOnly Spawns if " + authorName + "'s " + modName + " mod is Installed\nSetting this value to 0 will disable this variant from spawning.", null, Array.Empty<object>()));
+            if (!isOther)
+            {
+                return config.Bind<float>(new ConfigDefinition("4 - Custom Variants", enemyName), defaultValue, new ConfigDescription("Chance for the " + enemyName + " variant to spawn (percentage, 0-100)\nOnly Spawns if " + authorName + "'s " + modName + " mod is Installed\nSetting this value to 0 will disable this variant from spawning.", null, Array.Empty<object>()));
+            }
+            else
+            {
+                return config.Bind<float>(new ConfigDefinition("5 - Other Variants", enemyName), defaultValue, new ConfigDescription("Chance for the " + enemyName + " variant to spawn (percentage, 0-100)\nOnly Spawns if " + authorName + "'s " + modName + " mod is Installed\nSetting this value to 0 will disable this variant from spawning.", null, Array.Empty<object>()));
+            }
         }
     }
 }
