@@ -16,13 +16,17 @@ namespace MonsterVariantsPlus.SubClasses
             ItemDisplayRuleSet itemDisplayRuleSet = Resources.Load<GameObject>("Prefabs/CharacterBodies/CommandoBody").GetComponent<ModelLocator>().modelTransform.GetComponent<CharacterModel>().itemDisplayRuleSet;
             Material wispFlameMat = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/WispBody").GetComponentInChildren<CharacterModel>().baseRendererInfos[1].defaultMaterial);
             Material wispBodyMat = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/WispBody").GetComponentInChildren<CharacterModel>().baseRendererInfos[0].defaultMaterial);
+            Material greaterWispFlameMat = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/GreaterWispBody").GetComponentInChildren<CharacterModel>().baseRendererInfos[1].defaultMaterial);
+            Material greaterWispBodyMat = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/GreaterWispBody").GetComponentInChildren<CharacterModel>().baseRendererInfos[0].defaultMaterial);
+            Material archaicWispBodyMat = Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/ArchWispBody").GetComponent<ModelLocator>().modelTransform.GetComponent<CharacterModel>().baseRendererInfos[0].defaultMaterial);
+            Material archaicWispFlameMat = Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/ArchWispBody").GetComponent<ModelLocator>().modelTransform.GetComponent<CharacterModel>().baseRendererInfos[1].defaultMaterial);
             Material perforatorMat = UnityEngine.Object.Instantiate(itemDisplayRuleSet.FindDisplayRuleGroup(RoR2Content.Items.FireballsOnHit).rules[0].followerPrefab.GetComponentInChildren<MeshRenderer>().material);
-            //Mosquito Wisp
+            //Leastest Wisp
             MV.AddVariant(new MonsterVariantInfo
             {
                 bodyName = "Wisp",
-                overrideName = "Mosquito Wisp",
-                spawnRate = ConfigLoader.MosquitoWispSpawnChance.Value ,
+                overrideName = "Leastest Wisp",
+                spawnRate = ConfigLoader.LeastestWispSpawnChance.Value,
                 variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.FlyingSizeModifier(0.5f),
                 healthMultiplier = 0.5f,
@@ -35,6 +39,24 @@ namespace MonsterVariantsPlus.SubClasses
                 meshReplacement = null,
                 materialReplacement = null,
                 skillReplacement = null
+            });
+            //Almost but not quite archaic wisp
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "Wisp",
+                overrideName = "Almost-But-Not-Quite-Archaic Wisp",
+                spawnRate = ConfigLoader.AlmostButNotQuiteArchaicWispSpawnChance.Value,
+                variantTier = MonsterVariantTier.Uncommon,
+                sizeModifier = MV.FlyingSizeModifier(1.25f),
+                healthMultiplier = 6f,
+                attackSpeedMultiplier = 1f,
+                damageMultiplier = 1f,
+                armorMultiplier = 1f,
+                armorBonus = 0,
+                customInventory = null,
+                meshReplacement = null,
+                materialReplacement = MV.MultiMaterialReplacement(new Dictionary<int, Material> { { 0, archaicWispBodyMat }, { 1, archaicWispFlameMat } }),
+                skillReplacement = MV.PrimaryReplacement(CustomSkills.chargeArchCannonDef)
             });
             //Steel Contraption
             MV.AddVariant(new MonsterVariantInfo
@@ -259,8 +281,46 @@ namespace MonsterVariantsPlus.SubClasses
                 armorBonus = 0,
                 customInventory = null,
                 meshReplacement = null,
-                materialReplacement = MV.MultiMaterialReplacement(new Dictionary<int, Material> { { 0, wispBodyMat}, { 1, wispFlameMat}}),
-                skillReplacement = MV.PrimaryReplacement(CustomSkills.WispAmalgamateDef)
+                materialReplacement = MV.MultiMaterialReplacement(new Dictionary<int, Material> { { 0, wispBodyMat }, { 1, wispFlameMat } }),
+                skillReplacement = MV.PrimaryReplacement(CustomSkills.wispAmalgamateDef)
+            });
+            //Kinda-Great-But-Not-Greater Wisp
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "GreaterWisp",
+                overrideName = "Kinda-Great-But-Not-Greater Wisp",
+                spawnRate = ConfigLoader.KindaGreatButNotGreaterWispSpawnChance.Value,
+                variantTier = MonsterVariantTier.Uncommon,
+                sizeModifier = MV.FlyingSizeModifier(0.5f),
+                healthMultiplier = 0.5f,
+                moveSpeedMultiplier = 5.0f,
+                attackSpeedMultiplier = 5.0f,
+                damageMultiplier = 1,
+                armorBonus = 0,
+                armorMultiplier = 1,
+                customInventory = MV.SimpleInventory("AlienHead", 2),
+                meshReplacement = null,
+                materialReplacement = null,
+                skillReplacement = null
+            });
+            //Swarmer Probe
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "RoboBallMini",
+                overrideName = "Swarmer Probe",
+                spawnRate = ConfigLoader.SwarmerProbeSpawnChance.Value,
+                variantTier = MonsterVariantTier.Common,
+                sizeModifier = MV.FlyingSizeModifier(0.5f),
+                healthMultiplier = 0.5f,
+                moveSpeedMultiplier = 4.0f,
+                attackSpeedMultiplier = 4.0f,
+                damageMultiplier = 0.3f,
+                armorBonus = 0,
+                armorMultiplier = 1,
+                customInventory = null,
+                meshReplacement = null,
+                materialReplacement = null,
+                skillReplacement = null,
             });
             //Incinerating Elder Lemurian
             MV.AddVariant(new MonsterVariantInfo
@@ -270,11 +330,11 @@ namespace MonsterVariantsPlus.SubClasses
                 spawnRate = ConfigLoader.IncineratingElderLemurianSpawnChance.Value,
                 variantTier = MonsterVariantTier.Rare,
                 sizeModifier = MV.GroundSizeModifier(1.25f),
-                healthMultiplier = 0.75f,
+                healthMultiplier = 1.0f,
                 moveSpeedMultiplier = 1.5f,
                 attackSpeedMultiplier = 30f,
-                damageMultiplier = 10,
-                armorBonus = 0,
+                damageMultiplier = 7.5f,
+                armorBonus = -50,
                 customInventory = MV.SimpleInventory("Behemoth", 5),
                 meshReplacement  = null,
                 materialReplacement = MV.SimpleMaterialReplacement(perforatorMat),
@@ -344,7 +404,7 @@ namespace MonsterVariantsPlus.SubClasses
                 bodyName = "ClayBoss",
                 overrideName = "Devourer Dunestrider",
                 spawnRate = ConfigLoader.DevourerDunestriderspawnChance.Value,
-                variantTier = MonsterVariantTier.Rare,
+                variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.GroundSizeModifier(1.25f),
                 healthMultiplier = 1.0f,
                 moveSpeedMultiplier = 1.25f,
@@ -365,7 +425,7 @@ namespace MonsterVariantsPlus.SubClasses
                 spawnRate = ConfigLoader.MalfunctioningSolusControlUnitSpawnChance.Value,
                 variantTier = MonsterVariantTier.Common,
                 aiModifier = MonsterVariantAIModifier.Unstable,
-                sizeModifier = MV.GroundSizeModifier(1.0f),
+                sizeModifier = MV.FlyingSizeModifier(1.0f),
                 healthMultiplier = 1.0f,
                 moveSpeedMultiplier = 1.0f,
                 attackSpeedMultiplier = 1.0f,
@@ -377,6 +437,25 @@ namespace MonsterVariantsPlus.SubClasses
                 materialReplacement = null,
                 skillReplacement = null,
             });
+            //Solus Swarming Unit
+            /*MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "RoboBallBoss",
+                overrideName = "Solus Swarming Unit",
+                spawnRate = ConfigLoader.SolusSwarmingUnitSpawnChance.Value,
+                variantTier = MonsterVariantTier.Uncommon,
+                sizeModifier = MV.FlyingSizeModifier(0.25f),
+                healthMultiplier = 1.0f,
+                moveSpeedMultiplier = 1.2f,
+                attackSpeedMultiplier = 1.2f,
+                damageMultiplier = 1.0f,
+                armorMultiplier = 1.0f,
+                armorBonus = -100f,
+                customInventory = null,
+                meshReplacement = null,
+                materialReplacement = null,
+                skillReplacement = MV.UtilityReplacement(CustomSkills.DeploySwarmDef)
+            });*/
             //Malfunctioning Alloy Worship Unit
             MV.AddVariant(new MonsterVariantInfo
             {
@@ -385,7 +464,7 @@ namespace MonsterVariantsPlus.SubClasses
                 spawnRate = ConfigLoader.MalfunctioningAlloyWorshipUnitSpawnChance.Value,
                 variantTier = MonsterVariantTier.Common,
                 aiModifier = MonsterVariantAIModifier.Unstable,
-                sizeModifier = MV.GroundSizeModifier(1.0f),
+                sizeModifier = MV.FlyingSizeModifier(1.0f),
                 healthMultiplier = 1.0f,
                 moveSpeedMultiplier = 1.0f,
                 attackSpeedMultiplier = 1.0f,
@@ -440,8 +519,25 @@ namespace MonsterVariantsPlus.SubClasses
                     meshReplacement = null,
                     materialReplacement = null,
                     skillReplacement = null,
-                    
                 });
+                MV.AddModdedVariant(new MonsterVariantInfo
+                {
+                    bodyName = "MoffeinAncientWisp",
+                    overrideName = "Amalgamated Ancient Wisp",
+                    spawnRate = ConfigLoader.AmalgamatedAncientWispSpawnChance.Value,
+                    variantTier = MonsterVariantTier.Uncommon,
+                    sizeModifier = MV.FlyingSizeModifier(1.25f),
+                    healthMultiplier = 1.25f,
+                    moveSpeedMultiplier = 1.2f,
+                    attackSpeedMultiplier = 1.1f,
+                    damageMultiplier = 1,
+                    armorMultiplier = 1,
+                    armorBonus = -50,
+                    customInventory = null,
+                    meshReplacement = null,
+                    materialReplacement = MV.MultiMaterialReplacement(new Dictionary<int, Material> { { 0, greaterWispBodyMat }, { 1, greaterWispFlameMat } }),
+                    skillReplacement = null,
+                })
             }
             if (ConfigLoader.EnableOtherVariants)
             {
