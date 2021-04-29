@@ -56,7 +56,7 @@ If you don't want any new variants, you can also disable the entire section in t
 Since Version 1.3.7 of MonsterVariants, Modded variants are now possible to create. Currently it only supports Moffein's ClayMen & AncientWisp
 Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names to showcase their abilities.
 
-	Mosquito Wisp (Lesser Wisp)(7% Chance):
+	Leastest Wisp (Lesser Wisp)(7% Chance):
 	- 50% Size
 	- 50% Health
 	- 500% Movement Speed
@@ -293,7 +293,7 @@ KomradeSpectre, for helping me a ton with making the variants have custom skins.
 - Added a new Skin for AD-Shroom Variant
 
 '1.2.4' Variant Rebalance Update
-- Changed the Mosquito Wisp.
+- Changed the Leastest Wisp.
 	-- Common Tier -> Uncommon	Tier
 	-- 30% Spawn Chance -> 7% Spawn Chance
 	-- 1000% Attack Speed -> 500% Attack Speed
@@ -313,9 +313,9 @@ KomradeSpectre, for helping me a ton with making the variants have custom skins.
 - Added a missing Semi-Colon in Config Loader that caused the mod to not compile, whoops.
 
 '1.2.2' Vampiric Templar Update
-- Increased the spawn chance of a mosquito wisp to 30%
+- Increased the spawn chance of a Leastest Wisp to 30%
 -  Added Vampiric Templar Variant
--  Slightly Buffed Mosquito Wisps, so theyre more annoying (as a mosquito should be)
+-  Slightly Buffed Leastest Wisps, so theyre more annoying (as a mosquito should be)
 	-- 200% Movement Speed -> 500% Movement Speed
 	-- 200% Attack Speed -> 1000% Attack Speed
 	-- 100% Damage -> 110% Damage
@@ -326,7 +326,7 @@ KomradeSpectre, for helping me a ton with making the variants have custom skins.
 '1.2.0' Custom Variants Update
 - Added 3 New Variants.
 - Steel Contraption.
-- Mosquito Wisp.
+- Leastest Wisp.
 - Mortar Crab.
 
 '1.1.1'
