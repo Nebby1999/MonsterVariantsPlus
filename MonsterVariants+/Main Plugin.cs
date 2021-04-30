@@ -20,22 +20,24 @@ namespace MonsterVariantsPlus
         internal static bool hasClayMan;
         internal static bool hasAncientWisp;
         internal static bool hasArchWisp;
-        public static AssetBundle MainAssets; //Contains custom assets
+
 
         public void Awake()
         {
             //Check if Mods are loaded.
-            hasClayMan = AssetLoaderAndChecker.checkForMod("com.Moffein.ClayMen");
-            hasAncientWisp = AssetLoaderAndChecker.checkForMod("com.Moffein.AncientWisp");
-            hasArchWisp = AssetLoaderAndChecker.checkForMod("com.Nebby1999.ArchaicWisps");
+            hasClayMan = AssetLoaderAndChecker.CheckForMod("com.Moffein.ClayMen");
+            hasAncientWisp = AssetLoaderAndChecker.CheckForMod("com.Moffein.AncientWisp");
+            hasArchWisp = AssetLoaderAndChecker.CheckForMod("com.Nebby1999.ArchaicWisps");
 
             //Load Monster Variant Assets
-            AssetLoaderAndChecker.LoadAssets(MainAssets);
+            AssetLoaderAndChecker.LoadAssets();
 
             //Initializes the rewards Config
             ConfigLoader.SetupConfigLoader(Config);
             //Initializes the custom variants config
             ConfigLoader.ReadConfig(Config);
+
+            AssetLoaderAndChecker.PreventBadValues(Config);
             
             //Registers skills.
 
@@ -67,27 +69,34 @@ namespace MonsterVariantsPlus
                 //Remove this once rob implements deathState replacements.
                 if (DamageReport.victimBody.baseNameToken == "Wisp Amalgamate")
                 {
-                    
+                    SpawnEnemy("LesserWisp", 5, DamageReport);
                 }
-                else
+                else if(DamageReport.victimBody.baseNameToken == "Amalgamated Ancient Wisp")
+                {
+                    SpawnEnemy("GreaterWisp", 5, DamageReport);
+                }
+                else if(DamageReport.victimBody.baseNameToken == "M.O.A.J")
+                {
+                    SpawnEnemy("Jellyfish", 5, DamageReport);
+                }
                 orig(self, DamageReport);
             };
         }
-        public void spawnEnemy(string spawnCard, int amount, DamageReport damageReport)
+        public void SpawnEnemy(string spawnCard, int amount, DamageReport damageReport)
         {
+            Vector3 position = damageReport.victimBody.corePosition + (2f * Random.insideUnitSphere);
+
+            DirectorSpawnRequest directorSpawnRequest = new DirectorSpawnRequest((SpawnCard)Resources.Load(string.Format("SpawnCards/CharacterSpawnCards/csc" + spawnCard)), new DirectorPlacementRule
+            {
+                placementMode = DirectorPlacementRule.PlacementMode.Direct,
+                minDistance = 0f,
+                maxDistance = 0f,
+                position = position
+            }, RoR2Application.rng);
+
+            directorSpawnRequest.summonerBodyObject = damageReport.victimBody.gameObject;
             for (int i = 0; i < amount; i++)
             {
-                Vector3 position = damageReport.victimBody.corePosition + (2f * Random.insideUnitSphere);
-
-                DirectorSpawnRequest directorSpawnRequest = new DirectorSpawnRequest((SpawnCard)Resources.Load(string.Format("SpawnCards/CharacterSpawnCards/csc" + spawnCard)), new DirectorPlacementRule
-                {
-                    placementMode = DirectorPlacementRule.PlacementMode.Direct,
-                    minDistance = 0f,
-                    maxDistance = 0f,
-                    position = position
-                }, RoR2Application.rng);
-
-                directorSpawnRequest.summonerBodyObject = damageReport.victimBody.gameObject;
 
                 GameObject enemy = DirectorCore.instance.TrySpawnObject(directorSpawnRequest);
                 if (enemy)

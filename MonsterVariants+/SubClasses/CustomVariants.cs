@@ -48,11 +48,12 @@ namespace MonsterVariantsPlus.SubClasses
                 spawnRate = ConfigLoader.AlmostButNotQuiteArchaicWispSpawnChance.Value,
                 variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.FlyingSizeModifier(1.25f),
-                healthMultiplier = 6f,
-                attackSpeedMultiplier = 1f,
+                healthMultiplier = 6.0f,
+                moveSpeedMultiplier = 1.0f,
+                attackSpeedMultiplier = 1.0f,
                 damageMultiplier = 1f,
                 armorMultiplier = 1f,
-                armorBonus = 0,
+                armorBonus = 0f,
                 customInventory = null,
                 meshReplacement = null,
                 materialReplacement = MV.MultiMaterialReplacement(new Dictionary<int, Material> { { 0, archaicWispBodyMat }, { 1, archaicWispFlameMat } }),
@@ -74,7 +75,7 @@ namespace MonsterVariantsPlus.SubClasses
                 armorBonus = 0f,
                 customInventory = null,
                 meshReplacement = null,
-                materialReplacement = MV.SimpleMaterialReplacement(MainPlugin.MainAssets.LoadAsset<Material>("SteelContraption")),
+                materialReplacement = MV.SimpleMaterialReplacement(AssetLoaderAndChecker.MainAssets.LoadAsset<Material>("SteelContraption")),
                 skillReplacement = null
             });
             //Aluminum Contraption
@@ -93,7 +94,7 @@ namespace MonsterVariantsPlus.SubClasses
                 armorBonus = 0f,
                 customInventory = MV.SimpleInventory("AlienHead", 1),
                 meshReplacement = null,
-                materialReplacement = MV.SimpleMaterialReplacement(MainPlugin.MainAssets.LoadAsset<Material>("AluminumContraption")),
+                materialReplacement = MV.SimpleMaterialReplacement(AssetLoaderAndChecker.MainAssets.LoadAsset<Material>("AluminumContraption")),
                 skillReplacement = null,
             });
             //Mortar Crab
@@ -150,7 +151,7 @@ namespace MonsterVariantsPlus.SubClasses
                 armorBonus = 0,
                 customInventory = MV.SimpleInventory("AlienHead", 5),
                 meshReplacement = null,
-                materialReplacement = MV.SimpleMaterialReplacement(MainPlugin.MainAssets.LoadAsset<Material>("ADShroom")),
+                materialReplacement = MV.SimpleMaterialReplacement(AssetLoaderAndChecker.MainAssets.LoadAsset<Material>("ADShroom")),
                 skillReplacement = null
             });
             //Healer-Shroom
@@ -169,7 +170,26 @@ namespace MonsterVariantsPlus.SubClasses
                 armorBonus = 0,
                 customInventory = MV.SimpleInventory("Mushroom", 2),
                 meshReplacement = null,
-                materialReplacement = MV.SimpleMaterialReplacement(MainPlugin.MainAssets.LoadAsset<Material>("HealerShroom")),
+                materialReplacement = MV.SimpleMaterialReplacement(AssetLoaderAndChecker.MainAssets.LoadAsset<Material>("HealerShroom")),
+                skillReplacement = null,
+            });
+            //Mama Shroom
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "MiniMushroom",
+                overrideName = "Mama-Mushroom",
+                spawnRate = ConfigLoader.MamaShroomSpawnChance.Value,
+                variantTier = MonsterVariantTier.Rare,
+                sizeModifier = MV.GroundSizeModifier(2f),
+                healthMultiplier = 1.0f,
+                moveSpeedMultiplier = 0.0f,
+                attackSpeedMultiplier = 1.0f,
+                damageMultiplier = 1.0f,
+                armorMultiplier = 1,
+                armorBonus = 0,
+                customInventory = MamaInventory,
+                meshReplacement = null,
+                materialReplacement = null,
                 skillReplacement = null,
             });
             //Adolescent
@@ -245,7 +265,7 @@ namespace MonsterVariantsPlus.SubClasses
                 armorBonus = 0f,
                 customInventory = MV.SimpleInventory("Behemoth", 2),
                 meshReplacement = null,
-                materialReplacement = MV.SimpleMaterialReplacement(MainPlugin.MainAssets.LoadAsset<Material>("AlphaBison")),
+                materialReplacement = MV.SimpleMaterialReplacement(AssetLoaderAndChecker.MainAssets.LoadAsset<Material>("AlphaBison")),
                 skillReplacement = null,
             });
             //Kamikaze Reaver
@@ -520,6 +540,7 @@ namespace MonsterVariantsPlus.SubClasses
                     materialReplacement = null,
                     skillReplacement = null,
                 });
+                //Amalgamated Ancient Wisp
                 MV.AddModdedVariant(new MonsterVariantInfo
                 {
                     bodyName = "MoffeinAncientWisp",
@@ -537,7 +558,46 @@ namespace MonsterVariantsPlus.SubClasses
                     meshReplacement = null,
                     materialReplacement = MV.MultiMaterialReplacement(new Dictionary<int, Material> { { 0, greaterWispBodyMat }, { 1, greaterWispFlameMat } }),
                     skillReplacement = null,
-                })
+                });
+            }
+            if (MainPlugin.hasArchWisp)
+            {
+                //Aeonic Wisp
+                MV.AddVariant(new MonsterVariantInfo
+                {
+                    bodyName = "ArchWisp",
+                    overrideName = "Aeonic Wisp",
+                    variantTier = MonsterVariantTier.Rare,
+                    sizeModifier = MV.FlyingSizeModifier(1.25f),
+                    healthMultiplier = 2f,
+                    moveSpeedMultiplier = 0.9f,
+                    attackSpeedMultiplier = 1.2f,
+                    damageMultiplier = 1.0f,
+                    armorMultiplier = 1.0f,
+                    armorBonus = 20,
+                    customInventory = MV.SimpleInventory("AlienHead", 2),
+                    meshReplacement = null,
+                    materialReplacement = null,
+                    skillReplacement = null,
+                });
+                //Kinda Archaic Wisp
+                MV.AddVariant(new MonsterVariantInfo
+                {
+                    bodyName = "ArchWisp",
+                    overrideName = "Kinda-Archaic-Wisp",
+                    variantTier = MonsterVariantTier.Rare,
+                    sizeModifier = MV.FlyingSizeModifier(0.5f),
+                    healthMultiplier = 0.5f,
+                    moveSpeedMultiplier = 5.0f,
+                    attackSpeedMultiplier = 5.0f,
+                    damageMultiplier = 1,
+                    armorBonus = 0,
+                    armorMultiplier = 1,
+                    customInventory = MV.SimpleInventory("AlienHead", 2),
+                    meshReplacement = null,
+                    materialReplacement = null,
+                    skillReplacement = null
+                });
             }
             if (ConfigLoader.EnableOtherVariants)
             {
@@ -638,6 +698,11 @@ namespace MonsterVariantsPlus.SubClasses
         {
             MV.SimpleItem("RepeatHeal", 2),
             MV.SimpleItem("BarrierOnOverHeal", 2)
+        };
+        readonly static ItemInfo[] MamaInventory = new ItemInfo[]
+        {
+            MV.SimpleItem("Mushroom", 10),
+            MV.SimpleItem("BarrierOnOverHeal", 1)
         };
         //Method to replace a monster's primary and utility skills. used for Child.
         internal static MonsterSkillReplacement[] PrimaryUtilityReplacement(SkillDef primarySkill, SkillDef utilitySkill)
