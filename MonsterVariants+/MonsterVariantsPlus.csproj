@@ -118,6 +118,8 @@
     <Compile Include="SubClasses\MultiplyGold.cs" />
     <Compile Include="SubClasses\Skills\States\GreaterWisp\WispAmalgamateFire.cs" />
     <Compile Include="SubClasses\Skills\States\GreaterWisp\WispAmalgamateCharge.cs" />
+    <Compile Include="SubClasses\Skills\States\LesserWisp\ChargeArchwispCannon.cs" />
+    <Compile Include="SubClasses\Skills\States\LesserWisp\FireArchwispCannon.cs" />
     <Compile Include="SubClasses\Skills\States\RoboBallBoss\DeploySwarm.cs" />
     <Compile Include="SubClasses\Skills\States\VoidReaver\KamikazeBlink.cs" />
     <Compile Include="SubClasses\Skills\States\ClayDunestrider\XLRecover.cs" />
@@ -125,9 +127,7 @@
     <Compile Include="SubClasses\Skills\States\Parent\MultiSlam.cs" />
     <Compile Include="SubClasses\Skills\States\EmptySkill.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="SubClasses\Skills\States\LesserWisp\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="monstervariantsplus_assets" />
     <None Include="monstervariantsplus_assets.manifest" />
