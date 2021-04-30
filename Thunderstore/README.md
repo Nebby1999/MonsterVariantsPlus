@@ -1,3 +1,4 @@
+
 # MonsterVariantsPlus
 - An Addon for Rob's [MonsterVariants](https://thunderstore.io/package/rob/MonsterVariants/)
 - Adds Custom Variants on top of Rob's Existing Variants
@@ -52,17 +53,22 @@ The end goal is to have at least one variant per type of enemy.
 Just Like in the Original Monster Variants, their spawn chance can be changed in the config file.
 If you don't want any new variants, you can also disable the entire section in the config file.
 
-Since Version 1.3.7 of MonsterVariants, modded variants are now possible to create. Currently it only supports Moffein's Claymen
+Since Version 1.3.7 of MonsterVariants, Modded variants are now possible to create. Currently it only supports Moffein's ClayMen & AncientWisp
 Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names to showcase their abilities.
 
-	Mosquito Wisp (Lesser Wisp)(7% Chance):
+	Leastest Wisp (Lesser Wisp)(7% Chance):
 	- 50% Size
 	- 50% Health
 	- 500% Movement Speed
 	- 500% Attack Speed
 	- 110% Damage
-	- Has 4 Alien Heads
+	- Has 5 Alien Heads
 	
+	Almost-But-Not-Quite-Archaic Wisp (Lesser Wisp)(4% Chance)
+	- 125% Size
+	- 600% Health
+	- Fires Archaic Wisp Fireballs
+
 	Steel Contraption (Brass Contraption)(7% Chance):
 	- 100% Size
 	- 150% Health
@@ -99,14 +105,21 @@ Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names t
 	- 6.2% Damage
 	- Has 5 Alien Heads
 
-	-Healer-Shroom (MiniMushroom)(10% Chance):
+	Healer-Shroom (MiniMushroom)(10% Chance):
 	- 50% Size
 	- 200% Movement Speed
 	- 50% Attack Speed
 	- 50% Damage
 	- Has 2 Bustling Fungus
 
-	Adolescent (Parent)(8% Chance):
+	Mama-Shroom (MiniMushroom) (2% Chance): (Based off an idea by Awesome_Soul)
+	- 200% Size
+	- 0% Movement Speed
+	- -50 Armor
+	- Has 10 Bustling Fungus
+	- Has 1 Aegis
+
+	Adolescent (Parent)(8% Chance): (Based off an idea by Zarko)
 	- 75% Size
 	- 75% Health
 	- 120% Attack Speed
@@ -115,7 +128,7 @@ Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names t
 	- Has 1 Hardlight Afterburner
 	- Has 3 Alien Heads
 
-	Child (Parent)(6% Chance):
+	Child (Parent)(6% Chance): (Based off an idea by Ululu)
 	- 50% Size
 	- 300% Movement Speed
 	- 600% Attack Speed
@@ -132,7 +145,7 @@ Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names t
 	- Has 2 Crowbars
 	- Cannot Teleport
 
-	Alpha Bison (Bighorn Bison)(5% Chance):
+	Alpha Bison (Bighorn Bison)(5% Chance): (Based off an idea by Gaforb)
 	- 125% Size
 	- 75% Health
 	- 200% Movement Speed
@@ -140,16 +153,39 @@ Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names t
 	- 70% Damage
 	- Has 2 Brilliant Behemoths
 
-	Wisp Amalgamate (Greater Wisp)(10% Chance)
+	Wisp Amalgamate (Greater Wisp)(8% Chance)
 	- 75% Size
 	- Attacks with a hitscan attack, much like the regular wisp
-	- Spawns Wisps upon Death
+	- Spawns 5 Wisps upon Death
 
-	Sun Priest (GrandParent)(3% Chance):
+	Kinda-Great-But-Not-Greater Wisp (Greater Wisp)(6% Chance)
+	- 50% Size
+	- 50% Health
+	- 500% Movement Speed
+	- 500% Attack Speed
+	- Has 2 Alien Heads
+
+	Swarmer Probe (Solus Probe)(7% Chance)
+	- 50% Size
+	- 50% Health
+	- 400% Movement Speed
+	- 400% Attack Speed
+	- 30% Damage
+
+	Incinerating Elder Lemurian (Elder Lemurian)(5% Chance)
+	- 125% Size
+	- 150% Movement Speed
+	- 3000% Attack Speed
+	- 750% Damage
+	- -50 Armor
+	- Has 5 Brilliant Behemoths
+	- Cannot shoot fireball volley, limiting his arsenal to just it's close-range flame thrower.
+
+	Sun Priest (GrandParent)(3% Chance): (Based off an idea by Ululu)
 	- Can use Solar Flare at any point in time.
 	- -50 Armor
 
-	Hoarder (Scavenger)(8% Chance):
+	Hoarder (Scavenger)(8% Chance): (Based off an idea by Gaforb)
 	- 75% Size
 	- 75% Health
 	- 125% Movement Speed
@@ -161,15 +197,23 @@ Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names t
 	- Can use Life Draining Tendrils at any point in time.
 	- -50 Armor
 
-	Devourer Dunestrider (Clay Dunestrider)(2% Chance):
+	Devourer Dunestrider (Clay Dunestrider)(2% Chance): (Mildly based off an idea by Gaforb)
 	- 125% Size
 	- 120% Movement Speed
 	- 110% Attack Speed
 	- Has 2 Rejuvination Racks
 	- Has 2 Aegis
-	- Life Draining Tendrils has Twice the Cooldown, Lasts Twice as Long, the Tethers are Twice as Long, and the Dunestrider no longer gains Armor.
+	- Life Draining Tendrils has a 90 Second Cooldown, Lasts Twice as Long, the Tethers are Twice as Long, and the Dunestrider no longer gains Armor.
 
-	Clay Soldier (ClayMen)(Requires Moffein's ClayMen)(15% Spawn Chance)
+	Malfunctioning Solus Control Unit (Solus Control Unit)(4% Chance):
+	- Can use Solus Charged Detonation at any point in time.
+	- -50 Armor
+
+	Malfunctioning Alloy Worship Unit (Alloy Worship Unit)(4% Chance):
+	- Can use Alloy Supercharged Detonation at any point in time.
+	- -50 Armor
+	
+	Clay Soldier (ClayMen)(Requires Moffeins ClayMen)(15% Spawn Chance)
 	- 112.5% Size
 	- 125% Health
 	- 90% Movement Speed
@@ -177,10 +221,65 @@ Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names t
 	- 50% Damage
 	- Has 1 Alien Head
 
-	Enraged Wisp (Ancient Wisp)(Requires Moffein's Ancient Wisp') (2% Chance)
-	-Can use it's enrage ability at any point in time
+	Enraged Wisp (Ancient Wisp)(Requires Moffeins Ancient Wisp)(4% Chance)
+	-Can use its enrage ability at any point in time
 	- -50 Armor
+	
+	Amalgamated Ancient Wisp (Ancient Wisp)(Requires Moffeins Ancient Wisp)(2% Chance)
+	- 125% Size
+	- 120% Movement Speed
+	- 110% Attack Speed
+	- -50 Armor
+	- Spawns 5 Greater Wisps upon Death
 
+	Aeonic Wisp (Archaic Wisp)(Requires Nebbys Archaic Wisp)(4% Chance)
+	- 125% Size
+	- 200% Health
+	- 90% Movement Speed
+	- 90% Attack Speed
+	- 20 Armor
+	- Has 1 Brilliant Behemoth
+
+	Kinda-Archaic Wisp (Archaic Wisp)(Requires Nebbys Archaic Wisp)(7% Chance)
+	- 50% Size
+	- 50% Health
+	- 500% Movement Speed
+	- 500 Attack Speed
+	- Has 2 Alien Heads
+
+## Other Variants
+A new adition from update 1.3.0, Other variants include a list of potentially helpful Creature variants.
+Currently only adds variants for 2 Creatures, the Beetleguards from the Queen's Gland item (Taken directly from Rob's Original mod) & the Squid Turrets from the Squid Polyp
+All of these variants can be toggled OFF with a simple boolean switch, found at the top of the "5 - Other Variants" Category in the Config File.
+If you wish to disable specific variants, just like regular variants, their spawn chances can be set to 0 to disable them from spawning.
+While these might sound like they'll give you the advantage in combat, keep in mind that these variants are not Team dependant, so enemies like KipKip the Gentle can spawn with Beetle Guard Variants!
+
+	Beetle Guard Brute - QueensGland (Beetle Guard)(25% chance)
+	- 110% Size
+	- 200% Health
+	- 50% Movement speed
+	- 90% Attack speed
+	- 140% Damage
+	- +10 Armor
+	
+	Beetle Guard Sharpshooter - QueensGland (Beetle Guard)(2% chance)
+	- 80% Size
+	- 80% Health
+	- 60% Movement speed
+	- 300% Attack speed
+	- 40% Damage
+	- Has 10 Alien Heads
+
+	Sniper Squid (Squid Turret)(2% Chance)
+	- 125% Size
+	- 10% Attack Speed
+	- 1000% Damage
+	- -100 Armor
+
+	Chaingun Squid (Squid Turret)(10% Chance)
+	- 50% Size
+	- 500% Attack Speed
+	- 30% Damage
 
 ## Configuring the Mod.
 This section is for explaining how the Item drop chance mechanic works, since it's not based off the normal % chance ROR2 has.
@@ -194,7 +293,6 @@ To install the addon, simply drag the MonsterVariantsPlus.dll onto your plugins 
 
 ## Future Plans
 - Have Boss variants drop their Boss item based off Chance.
-- Polish up the code because rn it's becoming spaghetti code
 - Create actually pleasing to the eyes textures for the variants instead of the awful look of some of them *cough cough* Alpha Bison *cough cough*
 - Wait for Rob to implement DeathState replacers to replace the Wisp Amalgamate's death behavior instead of using a hook, which would increase performance overall.
 - Make some wizardry to improve the Wisp Amalgamate's Death explosion & it's light emmiting properties so they arent green.
@@ -208,6 +306,31 @@ Rob, for making his MonsterVariants mod and helping me a lot with questions i've
 KomradeSpectre, for helping me a ton with making the variants have custom skins.
 
 ## Changelog
+'1.3.1' Whoops, More Variants!
+- Added a failsafe mechanism that runs every time the mod loads, it checks if the values on the config file are invalid (Can be disabled).
+- Added the Almost-But-Not-Quite-Archaic Wisp.
+- Added the Mama Shroom.
+- Added the Kinda-Great-But-Not-Greater Wisp.
+- Added the Swarmer Probe.
+- Added the Incinerating Elder Lemurian.
+- Added the Amalgamated Ancient Wisp.
+- Added the Aeonic Wisp.
+- Added the Kinda-Archaic Wisp.
+- Changed how certain enemies spawn enemies on death.
+- Wisp Amalgamate now spawns 5 lesser wisps on death.
+- Rob's M.O.A.J now spawns 5 jellyfishes on death.
+- Added proper credits to the people who suggested variants.
+
+'1.3.0' Code Cleanup & Other Variants Update
+- Refractored how the config file is generated, it's EXTREMELY advised that you delete your existing config file so the new one generates without any errors!
+- Added the Malfunctioning Solus Control Unit
+- Added the Malfunctioning Alloy Worship Unit,
+- Added Other Variants. Variants that not necesarily belong to the Enemy Team.
+- Added the Beetle Guard Brute - Gland
+- Added the Beetle Guard Sharpshooter - Gland
+- Added the Sniper Squid
+- Added the Chaingun Squid.
+
 '1.2.9' Wispception update
 - Added the Wisp Amalgamate
 - Added the Aluminum Contraption
@@ -242,7 +365,7 @@ KomradeSpectre, for helping me a ton with making the variants have custom skins.
 - Added a new Skin for AD-Shroom Variant
 
 '1.2.4' Variant Rebalance Update
-- Changed the Mosquito Wisp.
+- Changed the Leastest Wisp.
 	-- Common Tier -> Uncommon	Tier
 	-- 30% Spawn Chance -> 7% Spawn Chance
 	-- 1000% Attack Speed -> 500% Attack Speed
@@ -262,9 +385,9 @@ KomradeSpectre, for helping me a ton with making the variants have custom skins.
 - Added a missing Semi-Colon in Config Loader that caused the mod to not compile, whoops.
 
 '1.2.2' Vampiric Templar Update
-- Increased the spawn chance of a mosquito wisp to 30%
+- Increased the spawn chance of a Leastest Wisp to 30%
 -  Added Vampiric Templar Variant
--  Slightly Buffed Mosquito Wisps, so theyre more annoying (as a mosquito should be)
+-  Slightly Buffed Leastest Wisps, so theyre more annoying (as a mosquito should be)
 	-- 200% Movement Speed -> 500% Movement Speed
 	-- 200% Attack Speed -> 1000% Attack Speed
 	-- 100% Damage -> 110% Damage
@@ -275,7 +398,7 @@ KomradeSpectre, for helping me a ton with making the variants have custom skins.
 '1.2.0' Custom Variants Update
 - Added 3 New Variants.
 - Steel Contraption.
-- Mosquito Wisp.
+- Leastest Wisp.
 - Mortar Crab.
 
 '1.1.1'

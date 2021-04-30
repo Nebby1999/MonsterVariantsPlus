@@ -6,7 +6,7 @@ using EntityStates.ClayBoss;
 using RoR2;
 using UnityEngine;
 using UnityEngine.Networking;
-namespace MonsterVariantsPlus.SubClasses.Skills.States
+namespace MonsterVariantsPlus.SubClasses.Skills.States.ClayDunestrider
 {
     public class XLRecover : BaseState
     {

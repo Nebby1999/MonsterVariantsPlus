@@ -1,145 +1,200 @@
 ﻿using BepInEx.Configuration;
+using System;
 
 namespace MonsterVariantsPlus.SubClasses
 {
-    public class ConfigLoader
+    public static class ConfigLoader
     {
         //Main Categories
-        private static ConfigEntry<bool> EnableItemRewardsConfig { get; set; } //This creates the configuration entry.
+        internal static ConfigEntry<bool> EnableItemRewardsConfig { get; set; } //This creates the configuration entry.
         public static bool EnableItemRewards => EnableItemRewardsConfig.Value; //This works as a Get, must keep in mind that "EnableItemRewards" is what one should get if you want to obtain a certain config's Value!
-        private static ConfigEntry<bool> EnableGoldRewardsConfig { get; set; }
+        internal static ConfigEntry<bool> EnableGoldRewardsConfig { get; set; }
         public static bool EnableGoldRewards => EnableGoldRewardsConfig.Value;
-        private static ConfigEntry<bool> EnableXPRewardsConfig { get; set; }
+        internal static ConfigEntry<bool> EnableXPRewardsConfig { get; set; }
         public static bool EnableXPRewards => EnableXPRewardsConfig.Value;
-        private static ConfigEntry<bool> EnableCustomVariantsConfig { get; set; }
+        internal static ConfigEntry<bool> EnableCustomVariantsConfig { get; set; }
         public static bool EnableCustomVariants => EnableCustomVariantsConfig.Value;
+        internal static ConfigEntry<bool> EnableOtherVariantsConfig { get; set; }
+        public static bool EnableOtherVariants => EnableOtherVariantsConfig.Value;
+        internal static ConfigEntry<bool> EnableConfigCheckConfig { get; set; }
+        public static bool EnableConfigcheck => EnableConfigCheckConfig.Value;
 
         //Item Related Configs
-        private static ConfigEntry<bool> ItemSpawnsOnPlayerConfig { get; set; }
+        internal static ConfigEntry<bool> ItemSpawnsOnPlayerConfig { get; set; }
         public static bool ItemSpawnsOnPlayer => ItemSpawnsOnPlayerConfig.Value;
-        private static ConfigEntry<int> CommonWhiteChanceConfig { get; set; }
+        internal static ConfigEntry<int> CommonWhiteChanceConfig { get; set; }
         public static int CommonWhiteChance => CommonWhiteChanceConfig.Value;
-        private static ConfigEntry<int> CommonGreenChanceConfig { get; set; }
+        internal static ConfigEntry<int> CommonGreenChanceConfig { get; set; }
         public static int CommonGreenChance => CommonGreenChanceConfig.Value;
-        private static ConfigEntry<int> CommonRedChanceConfig { get; set; }
+        internal static ConfigEntry<int> CommonRedChanceConfig { get; set; }
         public static int CommonRedChance => CommonRedChanceConfig.Value;
-        private static ConfigEntry<int> UncommonWhiteChanceConfig { get; set; }
+        internal static ConfigEntry<int> UncommonWhiteChanceConfig { get; set; }
         public static int UncommonWhiteChance => UncommonWhiteChanceConfig.Value;
-        private static ConfigEntry<int> UncommonGreenChanceConfig { get; set; }
+        internal static ConfigEntry<int> UncommonGreenChanceConfig { get; set; }
         public static int UncommonGreenChance => UncommonGreenChanceConfig.Value;
-        private static ConfigEntry<int> UncommonRedChanceConfig { get; set; }
+        internal static ConfigEntry<int> UncommonRedChanceConfig { get; set; }
         public static int UncommonRedChance => UncommonRedChanceConfig.Value;
-        private static ConfigEntry<int> RareWhiteChanceConfig { get; set; }
+        internal static ConfigEntry<int> RareWhiteChanceConfig { get; set; }
         public static int RareWhiteChance => RareWhiteChanceConfig.Value;
-        private static ConfigEntry<int> RareGreenChanceConfig { get; set; }
+        internal static ConfigEntry<int> RareGreenChanceConfig { get; set; }
         public static int RareGreenChance => RareGreenChanceConfig.Value;
-        private static ConfigEntry<int> RareRedChanceConfig { get; set; }
+        internal static ConfigEntry<int> RareRedChanceConfig { get; set; }
         public static int RareRedChance => RareRedChanceConfig.Value;
 
         //Money Related Configs
-        private static ConfigEntry<float> CommonMoneyMultConfig { get; set; }
+        internal static ConfigEntry<float> CommonMoneyMultConfig { get; set; }
         public static float CommonMoneyMult => CommonMoneyMultConfig.Value;
-        private static ConfigEntry<float> UncommonMoneyMultConfig { get; set; }
+        internal static ConfigEntry<float> UncommonMoneyMultConfig { get; set; }
         public static float UncommonMoneyMult => UncommonMoneyMultConfig.Value;
-        private static ConfigEntry<float> RareMoneyMultConfig { get; set; }
+        internal static ConfigEntry<float> RareMoneyMultConfig { get; set; }
         public static float RareMoneyMult => RareMoneyMultConfig.Value;
 
         //XP Related Configs
-        private static ConfigEntry<float> CommonXPMultConfig { get; set; }
+        internal static ConfigEntry<float> CommonXPMultConfig { get; set; }
         public static float CommonXPMult => CommonXPMultConfig.Value;
-        private static ConfigEntry<float> UncommonXPMultConfig { get; set; }
+        internal static ConfigEntry<float> UncommonXPMultConfig { get; set; }
         public static float UncommonXPMult => UncommonXPMultConfig.Value;
-        private static ConfigEntry<float> RareXPMultConfig { get; set; }
+        internal static ConfigEntry<float> RareXPMultConfig { get; set; }
         public static float RareXPMult => RareXPMultConfig.Value;
 
         //Custom Variants
-        private static ConfigEntry<float> MosquitoWispSpawnChanceConfig { get; set; }
-        public static float MosquitoWispSpawnChance => MosquitoWispSpawnChanceConfig.Value;
-        private static ConfigEntry<float> SteelContraptionSpawnChanceConfig { get; set; }
-        public static float SteelContraptionSpawnChance => SteelContraptionSpawnChanceConfig.Value;
-        private static ConfigEntry<float> AluminumContraptionSpawnChanceConfig { get; set; }
-        public static float AluminumContraptionSpawnChance => AluminumContraptionSpawnChanceConfig.Value;
-        private static ConfigEntry<float> MortarCrabSpawnChanceConfig { get; set; }
-        public static float MortarCrabSpawnChance => MortarCrabSpawnChanceConfig.Value;
-        private static ConfigEntry<float> VampiricTemplarSpawnChanceConfig { get; set; }
-        public static float VampiricTemplarSpawnChance => VampiricTemplarSpawnChanceConfig.Value;
-        private static ConfigEntry<float> ADShroomSpawnChanceConfig { get; set; }
-        public static float ADShroomSpawnChance => ADShroomSpawnChanceConfig.Value;
-        private static ConfigEntry<float> HealerShroomSpawnChanceConfig { get; set; }
-        public static float HealerShroomSpawnChance => HealerShroomSpawnChanceConfig.Value;
-        private static ConfigEntry<float> AdolescentSpawnChanceConfig { get; set; }
-        public static float AdolescentSpawnChance => AdolescentSpawnChanceConfig.Value;
-        private static ConfigEntry<float> ChildSpawnChanceConfig { get; set; }
-        public static float ChildSpawnChance => ChildSpawnChanceConfig.Value;
-        private static ConfigEntry<float> BruiserImpSpawnChanceConfig { get; set; }
-        public static float BruiserImpSpawnChance => BruiserImpSpawnChanceConfig.Value;
-        private static ConfigEntry<float> AlphaBisonSpawnChanceConfig { get; set; }
-        public static float AlphaBisonSpawnChance => AlphaBisonSpawnChanceConfig.Value;
-        /*private static ConfigEntry<float> KamikazeReaverSpawnChanceConfig { get; set; }
-        public static float KamikazeReaverSpawnChance => KamikazeReaverSpawnChanceConfig.Value;*/
-        private static ConfigEntry<float> WispAmalgamateSpawnChanceConfig { get; set; }
-        public static float WispAmalgamateSpawnChance => WispAmalgamateSpawnChanceConfig.Value;
-        private static ConfigEntry<float> SunPriestSpawnChanceConfig { get; set; }
-        public static float SunPriestSpawnChance => SunPriestSpawnChanceConfig.Value;
-        private static ConfigEntry<float> HoarderSpawnChanceConfig { get; set; }
-        public static float HoarderSpawnChance => HoarderSpawnChanceConfig.Value;
-        private static ConfigEntry<float> StarvingDunestriderSpawnChanceConfig { get; set; }
-        public static float StarvingDunestriderSpawnChance => StarvingDunestriderSpawnChanceConfig.Value;
-        private static ConfigEntry<float> DevourerDunestriderspawnChanceConfig { get; set; }
-        public static float DevourerDunestriderSpawnChance => DevourerDunestriderspawnChanceConfig.Value;
-        private static ConfigEntry<float> ClaySoldierSpawnChanceConfig { get; set; }
-        public static float ClaySoldierSpawnChance => ClaySoldierSpawnChanceConfig.Value;
-        private static ConfigEntry<float> EnragedWispSpawnChanceConfig { get; set; }
-        public static float EnragedWispSpawnChance => EnragedWispSpawnChanceConfig.Value;
+        //Enemy Variants
+        public static ConfigEntry<float> LeastestWispSpawnChance;
+        public static ConfigEntry<float> AlmostButNotQuiteArchaicWispSpawnChance;
+        public static ConfigEntry<float> SteelContraptionSpawnChance;
+        public static ConfigEntry<float> AluminumContraptionSpawnChance;
+        public static ConfigEntry<float> MortarCrabSpawnChance;
+        public static ConfigEntry<float> VampiricTemplarSpawnChance;
+        public static ConfigEntry<float> ADShroomSpawnChance;
+        public static ConfigEntry<float> HealerShroomSpawnChance;
+        public static ConfigEntry<float> MamaShroomSpawnChance;
+        public static ConfigEntry<float> AdolescentSpawnChance;
+        public static ConfigEntry<float> ChildSpawnChance;
+        public static ConfigEntry<float> BruiserImpSpawnChance;
+        public static ConfigEntry<float> AlphaBisonSpawnChance;
+        //public static ConfigEntry<float> KamikazeReaverSpawnChance;
+        public static ConfigEntry<float> WispAmalgamateSpawnChance;
+        public static ConfigEntry<float> KindaGreatButNotGreaterWispSpawnChance;
+        public static ConfigEntry<float> IncineratingElderLemurianSpawnChance;
+        public static ConfigEntry<float> SwarmerProbeSpawnChance;
+        //Boss Variants
+        public static ConfigEntry<float> SunPriestSpawnChance;
+        public static ConfigEntry<float> HoarderSpawnChance;
+        public static ConfigEntry<float> StarvingDunestriderSpawnChance;
+        public static ConfigEntry<float> DevourerDunestriderspawnChance;
+        public static ConfigEntry<float> MalfunctioningSolusControlUnitSpawnChance;
+        //public static ConfigEntry<float> SolusSwarmingUnitSpawnChance;
+        public static ConfigEntry<float> MalfunctioningAlloyWorshipUnitSpawnChance;
+        //public static ConfigEntry<float> AlloySwarmingUnitSpawnChance;
+        //Modded Variants
+        public static ConfigEntry<float> ClaySoldierSpawnChance;
+        public static ConfigEntry<float> EnragedWispSpawnChance;
+        public static ConfigEntry<float> AmalgamatedAncientWispSpawnChance;
+        public static ConfigEntry<float> AeonicWispSpawnChance;
+        public static ConfigEntry<float> KindaArchaicWispSpawnChance;
+
+        //Other Variants
+        public static ConfigEntry<float> GlandBeetleGuardBruteSpawnChance;
+        public static ConfigEntry<float> GlandBeetleGuardSharpshooterSpawnChance;
+        public static ConfigEntry<float> SquidChaingunSpawnChance;
+        public static ConfigEntry<float> SquidSniperSpawnChance;
 
         public static void SetupConfigLoader(ConfigFile config) //Creates the description and some mumbojumbo for the values.
         {
-            EnableItemRewardsConfig = config.Bind<bool>("Item Rewards", "Enable Item Rewards", true, "If this is set to True, then Enemy Variants have a chance to drop Items. If this is set to False,\nthen the rest of the available options in this category are disabled.");
-            EnableGoldRewardsConfig = config.Bind<bool>("Gold Rewards", "Enable Gold Rewards", true, "If this is set to True, then Enemy Variants will drop extra gold based off a multiplier.\nIf this is set to False, then the rest of the available options of this category are disabled.");
-            EnableXPRewardsConfig = config.Bind<bool>("XP Rewards", "Enable XP Rewards", true, "If this is set to True, then Enemy Variants will drop extra XP based off a multiplier.\nIf this is set to False, then the rest of the available options of this category are disabled.");
-            EnableCustomVariantsConfig = config.Bind<bool>("Custom Variants", "Enable Custom Variants", true, "If this is set to True, then new Enemy Variants designed by nebby will begin spawning, all the effects of killing a regular variant also apply to these.\nIf this is set to False, then the rest of the available options in this category are disabled.");
+            EnableConfigCheckConfig = config.Bind<bool>("0 - Config Checker", "Enable Config Checker", true, "When set to true, the mod will scan it's config file every time the game begins to check for errors\nErrors include invalid values in the config, such as drop chances being over 100 or below 0.");
+            EnableItemRewardsConfig = config.Bind<bool>("1 - Item Rewards", "Enable Item Rewards", true, "If this is set to True, then Enemy Variants have a chance to drop Items. If this is set to False,\nthen the rest of the available options in this category are disabled.");
+            EnableGoldRewardsConfig = config.Bind<bool>("2 - Gold Rewards", "Enable Gold Rewards", true, "If this is set to True, then Enemy Variants will drop extra gold based off a multiplier.\nIf this is set to False, then the rest of the available options of this category are disabled.");
+            EnableXPRewardsConfig = config.Bind<bool>("3 - XP Rewards", "Enable XP Rewards", true, "If this is set to True, then Enemy Variants will drop extra XP based off a multiplier.\nIf this is set to False, then the rest of the available options of this category are disabled.");
+            EnableCustomVariantsConfig = config.Bind<bool>("4 - Custom Variants", "Enable Custom Variants", true, "If this is set to True, then new Enemy Variants designed by nebby will begin spawning, all the effects of killing a regular variant also apply to these.\nIf this is set to False, then the rest of the available options in this category are disabled.");
+            EnableOtherVariantsConfig = config.Bind<bool>("5 - Other Variants", "Enable Other Variants", true, "If this is set to True, then living entities other than enemies will get variants, examples include the Queen's Gland's Beetle Guards\nVariants in this category will not spawn rewards if theyre in your Team! (AKA The sidebar with the health bars.)\nIf this is set to false, then the rest of the available options of this category are disabled.");
 
-            ItemSpawnsOnPlayerConfig = config.Bind<bool>("Item Rewards", "Item Rewards Spawns on Player", false, "Normally the item reward's droplet spawns from the center of the slain Variant.\nThis can cause some issues with killing Variants that are on top of the death plane, or get knocked back onto it, Since the item will be lost in the process.\nSetting this to True causes all Item Rewards to be spawned at the center of the Player who killed the variant.");
+            ItemSpawnsOnPlayerConfig = config.Bind<bool>("1 - Item Rewards", "Item Rewards Spawns on Player", false, "Normally the item reward's droplet spawns from the center of the slain Variant.\nThis can cause some issues with killing Variants that are on top of the death plane, or get knocked back onto it, Since the item will be lost in the process.\nSetting this to True causes all Item Rewards to be spawned at the center of the Player who killed the variant.");
 
-            CommonWhiteChanceConfig = config.Bind<int>("Item Rewards", "Common Variant White Item Drop Chance", 3, "The chance that a Common variant drops a White item. Accepted values range from 0 to 100.\n(Set this value to 0 to Disable).");
-            CommonGreenChanceConfig = config.Bind<int>("Item Rewards", "Common Variant Green Item Drop Chance", 0, "The chance that a Common variant drops a Green item. Accepted values range from 0 to 100.\n(Set this value to 0 to Disable).");
-            CommonRedChanceConfig = config.Bind<int>("Item Rewards", "Common Variant Red Item Drop Chance", 0, "The chance that a Common variant drops a Red item. Accepted values range from 0 to 100.\n(Set this value to 0 to Disable).");
+            CommonWhiteChanceConfig = config.Bind<int>("1 - Item Rewards", "Common Variant White Item Drop Chance", 3, "The chance that a Common variant drops a White item. Accepted values range from 0 to 100.\n(Set this value to 0 to Disable).");
+            CommonGreenChanceConfig = config.Bind<int>("1 - Item Rewards", "Common Variant Green Item Drop Chance", 0, "The chance that a Common variant drops a Green item. Accepted values range from 0 to 100.\n(Set this value to 0 to Disable).");
+            CommonRedChanceConfig = config.Bind<int>("1 - Item Rewards", "Common Variant Red Item Drop Chance", 0, "The chance that a Common variant drops a Red item. Accepted values range from 0 to 100.\n(Set this value to 0 to Disable).");
 
-            UncommonWhiteChanceConfig = config.Bind<int>("Item Rewards", "Uncommon Variant White Item Drop Chance", 5, "The chance that an Uncommon variant drops a White Item. Accepted values range from 0 to 100.\n(Set this value to 0 to Disable).");
-            UncommonGreenChanceConfig = config.Bind<int>("Item Rewards", "Uncommon Variant Green Item Drop Chance", 1, "The chance that an Uncommon variant drops a Green Item. Accepted values range from 0 to 100.\n(Set this value to 0 to Disable).");
-            UncommonRedChanceConfig = config.Bind<int>("Item Rewards", "Uncommon Variant Red Item Drop Chance", 0, "The chance that an Uncommon variant drops a Red Item. Accepted values range from 0 to 100.\n(Set this value to 0 to Disable).");
+            UncommonWhiteChanceConfig = config.Bind<int>("1 - Item Rewards", "Uncommon Variant White Item Drop Chance", 5, "The chance that an Uncommon variant drops a White Item. Accepted values range from 0 to 100.\n(Set this value to 0 to Disable).");
+            UncommonGreenChanceConfig = config.Bind<int>("1 - Item Rewards", "Uncommon Variant Green Item Drop Chance", 1, "The chance that an Uncommon variant drops a Green Item. Accepted values range from 0 to 100.\n(Set this value to 0 to Disable).");
+            UncommonRedChanceConfig = config.Bind<int>("1 - Item Rewards", "Uncommon Variant Red Item Drop Chance", 0, "The chance that an Uncommon variant drops a Red Item. Accepted values range from 0 to 100.\n(Set this value to 0 to Disable).");
 
-            RareWhiteChanceConfig = config.Bind<int>("Item Rewards", "Rare Variant White Item Drop Chance", 10, "The chance that a Rare variant drops a White Item. Accepted values range from 0 to 100.\n(Set this value to 0 to Disable).");
-            RareGreenChanceConfig = config.Bind<int>("Item Rewards", "Rare Variant Green Item Drop Chance", 5, "The chance that a Rare variant drops a Green Item. Accepted values range from 0 to 100.\n(Set this value to 0 to Disable).");
-            RareRedChanceConfig = config.Bind<int>("Item Rewards", "Rare Variant Red Item Drop Chance", 1, "The chance that a Rare variant drops a Red Item. Accepted values range from 0 to 100.\n(Set this value to 0 to Disable).");
+            RareWhiteChanceConfig = config.Bind<int>("1 - Item Rewards", "Rare Variant White Item Drop Chance", 10, "The chance that a Rare variant drops a White Item. Accepted values range from 0 to 100.\n(Set this value to 0 to Disable).");
+            RareGreenChanceConfig = config.Bind<int>("1 - Item Rewards", "Rare Variant Green Item Drop Chance", 5, "The chance that a Rare variant drops a Green Item. Accepted values range from 0 to 100.\n(Set this value to 0 to Disable).");
+            RareRedChanceConfig = config.Bind<int>("1 - Item Rewards", "Rare Variant Red Item Drop Chance", 1, "The chance that a Rare variant drops a Red Item. Accepted values range from 0 to 100.\n(Set this value to 0 to Disable).");
 
-            CommonMoneyMultConfig = config.Bind<float>("Gold Rewards", "Common Variant Gold Multiplier", 1.3f, "Multiplier that's applied to the Gold reward for killing a common Variant.\n(Set this value to 1.0 to disable, values lower than this number decreases the Gold recieved).");
-            UncommonMoneyMultConfig = config.Bind<float>("Gold Rewards", "Uncommon Variant Gold Multiplier", 1.6f, "Multiplier that's applied to the Gold reward for killing an uncommon Variant.\n(Set this value to 1.0 to disable, values lower than this number decreases the Gold recieved).");
-            RareMoneyMultConfig = config.Bind<float>("Gold Rewards", "Rare Variant Gold Multiplier", 2.0f, "Multiplier that's applied to the Gold reward for killing a rare Variant.\n(Set this value to 1.0 to disable, values lower than this number decreases the Gold recieved).");
+            CommonMoneyMultConfig = config.Bind<float>("2 - Gold Rewards", "Common Variant Gold Multiplier", 1.3f, "Multiplier that's applied to the Gold reward for killing a common Variant.\n(Set this value to 1.0 to disable).");
+            UncommonMoneyMultConfig = config.Bind<float>("2 - Gold Rewards", "Uncommon Variant Gold Multiplier", 1.6f, "Multiplier that's applied to the Gold reward for killing an uncommon Variant.\n(Set this value to 1.0 to disable).");
+            RareMoneyMultConfig = config.Bind<float>("2 - Gold Rewards", "Rare Variant Gold Multiplier", 2.0f, "Multiplier that's applied to the Gold reward for killing a rare Variant.\n(Set this value to 1.0 to disable).");
 
-            CommonXPMultConfig = config.Bind<float>("XP Rewards", "Common Variant XP Multiplier", 1.3f, "Multiplier that's applied to the XP reward for killing a common Variant.\n(Set this value to 1.0 to disable, values lower than this number decreases the XP recieved).");
-            UncommonXPMultConfig = config.Bind<float>("XP Rewards", "Uncommon Variant XP Multiplier", 1.6f, "Multiplier that's applied to the XP reward for killing an uncommon Variant.\n(Set this value to 1.0 to disable, values lower than this number decreases the XP recieved).");
-            RareXPMultConfig = config.Bind<float>("XP Rewards", "Rare Variant XP Multiplier", 2.0f, "Multiplier that's applied to the XP reward for killing a rare Variant.\n(Set this value to 1.0 to disable, values lower than this number decreases the XP recieved.");
+            CommonXPMultConfig = config.Bind<float>("3 - XP Rewards", "Common Variant XP Multiplier", 1.3f, "Multiplier that's applied to the XP reward for killing a common Variant.\n(Set this value to 1.0 to disable).");
+            UncommonXPMultConfig = config.Bind<float>("3 - XP Rewards", "Uncommon Variant XP Multiplier", 1.6f, "Multiplier that's applied to the XP reward for killing an uncommon Variant.\n(Set this value to 1.0 to disable).");
+            RareXPMultConfig = config.Bind<float>("3 - XP Rewards", "Rare Variant XP Multiplier", 2.0f, "Multiplier that's applied to the XP reward for killing a rare Variant.\n(Set this value to 1.0 to disable).");
+        }
+        public static void ReadConfig(ConfigFile config)
+        {
+            LeastestWispSpawnChance = SpawnRateConfig(false, "Leastest Wisp", 7, config);
+            AlmostButNotQuiteArchaicWispSpawnChance = SpawnRateConfig(false, "Almost-But-Not-Quite-Archaic-Wisp", 4, config);
+            SteelContraptionSpawnChance = SpawnRateConfig(false, "Steel Contraption", 7, config);
+            AluminumContraptionSpawnChance = SpawnRateConfig(false,"Aluminum Contraption", 7, config);
+            MortarCrabSpawnChance = SpawnRateConfig(false, "Mortar Crab", 5, config);
+            VampiricTemplarSpawnChance = SpawnRateConfig(false, "Vampiric Templar", 5, config);
+            ADShroomSpawnChance = SpawnRateConfig(false, "AD-Shroom (Area of Denial Shroom)", 6, config);
+            HealerShroomSpawnChance = SpawnRateConfig(false, "Healer Shroom", 10, config);
+            MamaShroomSpawnChance = SpawnRateConfig(false, "Mama Shroom", 2, config);
+            AdolescentSpawnChance = SpawnRateConfig(false, "Adolescent", 8, config);
+            ChildSpawnChance = SpawnRateConfig(false, "Child", 6, config);
+            BruiserImpSpawnChance = SpawnRateConfig(false, "Bruiser Imp", 10, config);
+            AlphaBisonSpawnChance = SpawnRateConfig(false, "Alpha Bison", 5, config);
+            //KamikazeReaverSpawnChance = SpawnRateConfig(false, "Kamikaze Reaver", 5, config);
+            WispAmalgamateSpawnChance = SpawnRateConfig(false, "Wisp Amalgamate", 8, config);
+            KindaGreatButNotGreaterWispSpawnChance = SpawnRateConfig(false, "Kinda-Great-But-Not-Greater Wisp", 6, config);
+            SwarmerProbeSpawnChance = SpawnRateConfig(false, "Swarmer Probe", 7, config);
+            IncineratingElderLemurianSpawnChance = SpawnRateConfig(false, "Incinerating Elder Lemurian", 5, config);
+            
+            //Bosses
+            SunPriestSpawnChance = SpawnRateConfig(false, "Sun Priest", 4, config);
+            HoarderSpawnChance = SpawnRateConfig(false, "Hoarder", 8, config);
+            StarvingDunestriderSpawnChance = SpawnRateConfig(false, "Starving Dunestrider", 4, config);
+            DevourerDunestriderspawnChance = SpawnRateConfig(false, "Devourer Dunestrider", 2, config);
+            MalfunctioningSolusControlUnitSpawnChance = SpawnRateConfig(false, "Malfunctioning Solus Control Unit", 4, config);
+            //SolusSwarmingUnitSpawnChance = SpawnRateConfig(false, "Solus Swarming Unit", 100, config);
+            MalfunctioningAlloyWorshipUnitSpawnChance = SpawnRateConfig(false, "Malfunctioning Alloy Worship Unit", 4, config);
+            //AlloySwarmingUnitSpawnChance = SpawnRateConfig(false, "Alloy Swarming Unit", 100, config);
 
-            MosquitoWispSpawnChanceConfig = config.Bind<float>("Custom Variants", "Mosquito Wisp Spawn Chance", 7f, "Chance for a Mosquito Wisp variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
-            SteelContraptionSpawnChanceConfig = config.Bind<float>("Custom Variants", "Steel Contraption Spawn Chance", 7f, "Chance for a Steel Contraption variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
-            AluminumContraptionSpawnChanceConfig = config.Bind<float>("Custom Variants", "Aluminum Contraption Spawn Chance", 8, "Chance for an Aluminum Contraption Variant to Spawn (percentage, 0-100)\nSetting this value to 0 will disable this variant from spawning.");
-            MortarCrabSpawnChanceConfig = config.Bind<float>("Custom Variants", "Mortar Crab Spawn Chance", 5f, "Chance for a Mortar Crab variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
-            VampiricTemplarSpawnChanceConfig = config.Bind<float>("Custom Variants", "Vampiric Templar Spawn Chance", 5, "Chance for a Vampiric Templar variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
-            ADShroomSpawnChanceConfig = config.Bind<float>("Custom Variants", "ADShroom Spawn Chance", 6, "Chance for an ADShroom (Area of Denial Shroom) variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant form spawning.");
-            HealerShroomSpawnChanceConfig = config.Bind<float>("Custom Variants", "Healer Shroom Spawn Chance", 10, "Chance for a Healer Shroom Variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this Variant from spawning");
-            AdolescentSpawnChanceConfig = config.Bind<float>("Custom Variants", "Adolescent Spawn Chance", 8, "Chance for an Adolescent Variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
-            ChildSpawnChanceConfig = config.Bind<float>("Custom Variants", "Child Spawn Chance", 6, "Chance for a Child Variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
-            BruiserImpSpawnChanceConfig = config.Bind<float>("Custom Variants", "Bruiser Imp Spawn Chance", 10, "Chance for a Bruiser Imp Variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
-            AlphaBisonSpawnChanceConfig = config.Bind<float>("Custom Variants", "Alpha Bison Spawn Chance", 5, "Chance for an Alpha Bison Variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
-            //KamikazeReaverSpawnChanceConfig = config.Bind<float>("Custom Variants", "Kamikaze Reaver Spawn chance", 100, "Chance for a Kamikaze Reaver Variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
-            WispAmalgamateSpawnChanceConfig = config.Bind<float>("Custom Variants", "Wisp Amalgamate Spawn Chance", 10, "Chance for a Wisp Amalgamate Variant to Spawn (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning");
-            SunPriestSpawnChanceConfig = config.Bind<float>("Custom Variants", "Sun Priest Spawn Chance", 3, "Chance for a Sun Priest Variant to Spawn, (percentage, 0-100).\nSetting this value to 0 will disable this variant from spawning.");
-            HoarderSpawnChanceConfig = config.Bind<float>("Custom Variants", "Hoarder Scavenger Spawn Chance", 8, "Chance for a Hoarder Scavenger Variant to Spawn (percentage, 0-100)\nSetting this value to 0 will disable this variant from spawning.");
-            StarvingDunestriderSpawnChanceConfig = config.Bind<float>("Custom Variants", "Starving Dunestrider Spawn Chance", 4, "Chance for a Starving Dunestrider to Spawn (percentage, 0-100)\nSetting this value to 0 will disable this variant from spawning.");
-            DevourerDunestriderspawnChanceConfig = config.Bind<float>("Custom Variants", "Devourer Dunestrider Spawn Chance", 2, "Chance for a Devourer Dunestrider to Spawn (percentage, 0-100)\nSetting this value to 0 will disable this variant form spawning.");
-            ClaySoldierSpawnChanceConfig = config.Bind<float>("Custom Variants", "Clay Soldier Spawn Chance", 15, "Chance for a Clay Soldier Variant to Spawn (percentage, 0-100)\nOnly Spawns if Moffein's ClayMen mod is Installed.\nSetting this value to 0 will disable this variant from spawning.");
-            EnragedWispSpawnChanceConfig = config.Bind<float>("Custom Variants", "Enraged Wisp Spawn Chance", 2, "Chance for an Enraged Wisp Variant to Spawn (percentage, 0-100)\nOnly Spawns if Moffein's Ancient Wisp mod is Installed.\nSetting this value to 0 will disable this variant from spawning.");
+            //Modded
+            ClaySoldierSpawnChance = SpawnRateConfig(false, "Clay Soldier", 15, "Moffein", "ClayMen", config);
+            EnragedWispSpawnChance = SpawnRateConfig(false, "Enraged Wisp", 4, "Moffein", "AncientWisp", config);
+            AmalgamatedAncientWispSpawnChance = SpawnRateConfig(false, "Amalgamated Ancient Wisp", 2, "Moffein", "AncientWisp", config);
+            AeonicWispSpawnChance = SpawnRateConfig(false, "Aeonic Wisp", 4, "Nebby", "ArchaicWisp", config);
+            KindaArchaicWispSpawnChance = SpawnRateConfig(false, "Kinda-Archaic-Wisp", 7, "Nebby", "ArchaicWisp", config);
+
+            //Other Variants
+            GlandBeetleGuardBruteSpawnChance = SpawnRateConfig(true, "Beetle Guard Brute - Gland", 25, config);
+            GlandBeetleGuardSharpshooterSpawnChance = SpawnRateConfig(true, "Beetle Guard Sharpshooter - Gland", 2, config);
+            SquidChaingunSpawnChance = SpawnRateConfig(true, "Squid Chaingun", 10, config);
+            SquidSniperSpawnChance = SpawnRateConfig(true, "Squid Sniper", 2, config);
+        }
+        private static ConfigEntry<float> SpawnRateConfig (bool isOther, string enemyName, float defaultValue, ConfigFile config)
+        {
+            if (!isOther)
+            {
+                return config.Bind<float>(new ConfigDefinition("4 - Custom Variants", enemyName), defaultValue, new ConfigDescription("Chance for the " + enemyName + " variant to spawn (percentage, 0-100)\nSetting this value to 0 will disable this variant from spawning.", null, Array.Empty<object>()));
+            }
+            else
+            {
+                return config.Bind<float>(new ConfigDefinition("5 - Other Variants", enemyName), defaultValue, new ConfigDescription("Chance for the " + enemyName + " variant to spawn (percentage, 0-100)\nSetting this value to 0 will disable this variant from spawning.", null, Array.Empty<object>()));
+            }
+        }
+        private static ConfigEntry<float> SpawnRateConfig (bool isOther, string enemyName, float defaultValue, string authorName, string modName, ConfigFile config)
+        {
+            if (!isOther)
+            {
+                return config.Bind<float>(new ConfigDefinition("4 - Custom Variants", enemyName), defaultValue, new ConfigDescription("Chance for the " + enemyName + " variant to spawn (percentage, 0-100)\nOnly Spawns if " + authorName + "'s " + modName + " mod is Installed\nSetting this value to 0 will disable this variant from spawning.", null, Array.Empty<object>()));
+            }
+            else
+            {
+                return config.Bind<float>(new ConfigDefinition("5 - Other Variants", enemyName), defaultValue, new ConfigDescription("Chance for the " + enemyName + " variant to spawn (percentage, 0-100)\nOnly Spawns if " + authorName + "'s " + modName + " mod is Installed\nSetting this value to 0 will disable this variant from spawning.", null, Array.Empty<object>()));
+            }
         }
     }
 }

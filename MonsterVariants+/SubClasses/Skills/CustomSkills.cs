@@ -13,28 +13,32 @@ namespace MonsterVariantsPlus.SubClasses.Skills
         public static SkillDef hoarderSitDef;
         public static SkillDef xlRecoverDef;
         public static SkillDef kamikazeBlinkDef;
-        public static SkillDef WispAmalgamateDef;
+        public static SkillDef wispAmalgamateDef;
+        public static SkillDef chargeArchCannonDef;
+        //public static SkillDef DeploySwarmDef;
 
         internal static void RegisterSkills()
         {
             Loadouts.AddSkill(typeof(EmptySkill));
-            Loadouts.AddSkill(typeof(MultiSlam));
-            Loadouts.AddSkill(typeof(HoarderSit));
-            Loadouts.AddSkill(typeof(XLRecover));
-            Loadouts.AddSkill(typeof(KamikazeBlink));
-
-            Loadouts.AddSkill(typeof(WispAmalgamateCharge));
+            Loadouts.AddSkill(typeof(States.Parent.MultiSlam));
+            Loadouts.AddSkill(typeof(States.Scavenger.HoarderSit));
+            Loadouts.AddSkill(typeof(States.ClayDunestrider.XLRecover));
+            Loadouts.AddSkill(typeof(States.VoidReaver.KamikazeBlink));
+            Loadouts.AddSkill(typeof(States.GreaterWisp.WispAmalgamateCharge));
+            Loadouts.AddSkill(typeof(States.LesserWisp.ChargeArchwispCannon));
+            //Loadouts.AddSkill(typeof(States.RoboBallBoss.DeploySwarm));
 
             //Skill that does absolutely nothing, useful for getting variants without a certain skill (No teleporting imps/parents)
             emptySkillDef = NewSkillDef(new SerializableEntityStateType(typeof(EmptySkill)), "Body");
             //An Attempt at a modified parent slam attack
-            multiSlamDef = NewSkillDef(new SerializableEntityStateType(typeof(MultiSlam)), "Body");
+            multiSlamDef = NewSkillDef(new SerializableEntityStateType(typeof(States.Parent.MultiSlam)), "Body");
             //Used for the hoarder scavanger.
-            hoarderSitDef = NewSkillDef(new SerializableEntityStateType(typeof(HoarderSit)), "Body");
-            xlRecoverDef = NewSkillDef(new SerializableEntityStateType(typeof(XLRecover)), "Body");
-            kamikazeBlinkDef = NewSkillDef(new SerializableEntityStateType(typeof(KamikazeBlink)), "Body");
-
-            WispAmalgamateDef = NewSkillDef(new SerializableEntityStateType(typeof(WispAmalgamateCharge)), "Body");
+            hoarderSitDef = NewSkillDef(new SerializableEntityStateType(typeof(States.Scavenger.HoarderSit)), "Body");
+            xlRecoverDef = NewSkillDef(new SerializableEntityStateType(typeof(States.ClayDunestrider.XLRecover)), "Body");
+            kamikazeBlinkDef = NewSkillDef(new SerializableEntityStateType(typeof(States.VoidReaver.KamikazeBlink)), "Body");
+            wispAmalgamateDef = NewSkillDef(new SerializableEntityStateType(typeof(States.GreaterWisp.WispAmalgamateCharge)), "Weapon");
+            chargeArchCannonDef = NewSkillDef(new SerializableEntityStateType(typeof(States.LesserWisp.ChargeArchwispCannon)), "Weapon");
+            //DeploySwarmDef = NewSkillDef(new SerializableEntityStateType(typeof(States.RoboBallBoss.DeploySwarm)), "Weapon");
 
             emptySkillDef.baseMaxStock = 0;
             emptySkillDef.requiredStock = 1000;
@@ -48,6 +52,16 @@ namespace MonsterVariantsPlus.SubClasses.Skills
             xlRecoverDef.baseRechargeInterval = 90f;
             xlRecoverDef.requiredStock = 1;
             xlRecoverDef.stockToConsume = 1;
+
+            wispAmalgamateDef.baseMaxStock = 1;
+            wispAmalgamateDef.baseRechargeInterval = 4f;
+            wispAmalgamateDef.requiredStock = 1;
+            wispAmalgamateDef.stockToConsume = 1;
+
+            chargeArchCannonDef.baseMaxStock = 1;
+            chargeArchCannonDef.baseRechargeInterval = 3f;
+            chargeArchCannonDef.requiredStock = 1;
+            chargeArchCannonDef.stockToConsume = 1;
         }
         private static SkillDef NewSkillDef(SerializableEntityStateType state, string stateMachine)
         {

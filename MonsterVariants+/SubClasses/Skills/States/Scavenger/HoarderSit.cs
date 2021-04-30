@@ -2,7 +2,7 @@
 using EntityStates.ScavMonster;
 using RoR2;
 
-namespace MonsterVariantsPlus.SubClasses.Skills.States
+namespace MonsterVariantsPlus.SubClasses.Skills.States.Scavenger
 {
     public class HoarderSit : BaseSitState
     {
