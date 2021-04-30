@@ -10,28 +10,24 @@ namespace MonsterVariantsPlus.SubClasses.Skills.States.GreaterWisp
     public class WispAmalgamateCharge : BaseState
     {
         public static float baseDuration = 3f;
-
-        public static GameObject chargeEffectLeftPrefab;
-        private GameObject chargeEffectInstanceLeft;
-
-        public static GameObject chargeEffectRightPrefab;
-        private GameObject chargeEffectInstanceRight;
-
+        public static GameObject chargeEffectLeft;
+        public static GameObject chargeEffectRight;
         public static GameObject laserEffectPrefab;
-        private GameObject laserEffectInstanceLeft;
-        private GameObject laserEffectInstanceRight;
-        private LineRenderer laserEffectInstanceLineRenderer;
-
         public static string attackString;
         private float duration;
         private float stopwatch;
         private uint soundID;
+        private GameObject chargeEffectInstanceLeft;
+        private GameObject laserEffectInstanceLeft;
+        private GameObject chargeEffectInstanceRight;
+        private GameObject laserEffectInstanceRight;
+        private LineRenderer laserEffectInstanceLineRenderer;
 
         public override void OnEnter()
         {
             attackString = ChargeEmbers.attackString;
-            chargeEffectLeftPrefab = ChargeEmbers.chargeEffectPrefab;
-            chargeEffectRightPrefab = ChargeEmbers.chargeEffectPrefab;
+            chargeEffectLeft = ChargeEmbers.chargeEffectPrefab;
+            chargeEffectRight = ChargeEmbers.chargeEffectPrefab;
             laserEffectPrefab = ChargeEmbers.laserEffectPrefab;
 
             base.OnEnter();
@@ -49,10 +45,10 @@ namespace MonsterVariantsPlus.SubClasses.Skills.States.GreaterWisp
                     Transform transform2 = component.FindChild("MuzzleRight");
                     if ((bool)transform1)
                     {
-                        if ((bool)chargeEffectLeftPrefab)
+                        if ((bool)chargeEffectLeft)
                         {
-                            chargeEffectInstanceLeft = Object.Instantiate(chargeEffectLeftPrefab, transform.position, transform.rotation);
-                            chargeEffectInstanceLeft.transform.parent = transform;
+                            chargeEffectInstanceLeft = Object.Instantiate(chargeEffectLeft, transform1.position, transform1.rotation);
+                            chargeEffectInstanceLeft.transform.parent = transform1;
                             ScaleParticleSystemDuration component2 = chargeEffectInstanceLeft.GetComponent<ScaleParticleSystemDuration>();
                             if ((bool)component2)
                             {
@@ -61,17 +57,17 @@ namespace MonsterVariantsPlus.SubClasses.Skills.States.GreaterWisp
                         }
                         if ((bool)laserEffectPrefab)
                         {
-                            laserEffectInstanceLeft = Object.Instantiate(chargeEffectLeftPrefab, transform.position, transform.rotation);
-                            laserEffectInstanceLeft.transform.parent = transform;
+                            laserEffectInstanceLeft = Object.Instantiate(chargeEffectLeft, transform1.position, transform1.rotation);
+                            laserEffectInstanceLeft.transform.parent = transform1;
                             laserEffectInstanceLineRenderer = laserEffectInstanceLeft.GetComponent<LineRenderer>();
                         }
                     }
                     if ((bool)transform2)
                     {
-                        if ((bool)chargeEffectRightPrefab)
+                        if ((bool)chargeEffectRight)
                         {
-                            chargeEffectInstanceRight = Object.Instantiate(chargeEffectRightPrefab, transform.position, transform.rotation);
-                            chargeEffectInstanceRight.transform.parent = transform;
+                            chargeEffectInstanceRight = Object.Instantiate(chargeEffectRight, transform2.position, transform2.rotation);
+                            chargeEffectInstanceRight.transform.parent = transform2;
                             ScaleParticleSystemDuration component2 = chargeEffectInstanceRight.GetComponent<ScaleParticleSystemDuration>();
                             if ((bool)component2)
                             {
@@ -80,8 +76,8 @@ namespace MonsterVariantsPlus.SubClasses.Skills.States.GreaterWisp
                         }
                         if ((bool)laserEffectPrefab)
                         {
-                            laserEffectInstanceRight = Object.Instantiate(laserEffectPrefab, transform.position, transform.rotation);
-                            laserEffectInstanceRight.transform.parent = transform;
+                            laserEffectInstanceRight = Object.Instantiate(laserEffectPrefab, transform2.position, transform2.rotation);
+                            laserEffectInstanceRight.transform.parent = transform2;
                             laserEffectInstanceLineRenderer = laserEffectInstanceRight.GetComponent<LineRenderer>();
                         }
                     }
@@ -97,7 +93,7 @@ namespace MonsterVariantsPlus.SubClasses.Skills.States.GreaterWisp
         {
             PlayAnimation("Gesture", "Empty");
             base.OnExit();
-            if ((bool)chargeEffectRightPrefab)
+            if ((bool)chargeEffectRight)
             {
                 EntityState.Destroy(chargeEffectInstanceRight);
             }
@@ -105,7 +101,7 @@ namespace MonsterVariantsPlus.SubClasses.Skills.States.GreaterWisp
             {
                 EntityState.Destroy(laserEffectInstanceRight);
             }
-            if ((bool)chargeEffectLeftPrefab)
+            if ((bool)chargeEffectLeft)
             {
                 EntityState.Destroy(chargeEffectInstanceLeft);
             }
@@ -119,7 +115,7 @@ namespace MonsterVariantsPlus.SubClasses.Skills.States.GreaterWisp
         {
             base.Update();
             Ray aimRay = GetAimRay();
-            float distance = 100f;
+            float distance = 50f;
             Vector3 origin = aimRay.origin;
             Vector3 point = aimRay.GetPoint(distance);
             laserEffectInstanceLineRenderer.SetPosition(0, origin);
