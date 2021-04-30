@@ -36,11 +36,12 @@ namespace MonsterVariantsPlus
             ConfigLoader.SetupConfigLoader(Config);
             //Initializes the custom variants config
             ConfigLoader.ReadConfig(Config);
-
-            AssetLoaderAndChecker.PreventBadValues(Config);
-            
-            //Registers skills.
-
+            //Make sure config values aren't invalid.
+            if(ConfigLoader.EnableConfigcheck)
+            {
+                AssetLoaderAndChecker.PreventBadValues(Config);
+            }
+            //Registers skills
             SubClasses.Skills.CustomSkills.RegisterSkills();
 
             //hook

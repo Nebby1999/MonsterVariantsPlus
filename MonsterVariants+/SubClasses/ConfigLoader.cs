@@ -16,6 +16,8 @@ namespace MonsterVariantsPlus.SubClasses
         public static bool EnableCustomVariants => EnableCustomVariantsConfig.Value;
         internal static ConfigEntry<bool> EnableOtherVariantsConfig { get; set; }
         public static bool EnableOtherVariants => EnableOtherVariantsConfig.Value;
+        internal static ConfigEntry<bool> EnableConfigCheckConfig { get; set; }
+        public static bool EnableConfigcheck => EnableConfigCheckConfig.Value;
 
         //Item Related Configs
         internal static ConfigEntry<bool> ItemSpawnsOnPlayerConfig { get; set; }
@@ -40,19 +42,19 @@ namespace MonsterVariantsPlus.SubClasses
         public static int RareRedChance => RareRedChanceConfig.Value;
 
         //Money Related Configs
-        private static ConfigEntry<float> CommonMoneyMultConfig { get; set; }
+        internal static ConfigEntry<float> CommonMoneyMultConfig { get; set; }
         public static float CommonMoneyMult => CommonMoneyMultConfig.Value;
-        private static ConfigEntry<float> UncommonMoneyMultConfig { get; set; }
+        internal static ConfigEntry<float> UncommonMoneyMultConfig { get; set; }
         public static float UncommonMoneyMult => UncommonMoneyMultConfig.Value;
-        private static ConfigEntry<float> RareMoneyMultConfig { get; set; }
+        internal static ConfigEntry<float> RareMoneyMultConfig { get; set; }
         public static float RareMoneyMult => RareMoneyMultConfig.Value;
 
         //XP Related Configs
-        private static ConfigEntry<float> CommonXPMultConfig { get; set; }
+        internal static ConfigEntry<float> CommonXPMultConfig { get; set; }
         public static float CommonXPMult => CommonXPMultConfig.Value;
-        private static ConfigEntry<float> UncommonXPMultConfig { get; set; }
+        internal static ConfigEntry<float> UncommonXPMultConfig { get; set; }
         public static float UncommonXPMult => UncommonXPMultConfig.Value;
-        private static ConfigEntry<float> RareXPMultConfig { get; set; }
+        internal static ConfigEntry<float> RareXPMultConfig { get; set; }
         public static float RareXPMult => RareXPMultConfig.Value;
 
         //Custom Variants
@@ -99,6 +101,7 @@ namespace MonsterVariantsPlus.SubClasses
 
         public static void SetupConfigLoader(ConfigFile config) //Creates the description and some mumbojumbo for the values.
         {
+            EnableConfigCheckConfig = config.Bind<bool>("0 - Config Checker", "Enable Config Checker", true, "When set to true, the mod will scan it's config file every time the game begins to check for errors\nErrors include invalid values in the config, such as drop chances being over 100 or below 0.");
             EnableItemRewardsConfig = config.Bind<bool>("1 - Item Rewards", "Enable Item Rewards", true, "If this is set to True, then Enemy Variants have a chance to drop Items. If this is set to False,\nthen the rest of the available options in this category are disabled.");
             EnableGoldRewardsConfig = config.Bind<bool>("2 - Gold Rewards", "Enable Gold Rewards", true, "If this is set to True, then Enemy Variants will drop extra gold based off a multiplier.\nIf this is set to False, then the rest of the available options of this category are disabled.");
             EnableXPRewardsConfig = config.Bind<bool>("3 - XP Rewards", "Enable XP Rewards", true, "If this is set to True, then Enemy Variants will drop extra XP based off a multiplier.\nIf this is set to False, then the rest of the available options of this category are disabled.");
@@ -119,13 +122,13 @@ namespace MonsterVariantsPlus.SubClasses
             RareGreenChanceConfig = config.Bind<int>("1 - Item Rewards", "Rare Variant Green Item Drop Chance", 5, "The chance that a Rare variant drops a Green Item. Accepted values range from 0 to 100.\n(Set this value to 0 to Disable).");
             RareRedChanceConfig = config.Bind<int>("1 - Item Rewards", "Rare Variant Red Item Drop Chance", 1, "The chance that a Rare variant drops a Red Item. Accepted values range from 0 to 100.\n(Set this value to 0 to Disable).");
 
-            CommonMoneyMultConfig = config.Bind<float>("2 - Gold Rewards", "Common Variant Gold Multiplier", 1.3f, "Multiplier that's applied to the Gold reward for killing a common Variant.\n(Set this value to 1.0 to disable, values lower than this number decreases the Gold recieved).");
-            UncommonMoneyMultConfig = config.Bind<float>("2 - Gold Rewards", "Uncommon Variant Gold Multiplier", 1.6f, "Multiplier that's applied to the Gold reward for killing an uncommon Variant.\n(Set this value to 1.0 to disable, values lower than this number decreases the Gold recieved).");
-            RareMoneyMultConfig = config.Bind<float>("2 - Gold Rewards", "Rare Variant Gold Multiplier", 2.0f, "Multiplier that's applied to the Gold reward for killing a rare Variant.\n(Set this value to 1.0 to disable, values lower than this number decreases the Gold recieved).");
+            CommonMoneyMultConfig = config.Bind<float>("2 - Gold Rewards", "Common Variant Gold Multiplier", 1.3f, "Multiplier that's applied to the Gold reward for killing a common Variant.\n(Set this value to 1.0 to disable).");
+            UncommonMoneyMultConfig = config.Bind<float>("2 - Gold Rewards", "Uncommon Variant Gold Multiplier", 1.6f, "Multiplier that's applied to the Gold reward for killing an uncommon Variant.\n(Set this value to 1.0 to disable).");
+            RareMoneyMultConfig = config.Bind<float>("2 - Gold Rewards", "Rare Variant Gold Multiplier", 2.0f, "Multiplier that's applied to the Gold reward for killing a rare Variant.\n(Set this value to 1.0 to disable).");
 
-            CommonXPMultConfig = config.Bind<float>("3 - XP Rewards", "Common Variant XP Multiplier", 1.3f, "Multiplier that's applied to the XP reward for killing a common Variant.\n(Set this value to 1.0 to disable, values lower than this number decreases the XP recieved).");
-            UncommonXPMultConfig = config.Bind<float>("3 - XP Rewards", "Uncommon Variant XP Multiplier", 1.6f, "Multiplier that's applied to the XP reward for killing an uncommon Variant.\n(Set this value to 1.0 to disable, values lower than this number decreases the XP recieved).");
-            RareXPMultConfig = config.Bind<float>("3 - XP Rewards", "Rare Variant XP Multiplier", 2.0f, "Multiplier that's applied to the XP reward for killing a rare Variant.\n(Set this value to 1.0 to disable, values lower than this number decreases the XP recieved.");
+            CommonXPMultConfig = config.Bind<float>("3 - XP Rewards", "Common Variant XP Multiplier", 1.3f, "Multiplier that's applied to the XP reward for killing a common Variant.\n(Set this value to 1.0 to disable).");
+            UncommonXPMultConfig = config.Bind<float>("3 - XP Rewards", "Uncommon Variant XP Multiplier", 1.6f, "Multiplier that's applied to the XP reward for killing an uncommon Variant.\n(Set this value to 1.0 to disable).");
+            RareXPMultConfig = config.Bind<float>("3 - XP Rewards", "Rare Variant XP Multiplier", 2.0f, "Multiplier that's applied to the XP reward for killing a rare Variant.\n(Set this value to 1.0 to disable).");
         }
         public static void ReadConfig(ConfigFile config)
         {
