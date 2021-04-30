@@ -21,7 +21,6 @@ namespace MonsterVariantsPlus
         internal static bool hasAncientWisp;
         internal static bool hasArchWisp;
 
-
         public void Awake()
         {
             //Check if Mods are loaded.

@@ -62,8 +62,13 @@ Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names t
 	- 500% Movement Speed
 	- 500% Attack Speed
 	- 110% Damage
-	- Has 4 Alien Heads
+	- Has 5 Alien Heads
 	
+	Almost-But-Not-Quite-Archaic Wisp (Lesser Wisp)(4% Chance)
+	- 125% Size
+	- 600% Health
+	- Fires Archaic Wisp Fireballs
+
 	Steel Contraption (Brass Contraption)(7% Chance):
 	- 100% Size
 	- 150% Health
@@ -100,14 +105,21 @@ Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names t
 	- 6.2% Damage
 	- Has 5 Alien Heads
 
-	-Healer-Shroom (MiniMushroom)(10% Chance):
+	Healer-Shroom (MiniMushroom)(10% Chance):
 	- 50% Size
 	- 200% Movement Speed
 	- 50% Attack Speed
 	- 50% Damage
 	- Has 2 Bustling Fungus
 
-	Adolescent (Parent)(8% Chance):
+	Mama-Shroom (MiniMushroom) (2% Chance): (Based off an idea by Awesome_Soul)
+	- 200% Size
+	- 0% Movement Speed
+	- -50 Armor
+	- Has 10 Bustling Fungus
+	- Has 1 Aegis
+
+	Adolescent (Parent)(8% Chance): (Based off an idea by Zarko)
 	- 75% Size
 	- 75% Health
 	- 120% Attack Speed
@@ -116,7 +128,7 @@ Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names t
 	- Has 1 Hardlight Afterburner
 	- Has 3 Alien Heads
 
-	Child (Parent)(6% Chance):
+	Child (Parent)(6% Chance): (Based off an idea by Ululu)
 	- 50% Size
 	- 300% Movement Speed
 	- 600% Attack Speed
@@ -133,7 +145,7 @@ Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names t
 	- Has 2 Crowbars
 	- Cannot Teleport
 
-	Alpha Bison (Bighorn Bison)(5% Chance):
+	Alpha Bison (Bighorn Bison)(5% Chance): (Based off an idea by Gaforb)
 	- 125% Size
 	- 75% Health
 	- 200% Movement Speed
@@ -141,16 +153,39 @@ Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names t
 	- 70% Damage
 	- Has 2 Brilliant Behemoths
 
-	Wisp Amalgamate (Greater Wisp)(10% Chance)
+	Wisp Amalgamate (Greater Wisp)(8% Chance)
 	- 75% Size
 	- Attacks with a hitscan attack, much like the regular wisp
-	- Spawns Wisps upon Death
+	- Spawns 5 Wisps upon Death
 
-	Sun Priest (GrandParent)(3% Chance):
+	Kinda-Great-But-Not-Greater Wisp (Greater Wisp)(6% Chance)
+	- 50% Size
+	- 50% Health
+	- 500% Movement Speed
+	- 500% Attack Speed
+	- Has 2 Alien Heads
+
+	Swarmer Probe (Solus Probe)(7% Chance)
+	- 50% Size
+	- 50% Health
+	- 400% Movement Speed
+	- 400% Attack Speed
+	- 30% Damage
+
+	Incinerating Elder Lemurian (Elder Lemurian)(5% Chance)
+	- 125% Size
+	- 150% Movement Speed
+	- 3000% Attack Speed
+	- 750% Damage
+	- -50 Armor
+	- Has 5 Brilliant Behemoths
+	- Cannot shoot fireball volley, limiting his arsenal to just it's close-range flame thrower.
+
+	Sun Priest (GrandParent)(3% Chance): (Based off an idea by Ululu)
 	- Can use Solar Flare at any point in time.
 	- -50 Armor
 
-	Hoarder (Scavenger)(8% Chance):
+	Hoarder (Scavenger)(8% Chance): (Based off an idea by Gaforb)
 	- 75% Size
 	- 75% Health
 	- 125% Movement Speed
@@ -162,7 +197,7 @@ Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names t
 	- Can use Life Draining Tendrils at any point in time.
 	- -50 Armor
 
-	Devourer Dunestrider (Clay Dunestrider)(2% Chance):
+	Devourer Dunestrider (Clay Dunestrider)(2% Chance): (Mildly based off an idea by Gaforb)
 	- 125% Size
 	- 120% Movement Speed
 	- 110% Attack Speed
@@ -186,9 +221,31 @@ Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names t
 	- 50% Damage
 	- Has 1 Alien Head
 
-	Enraged Wisp (Ancient Wisp)(Requires Moffeins Ancient Wisp)(2% Chance)
-	-Can use it's enrage ability at any point in time
+	Enraged Wisp (Ancient Wisp)(Requires Moffeins Ancient Wisp)(4% Chance)
+	-Can use its enrage ability at any point in time
 	- -50 Armor
+	
+	Amalgamated Ancient Wisp (Ancient Wisp)(Requires Moffeins Ancient Wisp)(2% Chance)
+	- 125% Size
+	- 120% Movement Speed
+	- 110% Attack Speed
+	- -50 Armor
+	- Spawns 5 Greater Wisps upon Death
+
+	Aeonic Wisp (Archaic Wisp)(Requires Nebbys Archaic Wisp)(4% Chance)
+	- 125% Size
+	- 200% Health
+	- 90% Movement Speed
+	- 90% Attack Speed
+	- 20 Armor
+	- Has 1 Brilliant Behemoth
+
+	Kinda-Archaic Wisp (Archaic Wisp)(Requires Nebbys Archaic Wisp)(7% Chance)
+	- 50% Size
+	- 50% Health
+	- 500% Movement Speed
+	- 500 Attack Speed
+	- Has 2 Alien Heads
 
 ## Other Variants
 A new adition from update 1.3.0, Other variants include a list of potentially helpful Creature variants.
@@ -249,6 +306,21 @@ Rob, for making his MonsterVariants mod and helping me a lot with questions i've
 KomradeSpectre, for helping me a ton with making the variants have custom skins.
 
 ## Changelog
+'1.3.1' Whoops, More Variants!
+- Added a failsafe mechanism that runs every time the mod loads, it checks if the values on the config file are invalid (Can be disabled).
+- Added the Almost-But-Not-Quite-Archaic Wisp.
+- Added the Mama Shroom.
+- Added the Kinda-Great-But-Not-Greater Wisp.
+- Added the Swarmer Probe.
+- Added the Incinerating Elder Lemurian.
+- Added the Amalgamated Ancient Wisp.
+- Added the Aeonic Wisp.
+- Added the Kinda-Archaic Wisp.
+- Changed how certain enemies spawn enemies on death.
+- Wisp Amalgamate now spawns 5 lesser wisps on death.
+- Rob's M.O.A.J now spawns 5 jellyfishes on death.
+- Added proper credits to the people who suggested variants.
+
 '1.3.0' Code Cleanup & Other Variants Update
 - Refractored how the config file is generated, it's EXTREMELY advised that you delete your existing config file so the new one generates without any errors!
 - Added the Malfunctioning Solus Control Unit

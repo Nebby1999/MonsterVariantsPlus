@@ -148,8 +148,8 @@ namespace MonsterVariantsPlus.SubClasses
             //KamikazeReaverSpawnChance = SpawnRateConfig(false, "Kamikaze Reaver", 5, config);
             WispAmalgamateSpawnChance = SpawnRateConfig(false, "Wisp Amalgamate", 8, config);
             KindaGreatButNotGreaterWispSpawnChance = SpawnRateConfig(false, "Kinda-Great-But-Not-Greater Wisp", 6, config);
-            IncineratingElderLemurianSpawnChance = SpawnRateConfig(false, "Incinerating Elder Lemurian", 5, config);
             SwarmerProbeSpawnChance = SpawnRateConfig(false, "Swarmer Probe", 7, config);
+            IncineratingElderLemurianSpawnChance = SpawnRateConfig(false, "Incinerating Elder Lemurian", 5, config);
             
             //Bosses
             SunPriestSpawnChance = SpawnRateConfig(false, "Sun Priest", 4, config);

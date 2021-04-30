@@ -572,11 +572,11 @@ namespace MonsterVariantsPlus.SubClasses
                     spawnRate = ConfigLoader.AeonicWispSpawnChance.Value,
                     healthMultiplier = 2f,
                     moveSpeedMultiplier = 0.9f,
-                    attackSpeedMultiplier = 1.2f,
+                    attackSpeedMultiplier = 0.9f,
                     damageMultiplier = 1.0f,
                     armorMultiplier = 1.0f,
                     armorBonus = 20,
-                    customInventory = MV.SimpleInventory("AlienHead", 2),
+                    customInventory = MV.SimpleInventory("Behemoth", 1),
                     meshReplacement = null,
                     materialReplacement = null,
                     skillReplacement = null,
@@ -585,7 +585,7 @@ namespace MonsterVariantsPlus.SubClasses
                 MV.AddModdedVariant(new MonsterVariantInfo
                 {
                     bodyName = "NebbyArchWisp",
-                    overrideName = "Kinda-Archaic-Wisp",
+                    overrideName = "Kinda-Archaic Wisp",
                     variantTier = MonsterVariantTier.Rare,
                     sizeModifier = MV.FlyingSizeModifier(0.5f),
                     spawnRate = ConfigLoader.KindaArchaicWispSpawnChance.Value,
