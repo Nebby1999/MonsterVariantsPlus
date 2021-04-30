@@ -6,37 +6,37 @@ namespace MonsterVariantsPlus.SubClasses
     public static class ConfigLoader
     {
         //Main Categories
-        internal static ConfigEntry<bool> EnableItemRewardsConfig { get; set; } //This creates the configuration entry.
+        private static ConfigEntry<bool> EnableItemRewardsConfig { get; set; } //This creates the configuration entry.
         public static bool EnableItemRewards => EnableItemRewardsConfig.Value; //This works as a Get, must keep in mind that "EnableItemRewards" is what one should get if you want to obtain a certain config's Value!
-        internal static ConfigEntry<bool> EnableGoldRewardsConfig { get; set; }
+        private static ConfigEntry<bool> EnableGoldRewardsConfig { get; set; }
         public static bool EnableGoldRewards => EnableGoldRewardsConfig.Value;
-        internal static ConfigEntry<bool> EnableXPRewardsConfig { get; set; }
+        private static ConfigEntry<bool> EnableXPRewardsConfig { get; set; }
         public static bool EnableXPRewards => EnableXPRewardsConfig.Value;
-        internal static ConfigEntry<bool> EnableCustomVariantsConfig { get; set; }
+        private static ConfigEntry<bool> EnableCustomVariantsConfig { get; set; }
         public static bool EnableCustomVariants => EnableCustomVariantsConfig.Value;
-        internal static ConfigEntry<bool> EnableOtherVariantsConfig { get; set; }
+        private static ConfigEntry<bool> EnableOtherVariantsConfig { get; set; }
         public static bool EnableOtherVariants => EnableOtherVariantsConfig.Value;
 
         //Item Related Configs
-        internal static ConfigEntry<bool> ItemSpawnsOnPlayerConfig { get; set; }
+        private static ConfigEntry<bool> ItemSpawnsOnPlayerConfig { get; set; }
         public static bool ItemSpawnsOnPlayer => ItemSpawnsOnPlayerConfig.Value;
-        internal static ConfigEntry<int> CommonWhiteChanceConfig { get; set; }
+        private static ConfigEntry<int> CommonWhiteChanceConfig { get; set; }
         public static int CommonWhiteChance => CommonWhiteChanceConfig.Value;
-        internal static ConfigEntry<int> CommonGreenChanceConfig { get; set; }
+        private static ConfigEntry<int> CommonGreenChanceConfig { get; set; }
         public static int CommonGreenChance => CommonGreenChanceConfig.Value;
-        internal static ConfigEntry<int> CommonRedChanceConfig { get; set; }
+        private static ConfigEntry<int> CommonRedChanceConfig { get; set; }
         public static int CommonRedChance => CommonRedChanceConfig.Value;
-        internal static ConfigEntry<int> UncommonWhiteChanceConfig { get; set; }
+        private static ConfigEntry<int> UncommonWhiteChanceConfig { get; set; }
         public static int UncommonWhiteChance => UncommonWhiteChanceConfig.Value;
-        internal static ConfigEntry<int> UncommonGreenChanceConfig { get; set; }
+        private static ConfigEntry<int> UncommonGreenChanceConfig { get; set; }
         public static int UncommonGreenChance => UncommonGreenChanceConfig.Value;
-        internal static ConfigEntry<int> UncommonRedChanceConfig { get; set; }
+        private static ConfigEntry<int> UncommonRedChanceConfig { get; set; }
         public static int UncommonRedChance => UncommonRedChanceConfig.Value;
-        internal static ConfigEntry<int> RareWhiteChanceConfig { get; set; }
+        private static ConfigEntry<int> RareWhiteChanceConfig { get; set; }
         public static int RareWhiteChance => RareWhiteChanceConfig.Value;
-        internal static ConfigEntry<int> RareGreenChanceConfig { get; set; }
+        private static ConfigEntry<int> RareGreenChanceConfig { get; set; }
         public static int RareGreenChance => RareGreenChanceConfig.Value;
-        internal static ConfigEntry<int> RareRedChanceConfig { get; set; }
+        private static ConfigEntry<int> RareRedChanceConfig { get; set; }
         public static int RareRedChance => RareRedChanceConfig.Value;
 
         //Money Related Configs
@@ -65,7 +65,6 @@ namespace MonsterVariantsPlus.SubClasses
         public static ConfigEntry<float> VampiricTemplarSpawnChance;
         public static ConfigEntry<float> ADShroomSpawnChance;
         public static ConfigEntry<float> HealerShroomSpawnChance;
-        public static ConfigEntry<float> MamaShroomSpawnChance;
         public static ConfigEntry<float> AdolescentSpawnChance;
         public static ConfigEntry<float> ChildSpawnChance;
         public static ConfigEntry<float> BruiserImpSpawnChance;
@@ -137,14 +136,13 @@ namespace MonsterVariantsPlus.SubClasses
             VampiricTemplarSpawnChance = SpawnRateConfig(false, "Vampiric Templar", 5, config);
             ADShroomSpawnChance = SpawnRateConfig(false, "AD-Shroom (Area of Denial Shroom)", 6, config);
             HealerShroomSpawnChance = SpawnRateConfig(false, "Healer Shroom", 10, config);
-            MamaShroomSpawnChance = SpawnRateConfig(false, "Mama Shroom", 2, config);
             AdolescentSpawnChance = SpawnRateConfig(false, "Adolescent", 8, config);
             ChildSpawnChance = SpawnRateConfig(false, "Child", 6, config);
             BruiserImpSpawnChance = SpawnRateConfig(false, "Bruiser Imp", 10, config);
             AlphaBisonSpawnChance = SpawnRateConfig(false, "Alpha Bison", 5, config);
             //KamikazeReaverSpawnChance = SpawnRateConfig(false, "Kamikaze Reaver", 5, config);
-            WispAmalgamateSpawnChance = SpawnRateConfig(false, "Wisp Amalgamate", 8, config);
-            KindaGreatButNotGreaterWispSpawnChance = SpawnRateConfig(false, "Kinda-Great-But-Not-Greater Wisp", 6, config);
+            WispAmalgamateSpawnChance = SpawnRateConfig(false, "Wisp Amalgamate", 5, config);
+            KindaGreatButNotGreaterWispSpawnChance = SpawnRateConfig(false, "Kinda-Great-But-Not-Greater Wisp", 7, config);
             IncineratingElderLemurianSpawnChance = SpawnRateConfig(false, "Incinerating Elder Lemurian", 5, config);
             SwarmerProbeSpawnChance = SpawnRateConfig(false, "Swarmer Probe", 7, config);
             
