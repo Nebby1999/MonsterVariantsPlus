@@ -52,7 +52,7 @@ namespace MonsterVariantsPlus.SubClasses
             {
                 if(entry.Value < 0 || entry.Value > 100)
                 {
-                    entry.Value = entry.DefaultValue;
+                    entry.Value = (int)entry.DefaultValue;
                 }
             }
         }
