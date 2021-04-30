@@ -186,7 +186,7 @@ namespace MonsterVariantsPlus.SubClasses
                 attackSpeedMultiplier = 1.0f,
                 damageMultiplier = 1.0f,
                 armorMultiplier = 1,
-                armorBonus = 0,
+                armorBonus = -50,
                 customInventory = MamaInventory,
                 meshReplacement = null,
                 materialReplacement = null,
@@ -563,12 +563,13 @@ namespace MonsterVariantsPlus.SubClasses
             if (MainPlugin.hasArchWisp)
             {
                 //Aeonic Wisp
-                MV.AddVariant(new MonsterVariantInfo
+                MV.AddModdedVariant(new MonsterVariantInfo
                 {
-                    bodyName = "ArchWisp",
+                    bodyName = "NebbyArchWisp",
                     overrideName = "Aeonic Wisp",
                     variantTier = MonsterVariantTier.Rare,
                     sizeModifier = MV.FlyingSizeModifier(1.25f),
+                    spawnRate = ConfigLoader.AeonicWispSpawnChance.Value,
                     healthMultiplier = 2f,
                     moveSpeedMultiplier = 0.9f,
                     attackSpeedMultiplier = 1.2f,
@@ -581,12 +582,13 @@ namespace MonsterVariantsPlus.SubClasses
                     skillReplacement = null,
                 });
                 //Kinda Archaic Wisp
-                MV.AddVariant(new MonsterVariantInfo
+                MV.AddModdedVariant(new MonsterVariantInfo
                 {
-                    bodyName = "ArchWisp",
+                    bodyName = "NebbyArchWisp",
                     overrideName = "Kinda-Archaic-Wisp",
                     variantTier = MonsterVariantTier.Rare,
                     sizeModifier = MV.FlyingSizeModifier(0.5f),
+                    spawnRate = ConfigLoader.KindaArchaicWispSpawnChance.Value,
                     healthMultiplier = 0.5f,
                     moveSpeedMultiplier = 5.0f,
                     attackSpeedMultiplier = 5.0f,
