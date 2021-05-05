@@ -75,7 +75,7 @@ namespace MonsterVariantsPlus
                 {
                     SpawnEnemy("GreaterWisp", 5, DamageReport);
                 }
-                else if(DamageReport.victimBody.baseNameToken == "M.O.A.J")
+                else if(DamageReport.victimBody.baseNameToken == "M.O.A.J.")
                 {
                     SpawnEnemy("Jellyfish", 5, DamageReport);
                 }
