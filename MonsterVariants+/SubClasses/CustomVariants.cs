@@ -48,7 +48,7 @@ namespace MonsterVariantsPlus.SubClasses
                 spawnRate = ConfigLoader.AlmostButNotQuiteArchaicWispSpawnChance.Value,
                 variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.FlyingSizeModifier(1.25f),
-                healthMultiplier = 6.0f,
+                healthMultiplier = 5.0f,
                 moveSpeedMultiplier = 1.0f,
                 attackSpeedMultiplier = 1.0f,
                 damageMultiplier = 1f,
