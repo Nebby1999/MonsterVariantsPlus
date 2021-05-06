@@ -42,6 +42,11 @@ The default values for the Item drops are right below (It is recommended to chec
 	- 10% for a White Item
 	- 5% for a Green Item
 	- 1% for a Red Item
+In the case the variant is fought inside a hidden realm, a special config entry exists to determine how the mod calculates the chances for an item drop. these settings are used so players dont spend time in hidden realms farming for items.
+The Settings are:
+Unchanged: No changes are made, numbers above stay the same.
+Halved: When the variant dies, there's a 50% Chance the mod will roll the dice to determine wether or not an item spawns.
+Never: Variants never drop items in hidden realms.
 
 ### New Variants
 Steel Contraption
@@ -66,7 +71,7 @@ Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names t
 	
 	Almost-But-Not-Quite-Archaic Wisp (Lesser Wisp)(4% Chance)
 	- 125% Size
-	- 600% Health
+	- 500% Health
 	- Fires Archaic Wisp Fireballs
 
 	Steel Contraption (Brass Contraption)(7% Chance):
@@ -101,19 +106,20 @@ Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names t
 
 	AD-Shroom (MiniMushroom)(6% Chance):
 	- 75% Size
-	- 500% Attack Speed
+	- 1000% Attack Speed
 	- 6.2% Damage
-	- Has 5 Alien Heads
+	- Has 10 Alien Heads
 
 	Healer-Shroom (MiniMushroom)(10% Chance):
 	- 50% Size
 	- 200% Movement Speed
-	- 50% Attack Speed
+	- 25% Attack Speed
 	- 50% Damage
-	- Has 2 Bustling Fungus
+	- Has 5 Bustling Fungus
 
 	Mama-Shroom (MiniMushroom) (2% Chance): (Based off an idea by Awesome_Soul)
 	- 200% Size
+	- 200% HP
 	- 0% Movement Speed
 	- -50 Armor
 	- Has 10 Bustling Fungus
@@ -138,11 +144,10 @@ Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names t
 
 	Bruiser Imp (Imp)(10% Chance):
 	- 125% Size
-	- 80% Health
-	- 200% Movement Speed
+	- 300% Movement Speed
 	- 200% Attack Speed
 	- Has 5 Alien Heads
-	- Has 2 Crowbars
+	- Has 3 Crowbars
 	- Cannot Teleport
 
 	Alpha Bison (Bighorn Bison)(5% Chance): (Based off an idea by Gaforb)
@@ -162,7 +167,7 @@ Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names t
 	- 50% Size
 	- 50% Health
 	- 500% Movement Speed
-	- 500% Attack Speed
+	- 250% Attack Speed
 	- Has 2 Alien Heads
 
 	Swarmer Probe (Solus Probe)(7% Chance)
@@ -174,7 +179,7 @@ Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names t
 
 	Incinerating Elder Lemurian (Elder Lemurian)(5% Chance)
 	- 125% Size
-	- 150% Movement Speed
+	- 200% Movement Speed
 	- 3000% Attack Speed
 	- 750% Damage
 	- -50 Armor
@@ -195,6 +200,7 @@ Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names t
 
 	Starving Dunestrider (Clay Dunestrider)(4% Chance):
 	- Can use Life Draining Tendrils at any point in time.
+	- Has a Hardlight Afterburner
 	- -50 Armor
 
 	Devourer Dunestrider (Clay Dunestrider)(2% Chance): (Mildly based off an idea by Gaforb)
@@ -212,14 +218,39 @@ Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names t
 	Malfunctioning Alloy Worship Unit (Alloy Worship Unit)(4% Chance):
 	- Can use Alloy Supercharged Detonation at any point in time.
 	- -50 Armor
+
+	Ancient Stone Titan (Stone Titan)(4% Chance):
+	- Can use Eye Laser & Stone Construct at any point in time.
+	- -50 Armor
+
+	Ancient Aurelionite (Aurelionite)(4% Chance):
+	- Can use Eye Laser & Stone Construct at Any Point in Time
+
+	Aurelionite Colosus (Aurelionite)(2% Chance):
+	- 300% Size
+	- 50% Movement Speed
+	- 200% Damage
+	- 50 Armor
+	- Has 3 Alien Heads
+
+	Pygmy Aurelionite (Aurelionite)(2% Chance):
+	- 30% Size
+	- 500% Movement Speed
 	
-	Clay Soldier (ClayMen)(Requires Moffeins ClayMen)(15% Spawn Chance)
+	Clay Soldier (ClayMen)(Requires Moffeins ClayMen)(15% Chance):
 	- 112.5% Size
 	- 125% Health
 	- 90% Movement Speed
 	- 150% Attack Speed
 	- 50% Damage
 	- Has 1 Alien Head
+
+	Clay Assasin (ClayMen)(Requires Moffeins ClayMen)(7% Spawn Chance):
+	- 75% Size
+	- 120% Movement Speed
+	- Has 3 Tritip Daggers
+	- Has 1 Old War Stealthkit
+	- -25 Armor
 
 	Enraged Wisp (Ancient Wisp)(Requires Moffeins Ancient Wisp)(4% Chance)
 	-Can use its enrage ability at any point in time
@@ -244,7 +275,7 @@ Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names t
 	- 50% Size
 	- 50% Health
 	- 500% Movement Speed
-	- 500 Attack Speed
+	- 250% Attack Speed
 	- Has 2 Alien Heads
 
 ## Other Variants
@@ -306,16 +337,50 @@ Rob, for making his MonsterVariants mod and helping me a lot with questions i've
 KomradeSpectre, for helping me a ton with making the variants have custom skins.
 
 ## Changelog
+'1.3.2' Hidden Realms Nerf update.
+- Added a new config entry that dictates how the Item Drop behavior works on Hidden Realms.
+- Fixed M.O.A.J. not spawning jellyfishes on death.
+- Tweaked the Following Variants:
+	- Almost-But-Not-Quite-Archaic Wisp.
+		-- 600 HP -> 500% HP
+	- AD-Shroom
+		-- 500% Attack Speed -> 1000% Attack Speed
+		-- 5 Alien Heads -> 10 Alien Heads
+	- Healer Shroom
+		-- 50% Attack Speed -> 25% Attack Speed
+		-- 2 Bustling Fungus -> 5 Bustling Fungus.
+	- Mama Shroom
+		-- 100% HP -> 200% HP
+	- Bruiser Imp
+		-- 80% HP -> 100% HP
+		-- 200% Movement Speed -> 300% Movement Speed
+		-- 2 Crowbars -> 3 Crowbars
+	- Kinda Great But Not Greater Wisp
+		-- 500% Attack Speed -> 250% Attack Speed
+	- Incinerating Elder Lemurian
+		-- 150% Movement Speed -> 300% Movement Speed
+	- Starving Dunestrider
+		-- Added a Hardlight Afterburner
+	- Kinda Archaic Wisp
+		-- 500% Attack Speed -> 250% Attack Speed.
+- Added the Following Variants:
+	- Clay Assasin
+	- Ancient Stone Titan
+	- Ancient Aurelionite
+	- Aurelionite Colosus
+	- Pygmy Aurelionite
+
 '1.3.1' Whoops, More Variants!
 - Added a failsafe mechanism that runs every time the mod loads, it checks if the values on the config file are invalid (Can be disabled).
-- Added the Almost-But-Not-Quite-Archaic Wisp.
-- Added the Mama Shroom.
-- Added the Kinda-Great-But-Not-Greater Wisp.
-- Added the Swarmer Probe.
-- Added the Incinerating Elder Lemurian.
-- Added the Amalgamated Ancient Wisp.
-- Added the Aeonic Wisp.
-- Added the Kinda-Archaic Wisp.
+- Added the Following Variants:
+	- Almost-But-Not-Quite-Archaic Wisp.
+	- Mama Shroom.
+	- Kinda-Great-But-Not-Greater Wisp.
+	- Swarmer Probe.
+	- Incinerating Elder Lemurian.
+	- Amalgamated Ancient Wisp.
+	- Aeonic Wisp.
+	- Kinda-Archaic Wisp.
 - Changed how certain enemies spawn enemies on death.
 - Wisp Amalgamate now spawns 5 lesser wisps on death.
 - Rob's M.O.A.J now spawns 5 jellyfishes on death.
