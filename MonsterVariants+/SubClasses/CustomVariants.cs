@@ -238,8 +238,8 @@ namespace MonsterVariantsPlus.SubClasses
                 spawnRate = ConfigLoader.BruiserImpSpawnChance.Value,
                 variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.GroundSizeModifier(1.25f),
-                healthMultiplier = 0.8f,
-                moveSpeedMultiplier = 2.0f,
+                healthMultiplier = 1.0f,
+                moveSpeedMultiplier = 3.0f,
                 attackSpeedMultiplier = 2.0f,
                 damageMultiplier = 1.0f,
                 armorMultiplier = 1f,
@@ -314,7 +314,7 @@ namespace MonsterVariantsPlus.SubClasses
                 sizeModifier = MV.FlyingSizeModifier(0.5f),
                 healthMultiplier = 0.5f,
                 moveSpeedMultiplier = 5.0f,
-                attackSpeedMultiplier = 5.0f,
+                attackSpeedMultiplier = 2.5f,
                 damageMultiplier = 1,
                 armorBonus = 0,
                 armorMultiplier = 1,
@@ -351,7 +351,7 @@ namespace MonsterVariantsPlus.SubClasses
                 variantTier = MonsterVariantTier.Rare,
                 sizeModifier = MV.GroundSizeModifier(1.25f),
                 healthMultiplier = 1.0f,
-                moveSpeedMultiplier = 1.5f,
+                moveSpeedMultiplier = 2.0f,
                 attackSpeedMultiplier = 30f,
                 damageMultiplier = 7.5f,
                 armorBonus = -50,
@@ -413,7 +413,7 @@ namespace MonsterVariantsPlus.SubClasses
                 damageMultiplier = 1,
                 armorMultiplier = 1,
                 armorBonus =-50,
-                customInventory = null,
+                customInventory = MV.SimpleInventory("UtilitySkillMagazine", 1),
                 meshReplacement = null,
                 materialReplacement = null,
                 skillReplacement = null
@@ -517,6 +517,25 @@ namespace MonsterVariantsPlus.SubClasses
                     materialReplacement = null,
                     skillReplacement = null
                 });
+                //Clay Assasin
+                MV.AddModdedVariant(new MonsterVariantInfo
+                {
+                    bodyName = "MoffeinClayMan",
+                    overrideName = "Clay Assasin",
+                    spawnRate = ConfigLoader.ClayAssasinSpawnChance.Value,
+                    variantTier = MonsterVariantTier.Uncommon,
+                    sizeModifier = MV.GroundSizeModifier(0.75f),
+                    healthMultiplier = 1.0f,
+                    moveSpeedMultiplier = 1.2f,
+                    attackSpeedMultiplier = 1.0f,
+                    damageMultiplier = 1.0f,
+                    armorMultiplier = 1f,
+                    armorBonus = -25f,
+                    customInventory = assasinInventory,
+                    meshReplacement = null,
+                    materialReplacement = null,
+                    skillReplacement = null
+                });
             }
             if (MainPlugin.hasAncientWisp)
             {
@@ -591,7 +610,7 @@ namespace MonsterVariantsPlus.SubClasses
                     spawnRate = ConfigLoader.KindaArchaicWispSpawnChance.Value,
                     healthMultiplier = 0.5f,
                     moveSpeedMultiplier = 5.0f,
-                    attackSpeedMultiplier = 5.0f,
+                    attackSpeedMultiplier = 2.5f,
                     damageMultiplier = 1,
                     armorBonus = 0,
                     armorMultiplier = 1,
@@ -679,32 +698,39 @@ namespace MonsterVariantsPlus.SubClasses
                 });
             }
         }
-        readonly static ItemInfo[] vampiricInventory = new ItemInfo[]
+        private static readonly ItemInfo[] vampiricInventory = new ItemInfo[]
         {
                 MV.SimpleItem("CritGlasses", 10),
                 MV.SimpleItem("HealOnCrit", 20),
         };
-        readonly static ItemInfo[] bruiserInventory = new ItemInfo[]
+        private static readonly ItemInfo[] bruiserInventory = new ItemInfo[]
         {
             MV.SimpleItem("AlienHead", 5),
-            MV.SimpleItem("Crowbar", 2),
+            MV.SimpleItem("Crowbar", 3),
         };
-        readonly static ItemInfo[] adolescentInventory = new ItemInfo[]
+        private static readonly ItemInfo[] adolescentInventory = new ItemInfo[]
         {
             MV.SimpleItem("ParentEgg", 1),
             MV.SimpleItem("Medkit", 1),
             MV.SimpleItem("UtilitySkillMagazine", 1),
             MV.SimpleItem("AlienHead", 3),
         };
-        readonly static ItemInfo[] devourerInventory = new ItemInfo[]
+        private static readonly ItemInfo[] devourerInventory = new ItemInfo[]
         {
             MV.SimpleItem("RepeatHeal", 2),
             MV.SimpleItem("BarrierOnOverHeal", 2)
         };
-        readonly static ItemInfo[] MamaInventory = new ItemInfo[]
+        private static readonly ItemInfo[] MamaInventory = new ItemInfo[]
         {
             MV.SimpleItem("Mushroom", 10),
-            MV.SimpleItem("BarrierOnOverHeal", 1)
+            MV.SimpleItem("BarrierOnOverHeal", 1),
+        };
+        private static readonly ItemInfo[] assasinInventory = new ItemInfo[]
+        {
+            MV.SimpleItem("BleedOnHit", 3),
+            MV.SimpleItem("Ghost", 1),
+            MV.SimpleItem("Phasing", 1)
+
         };
         //Method to replace a monster's primary and utility skills. used for Child.
         internal static MonsterSkillReplacement[] PrimaryUtilityReplacement(SkillDef primarySkill, SkillDef utilitySkill)
