@@ -1,5 +1,6 @@
 ﻿using BepInEx.Configuration;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using UnityEngine;
 
@@ -117,7 +118,8 @@ namespace MonsterVariantsPlus.SubClasses
                     entry.Value = (float)entry.DefaultValue;
                 }
             }
-            if(hiddenRealmDropBehaviorConfig.Value != "Unchanged" || hiddenRealmDropBehaviorConfig.Value != "Halved" || hiddenRealmDropBehaviorConfig.Value != "Never")
+            string[] validValues = new string[] { "Unchanged", "Halved", "Never" };
+            if (!validValues.Contains(hiddenRealmDropBehaviorConfig.Value))
             {
                 Debug.LogError("Invalid value detected in " + hiddenRealmDropBehaviorConfig.Definition.Key + "! Restoring value to default Value.");
                 hiddenRealmDropBehaviorConfig.Value = (string)hiddenRealmDropBehaviorConfig.DefaultValue;
