@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using MonsterVariants.Components;
 using System.Reflection;
 using R2API;
+using UnityEngine.SceneManagement;
 
 namespace MonsterVariantsPlus
 {
@@ -53,28 +54,24 @@ namespace MonsterVariantsPlus
                     {
                         if (ConfigLoader.EnableItemRewards)
                         {
-                            DirectorAPI.MonsterActions += (list, stage) => 
+                            if(Run.instance.isRunStopwatchPaused && ConfigLoader.HiddenRealmItemdropBehavior != "Unchanged")
                             {
-                                if((stage.stage == DirectorAPI.Stage.VoidCell) || (stage.stage == DirectorAPI.Stage.GildedCoast) || (stage.stage == DirectorAPI.Stage.ArtifactReliquary) && ConfigLoader.HiddenRealmItemdropBehavior != "Unchanged")
+                                if(ConfigLoader.HiddenRealmItemdropBehavior == "Halved")
                                 {
-                                    if(ConfigLoader.HiddenRealmItemdropBehavior == "Halved")
+                                    int rng = Random.Range(1, 20);
+                                    if (rng > 10)
                                     {
-                                        int rng = Random.Range(0, 1);
-                                        if (rng == 1)
-                                        {
-                                            ExtraRewards.TryExtraReward(enemy, DamageReport.victimBody, DamageReport.attackerBody);
-                                        }
-                                    }
-                                    else //(Hidden REalm item drop behavior is NONE
-                                    {
-
+                                        ExtraRewards.TryExtraReward(enemy, DamageReport.victimBody, DamageReport.attackerBody);
                                     }
                                 }
-                                else
+                                else //(Hidden Realm item drop behavior is "Never")
                                 {
-                                    ExtraRewards.TryExtraReward(enemy, DamageReport.victimBody, DamageReport.attackerBody);
                                 }
-                            };
+                            }
+                            else
+                            {
+                                ExtraRewards.TryExtraReward(enemy, DamageReport.victimBody, DamageReport.attackerBody);
+                            }
                         }
                         if (ConfigLoader.EnableGoldRewards)
                         {
