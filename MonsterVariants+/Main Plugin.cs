@@ -5,6 +5,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using MonsterVariants.Components;
 using System.Reflection;
+using R2API;
 
 namespace MonsterVariantsPlus
 {
@@ -52,7 +53,28 @@ namespace MonsterVariantsPlus
                     {
                         if (ConfigLoader.EnableItemRewards)
                         {
-                            ExtraRewards.TryExtraReward(enemy, DamageReport.victimBody, DamageReport.attackerBody);
+                            DirectorAPI.MonsterActions += (list, stage) => 
+                            {
+                                if((stage.stage == DirectorAPI.Stage.VoidCell) || (stage.stage == DirectorAPI.Stage.GildedCoast) || (stage.stage == DirectorAPI.Stage.ArtifactReliquary) && ConfigLoader.HiddenRealmItemdropBehavior != "Unchanged")
+                                {
+                                    if(ConfigLoader.HiddenRealmItemdropBehavior == "Halved")
+                                    {
+                                        int rng = Random.Range(0, 1);
+                                        if (rng == 1)
+                                        {
+                                            ExtraRewards.TryExtraReward(enemy, DamageReport.victimBody, DamageReport.attackerBody);
+                                        }
+                                    }
+                                    else //(Hidden REalm item drop behavior is NONE
+                                    {
+
+                                    }
+                                }
+                                else
+                                {
+                                    ExtraRewards.TryExtraReward(enemy, DamageReport.victimBody, DamageReport.attackerBody);
+                                }
+                            };
                         }
                         if (ConfigLoader.EnableGoldRewards)
                         {
@@ -84,7 +106,7 @@ namespace MonsterVariantsPlus
         }
         public void SpawnEnemy(string spawnCard, int amount, DamageReport damageReport)
         {
-            Vector3 position = damageReport.victimBody.corePosition + (2f * Random.insideUnitSphere);
+            Vector3 position = damageReport.victimBody.corePosition + (amount * Random.insideUnitSphere);
 
             DirectorSpawnRequest directorSpawnRequest = new DirectorSpawnRequest((SpawnCard)Resources.Load(string.Format("SpawnCards/CharacterSpawnCards/csc" + spawnCard)), new DirectorPlacementRule
             {
