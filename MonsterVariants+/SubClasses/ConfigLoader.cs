@@ -90,6 +90,7 @@ namespace MonsterVariantsPlus.SubClasses
         //public static ConfigEntry<float> AlloySwarmingUnitSpawnChance;
         //Modded Variants
         public static ConfigEntry<float> ClaySoldierSpawnChance;
+        public static ConfigEntry<float> ClayAssasinSpawnChance;
         public static ConfigEntry<float> EnragedWispSpawnChance;
         public static ConfigEntry<float> AmalgamatedAncientWispSpawnChance;
         public static ConfigEntry<float> AeonicWispSpawnChance;
@@ -167,6 +168,7 @@ namespace MonsterVariantsPlus.SubClasses
 
             //Modded
             ClaySoldierSpawnChance = SpawnRateConfig(false, "Clay Soldier", 15, "Moffein", "ClayMen", config);
+            ClayAssasinSpawnChance = SpawnRateConfig(false, "Clay Assasin", 7, "Moffein", "ClayMen", config);
             EnragedWispSpawnChance = SpawnRateConfig(false, "Enraged Wisp", 4, "Moffein", "AncientWisp", config);
             AmalgamatedAncientWispSpawnChance = SpawnRateConfig(false, "Amalgamated Ancient Wisp", 2, "Moffein", "AncientWisp", config);
             AeonicWispSpawnChance = SpawnRateConfig(false, "Aeonic Wisp", 4, "Nebby", "ArchaicWisp", config);
