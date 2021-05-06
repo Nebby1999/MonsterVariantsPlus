@@ -496,6 +496,44 @@ namespace MonsterVariantsPlus.SubClasses
                 materialReplacement = null,
                 skillReplacement = null,
             });
+            //Aurelionite Colosus
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "TitanGold",
+                overrideName = "Aurelionite Colosus",
+                spawnRate = ConfigLoader.AurelioniteColosusSpawnChance.Value,
+                variantTier = MonsterVariantTier.Uncommon,
+                sizeModifier = MV.GroundSizeModifier(3.0f),
+                healthMultiplier = 3.0f,
+                moveSpeedMultiplier = 0.5f,
+                attackSpeedMultiplier = 1.0f,
+                damageMultiplier = 2.0f,
+                armorMultiplier = 1.0f,
+                armorBonus = 50f,
+                customInventory = null,
+                meshReplacement = null,
+                materialReplacement = null,
+                skillReplacement = null
+            });
+            //Pygmy Aurelionite
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "TitanGold",
+                overrideName = "Pygmy Aurelionite",
+                spawnRate = ConfigLoader.AurelioniteColosusSpawnChance.Value,
+                variantTier = MonsterVariantTier.Uncommon,
+                sizeModifier = MV.GroundSizeModifier(0.3f),
+                healthMultiplier = 1.0f,
+                moveSpeedMultiplier = 5.0f,
+                attackSpeedMultiplier = 1.0f,
+                damageMultiplier = 1.0f,
+                armorMultiplier = 1.0f,
+                armorBonus = 0f,
+                customInventory = null,
+                meshReplacement = null,
+                materialReplacement = null,
+                skillReplacement = null
+            });
             if (MainPlugin.hasClayMan)
             {
                 //Clay Soldier
