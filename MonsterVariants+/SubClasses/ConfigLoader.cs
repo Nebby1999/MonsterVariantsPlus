@@ -88,6 +88,10 @@ namespace MonsterVariantsPlus.SubClasses
         //public static ConfigEntry<float> SolusSwarmingUnitSpawnChance;
         public static ConfigEntry<float> MalfunctioningAlloyWorshipUnitSpawnChance;
         //public static ConfigEntry<float> AlloySwarmingUnitSpawnChance;
+        public static ConfigEntry<float> AncientStoneTitanSpawnChance;
+        public static ConfigEntry<float> AncientAurelioniteSpawnChance;
+        public static ConfigEntry<float> AurelioniteColosusSpawnChance;
+        public static ConfigEntry<float> PygmyAurelioniteSpawnChance;
         //Modded Variants
         public static ConfigEntry<float> ClaySoldierSpawnChance;
         public static ConfigEntry<float> ClayAssasinSpawnChance;
@@ -165,7 +169,10 @@ namespace MonsterVariantsPlus.SubClasses
             //SolusSwarmingUnitSpawnChance = SpawnRateConfig(false, "Solus Swarming Unit", 100, config);
             MalfunctioningAlloyWorshipUnitSpawnChance = SpawnRateConfig(false, "Malfunctioning Alloy Worship Unit", 4, config);
             //AlloySwarmingUnitSpawnChance = SpawnRateConfig(false, "Alloy Swarming Unit", 100, config);
-
+            AncientStoneTitanSpawnChance = SpawnRateConfig(false, "Ancient Stone Titan", 4, config);
+            AncientAurelioniteSpawnChance = SpawnRateConfig(false, "Ancient Aurelionite", 4, config);
+            AurelioniteColosusSpawnChance = SpawnRateConfig(false, "Aurelionite Colosus", 2, config);
+            PygmyAurelioniteSpawnChance = SpawnRateConfig(false, "Pygmy Aurelionite", 2, config);
             //Modded
             ClaySoldierSpawnChance = SpawnRateConfig(false, "Clay Soldier", 15, "Moffein", "ClayMen", config);
             ClayAssasinSpawnChance = SpawnRateConfig(false, "Clay Assasin", 7, "Moffein", "ClayMen", config);
