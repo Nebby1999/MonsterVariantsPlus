@@ -496,6 +496,46 @@ namespace MonsterVariantsPlus.SubClasses
                 materialReplacement = null,
                 skillReplacement = null,
             });
+            //Ancient Stone Titan
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "Titan",
+                overrideName = "Ancient Stone Titan",
+                spawnRate = ConfigLoader.AncientStoneTitanSpawnChance.Value,
+                variantTier = MonsterVariantTier.Common,
+                aiModifier = MonsterVariantAIModifier.Unstable,
+                sizeModifier = MV.GroundSizeModifier(1.0f),
+                healthMultiplier = 1.0f,
+                moveSpeedMultiplier = 1.0f,
+                attackSpeedMultiplier = 1.0f,
+                damageMultiplier = 1.0f,
+                armorMultiplier = 1.0f,
+                armorBonus = -50,
+                customInventory = null,
+                meshReplacement = null,
+                materialReplacement = null,
+                skillReplacement = null
+            });
+            //Ancient Aurelionite
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "TitanGold",
+                overrideName = "Ancient Aurelionite",
+                spawnRate = ConfigLoader.AncientAurelioniteSpawnChance.Value,
+                variantTier = MonsterVariantTier.Common,
+                aiModifier = MonsterVariantAIModifier.Unstable,
+                sizeModifier = MV.GroundSizeModifier(1.0f),
+                healthMultiplier = 1.0f,
+                moveSpeedMultiplier = 1.0f,
+                attackSpeedMultiplier = 1.0f,
+                damageMultiplier = 1.0f,
+                armorMultiplier = 1.0f,
+                armorBonus = -50,
+                customInventory = null,
+                meshReplacement = null,
+                materialReplacement = null,
+                skillReplacement = null
+            });
             //Aurelionite Colosus
             MV.AddVariant(new MonsterVariantInfo
             {
@@ -510,7 +550,7 @@ namespace MonsterVariantsPlus.SubClasses
                 damageMultiplier = 2.0f,
                 armorMultiplier = 1.0f,
                 armorBonus = 50f,
-                customInventory = null,
+                customInventory = MV.SimpleInventory("AlienHead", 3),
                 meshReplacement = null,
                 materialReplacement = null,
                 skillReplacement = null
@@ -520,7 +560,7 @@ namespace MonsterVariantsPlus.SubClasses
             {
                 bodyName = "TitanGold",
                 overrideName = "Pygmy Aurelionite",
-                spawnRate = ConfigLoader.AurelioniteColosusSpawnChance.Value,
+                spawnRate = ConfigLoader.PygmyAurelioniteSpawnChance.Value,
                 variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.GroundSizeModifier(0.3f),
                 healthMultiplier = 1.0f,
