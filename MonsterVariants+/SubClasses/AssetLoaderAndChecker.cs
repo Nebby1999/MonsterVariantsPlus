@@ -91,6 +91,8 @@ namespace MonsterVariantsPlus.SubClasses
             variantSpawnChanceConfigs.Add(ConfigLoader.SquidChaingunSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.SquidSniperSpawnChance);
 
+            ConfigEntry<string> hiddenRealmDropBehaviorConfig = ConfigLoader.HiddenRealmItemdropBehaviorConfig;
+
             foreach (ConfigEntry<int> entry in itemDropChanceConfigs)
             {
                 if(entry.Value < 0 || entry.Value > 100)
@@ -114,6 +116,11 @@ namespace MonsterVariantsPlus.SubClasses
                     Debug.LogError("Invalid value detected in " + entry.Definition.Key + "! Restoring value to default Value.");
                     entry.Value = (float)entry.DefaultValue;
                 }
+            }
+            if(hiddenRealmDropBehaviorConfig.Value != "Unchanged" || hiddenRealmDropBehaviorConfig.Value != "Halved" || hiddenRealmDropBehaviorConfig.Value != "Never")
+            {
+                Debug.LogError("Invalid value detected in " + hiddenRealmDropBehaviorConfig.Definition.Key + "! Restoring value to default Value.");
+                hiddenRealmDropBehaviorConfig.Value = (string)hiddenRealmDropBehaviorConfig.DefaultValue;
             }
             Debug.Log("Config Checker finished succesfully.");
             return false;
