@@ -236,6 +236,16 @@ Since Version 1.3.9 of MonsterVariants, Modded Variant's now have custom names t
 	Pygmy Aurelionite (Aurelionite)(2% Chance):
 	- 30% Size
 	- 500% Movement Speed
+
+	Beetle Matriarch (Beetle Queen)(4% Chance):
+	- The Beetle Summon Ability summons both Beetle Guards as well as Normal Beetles
+	- -50 Armor
+
+	Beetle Empress (Beetle Queen)(2% Chance):
+	- 125% Size
+	- 120% Health
+	- Has 2 Queens Gland
+	- -70 Armor
 	
 	Clay Soldier (ClayMen)(Requires Moffeins ClayMen)(15% Chance):
 	- 112.5% Size
@@ -337,6 +347,22 @@ Rob, for making his MonsterVariants mod and helping me a lot with questions i've
 KomradeSpectre, for helping me a ton with making the variants have custom skins.
 
 ## Changelog
+'1.3.5' Beetle Update
+- Added two new Beetle Queen variants
+	- Beetle Matriarch
+	- Beetle Empress
+- Changes to the following variants
+	- Clay Assasin
+		-- 3 Tritip Daggers -> 5 Tritip Daggers
+		-- 120% Movement Speed -> 125% Movement Speed
+		-- Now properly uses a ghost material instead of being invulnerable.
+	- Clay Soldier
+		-- 50% Damage -> 60% Damage
+- Added Missing Variants to the Config Checker.
+
+'1.3.3' Whoops i accidentally made an invincible enemy uvu
+- Fixed the clay assasins being invulnerable.
+
 '1.3.2' Hidden Realms Nerf update.
 - Added a new config entry that dictates how the Item Drop behavior works on Hidden Realms.
 - Fixed M.O.A.J. not spawning jellyfishes on death.

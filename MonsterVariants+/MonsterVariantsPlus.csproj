@@ -116,6 +116,7 @@
     <Compile Include="SubClasses\ConfigLoader.cs" />
     <Compile Include="SubClasses\ExtraRewards.cs" />
     <Compile Include="SubClasses\MultiplyGold.cs" />
+    <Compile Include="SubClasses\Skills\States\BeetleQueen\BeetleSwarm.cs" />
     <Compile Include="SubClasses\Skills\States\GreaterWisp\WispAmalgamateFire.cs" />
     <Compile Include="SubClasses\Skills\States\GreaterWisp\WispAmalgamateCharge.cs" />
     <Compile Include="SubClasses\Skills\States\LesserWisp\ChargeArchwispCannon.cs" />
