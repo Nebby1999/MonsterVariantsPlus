@@ -15,6 +15,7 @@ namespace MonsterVariantsPlus.SubClasses.Skills
         public static SkillDef kamikazeBlinkDef;
         public static SkillDef wispAmalgamateDef;
         public static SkillDef chargeArchCannonDef;
+        public static SkillDef beetleSwarm;
         //public static SkillDef DeploySwarmDef;
 
         internal static void RegisterSkills()
@@ -26,6 +27,7 @@ namespace MonsterVariantsPlus.SubClasses.Skills
             Loadouts.AddSkill(typeof(States.VoidReaver.KamikazeBlink));
             Loadouts.AddSkill(typeof(States.GreaterWisp.WispAmalgamateCharge));
             Loadouts.AddSkill(typeof(States.LesserWisp.ChargeArchwispCannon));
+            Loadouts.AddSkill(typeof(States.BeetleQueen.BeetleSwarm));
             //Loadouts.AddSkill(typeof(States.RoboBallBoss.DeploySwarm));
 
             //Skill that does absolutely nothing, useful for getting variants without a certain skill (No teleporting imps/parents)
@@ -38,6 +40,7 @@ namespace MonsterVariantsPlus.SubClasses.Skills
             kamikazeBlinkDef = NewSkillDef(new SerializableEntityStateType(typeof(States.VoidReaver.KamikazeBlink)), "Body");
             wispAmalgamateDef = NewSkillDef(new SerializableEntityStateType(typeof(States.GreaterWisp.WispAmalgamateCharge)), "Weapon");
             chargeArchCannonDef = NewSkillDef(new SerializableEntityStateType(typeof(States.LesserWisp.ChargeArchwispCannon)), "Weapon");
+            beetleSwarm = NewSkillDef(new SerializableEntityStateType(typeof(States.BeetleQueen.BeetleSwarm)), "Body");
             //DeploySwarmDef = NewSkillDef(new SerializableEntityStateType(typeof(States.RoboBallBoss.DeploySwarm)), "Weapon");
 
             emptySkillDef.baseMaxStock = 0;
@@ -62,6 +65,16 @@ namespace MonsterVariantsPlus.SubClasses.Skills
             chargeArchCannonDef.baseRechargeInterval = 3f;
             chargeArchCannonDef.requiredStock = 1;
             chargeArchCannonDef.stockToConsume = 1;
+
+            beetleSwarm.baseMaxStock = 1;
+            beetleSwarm.baseRechargeInterval = 30f;
+            beetleSwarm.requiredStock = 1;
+            beetleSwarm.stockToConsume = 1;
+
+            /*stealhLeapDef.baseMaxStock = 1;
+            stealhLeapDef.baseRechargeInterval = 4;
+            stealhLeapDef.requiredStock = 1;
+            stealhLeapDef.stockToConsume = 1;*/
         }
         private static SkillDef NewSkillDef(SerializableEntityStateType state, string stateMachine)
         {

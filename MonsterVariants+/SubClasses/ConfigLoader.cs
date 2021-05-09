@@ -92,6 +92,8 @@ namespace MonsterVariantsPlus.SubClasses
         public static ConfigEntry<float> AncientAurelioniteSpawnChance;
         public static ConfigEntry<float> AurelioniteColosusSpawnChance;
         public static ConfigEntry<float> PygmyAurelioniteSpawnChance;
+        public static ConfigEntry<float> BeetleMatriarchSpawnChance;
+        public static ConfigEntry<float> BeetleEmpressSpawnChance;
         //Modded Variants
         public static ConfigEntry<float> ClaySoldierSpawnChance;
         public static ConfigEntry<float> ClayAssasinSpawnChance;
@@ -173,6 +175,8 @@ namespace MonsterVariantsPlus.SubClasses
             AncientAurelioniteSpawnChance = SpawnRateConfig(false, "Ancient Aurelionite", 4, config);
             AurelioniteColosusSpawnChance = SpawnRateConfig(false, "Aurelionite Colosus", 2, config);
             PygmyAurelioniteSpawnChance = SpawnRateConfig(false, "Pygmy Aurelionite", 2, config);
+            BeetleMatriarchSpawnChance = SpawnRateConfig(false, "Beetle Matriarch", 100, config);
+            BeetleEmpressSpawnChance = SpawnRateConfig(false, "Beetle Empress", 2, config);
             //Modded
             ClaySoldierSpawnChance = SpawnRateConfig(false, "Clay Soldier", 15, "Moffein", "ClayMen", config);
             ClayAssasinSpawnChance = SpawnRateConfig(false, "Clay Assasin", 7, "Moffein", "ClayMen", config);

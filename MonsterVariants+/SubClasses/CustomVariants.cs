@@ -21,6 +21,7 @@ namespace MonsterVariantsPlus.SubClasses
             Material archaicWispBodyMat = Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/ArchWispBody").GetComponent<ModelLocator>().modelTransform.GetComponent<CharacterModel>().baseRendererInfos[0].defaultMaterial);
             Material archaicWispFlameMat = Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/ArchWispBody").GetComponent<ModelLocator>().modelTransform.GetComponent<CharacterModel>().baseRendererInfos[1].defaultMaterial);
             Material perforatorMat = UnityEngine.Object.Instantiate(itemDisplayRuleSet.FindDisplayRuleGroup(RoR2Content.Items.FireballsOnHit).rules[0].followerPrefab.GetComponentInChildren<MeshRenderer>().material);
+            Material spectralMat = Resources.Load<Material>("Materials/matGhostEffect");
             //Leastest Wisp
             MV.AddVariant(new MonsterVariantInfo
             {
@@ -574,6 +575,44 @@ namespace MonsterVariantsPlus.SubClasses
                 materialReplacement = null,
                 skillReplacement = null
             });
+            //Beetle Matriarch
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "BeetleQueen2",
+                overrideName = "Beetle Matriarch",
+                spawnRate = ConfigLoader.BeetleMatriarchSpawnChance.Value,
+                variantTier = MonsterVariantTier.Common,
+                sizeModifier = MV.GroundSizeModifier(1.0f),
+                healthMultiplier = 1.0f,
+                moveSpeedMultiplier = 1.0f,
+                attackSpeedMultiplier = 1.0f,
+                damageMultiplier = 1.0f,
+                armorMultiplier = 1.0f,
+                armorBonus = -50f,
+                customInventory = null,
+                meshReplacement = null,
+                materialReplacement = null,
+                skillReplacement = MV.SpecialReplacement(CustomSkills.beetleSwarm)
+            });
+            //Beetle Empress
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "BeetleQueen2",
+                overrideName = "Beetle Empress",
+                spawnRate = ConfigLoader.BeetleEmpressSpawnChance.Value,
+                variantTier = MonsterVariantTier.Uncommon,
+                sizeModifier = MV.GroundSizeModifier(1.25f),
+                healthMultiplier = 1.2f,
+                moveSpeedMultiplier = 1.0f,
+                attackSpeedMultiplier = 1.0f,
+                damageMultiplier = 1.0f,
+                armorMultiplier = 1.0f,
+                armorBonus = -70,
+                customInventory = MV.SimpleInventory("BeetleGland", 2),
+                meshReplacement = null,
+                materialReplacement = null,
+                skillReplacement = null,
+            });
             if (MainPlugin.hasClayMan)
             {
                 //Clay Soldier
@@ -587,7 +626,7 @@ namespace MonsterVariantsPlus.SubClasses
                     healthMultiplier = 1.25f,
                     moveSpeedMultiplier = 0.9f,
                     attackSpeedMultiplier = 1.5f,
-                    damageMultiplier = 0.5f,
+                    damageMultiplier = 0.6f,
                     armorMultiplier = 1f,
                     armorBonus = 0f,
                     customInventory = MV.SimpleInventory("AlienHead", 1),
@@ -604,15 +643,15 @@ namespace MonsterVariantsPlus.SubClasses
                     variantTier = MonsterVariantTier.Uncommon,
                     sizeModifier = MV.GroundSizeModifier(0.75f),
                     healthMultiplier = 1.0f,
-                    moveSpeedMultiplier = 1.2f,
+                    moveSpeedMultiplier = 1.25f,
                     attackSpeedMultiplier = 1.0f,
                     damageMultiplier = 1.0f,
                     armorMultiplier = 1f,
                     armorBonus = -25f,
                     customInventory = assasinInventory,
                     meshReplacement = null,
-                    materialReplacement = null,
-                    skillReplacement = null
+                    materialReplacement = MV.MultiMaterialReplacement(new Dictionary<int, Material> { { 0, spectralMat }, { 1, spectralMat }, { 2, spectralMat } }),
+                    skillReplacement = null,
                 });
             }
             if (MainPlugin.hasAncientWisp)
@@ -805,8 +844,7 @@ namespace MonsterVariantsPlus.SubClasses
         };
         private static readonly ItemInfo[] assasinInventory = new ItemInfo[]
         {
-            MV.SimpleItem("BleedOnHit", 3),
-            MV.SimpleItem("Ghost", 1),
+            MV.SimpleItem("BleedOnHit", 5),
             MV.SimpleItem("Phasing", 1)
 
         };
