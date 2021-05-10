@@ -175,7 +175,7 @@ namespace MonsterVariantsPlus.SubClasses
             AncientAurelioniteSpawnChance = SpawnRateConfig(false, "Ancient Aurelionite", 4, config);
             AurelioniteColosusSpawnChance = SpawnRateConfig(false, "Aurelionite Colosus", 2, config);
             PygmyAurelioniteSpawnChance = SpawnRateConfig(false, "Pygmy Aurelionite", 2, config);
-            BeetleMatriarchSpawnChance = SpawnRateConfig(false, "Beetle Matriarch", 100, config);
+            BeetleMatriarchSpawnChance = SpawnRateConfig(false, "Beetle Matriarch", 4, config);
             BeetleEmpressSpawnChance = SpawnRateConfig(false, "Beetle Empress", 2, config);
             //Modded
             ClaySoldierSpawnChance = SpawnRateConfig(false, "Clay Soldier", 15, "Moffein", "ClayMen", config);

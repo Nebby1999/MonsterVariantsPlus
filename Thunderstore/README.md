@@ -347,6 +347,9 @@ Rob, for making his MonsterVariants mod and helping me a lot with questions i've
 KomradeSpectre, for helping me a ton with making the variants have custom skins.
 
 ## Changelog
+'1.3.6' Nebby did a poopy update
+	- Beetle Matriarchs default spawn rate is now 4 as its noted, instead of 100.
+
 '1.3.5' Beetle Update
 - Added two new Beetle Queen variants
 	- Beetle Matriarch
