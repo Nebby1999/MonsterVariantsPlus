@@ -22,6 +22,8 @@ namespace MonsterVariantsPlus.SubClasses
         //Item Related Configs
         internal static ConfigEntry<bool> ItemSpawnsOnPlayerConfig { get; set; }
         public static bool ItemSpawnsOnPlayer => ItemSpawnsOnPlayerConfig.Value;
+        internal static ConfigEntry<string> HiddenRealmItemdropBehaviorConfig { get; set; }
+        public static string HiddenRealmItemdropBehavior => HiddenRealmItemdropBehaviorConfig.Value;
         internal static ConfigEntry<int> CommonWhiteChanceConfig { get; set; }
         public static int CommonWhiteChance => CommonWhiteChanceConfig.Value;
         internal static ConfigEntry<int> CommonGreenChanceConfig { get; set; }
@@ -86,8 +88,15 @@ namespace MonsterVariantsPlus.SubClasses
         //public static ConfigEntry<float> SolusSwarmingUnitSpawnChance;
         public static ConfigEntry<float> MalfunctioningAlloyWorshipUnitSpawnChance;
         //public static ConfigEntry<float> AlloySwarmingUnitSpawnChance;
+        public static ConfigEntry<float> AncientStoneTitanSpawnChance;
+        public static ConfigEntry<float> AncientAurelioniteSpawnChance;
+        public static ConfigEntry<float> AurelioniteColosusSpawnChance;
+        public static ConfigEntry<float> PygmyAurelioniteSpawnChance;
+        public static ConfigEntry<float> BeetleMatriarchSpawnChance;
+        public static ConfigEntry<float> BeetleEmpressSpawnChance;
         //Modded Variants
         public static ConfigEntry<float> ClaySoldierSpawnChance;
+        public static ConfigEntry<float> ClayAssasinSpawnChance;
         public static ConfigEntry<float> EnragedWispSpawnChance;
         public static ConfigEntry<float> AmalgamatedAncientWispSpawnChance;
         public static ConfigEntry<float> AeonicWispSpawnChance;
@@ -109,6 +118,8 @@ namespace MonsterVariantsPlus.SubClasses
             EnableOtherVariantsConfig = config.Bind<bool>("5 - Other Variants", "Enable Other Variants", true, "If this is set to True, then living entities other than enemies will get variants, examples include the Queen's Gland's Beetle Guards\nVariants in this category will not spawn rewards if theyre in your Team! (AKA The sidebar with the health bars.)\nIf this is set to false, then the rest of the available options of this category are disabled.");
 
             ItemSpawnsOnPlayerConfig = config.Bind<bool>("1 - Item Rewards", "Item Rewards Spawns on Player", false, "Normally the item reward's droplet spawns from the center of the slain Variant.\nThis can cause some issues with killing Variants that are on top of the death plane, or get knocked back onto it, Since the item will be lost in the process.\nSetting this to True causes all Item Rewards to be spawned at the center of the Player who killed the variant.");
+            HiddenRealmItemdropBehaviorConfig = config.Bind<string>("1 - Item Rewards", "Item Rewards Hidden Realm Behavior", "Unchanged", "How the item rewards module handles item rewards on hidden realms.\n3 Accepted values, ranging from 'Unchanged', 'Halved', and 'Never'.\nUnchanged: No changes are made. item drop rates are the same as they are in normal stages.\nHalved: Item drop rates are lowered by 50%.\nNever: Enemy Variants never drop items in hidden realms.");
+            //HiddenRealmItemdropBehaviorConfig = config.Bind<string>("1 - Item Rewards", "Item Reward's Hidden Realm Behavior", "Halved", "How the item rewards module handles item rewards on hidden realms.\n3 Accepted values, ranging from 'Unchanged', 'Halved', and 'Never'.\nUnchanged: No changes are made to item drop rates are the same as they are in normal stages.\nHalved: Item drop rates are lowered by 50%.\nNever: Enemy Variants never drop items in hidden realms.");
 
             CommonWhiteChanceConfig = config.Bind<int>("1 - Item Rewards", "Common Variant White Item Drop Chance", 3, "The chance that a Common variant drops a White item. Accepted values range from 0 to 100.\n(Set this value to 0 to Disable).");
             CommonGreenChanceConfig = config.Bind<int>("1 - Item Rewards", "Common Variant Green Item Drop Chance", 0, "The chance that a Common variant drops a Green item. Accepted values range from 0 to 100.\n(Set this value to 0 to Disable).");
@@ -160,9 +171,15 @@ namespace MonsterVariantsPlus.SubClasses
             //SolusSwarmingUnitSpawnChance = SpawnRateConfig(false, "Solus Swarming Unit", 100, config);
             MalfunctioningAlloyWorshipUnitSpawnChance = SpawnRateConfig(false, "Malfunctioning Alloy Worship Unit", 4, config);
             //AlloySwarmingUnitSpawnChance = SpawnRateConfig(false, "Alloy Swarming Unit", 100, config);
-
+            AncientStoneTitanSpawnChance = SpawnRateConfig(false, "Ancient Stone Titan", 4, config);
+            AncientAurelioniteSpawnChance = SpawnRateConfig(false, "Ancient Aurelionite", 4, config);
+            AurelioniteColosusSpawnChance = SpawnRateConfig(false, "Aurelionite Colosus", 2, config);
+            PygmyAurelioniteSpawnChance = SpawnRateConfig(false, "Pygmy Aurelionite", 2, config);
+            BeetleMatriarchSpawnChance = SpawnRateConfig(false, "Beetle Matriarch", 4, config);
+            BeetleEmpressSpawnChance = SpawnRateConfig(false, "Beetle Empress", 2, config);
             //Modded
             ClaySoldierSpawnChance = SpawnRateConfig(false, "Clay Soldier", 15, "Moffein", "ClayMen", config);
+            ClayAssasinSpawnChance = SpawnRateConfig(false, "Clay Assasin", 7, "Moffein", "ClayMen", config);
             EnragedWispSpawnChance = SpawnRateConfig(false, "Enraged Wisp", 4, "Moffein", "AncientWisp", config);
             AmalgamatedAncientWispSpawnChance = SpawnRateConfig(false, "Amalgamated Ancient Wisp", 2, "Moffein", "AncientWisp", config);
             AeonicWispSpawnChance = SpawnRateConfig(false, "Aeonic Wisp", 4, "Nebby", "ArchaicWisp", config);

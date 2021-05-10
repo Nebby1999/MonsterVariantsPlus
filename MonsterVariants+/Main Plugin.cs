@@ -5,6 +5,8 @@ using UnityEngine;
 using System.Collections.Generic;
 using MonsterVariants.Components;
 using System.Reflection;
+using R2API;
+using UnityEngine.SceneManagement;
 
 namespace MonsterVariantsPlus
 {
@@ -13,7 +15,7 @@ namespace MonsterVariantsPlus
     [BepInDependency("com.Moffein.ClayMen", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.Moffein.AncientWisp", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.Nebby1999.ArchWisps", BepInDependency.DependencyFlags.SoftDependency)]
-    [BepInPlugin("com.Nebby1999.MonsterVariantsPlus", "Monster Variants +", "1.3.1")]
+    [BepInPlugin("com.Nebby1999.MonsterVariantsPlus", "Monster Variants +", "1.3.5")]
     public class MainPlugin : BaseUnityPlugin
     {
         public static MainPlugin instance;
@@ -52,7 +54,24 @@ namespace MonsterVariantsPlus
                     {
                         if (ConfigLoader.EnableItemRewards)
                         {
-                            ExtraRewards.TryExtraReward(enemy, DamageReport.victimBody, DamageReport.attackerBody);
+                            if(Run.instance.isRunStopwatchPaused && ConfigLoader.HiddenRealmItemdropBehavior != "Unchanged")
+                            {
+                                if(ConfigLoader.HiddenRealmItemdropBehavior == "Halved")
+                                {
+                                    int rng = Random.Range(1, 20);
+                                    if (rng > 10)
+                                    {
+                                        ExtraRewards.TryExtraReward(enemy, DamageReport.victimBody, DamageReport.attackerBody);
+                                    }
+                                }
+                                else //(Hidden Realm item drop behavior is "Never")
+                                {
+                                }
+                            }
+                            else
+                            {
+                                ExtraRewards.TryExtraReward(enemy, DamageReport.victimBody, DamageReport.attackerBody);
+                            }
                         }
                         if (ConfigLoader.EnableGoldRewards)
                         {
@@ -75,7 +94,7 @@ namespace MonsterVariantsPlus
                 {
                     SpawnEnemy("GreaterWisp", 5, DamageReport);
                 }
-                else if(DamageReport.victimBody.baseNameToken == "M.O.A.J")
+                else if(DamageReport.victimBody.baseNameToken == "M.O.A.J.")
                 {
                     SpawnEnemy("Jellyfish", 5, DamageReport);
                 }
@@ -84,7 +103,7 @@ namespace MonsterVariantsPlus
         }
         public void SpawnEnemy(string spawnCard, int amount, DamageReport damageReport)
         {
-            Vector3 position = damageReport.victimBody.corePosition + (2f * Random.insideUnitSphere);
+            Vector3 position = damageReport.victimBody.corePosition + (amount * Random.insideUnitSphere);
 
             DirectorSpawnRequest directorSpawnRequest = new DirectorSpawnRequest((SpawnCard)Resources.Load(string.Format("SpawnCards/CharacterSpawnCards/csc" + spawnCard)), new DirectorPlacementRule
             {

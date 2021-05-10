@@ -1,5 +1,6 @@
 ﻿using BepInEx.Configuration;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using UnityEngine;
 
@@ -73,15 +74,22 @@ namespace MonsterVariantsPlus.SubClasses
             variantSpawnChanceConfigs.Add(ConfigLoader.AlphaBisonSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.WispAmalgamateSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.KindaGreatButNotGreaterWispSpawnChance);
-            variantSpawnChanceConfigs.Add(ConfigLoader.IncineratingElderLemurianSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.SwarmerProbeSpawnChance);
+            variantSpawnChanceConfigs.Add(ConfigLoader.IncineratingElderLemurianSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.SunPriestSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.HoarderSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.StarvingDunestriderSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.DevourerDunestriderspawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.MalfunctioningSolusControlUnitSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.MalfunctioningAlloyWorshipUnitSpawnChance);
+            variantSpawnChanceConfigs.Add(ConfigLoader.AncientStoneTitanSpawnChance);
+            variantSpawnChanceConfigs.Add(ConfigLoader.AncientAurelioniteSpawnChance);
+            variantSpawnChanceConfigs.Add(ConfigLoader.AurelioniteColosusSpawnChance);
+            variantSpawnChanceConfigs.Add(ConfigLoader.PygmyAurelioniteSpawnChance);
+            variantSpawnChanceConfigs.Add(ConfigLoader.BeetleMatriarchSpawnChance);
+            variantSpawnChanceConfigs.Add(ConfigLoader.BeetleEmpressSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.ClaySoldierSpawnChance);
+            variantSpawnChanceConfigs.Add(ConfigLoader.ClayAssasinSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.EnragedWispSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.AmalgamatedAncientWispSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.AeonicWispSpawnChance);
@@ -90,6 +98,8 @@ namespace MonsterVariantsPlus.SubClasses
             variantSpawnChanceConfigs.Add(ConfigLoader.GlandBeetleGuardSharpshooterSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.SquidChaingunSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.SquidSniperSpawnChance);
+
+            ConfigEntry<string> hiddenRealmDropBehaviorConfig = ConfigLoader.HiddenRealmItemdropBehaviorConfig;
 
             foreach (ConfigEntry<int> entry in itemDropChanceConfigs)
             {
@@ -114,6 +124,12 @@ namespace MonsterVariantsPlus.SubClasses
                     Debug.LogError("Invalid value detected in " + entry.Definition.Key + "! Restoring value to default Value.");
                     entry.Value = (float)entry.DefaultValue;
                 }
+            }
+            string[] validValues = new string[] { "Unchanged", "Halved", "Never" };
+            if (!validValues.Contains(hiddenRealmDropBehaviorConfig.Value))
+            {
+                Debug.LogError("Invalid value detected in " + hiddenRealmDropBehaviorConfig.Definition.Key + "! Restoring value to default Value.");
+                hiddenRealmDropBehaviorConfig.Value = (string)hiddenRealmDropBehaviorConfig.DefaultValue;
             }
             Debug.Log("Config Checker finished succesfully.");
             return false;
