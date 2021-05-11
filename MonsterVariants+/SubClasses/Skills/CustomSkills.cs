@@ -53,7 +53,7 @@ namespace MonsterVariantsPlus.SubClasses.Skills
             BuildSkillDefs(wispAmalgamateDef, 1, 1, 4f, 1);
             BuildSkillDefs(chargeArchCannonDef, 1, 1, 3f, 1);
             BuildSkillDefs(beetleSwarmDef, 1, 1, 30f, 1);
-            BuildSkillDefs(onlyBeetleSwarmDef, 1, 1, 28, 1);
+            BuildSkillDefs(onlyBeetleSwarmDef, 1, 1, 15, 1);
             BuildSkillDefs(chargeSingleFireballDef, 5, 1, 3, 1, 5);
         }
 
