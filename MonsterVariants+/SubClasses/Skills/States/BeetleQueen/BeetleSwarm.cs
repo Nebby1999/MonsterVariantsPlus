@@ -26,8 +26,6 @@ namespace MonsterVariantsPlus.SubClasses.Skills.States.BeetleQueen
 
         public static float summonBeetleInterval = 0.30f;
 
-        private static float summonDuration = 3.26f;
-
         public static SpawnCard guardSpawnCard;
 
         public static SpawnCard beetleSpawnCard = Resources.Load<SpawnCard>("SpawnCards/CharacterSpawnCards/cscbeetle");
