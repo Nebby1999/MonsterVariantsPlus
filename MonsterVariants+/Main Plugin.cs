@@ -15,7 +15,7 @@ namespace MonsterVariantsPlus
     [BepInDependency("com.Moffein.ClayMen", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.Moffein.AncientWisp", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.Nebby1999.ArchWisps", BepInDependency.DependencyFlags.SoftDependency)]
-    [BepInPlugin("com.Nebby1999.MonsterVariantsPlus", "Monster Variants +", "1.3.5")]
+    [BepInPlugin("com.Nebby1999.MonsterVariantsPlus", "Monster Variants +", "1.3.7")]
     public class MainPlugin : BaseUnityPlugin
     {
         public static MainPlugin instance;
@@ -109,7 +109,7 @@ namespace MonsterVariantsPlus
             {
                 placementMode = DirectorPlacementRule.PlacementMode.Direct,
                 minDistance = 0f,
-                maxDistance = 0f,
+                maxDistance = 4f,
                 position = position
             }, RoR2Application.rng);
 
