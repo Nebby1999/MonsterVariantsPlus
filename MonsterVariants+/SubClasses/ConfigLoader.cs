@@ -66,7 +66,8 @@ namespace MonsterVariantsPlus.SubClasses
         public static int SpawnRateMultiplier => SpawnRateMultiplierConfig.Value;
         internal static ConfigEntry<bool> ArtifactIncreasesRewardsConfig { get; set; }
         public static bool ArtifactIncreasesRewards => ArtifactIncreasesRewardsConfig.Value;
-
+        internal static ConfigEntry<bool> ArtifactDecreasesRewardsConfig { get; set; }
+        public static bool ArtifactDecreasesRewards => ArtifactDecreasesRewardsConfig.Value;
 
         //Custom Variants
         //Enemy Variants
@@ -103,6 +104,7 @@ namespace MonsterVariantsPlus.SubClasses
         public static ConfigEntry<float> PygmyAurelioniteSpawnChance;
         public static ConfigEntry<float> BeetleMatriarchSpawnChance;
         public static ConfigEntry<float> BeetleEmpressSpawnChance;
+        public static ConfigEntry<float> AirstrikeWormSpawnChance;
         //Modded Variants
         public static ConfigEntry<float> ClaySoldierSpawnChance;
         public static ConfigEntry<float> ClayAssasinSpawnChance;
@@ -190,6 +192,7 @@ namespace MonsterVariantsPlus.SubClasses
             PygmyAurelioniteSpawnChance = SpawnRateConfig(false, "Pygmy Aurelionite", 2, config);
             BeetleMatriarchSpawnChance = SpawnRateConfig(false, "Beetle Matriarch", 4, config);
             BeetleEmpressSpawnChance = SpawnRateConfig(false, "Beetle Empress", 2, config);
+            AirstrikeWormSpawnChance = SpawnRateConfig(false, "Airstrike Worm", 2, config);
             //Modded
             ClaySoldierSpawnChance = SpawnRateConfig(false, "Clay Soldier", 15, "Moffein", "ClayMen", config);
             ClayAssasinSpawnChance = SpawnRateConfig(false, "Clay Assasin", 7, "Moffein", "ClayMen", config);

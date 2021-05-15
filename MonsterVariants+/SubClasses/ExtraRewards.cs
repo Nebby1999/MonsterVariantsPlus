@@ -12,9 +12,12 @@ namespace MonsterVariantsPlus.SubClasses
         static readonly float Offset = 2f * Mathf.PI / Run.instance.participatingPlayerCount;
         public static void TryExtraReward(VariantHandler enemyVariant,CharacterBody victimBody, CharacterBody playerBody)
         {
-            if (ConfigLoader.ArtifactIncreasesRewards && RunArtifactManager.instance.IsArtifactEnabled(Artifact.Variance))
+            if (RunArtifactManager.instance.IsArtifactEnabled(Artifact.Variance))
             {
-                RewardMultiplier = ConfigLoader.SpawnRateMultiplier;
+                if (ConfigLoader.ArtifactIncreasesRewards)
+                {
+                    RewardMultiplier = ConfigLoader.SpawnRateMultiplier;
+                }
             }
             var whiteItems = Run.instance.availableTier1DropList; //Grabs all the possible white items.
             var nextWhiteItems = Run.instance.treasureRng.RangeInt(0, whiteItems.Count); //Picks a random white item from the list above

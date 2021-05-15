@@ -39,7 +39,7 @@ namespace MonsterVariantsPlus
             //Initializes the custom variants config
             ConfigLoader.ReadConfig(Config);
             //Make sure config values aren't invalid.
-            if(ConfigLoader.EnableConfigcheck)
+            if (ConfigLoader.EnableConfigcheck)
             {
                 AssetLoaderAndChecker.PreventBadValues(Config);
             }
@@ -48,19 +48,18 @@ namespace MonsterVariantsPlus
             //Register Artifact of Variance
             Artifact.InitializeArtifact();
 
-            
+
             //main hook
-            On.RoR2.DeathRewards.OnKilledServer += (orig, self, DamageReport) =>
-            {
+            On.RoR2.DeathRewards.OnKilledServer += (orig, self, DamageReport) => {
                 foreach (VariantHandler enemy in DamageReport.victimBody.GetComponents<VariantHandler>())
                 {
-                    if(enemy.isVariant && (DamageReport.victimTeamIndex == (TeamIndex)2))
+                    if (enemy.isVariant && (DamageReport.victimTeamIndex == (TeamIndex)2))
                     {
                         if (ConfigLoader.EnableItemRewards)
                         {
-                            if(Run.instance.isRunStopwatchPaused && ConfigLoader.HiddenRealmItemdropBehavior != "Unchanged")
+                            if (Run.instance.isRunStopwatchPaused && ConfigLoader.HiddenRealmItemdropBehavior != "Unchanged")
                             {
-                                if(ConfigLoader.HiddenRealmItemdropBehavior == "Halved")
+                                if (ConfigLoader.HiddenRealmItemdropBehavior == "Halved")
                                 {
                                     int rng = Random.Range(1, 20);
                                     if (rng > 10)
@@ -94,11 +93,11 @@ namespace MonsterVariantsPlus
                 {
                     SpawnEnemy("LesserWisp", 5, DamageReport);
                 }
-                else if(DamageReport.victimBody.baseNameToken == "Amalgamated Ancient Wisp")
+                else if (DamageReport.victimBody.baseNameToken == "Amalgamated Ancient Wisp")
                 {
                     SpawnEnemy("GreaterWisp", 5, DamageReport);
                 }
-                else if(DamageReport.victimBody.baseNameToken == "M.O.A.J.")
+                else if (DamageReport.victimBody.baseNameToken == "M.O.A.J.")
                 {
                     SpawnEnemy("Jellyfish", 5, DamageReport);
                 }
