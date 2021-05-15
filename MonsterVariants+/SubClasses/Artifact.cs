@@ -13,7 +13,6 @@ namespace MonsterVariantsPlus.SubClasses
     public class Artifact
     {
         public static ArtifactDef Variance = ScriptableObject.CreateInstance<ArtifactDef>();
-
         public static void InitializeArtifact()
         {
             //Sexy, Sexy hook <3
@@ -27,8 +26,8 @@ namespace MonsterVariantsPlus.SubClasses
             {
                 Variance.descriptionToken = "All Variant's Spawn Rates are Multiplied by 2";
             }
-            Variance.smallIconDeselectedSprite = LoadoutAPI.CreateSkinIcon(Color.white, Color.white, Color.white, Color.white);
-            Variance.smallIconSelectedSprite = LoadoutAPI.CreateSkinIcon(Color.gray, Color.white, Color.white, Color.white);
+            Variance.smallIconDeselectedSprite = AssetLoaderAndChecker.MainAssets.LoadAsset<Sprite>("Assets/Textures/Artifact/VarianceDisabled.png");
+            Variance.smallIconSelectedSprite = AssetLoaderAndChecker.MainAssets.LoadAsset<Sprite>("Assets/Textures/Artifact/VarianceEnabled.png");
 
             ArtifactAPI.Add(Variance);
         }
