@@ -16,6 +16,7 @@ namespace MonsterVariantsPlus.SubClasses
 
         public static void InitializeArtifact()
         {
+            //Sexy, Sexy hook <3
             new Hook(typeof(VariantHandler).GetMethod("Awake", BindingFlags.NonPublic | BindingFlags.Instance), typeof(Artifact).GetMethod("MonsterVariantAwakeHook"));
             Variance.nameToken = "Artifact of Variance";
             if (ConfigLoader.ArtifactIncreasesRewards)
