@@ -7,12 +7,17 @@ namespace MonsterVariantsPlus.SubClasses
 {
     public class MultiplyXP
     {
+        private static int RewardMultiplier = 1;
         public static uint MultiplyExperience(uint monsterXP, VariantHandler enemyVariant)
         {
+            if (ConfigLoader.ArtifactIncreasesRewards && RunArtifactManager.instance.IsArtifactEnabled(Artifact.Variance))
+            {
+                RewardMultiplier = ConfigLoader.SpawnRateMultiplier;
+            }
             // Mult = Multiplier
-            float xpMultCommon = ConfigLoader.CommonXPMult;
-            float xpMultUncommon = ConfigLoader.UncommonXPMult;
-            float xpMultRare = ConfigLoader.RareXPMult;
+            float xpMultCommon = ConfigLoader.CommonXPMult * RewardMultiplier;
+            float xpMultUncommon = ConfigLoader.UncommonXPMult * RewardMultiplier;
+            float xpMultRare = ConfigLoader.RareXPMult * RewardMultiplier;
             if (enemyVariant.tier == MonsterVariantTier.Common)
             {
                 float commonXP = Convert.ToInt32(monsterXP);
