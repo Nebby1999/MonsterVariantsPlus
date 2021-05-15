@@ -12,7 +12,6 @@ namespace MonsterVariantsPlus.SubClasses.Skills
         public static SkillDef multiSlamDef;
         public static SkillDef hoarderSitDef;
         public static SkillDef xlRecoverDef;
-        public static SkillDef kamikazeBlinkDef;
         public static SkillDef wispAmalgamateDef;
         public static SkillDef chargeArchCannonDef;
         public static SkillDef beetleSwarmDef;
@@ -26,7 +25,6 @@ namespace MonsterVariantsPlus.SubClasses.Skills
             Loadouts.AddSkill(typeof(States.Parent.MultiSlam));
             Loadouts.AddSkill(typeof(States.Scavenger.HoarderSit));
             Loadouts.AddSkill(typeof(States.ClayDunestrider.XLRecover));
-            Loadouts.AddSkill(typeof(States.VoidReaver.KamikazeBlink));
             Loadouts.AddSkill(typeof(States.GreaterWisp.WispAmalgamateCharge));
             Loadouts.AddSkill(typeof(States.LesserWisp.ChargeArchwispCannon));
             Loadouts.AddSkill(typeof(States.BeetleQueen.BeetleSwarm));
@@ -41,7 +39,6 @@ namespace MonsterVariantsPlus.SubClasses.Skills
             //Used for the hoarder scavanger.
             hoarderSitDef = NewSkillDef(new SerializableEntityStateType(typeof(States.Scavenger.HoarderSit)), "Body");
             xlRecoverDef = NewSkillDef(new SerializableEntityStateType(typeof(States.ClayDunestrider.XLRecover)), "Body");
-            kamikazeBlinkDef = NewSkillDef(new SerializableEntityStateType(typeof(States.VoidReaver.KamikazeBlink)), "Body");
             wispAmalgamateDef = NewSkillDef(new SerializableEntityStateType(typeof(States.GreaterWisp.WispAmalgamateCharge)), "Weapon");
             chargeArchCannonDef = NewSkillDef(new SerializableEntityStateType(typeof(States.LesserWisp.ChargeArchwispCannon)), "Weapon");
             beetleSwarmDef = NewSkillDef(new SerializableEntityStateType(typeof(States.BeetleQueen.BeetleSwarm)), "Body");

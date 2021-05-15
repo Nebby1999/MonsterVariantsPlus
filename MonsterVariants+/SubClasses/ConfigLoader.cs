@@ -84,7 +84,6 @@ namespace MonsterVariantsPlus.SubClasses
         public static ConfigEntry<float> ChildSpawnChance;
         public static ConfigEntry<float> BruiserImpSpawnChance;
         public static ConfigEntry<float> AlphaBisonSpawnChance;
-        //public static ConfigEntry<float> KamikazeReaverSpawnChance;
         public static ConfigEntry<float> WispAmalgamateSpawnChance;
         public static ConfigEntry<float> KindaGreatButNotGreaterWispSpawnChance;
         public static ConfigEntry<float> IncineratingElderLemurianSpawnChance;
@@ -104,7 +103,6 @@ namespace MonsterVariantsPlus.SubClasses
         public static ConfigEntry<float> PygmyAurelioniteSpawnChance;
         public static ConfigEntry<float> BeetleMatriarchSpawnChance;
         public static ConfigEntry<float> BeetleEmpressSpawnChance;
-        public static ConfigEntry<float> AirstrikeWormSpawnChance;
         //Modded Variants
         public static ConfigEntry<float> ClaySoldierSpawnChance;
         public static ConfigEntry<float> ClayAssasinSpawnChance;
@@ -171,7 +169,6 @@ namespace MonsterVariantsPlus.SubClasses
             ChildSpawnChance = SpawnRateConfig(false, "Child", 6, config);
             BruiserImpSpawnChance = SpawnRateConfig(false, "Bruiser Imp", 10, config);
             AlphaBisonSpawnChance = SpawnRateConfig(false, "Alpha Bison", 5, config);
-            //KamikazeReaverSpawnChance = SpawnRateConfig(false, "Kamikaze Reaver", 5, config);
             WispAmalgamateSpawnChance = SpawnRateConfig(false, "Wisp Amalgamate", 8, config);
             KindaGreatButNotGreaterWispSpawnChance = SpawnRateConfig(false, "Kinda-Great-But-Not-Greater Wisp", 6, config);
             SwarmerProbeSpawnChance = SpawnRateConfig(false, "Swarmer Probe", 7, config);
@@ -192,7 +189,7 @@ namespace MonsterVariantsPlus.SubClasses
             PygmyAurelioniteSpawnChance = SpawnRateConfig(false, "Pygmy Aurelionite", 2, config);
             BeetleMatriarchSpawnChance = SpawnRateConfig(false, "Beetle Matriarch", 4, config);
             BeetleEmpressSpawnChance = SpawnRateConfig(false, "Beetle Empress", 2, config);
-            AirstrikeWormSpawnChance = SpawnRateConfig(false, "Airstrike Worm", 2, config);
+
             //Modded
             ClaySoldierSpawnChance = SpawnRateConfig(false, "Clay Soldier", 15, "Moffein", "ClayMen", config);
             ClayAssasinSpawnChance = SpawnRateConfig(false, "Clay Assasin", 7, "Moffein", "ClayMen", config);

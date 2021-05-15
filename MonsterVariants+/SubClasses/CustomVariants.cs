@@ -269,24 +269,6 @@ namespace MonsterVariantsPlus.SubClasses
                 materialReplacement = MV.SimpleMaterialReplacement(AssetLoaderAndChecker.MainAssets.LoadAsset<Material>("AlphaBison")),
                 skillReplacement = null,
             });
-            //Kamikaze Reaver
-            /*MV.AddVariant(new MonsterVariantInfo
-            {
-                bodyName = "Nullifier",
-                overrideName = "Kamikaze Reaver",
-                spawnRate = ConfigLoader.KamikazeReaverSpawnChance.Value,
-                variantTier = MonsterVariantTier.Rare,
-                sizeModifier = MV.GroundSizeModifier(1.2f),
-                healthMultiplier = 0.5f,
-                moveSpeedMultiplier = 10.0f,
-                attackSpeedMultiplier = 1.2f,
-                damageMultiplier = 1,
-                armorBonus = 0,
-                customInventory = MV.SimpleInventory("HealthDecay", 15),
-                meshReplacement = null,
-                materialReplacement = null,
-                skillReplacement = MV.PrimaryReplacement(CustomSkills.kamikazeBlinkDef),
-            });*/
             //Wisp Amalgamate
             MV.AddVariant(new MonsterVariantInfo
             {

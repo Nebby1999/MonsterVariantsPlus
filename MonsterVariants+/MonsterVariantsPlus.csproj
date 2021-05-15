@@ -126,7 +126,6 @@
     <Compile Include="SubClasses\Skills\States\LesserWisp\ChargeArchwispCannon.cs" />
     <Compile Include="SubClasses\Skills\States\LesserWisp\FireArchwispCannon.cs" />
     <Compile Include="SubClasses\Skills\States\RoboBallBoss\DeploySwarm.cs" />
-    <Compile Include="SubClasses\Skills\States\VoidReaver\KamikazeBlink.cs" />
     <Compile Include="SubClasses\Skills\States\ClayDunestrider\XLRecover.cs" />
     <Compile Include="SubClasses\Skills\States\Scavenger\HoarderSit.cs" />
     <Compile Include="SubClasses\Skills\States\Parent\MultiSlam.cs" />
