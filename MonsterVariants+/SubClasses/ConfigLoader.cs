@@ -18,6 +18,8 @@ namespace MonsterVariantsPlus.SubClasses
         public static bool EnableOtherVariants => EnableOtherVariantsConfig.Value;
         internal static ConfigEntry<bool> EnableConfigCheckConfig { get; set; }
         public static bool EnableConfigcheck => EnableConfigCheckConfig.Value;
+        internal static ConfigEntry<bool> EnableArtifactOfVarianceConfig { get; set; }
+        public static bool EnableArtifactOfVariance => EnableArtifactOfVarianceConfig.Value;
 
         //Item Related Configs
         internal static ConfigEntry<bool> ItemSpawnsOnPlayerConfig { get; set; }
@@ -58,6 +60,13 @@ namespace MonsterVariantsPlus.SubClasses
         public static float UncommonXPMult => UncommonXPMultConfig.Value;
         internal static ConfigEntry<float> RareXPMultConfig { get; set; }
         public static float RareXPMult => RareXPMultConfig.Value;
+
+        //Artifact related configs
+        internal static ConfigEntry<int> SpawnRateMultiplierConfig { get; set; }
+        public static int SpawnRateMultiplier => SpawnRateMultiplierConfig.Value;
+        internal static ConfigEntry<bool> ArtifactIncreasesRewardsConfig { get; set; }
+        public static bool ArtifactIncreasesRewards => ArtifactIncreasesRewardsConfig.Value;
+
 
         //Custom Variants
         //Enemy Variants
@@ -116,6 +125,7 @@ namespace MonsterVariantsPlus.SubClasses
             EnableXPRewardsConfig = config.Bind<bool>("3 - XP Rewards", "Enable XP Rewards", true, "If this is set to True, then Enemy Variants will drop extra XP based off a multiplier.\nIf this is set to False, then the rest of the available options of this category are disabled.");
             EnableCustomVariantsConfig = config.Bind<bool>("4 - Custom Variants", "Enable Custom Variants", true, "If this is set to True, then new Enemy Variants designed by nebby will begin spawning, all the effects of killing a regular variant also apply to these.\nIf this is set to False, then the rest of the available options in this category are disabled.");
             EnableOtherVariantsConfig = config.Bind<bool>("5 - Other Variants", "Enable Other Variants", true, "If this is set to True, then living entities other than enemies will get variants, examples include the Queen's Gland's Beetle Guards\nVariants in this category will not spawn rewards if theyre in your Team! (AKA The sidebar with the health bars.)\nIf this is set to false, then the rest of the available options of this category are disabled.");
+            EnableArtifactOfVarianceConfig = config.Bind<bool>("6 - Artifact of Variance", "Enable Artifact of Variance", true, "If this is set to True, then the Artifact of Variance is Enabled\nThe artifact of variance multiplies the SpawnRates of ALL Variants by a certain number.\nIf this is ser to false, then the rest of the available options in this category are disabled.");
 
             ItemSpawnsOnPlayerConfig = config.Bind<bool>("1 - Item Rewards", "Item Rewards Spawns on Player", false, "Normally the item reward's droplet spawns from the center of the slain Variant.\nThis can cause some issues with killing Variants that are on top of the death plane, or get knocked back onto it, Since the item will be lost in the process.\nSetting this to True causes all Item Rewards to be spawned at the center of the Player who killed the variant.");
             HiddenRealmItemdropBehaviorConfig = config.Bind<string>("1 - Item Rewards", "Item Rewards Hidden Realm Behavior", "Unchanged", "How the item rewards module handles item rewards on hidden realms.\n3 Accepted values, ranging from 'Unchanged', 'Halved', and 'Never'.\nUnchanged: No changes are made. item drop rates are the same as they are in normal stages.\nHalved: Item drop rates are lowered by 50%.\nNever: Enemy Variants never drop items in hidden realms.");
@@ -140,6 +150,9 @@ namespace MonsterVariantsPlus.SubClasses
             CommonXPMultConfig = config.Bind<float>("3 - XP Rewards", "Common Variant XP Multiplier", 1.3f, "Multiplier that's applied to the XP reward for killing a common Variant.\n(Set this value to 1.0 to disable).");
             UncommonXPMultConfig = config.Bind<float>("3 - XP Rewards", "Uncommon Variant XP Multiplier", 1.6f, "Multiplier that's applied to the XP reward for killing an uncommon Variant.\n(Set this value to 1.0 to disable).");
             RareXPMultConfig = config.Bind<float>("3 - XP Rewards", "Rare Variant XP Multiplier", 2.0f, "Multiplier that's applied to the XP reward for killing a rare Variant.\n(Set this value to 1.0 to disable).");
+
+            SpawnRateMultiplierConfig = config.Bind<int>("6 - Artifact of Variance", "Variant Spawn Rate Multiplier", 2, "Multiplier that's applied to each Variant's spawn rate when the Artifact of Variance is enabled\nIf a variant's Spawn Rate reaches a number higher than 100, it'll be automatically set to 100\nIf a Variant's Spawn Rate reaches a number lower than 0, it'll be automatically set to 0.");
+            ArtifactIncreasesRewardsConfig = config.Bind<bool>("6 - Artifact of Variance", "Artifact of Variance Increases Rewards", false, "If this is set to true, then the Artifact of Variance's 'Spawn Rate Multiplier' will also be applied to XP, Gold and Item Rewards.");
         }
         public static void ReadConfig(ConfigFile config)
         {
