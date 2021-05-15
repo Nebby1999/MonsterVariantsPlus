@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1421187809
+CRC: 83632356
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 7233497f4714e464a58a9d3570663f60
+    Hash: d5a788e8b8fa9b4d6f50854beea18b71
   TypeTreeHash:
     serializedVersion: 2
-    Hash: fe397485c3cec1106b49e9ff95e8f8a2
+    Hash: 011d1bb1b97750065fc8e33fbaec9bad
 HashAppended: 0
 ClassTypes:
 - Class: 21
@@ -15,14 +15,18 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 48
   Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
 Assets:
 - Assets/Materials/SteelContraption.mat
 - Assets/Textures/ADShroom/ADShroomEmmision.png
 - Assets/Textures/ADShroom/ADShroom.png
 - Assets/Textures/SteelContraption/SteelContraption_Normal.png
 - Assets/Materials/AluminumContraption.mat
+- Assets/Textures/Artifact/VarianceEnabled.png
 - Assets/Textures/HealerShroom/HealerShroomEmmision.png
 - Assets/Materials/ADShroom.mat
+- Assets/Textures/Artifact/VarianceDisabled.png
 - Assets/Materials/HealerShroom.mat
 - Assets/Textures/AlphaBison/AlphaBison.png
 - Assets/Textures/AluminumContraption/AluminumContraptionNormal.png

@@ -15,6 +15,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Thunderstore", "Thunderstor
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assets", "Assets", "{E51F5C3A-ED5E-45E8-9295-AEE2B14EC051}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Assets\ArtifactIcon.clip = Unity\Assets\ArtifactIcon.clip
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Materials", "Materials", "{241B210F-6F3C-47A8-8245-A08C23430ACA}"
 	ProjectSection(SolutionItems) = preProject
@@ -75,6 +78,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AluminumContraption", "Alum
 		Unity\Assets\Textures\AluminumContraption\AluminumContraptionNormal.png = Unity\Assets\Textures\AluminumContraption\AluminumContraptionNormal.png
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Artifact", "Artifact", "{A72BF007-5422-4043-98E3-79A3A16D7F1B}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Assets\Textures\Artifact\VarianceDisabled.png = Unity\Assets\Textures\Artifact\VarianceDisabled.png
+		Unity\Assets\Textures\Artifact\VarianceEnabled.png = Unity\Assets\Textures\Artifact\VarianceEnabled.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -100,6 +109,7 @@ Global
 		{6574E9B5-B2BF-457A-B252-8092C79E54AF} = {C545788F-0718-4E3B-8D38-71C81B0460BB}
 		{4FEB17A0-60B5-43D5-A8AD-C07988B376E5} = {C545788F-0718-4E3B-8D38-71C81B0460BB}
 		{92C97A03-E7EF-44B0-815C-99470341AB6A} = {C545788F-0718-4E3B-8D38-71C81B0460BB}
+		{A72BF007-5422-4043-98E3-79A3A16D7F1B} = {C545788F-0718-4E3B-8D38-71C81B0460BB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B0142633-C6E9-49CD-88D9-D98C3E562443}
