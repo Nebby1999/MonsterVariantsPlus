@@ -2,11 +2,12 @@
 using RoR2;
 using MonsterVariantsPlus.SubClasses;
 using UnityEngine;
-using System.Collections.Generic;
 using MonsterVariants.Components;
-using System.Reflection;
-using R2API;
-using UnityEngine.SceneManagement;
+using System.Security;
+using System.Security.Permissions;
+
+[module: UnverifiableCode]
+[assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
 
 namespace MonsterVariantsPlus
 {
@@ -44,8 +45,11 @@ namespace MonsterVariantsPlus
             }
             //Registers skills
             SubClasses.Skills.CustomSkills.RegisterSkills();
+            //Register Artifact of Variance
+            Artifact.InitializeArtifact();
 
-            //hook
+            
+            //main hook
             On.RoR2.DeathRewards.OnKilledServer += (orig, self, DamageReport) =>
             {
                 foreach (VariantHandler enemy in DamageReport.victimBody.GetComponents<VariantHandler>())
