@@ -66,18 +66,18 @@ namespace MonsterVariantsPlus.SubClasses
                 bodyName = "Bell",
                 overrideName = "Steel Contraption",
                 spawnRate = ConfigLoader.SteelContraptionSpawnChance.Value,
-                variantTier = MonsterVariantTier.Uncommon,
+                variantTier = MonsterVariantTier.Common,
                 sizeModifier = MV.FlyingSizeModifier(1.0f),
                 healthMultiplier = 1.50f,
                 moveSpeedMultiplier = 0.5f,
                 attackSpeedMultiplier = 0.75f,
                 damageMultiplier = 1.5f,
                 armorMultiplier = 1f,
-                armorBonus = 0f,
+                armorBonus = 25f,
                 customInventory = null,
                 meshReplacement = null,
                 materialReplacement = MV.SimpleMaterialReplacement(AssetLoaderAndChecker.MainAssets.LoadAsset<Material>("SteelContraption")),
-                skillReplacement = null
+                skillReplacement = MV.PrimaryReplacement(CustomSkills.megaBrassBallDef)
             });
             //Aluminum Contraption
             MV.AddVariant(new MonsterVariantInfo
@@ -93,7 +93,7 @@ namespace MonsterVariantsPlus.SubClasses
                 damageMultiplier = 0.75f,
                 armorMultiplier = 1f,
                 armorBonus = 0f,
-                customInventory = MV.SimpleInventory("AlienHead", 1),
+                customInventory = MV.SimpleInventory("AlienHead", 2),
                 meshReplacement = null,
                 materialReplacement = MV.SimpleMaterialReplacement(AssetLoaderAndChecker.MainAssets.LoadAsset<Material>("AluminumContraption")),
                 skillReplacement = null,
@@ -342,6 +342,24 @@ namespace MonsterVariantsPlus.SubClasses
                 meshReplacement  = null,
                 materialReplacement = MV.SimpleMaterialReplacement(perforatorMat),
                 skillReplacement = MV.PrimaryReplacement(CustomSkills.chargeSingleFireballDef)
+            });
+            //Ye Old Golem
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "Golem",
+                overrideName = "Ye Olde Golem",
+                spawnRate = ConfigLoader.YeOldeGolemSpawnChance.Value,
+                variantTier = MonsterVariantTier.Rare,
+                sizeModifier = MV.GroundSizeModifier(2.0f),
+                healthMultiplier = 2.0f,
+                moveSpeedMultiplier = 0.5f,
+                attackSpeedMultiplier = 1.0f,
+                damageMultiplier = 1.0f,
+                armorBonus = 20,
+                customInventory = null,
+                meshReplacement = null,
+                materialReplacement = null,
+                skillReplacement = MV.SecondaryReplacement(CustomSkills.golemLaserDef),
             });
             //Sun Priest
             MV.AddVariant(new MonsterVariantInfo
