@@ -1,4 +1,5 @@
 ﻿using EntityStates.LemurianBruiserMonster;
+using EntityStates.LemurianMonster;
 using EntityStates;
 using RoR2;
 using RoR2.Projectile;
@@ -36,7 +37,7 @@ namespace MonsterVariantsPlus.SubClasses.Skills.States.ElderLemurian
 
         public override void OnEnter()
         {
-            projectilePrefab = FireMegaFireball.projectilePrefab;
+            projectilePrefab = FireFireball.projectilePrefab;
             muzzleflashEffectPrefab = FireMegaFireball.muzzleflashEffectPrefab;
             projectileSpeed = FireMegaFireball.projectileSpeed;
             attackString = FireMegaFireball.attackString;
