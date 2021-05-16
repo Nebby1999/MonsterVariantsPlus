@@ -88,6 +88,7 @@ namespace MonsterVariantsPlus.SubClasses
         public static ConfigEntry<float> KindaGreatButNotGreaterWispSpawnChance;
         public static ConfigEntry<float> IncineratingElderLemurianSpawnChance;
         public static ConfigEntry<float> SwarmerProbeSpawnChance;
+        public static ConfigEntry<float> YeOldeGolemSpawnChance;
         //Boss Variants
         public static ConfigEntry<float> SunPriestSpawnChance;
         public static ConfigEntry<float> HoarderSpawnChance;
@@ -173,6 +174,7 @@ namespace MonsterVariantsPlus.SubClasses
             KindaGreatButNotGreaterWispSpawnChance = SpawnRateConfig(false, "Kinda-Great-But-Not-Greater Wisp", 6, config);
             SwarmerProbeSpawnChance = SpawnRateConfig(false, "Swarmer Probe", 7, config);
             IncineratingElderLemurianSpawnChance = SpawnRateConfig(false, "Incinerating Elder Lemurian", 5, config);
+            YeOldeGolemSpawnChance = SpawnRateConfig(false, "Ye Olde Golem", 3, config);
             
             //Bosses
             SunPriestSpawnChance = SpawnRateConfig(false, "Sun Priest", 4, config);
