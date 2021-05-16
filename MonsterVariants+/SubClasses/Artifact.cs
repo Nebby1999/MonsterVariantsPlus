@@ -24,7 +24,7 @@ namespace MonsterVariantsPlus.SubClasses
             }
             else
             {
-                Variance.descriptionToken = "All Variant's Spawn Rates are Multiplied by 2";
+                Variance.descriptionToken = "All Variant's Spawn Rates are Multiplied by " + ConfigLoader.SpawnRateMultiplier;
             }
             Variance.smallIconDeselectedSprite = AssetLoaderAndChecker.MainAssets.LoadAsset<Sprite>("Assets/Textures/Artifact/VarianceDisabled.png");
             Variance.smallIconSelectedSprite = AssetLoaderAndChecker.MainAssets.LoadAsset<Sprite>("Assets/Textures/Artifact/VarianceEnabled.png");
