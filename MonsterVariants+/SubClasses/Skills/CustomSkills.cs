@@ -17,6 +17,8 @@ namespace MonsterVariantsPlus.SubClasses.Skills
         public static SkillDef beetleSwarmDef;
         public static SkillDef onlyBeetleSwarmDef;
         public static SkillDef chargeSingleFireballDef;
+        public static SkillDef megaBrassBallDef;
+        public static SkillDef golemLaserDef;
         //public static SkillDef DeploySwarmDef;
 
         internal static void RegisterSkills()
@@ -30,6 +32,9 @@ namespace MonsterVariantsPlus.SubClasses.Skills
             Loadouts.AddSkill(typeof(States.BeetleQueen.BeetleSwarm));
             Loadouts.AddSkill(typeof(States.BeetleQueen.OnlyBeetleSwarm));
             Loadouts.AddSkill(typeof(States.ElderLemurian.ChargeSingleFireball));
+            Loadouts.AddSkill(typeof(States.BrassContraption.MegaBrassBall));
+            Loadouts.AddSkill(typeof(States.StoneGolem.ChargeLaser));
+
             //Loadouts.AddSkill(typeof(States.RoboBallBoss.DeploySwarm));
 
             //Skill that does absolutely nothing, useful for getting variants without a certain skill (No teleporting imps/parents)
@@ -44,6 +49,9 @@ namespace MonsterVariantsPlus.SubClasses.Skills
             beetleSwarmDef = NewSkillDef(new SerializableEntityStateType(typeof(States.BeetleQueen.BeetleSwarm)), "Body");
             onlyBeetleSwarmDef = NewSkillDef(new SerializableEntityStateType(typeof(States.BeetleQueen.OnlyBeetleSwarm)), "Body");
             chargeSingleFireballDef = NewSkillDef(new SerializableEntityStateType(typeof(States.ElderLemurian.ChargeSingleFireball)), "Weapon");
+            megaBrassBallDef = NewSkillDef(new SerializableEntityStateType(typeof(States.BrassContraption.MegaBrassBall)), "Weapon");
+            golemLaserDef = NewSkillDef(new SerializableEntityStateType(typeof(States.StoneGolem.ChargeLaser)), "Weapon");
+
             BuildSkillDefs(emptySkillDef, 0, 1000);
             BuildSkillDefs(hoarderSitDef, 1, 1, 10f, 1);
             BuildSkillDefs(xlRecoverDef, 1, 1, 10f, 1);
@@ -52,6 +60,8 @@ namespace MonsterVariantsPlus.SubClasses.Skills
             BuildSkillDefs(beetleSwarmDef, 1, 1, 30f, 1);
             BuildSkillDefs(onlyBeetleSwarmDef, 1, 1, 15, 1);
             BuildSkillDefs(chargeSingleFireballDef, 5, 1, 3, 1, 5);
+            BuildSkillDefs(megaBrassBallDef, 1, 1, 5, 1);
+            BuildSkillDefs(golemLaserDef, 1, 1, 10, 1);
         }
 
         private static void BuildSkillDefs(SkillDef skillDef, int baseMaxStock, int requiredStock)
