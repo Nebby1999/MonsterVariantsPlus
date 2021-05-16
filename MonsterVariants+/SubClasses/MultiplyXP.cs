@@ -7,7 +7,7 @@ namespace MonsterVariantsPlus.SubClasses
 {
     public class MultiplyXP
     {
-        private static int RewardMultiplier = 1;
+        private static float RewardMultiplier = 1f;
         public static uint MultiplyExperience(uint monsterXP, VariantHandler enemyVariant)
         {
             if (RunArtifactManager.instance.IsArtifactEnabled(Artifact.Variance))

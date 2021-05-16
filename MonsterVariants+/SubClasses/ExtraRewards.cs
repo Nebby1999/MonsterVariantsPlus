@@ -8,7 +8,7 @@ namespace MonsterVariantsPlus.SubClasses
 {
     public class ExtraRewards
     {
-        private static int RewardMultiplier = 1;
+        private static float RewardMultiplier = 1f;
         static readonly float Offset = 2f * Mathf.PI / Run.instance.participatingPlayerCount;
         public static void TryExtraReward(VariantHandler enemyVariant,CharacterBody victimBody, CharacterBody playerBody)
         {

@@ -62,8 +62,8 @@ namespace MonsterVariantsPlus.SubClasses
         public static float RareXPMult => RareXPMultConfig.Value;
 
         //Artifact related configs
-        internal static ConfigEntry<int> SpawnRateMultiplierConfig { get; set; }
-        public static int SpawnRateMultiplier => SpawnRateMultiplierConfig.Value;
+        internal static ConfigEntry<float> SpawnRateMultiplierConfig { get; set; }
+        public static float SpawnRateMultiplier => SpawnRateMultiplierConfig.Value;
         internal static ConfigEntry<bool> ArtifactIncreasesRewardsConfig { get; set; }
         public static bool ArtifactIncreasesRewards => ArtifactIncreasesRewardsConfig.Value;
         internal static ConfigEntry<bool> ArtifactDecreasesRewardsConfig { get; set; }
@@ -152,7 +152,7 @@ namespace MonsterVariantsPlus.SubClasses
             UncommonXPMultConfig = config.Bind<float>("3 - XP Rewards", "Uncommon Variant XP Multiplier", 1.6f, "Multiplier that's applied to the XP reward for killing an uncommon Variant.\n(Set this value to 1.0 to disable).");
             RareXPMultConfig = config.Bind<float>("3 - XP Rewards", "Rare Variant XP Multiplier", 2.0f, "Multiplier that's applied to the XP reward for killing a rare Variant.\n(Set this value to 1.0 to disable).");
 
-            SpawnRateMultiplierConfig = config.Bind<int>("6 - Artifact of Variance", "Variant Spawn Rate Multiplier", 2, "Multiplier that's applied to each Variant's spawn rate when the Artifact of Variance is enabled\nIf a variant's Spawn Rate reaches a number higher than 100, it'll be automatically set to 100\nIf a Variant's Spawn Rate reaches a number lower than 0, it'll be automatically set to 0.");
+            SpawnRateMultiplierConfig = config.Bind<float>("6 - Artifact of Variance", "Variant Spawn Rate Multiplier", 2, "Multiplier that's applied to each Variant's spawn rate when the Artifact of Variance is enabled\nIf a variant's Spawn Rate reaches a number higher than 100, it'll be automatically set to 100\nIf a Variant's Spawn Rate reaches a number lower than 0, it'll be automatically set to 0.");
             ArtifactIncreasesRewardsConfig = config.Bind<bool>("6 - Artifact of Variance", "Artifact of Variance Increases Rewards", false, "If this is set to true, then the Artifact of Variance's 'Spawn Rate Multiplier' will also be applied to XP, Gold and Item Rewards.");
         }
         public static void ReadConfig(ConfigFile config)
