@@ -2,11 +2,17 @@
 using RoR2;
 using MonsterVariantsPlus.SubClasses;
 using UnityEngine;
-using System.Collections.Generic;
 using MonsterVariants.Components;
-using System.Reflection;
+using System.Security;
+using System.Security.Permissions;
+using R2API.Utils;
 using R2API;
-using UnityEngine.SceneManagement;
+using System.Reflection;
+using System.Linq;
+using MonsterVariantsPlus.SubClasses.Projectiles;
+
+[module: UnverifiableCode]
+[assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
 
 namespace MonsterVariantsPlus
 {
@@ -15,7 +21,8 @@ namespace MonsterVariantsPlus
     [BepInDependency("com.Moffein.ClayMen", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.Moffein.AncientWisp", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.Nebby1999.ArchWisps", BepInDependency.DependencyFlags.SoftDependency)]
-    [BepInPlugin("com.Nebby1999.MonsterVariantsPlus", "Monster Variants +", "1.3.5")]
+    [R2APISubmoduleDependency(nameof(ProjectileAPI))]
+    [BepInPlugin("com.Nebby1999.MonsterVariantsPlus", "Monster Variants +", "1.4.0")]
     public class MainPlugin : BaseUnityPlugin
     {
         public static MainPlugin instance;
@@ -38,25 +45,32 @@ namespace MonsterVariantsPlus
             //Initializes the custom variants config
             ConfigLoader.ReadConfig(Config);
             //Make sure config values aren't invalid.
-            if(ConfigLoader.EnableConfigcheck)
+            if (ConfigLoader.EnableConfigcheck)
             {
                 AssetLoaderAndChecker.PreventBadValues(Config);
             }
             //Registers skills
             SubClasses.Skills.CustomSkills.RegisterSkills();
-
-            //hook
-            On.RoR2.DeathRewards.OnKilledServer += (orig, self, DamageReport) =>
+            //Register Artifact of Variance
+            Artifact.InitializeArtifact();
+            //Registers Prefabs... hopefully?
+            var Prefabs = Assembly.GetExecutingAssembly().GetTypes().Where(type => !type.IsAbstract && type.IsSubclassOf(typeof(PrefabBase)));
+            foreach (var prefabType in Prefabs)
             {
+                PrefabBase prefab = (PrefabBase)System.Activator.CreateInstance(prefabType);
+                prefab.Init();
+            }
+            //main hook
+            On.RoR2.DeathRewards.OnKilledServer += (orig, self, DamageReport) => {
                 foreach (VariantHandler enemy in DamageReport.victimBody.GetComponents<VariantHandler>())
                 {
-                    if(enemy.isVariant && (DamageReport.victimTeamIndex == (TeamIndex)2))
+                    if (enemy.isVariant && (DamageReport.victimTeamIndex == (TeamIndex)2))
                     {
                         if (ConfigLoader.EnableItemRewards)
                         {
-                            if(Run.instance.isRunStopwatchPaused && ConfigLoader.HiddenRealmItemdropBehavior != "Unchanged")
+                            if (Run.instance.isRunStopwatchPaused && ConfigLoader.HiddenRealmItemdropBehavior != "Unchanged")
                             {
-                                if(ConfigLoader.HiddenRealmItemdropBehavior == "Halved")
+                                if (ConfigLoader.HiddenRealmItemdropBehavior == "Halved")
                                 {
                                     int rng = Random.Range(1, 20);
                                     if (rng > 10)
@@ -90,11 +104,11 @@ namespace MonsterVariantsPlus
                 {
                     SpawnEnemy("LesserWisp", 5, DamageReport);
                 }
-                else if(DamageReport.victimBody.baseNameToken == "Amalgamated Ancient Wisp")
+                else if (DamageReport.victimBody.baseNameToken == "Amalgamated Ancient Wisp")
                 {
                     SpawnEnemy("GreaterWisp", 5, DamageReport);
                 }
-                else if(DamageReport.victimBody.baseNameToken == "M.O.A.J.")
+                else if (DamageReport.victimBody.baseNameToken == "M.O.A.J.")
                 {
                     SpawnEnemy("Jellyfish", 5, DamageReport);
                 }
@@ -109,7 +123,7 @@ namespace MonsterVariantsPlus
             {
                 placementMode = DirectorPlacementRule.PlacementMode.Direct,
                 minDistance = 0f,
-                maxDistance = 0f,
+                maxDistance = 4f,
                 position = position
             }, RoR2Application.rng);
 

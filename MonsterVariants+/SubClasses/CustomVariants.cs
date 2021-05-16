@@ -66,18 +66,18 @@ namespace MonsterVariantsPlus.SubClasses
                 bodyName = "Bell",
                 overrideName = "Steel Contraption",
                 spawnRate = ConfigLoader.SteelContraptionSpawnChance.Value,
-                variantTier = MonsterVariantTier.Uncommon,
+                variantTier = MonsterVariantTier.Common,
                 sizeModifier = MV.FlyingSizeModifier(1.0f),
-                healthMultiplier = 1.75f,
+                healthMultiplier = 1.50f,
                 moveSpeedMultiplier = 0.5f,
                 attackSpeedMultiplier = 0.75f,
                 damageMultiplier = 1.5f,
                 armorMultiplier = 1f,
-                armorBonus = 0f,
+                armorBonus = 25f,
                 customInventory = null,
                 meshReplacement = null,
                 materialReplacement = MV.SimpleMaterialReplacement(AssetLoaderAndChecker.MainAssets.LoadAsset<Material>("SteelContraption")),
-                skillReplacement = null
+                skillReplacement = MV.PrimaryReplacement(CustomSkills.megaBrassBallDef)
             });
             //Aluminum Contraption
             MV.AddVariant(new MonsterVariantInfo
@@ -90,10 +90,10 @@ namespace MonsterVariantsPlus.SubClasses
                 healthMultiplier = 0.5f,
                 moveSpeedMultiplier = 2.0f,
                 attackSpeedMultiplier = 2.0f,
-                damageMultiplier = 0.5f,
+                damageMultiplier = 0.75f,
                 armorMultiplier = 1f,
                 armorBonus = 0f,
-                customInventory = MV.SimpleInventory("AlienHead", 1),
+                customInventory = MV.SimpleInventory("AlienHead", 2),
                 meshReplacement = null,
                 materialReplacement = MV.SimpleMaterialReplacement(AssetLoaderAndChecker.MainAssets.LoadAsset<Material>("AluminumContraption")),
                 skillReplacement = null,
@@ -150,7 +150,7 @@ namespace MonsterVariantsPlus.SubClasses
                 damageMultiplier = 0.062f,
                 armorMultiplier = 1f,
                 armorBonus = 0,
-                customInventory = MV.SimpleInventory("AlienHead", 10),
+                customInventory = ADInventory,
                 meshReplacement = null,
                 materialReplacement = MV.SimpleMaterialReplacement(AssetLoaderAndChecker.MainAssets.LoadAsset<Material>("ADShroom")),
                 skillReplacement = null
@@ -204,7 +204,7 @@ namespace MonsterVariantsPlus.SubClasses
                 healthMultiplier = 0.75f,
                 moveSpeedMultiplier = 1.0f,
                 attackSpeedMultiplier = 1.2f,
-                damageMultiplier = 1.0f,
+                damageMultiplier = 1.5f,
                 armorMultiplier = 1f,
                 armorBonus = 0,
                 customInventory = adolescentInventory,
@@ -223,7 +223,7 @@ namespace MonsterVariantsPlus.SubClasses
                 healthMultiplier = 0.5f,
                 moveSpeedMultiplier = 3.0f,
                 attackSpeedMultiplier = 6.0f,
-                damageMultiplier = 0.5f,
+                damageMultiplier = 1.0f,
                 armorMultiplier = 1f,
                 armorBonus = 0f,
                 customInventory = MV.SimpleInventory("AlienHead", 1),
@@ -261,7 +261,7 @@ namespace MonsterVariantsPlus.SubClasses
                 healthMultiplier = 0.75f,
                 moveSpeedMultiplier = 2.0f,
                 attackSpeedMultiplier = 2.0f,
-                damageMultiplier = 0.7f,
+                damageMultiplier = 1.0f,
                 armorMultiplier = 1f,
                 armorBonus = 0f,
                 customInventory = MV.SimpleInventory("Behemoth", 2),
@@ -269,24 +269,6 @@ namespace MonsterVariantsPlus.SubClasses
                 materialReplacement = MV.SimpleMaterialReplacement(AssetLoaderAndChecker.MainAssets.LoadAsset<Material>("AlphaBison")),
                 skillReplacement = null,
             });
-            //Kamikaze Reaver
-            /*MV.AddVariant(new MonsterVariantInfo
-            {
-                bodyName = "Nullifier",
-                overrideName = "Kamikaze Reaver",
-                spawnRate = ConfigLoader.KamikazeReaverSpawnChance.Value,
-                variantTier = MonsterVariantTier.Rare,
-                sizeModifier = MV.GroundSizeModifier(1.2f),
-                healthMultiplier = 0.5f,
-                moveSpeedMultiplier = 10.0f,
-                attackSpeedMultiplier = 1.2f,
-                damageMultiplier = 1,
-                armorBonus = 0,
-                customInventory = MV.SimpleInventory("HealthDecay", 15),
-                meshReplacement = null,
-                materialReplacement = null,
-                skillReplacement = MV.PrimaryReplacement(CustomSkills.kamikazeBlinkDef),
-            });*/
             //Wisp Amalgamate
             MV.AddVariant(new MonsterVariantInfo
             {
@@ -349,17 +331,35 @@ namespace MonsterVariantsPlus.SubClasses
                 bodyName = "LemurianBruiser",
                 overrideName = "Incinerating Elder Lemurian",
                 spawnRate = ConfigLoader.IncineratingElderLemurianSpawnChance.Value,
-                variantTier = MonsterVariantTier.Rare,
+                variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.GroundSizeModifier(1.25f),
                 healthMultiplier = 1.0f,
                 moveSpeedMultiplier = 2.0f,
                 attackSpeedMultiplier = 30f,
                 damageMultiplier = 7.5f,
-                armorBonus = -50,
+                armorBonus = -10,
                 customInventory = MV.SimpleInventory("Behemoth", 5),
                 meshReplacement  = null,
                 materialReplacement = MV.SimpleMaterialReplacement(perforatorMat),
-                skillReplacement = MV.PrimaryReplacement(CustomSkills.emptySkillDef)
+                skillReplacement = MV.PrimaryReplacement(CustomSkills.chargeSingleFireballDef)
+            });
+            //Ye Old Golem
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "Golem",
+                overrideName = "Ye Olde Golem",
+                spawnRate = ConfigLoader.YeOldeGolemSpawnChance.Value,
+                variantTier = MonsterVariantTier.Rare,
+                sizeModifier = MV.GroundSizeModifier(2.0f),
+                healthMultiplier = 2.0f,
+                moveSpeedMultiplier = 0.5f,
+                attackSpeedMultiplier = 1.0f,
+                damageMultiplier = 1.0f,
+                armorBonus = 20,
+                customInventory = null,
+                meshReplacement = null,
+                materialReplacement = null,
+                skillReplacement = MV.SecondaryReplacement(CustomSkills.golemLaserDef),
             });
             //Sun Priest
             MV.AddVariant(new MonsterVariantInfo
@@ -592,7 +592,7 @@ namespace MonsterVariantsPlus.SubClasses
                 customInventory = null,
                 meshReplacement = null,
                 materialReplacement = null,
-                skillReplacement = MV.SpecialReplacement(CustomSkills.beetleSwarm)
+                skillReplacement = MV.SpecialReplacement(CustomSkills.beetleSwarmDef)
             });
             //Beetle Empress
             MV.AddVariant(new MonsterVariantInfo
@@ -611,7 +611,7 @@ namespace MonsterVariantsPlus.SubClasses
                 customInventory = MV.SimpleInventory("BeetleGland", 2),
                 meshReplacement = null,
                 materialReplacement = null,
-                skillReplacement = null,
+                skillReplacement = MV.SpecialReplacement(CustomSkills.onlyBeetleSwarmDef),
             });
             if (MainPlugin.hasClayMan)
             {
@@ -626,7 +626,7 @@ namespace MonsterVariantsPlus.SubClasses
                     healthMultiplier = 1.25f,
                     moveSpeedMultiplier = 0.9f,
                     attackSpeedMultiplier = 1.5f,
-                    damageMultiplier = 0.6f,
+                    damageMultiplier = 0.75f,
                     armorMultiplier = 1f,
                     armorBonus = 0f,
                     customInventory = MV.SimpleInventory("AlienHead", 1),
@@ -643,9 +643,9 @@ namespace MonsterVariantsPlus.SubClasses
                     variantTier = MonsterVariantTier.Uncommon,
                     sizeModifier = MV.GroundSizeModifier(0.75f),
                     healthMultiplier = 1.0f,
-                    moveSpeedMultiplier = 1.25f,
+                    moveSpeedMultiplier = 1.2f,
                     attackSpeedMultiplier = 1.0f,
-                    damageMultiplier = 1.0f,
+                    damageMultiplier = 0.5f,
                     armorMultiplier = 1f,
                     armorBonus = -25f,
                     customInventory = assasinInventory,
@@ -692,7 +692,7 @@ namespace MonsterVariantsPlus.SubClasses
                     armorBonus = -50,
                     customInventory = null,
                     meshReplacement = null,
-                    materialReplacement = MV.MultiMaterialReplacement(new Dictionary<int, Material> { { 0, greaterWispBodyMat }, { 1, greaterWispFlameMat } }),
+                    materialReplacement = MV.MultiMaterialReplacement(new Dictionary<int, Material> { { 0, greaterWispBodyMat }, { 3, greaterWispFlameMat }, { 4, wispFlameMat } }),
                     skillReplacement = null,
                 });
             }
@@ -706,8 +706,8 @@ namespace MonsterVariantsPlus.SubClasses
                     variantTier = MonsterVariantTier.Rare,
                     sizeModifier = MV.FlyingSizeModifier(1.25f),
                     spawnRate = ConfigLoader.AeonicWispSpawnChance.Value,
-                    healthMultiplier = 2f,
-                    moveSpeedMultiplier = 0.9f,
+                    healthMultiplier = 1.5f,
+                    moveSpeedMultiplier = 0.75f,
                     attackSpeedMultiplier = 0.9f,
                     damageMultiplier = 1.0f,
                     armorMultiplier = 1.0f,
@@ -819,6 +819,7 @@ namespace MonsterVariantsPlus.SubClasses
         {
                 MV.SimpleItem("CritGlasses", 10),
                 MV.SimpleItem("HealOnCrit", 20),
+                MV.SimpleItem("RepeatHeal", 1)
         };
         private static readonly ItemInfo[] bruiserInventory = new ItemInfo[]
         {
@@ -835,7 +836,8 @@ namespace MonsterVariantsPlus.SubClasses
         private static readonly ItemInfo[] devourerInventory = new ItemInfo[]
         {
             MV.SimpleItem("RepeatHeal", 2),
-            MV.SimpleItem("BarrierOnOverHeal", 2)
+            MV.SimpleItem("BarrierOnOverHeal", 2),
+            MV.SimpleItem("NearbyDamageBonus", 7)
         };
         private static readonly ItemInfo[] MamaInventory = new ItemInfo[]
         {
@@ -844,9 +846,16 @@ namespace MonsterVariantsPlus.SubClasses
         };
         private static readonly ItemInfo[] assasinInventory = new ItemInfo[]
         {
-            MV.SimpleItem("BleedOnHit", 5),
-            MV.SimpleItem("Phasing", 1)
+            MV.SimpleItem("CrtGlasses", 10),
+            MV.SimpleItem("Phasing", 1),
+            MV.SimpleItem("BleedOnHitAndExplode", 1)
 
+        };
+
+        private static readonly ItemInfo[] ADInventory = new ItemInfo[]
+        {
+            MV.SimpleItem("AlienHead", 10),
+            MV.SimpleItem("ArmorReductionOnHit", 1)
         };
         //Method to replace a monster's primary and utility skills. used for Child.
         internal static MonsterSkillReplacement[] PrimaryUtilityReplacement(SkillDef primarySkill, SkillDef utilitySkill)

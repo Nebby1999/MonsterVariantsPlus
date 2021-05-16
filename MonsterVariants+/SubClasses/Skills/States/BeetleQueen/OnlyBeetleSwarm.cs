@@ -8,7 +8,7 @@ using UnityEngine.Networking;
 
 namespace MonsterVariantsPlus.SubClasses.Skills.States.BeetleQueen
 {
-    public class BeetleSwarm : BaseState
+    public class OnlyBeetleSwarm : BaseState
     {
         public static float baseDuration = 3.5f;
 
@@ -18,15 +18,10 @@ namespace MonsterVariantsPlus.SubClasses.Skills.States.BeetleQueen
 
         public static GameObject spitPrefab;
 
-        public static int maxGuardCount = 2;
-
         public static int maxBeetleCount = 10;
-
-        public static float summonGuardInterval = 1f;
 
         public static float summonBeetleInterval = 0.30f;
 
-        public static SpawnCard guardSpawnCard;
 
         public static SpawnCard beetleSpawnCard = Resources.Load<SpawnCard>("SpawnCards/CharacterSpawnCards/cscbeetle");
 
@@ -38,11 +33,7 @@ namespace MonsterVariantsPlus.SubClasses.Skills.States.BeetleQueen
 
         private float duration;
 
-        private float summonGuardTimer;
-
         private float summonBeetleTimer;
-
-        private int guardSummonCount;
 
         private int beetleSummonCount;
 
@@ -54,7 +45,6 @@ namespace MonsterVariantsPlus.SubClasses.Skills.States.BeetleQueen
         {
             attackSoundString = SummonEggs.attackSoundString;
             spitPrefab = SummonEggs.spitPrefab;
-            guardSpawnCard = SummonEggs.spawnCard;
             base.OnEnter();
             animator = GetModelAnimator();
             modelTransform = GetModelTransform();
@@ -77,38 +67,6 @@ namespace MonsterVariantsPlus.SubClasses.Skills.States.BeetleQueen
             }
         }
 
-        private void SummonGuardEgg()
-        {
-            Vector3 searchOrigin = GetAimRay().origin;
-            if ((bool)base.inputBank && base.inputBank.GetAimRaycast(float.PositiveInfinity, out var hitInfo))
-            {
-                searchOrigin = hitInfo.point;
-            }
-            if (enemySearch == null)
-            {
-                return;
-            }
-            enemySearch.searchOrigin = searchOrigin;
-            enemySearch.RefreshCandidates();
-            HurtBox hurtBox = enemySearch.GetResults().FirstOrDefault();
-            Transform transform = (((bool)hurtBox && (bool)hurtBox.healthComponent) ? hurtBox.healthComponent.body.coreTransform : base.characterBody.coreTransform);
-            if ((bool)transform)
-            {
-                DirectorSpawnRequest directorSpawnRequest = new DirectorSpawnRequest(guardSpawnCard, new DirectorPlacementRule
-                {
-                    placementMode = DirectorPlacementRule.PlacementMode.Approximate,
-                    minDistance = 3f,
-                    maxDistance = 20f,
-                    spawnOnTarget = transform
-                }, RoR2Application.rng);
-                directorSpawnRequest.summonerBodyObject = base.gameObject;
-                directorSpawnRequest.onSpawnedServer = (Action<SpawnCard.SpawnResult>)Delegate.Combine(directorSpawnRequest.onSpawnedServer, (Action<SpawnCard.SpawnResult>)delegate (SpawnCard.SpawnResult spawnResult) {
-                    spawnResult.spawnedInstance.GetComponent<Inventory>().CopyEquipmentFrom(base.characterBody.inventory);
-
-                });
-                DirectorCore.instance?.TrySpawnObject(directorSpawnRequest);
-            }
-        }
         private void SummonBeetleEgg()
         {
             Vector3 searchOrigin = GetAimRay().origin;
@@ -151,14 +109,7 @@ namespace MonsterVariantsPlus.SubClasses.Skills.States.BeetleQueen
             }
             if (isSummoning)
             {
-                summonGuardTimer += Time.fixedDeltaTime;
                 summonBeetleTimer += Time.fixedDeltaTime;
-                if (NetworkServer.active && summonGuardTimer > 0f && guardSummonCount < maxGuardCount)
-                {
-                    guardSummonCount++;
-                    summonGuardTimer -= summonGuardInterval;
-                    SummonGuardEgg();
-                }
                 if (NetworkServer.active && summonBeetleTimer > 0f && beetleSummonCount < maxBeetleCount)
                 {
                     beetleSummonCount++;

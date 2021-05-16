@@ -12,10 +12,13 @@ namespace MonsterVariantsPlus.SubClasses.Skills
         public static SkillDef multiSlamDef;
         public static SkillDef hoarderSitDef;
         public static SkillDef xlRecoverDef;
-        public static SkillDef kamikazeBlinkDef;
         public static SkillDef wispAmalgamateDef;
         public static SkillDef chargeArchCannonDef;
-        public static SkillDef beetleSwarm;
+        public static SkillDef beetleSwarmDef;
+        public static SkillDef onlyBeetleSwarmDef;
+        public static SkillDef chargeSingleFireballDef;
+        public static SkillDef megaBrassBallDef;
+        public static SkillDef golemLaserDef;
         //public static SkillDef DeploySwarmDef;
 
         internal static void RegisterSkills()
@@ -24,10 +27,14 @@ namespace MonsterVariantsPlus.SubClasses.Skills
             Loadouts.AddSkill(typeof(States.Parent.MultiSlam));
             Loadouts.AddSkill(typeof(States.Scavenger.HoarderSit));
             Loadouts.AddSkill(typeof(States.ClayDunestrider.XLRecover));
-            Loadouts.AddSkill(typeof(States.VoidReaver.KamikazeBlink));
             Loadouts.AddSkill(typeof(States.GreaterWisp.WispAmalgamateCharge));
             Loadouts.AddSkill(typeof(States.LesserWisp.ChargeArchwispCannon));
             Loadouts.AddSkill(typeof(States.BeetleQueen.BeetleSwarm));
+            Loadouts.AddSkill(typeof(States.BeetleQueen.OnlyBeetleSwarm));
+            Loadouts.AddSkill(typeof(States.ElderLemurian.ChargeSingleFireball));
+            Loadouts.AddSkill(typeof(States.BrassContraption.MegaBrassBall));
+            Loadouts.AddSkill(typeof(States.StoneGolem.ChargeLaser));
+
             //Loadouts.AddSkill(typeof(States.RoboBallBoss.DeploySwarm));
 
             //Skill that does absolutely nothing, useful for getting variants without a certain skill (No teleporting imps/parents)
@@ -37,44 +44,45 @@ namespace MonsterVariantsPlus.SubClasses.Skills
             //Used for the hoarder scavanger.
             hoarderSitDef = NewSkillDef(new SerializableEntityStateType(typeof(States.Scavenger.HoarderSit)), "Body");
             xlRecoverDef = NewSkillDef(new SerializableEntityStateType(typeof(States.ClayDunestrider.XLRecover)), "Body");
-            kamikazeBlinkDef = NewSkillDef(new SerializableEntityStateType(typeof(States.VoidReaver.KamikazeBlink)), "Body");
             wispAmalgamateDef = NewSkillDef(new SerializableEntityStateType(typeof(States.GreaterWisp.WispAmalgamateCharge)), "Weapon");
             chargeArchCannonDef = NewSkillDef(new SerializableEntityStateType(typeof(States.LesserWisp.ChargeArchwispCannon)), "Weapon");
-            beetleSwarm = NewSkillDef(new SerializableEntityStateType(typeof(States.BeetleQueen.BeetleSwarm)), "Body");
-            //DeploySwarmDef = NewSkillDef(new SerializableEntityStateType(typeof(States.RoboBallBoss.DeploySwarm)), "Weapon");
+            beetleSwarmDef = NewSkillDef(new SerializableEntityStateType(typeof(States.BeetleQueen.BeetleSwarm)), "Body");
+            onlyBeetleSwarmDef = NewSkillDef(new SerializableEntityStateType(typeof(States.BeetleQueen.OnlyBeetleSwarm)), "Body");
+            chargeSingleFireballDef = NewSkillDef(new SerializableEntityStateType(typeof(States.ElderLemurian.ChargeSingleFireball)), "Weapon");
+            megaBrassBallDef = NewSkillDef(new SerializableEntityStateType(typeof(States.BrassContraption.MegaBrassBall)), "Weapon");
+            golemLaserDef = NewSkillDef(new SerializableEntityStateType(typeof(States.StoneGolem.ChargeLaser)), "Weapon");
 
-            emptySkillDef.baseMaxStock = 0;
-            emptySkillDef.requiredStock = 1000;
+            BuildSkillDefs(emptySkillDef, 0, 1000);
+            BuildSkillDefs(hoarderSitDef, 1, 1, 10f, 1);
+            BuildSkillDefs(xlRecoverDef, 1, 1, 10f, 1);
+            BuildSkillDefs(wispAmalgamateDef, 1, 1, 4f, 1);
+            BuildSkillDefs(chargeArchCannonDef, 1, 1, 3f, 1);
+            BuildSkillDefs(beetleSwarmDef, 1, 1, 30f, 1);
+            BuildSkillDefs(onlyBeetleSwarmDef, 1, 1, 15, 1);
+            BuildSkillDefs(chargeSingleFireballDef, 5, 1, 3, 1, 5);
+            BuildSkillDefs(megaBrassBallDef, 1, 1, 5, 1);
+            BuildSkillDefs(golemLaserDef, 1, 1, 10, 1);
+        }
 
-            hoarderSitDef.baseMaxStock = 1;
-            hoarderSitDef.baseRechargeInterval = 10f;
-            hoarderSitDef.requiredStock = 1;
-            hoarderSitDef.stockToConsume = 1;
-
-            xlRecoverDef.baseMaxStock = 1;
-            xlRecoverDef.baseRechargeInterval = 90f;
-            xlRecoverDef.requiredStock = 1;
-            xlRecoverDef.stockToConsume = 1;
-
-            wispAmalgamateDef.baseMaxStock = 1;
-            wispAmalgamateDef.baseRechargeInterval = 4f;
-            wispAmalgamateDef.requiredStock = 1;
-            wispAmalgamateDef.stockToConsume = 1;
-
-            chargeArchCannonDef.baseMaxStock = 1;
-            chargeArchCannonDef.baseRechargeInterval = 3f;
-            chargeArchCannonDef.requiredStock = 1;
-            chargeArchCannonDef.stockToConsume = 1;
-
-            beetleSwarm.baseMaxStock = 1;
-            beetleSwarm.baseRechargeInterval = 30f;
-            beetleSwarm.requiredStock = 1;
-            beetleSwarm.stockToConsume = 1;
-
-            /*stealhLeapDef.baseMaxStock = 1;
-            stealhLeapDef.baseRechargeInterval = 4;
-            stealhLeapDef.requiredStock = 1;
-            stealhLeapDef.stockToConsume = 1;*/
+        private static void BuildSkillDefs(SkillDef skillDef, int baseMaxStock, int requiredStock)
+        {
+            skillDef.baseMaxStock = baseMaxStock;
+            skillDef.requiredStock = requiredStock;
+        }
+        private static void BuildSkillDefs(SkillDef skillDef, int baseMaxStock, int requiredStock, float cooldownInSeconds, int stockToConsume)
+        {
+            skillDef.baseMaxStock = baseMaxStock;
+            skillDef.requiredStock = requiredStock;
+            skillDef.baseRechargeInterval = cooldownInSeconds;
+            skillDef.stockToConsume = stockToConsume;
+        }
+        private static void BuildSkillDefs(SkillDef skillDef, int baseMaxStock, int requiredStock, float cooldownInSeconds, int stockToConsume, int rechargeStock)
+        {
+            skillDef.baseMaxStock = baseMaxStock;
+            skillDef.requiredStock = requiredStock;
+            skillDef.baseRechargeInterval = cooldownInSeconds;
+            skillDef.stockToConsume = stockToConsume;
+            skillDef.rechargeStock = rechargeStock;
         }
         private static SkillDef NewSkillDef(SerializableEntityStateType state, string stateMachine)
         {

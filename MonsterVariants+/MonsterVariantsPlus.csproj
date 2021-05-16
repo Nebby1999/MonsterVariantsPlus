@@ -109,6 +109,9 @@
     <Compile Include="Main Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SubClasses\AssetLoaderAndChecker.cs" />
+    <Compile Include="SubClasses\Artifact.cs" />
+    <Compile Include="SubClasses\Prefabs\PrefabBase.cs" />
+    <Compile Include="SubClasses\Prefabs\Projectiles\BrassContraption\MegaBrassBallPrefab.cs" />
     <Compile Include="SubClasses\Skills\Loadouts.cs" />
     <Compile Include="SubClasses\Skills\CustomSkills.cs" />
     <Compile Include="SubClasses\CustomVariants.cs" />
@@ -117,16 +120,20 @@
     <Compile Include="SubClasses\ExtraRewards.cs" />
     <Compile Include="SubClasses\MultiplyGold.cs" />
     <Compile Include="SubClasses\Skills\States\BeetleQueen\BeetleSwarm.cs" />
+    <Compile Include="SubClasses\Skills\States\BeetleQueen\OnlyBeetleSwarm.cs" />
+    <Compile Include="SubClasses\Skills\States\BrassContraption\MegaBrassBall.cs" />
+    <Compile Include="SubClasses\Skills\States\ElderLemurian\ChargeSingleFireball.cs" />
+    <Compile Include="SubClasses\Skills\States\ElderLemurian\FireSingleFireball.cs" />
     <Compile Include="SubClasses\Skills\States\GreaterWisp\WispAmalgamateFire.cs" />
     <Compile Include="SubClasses\Skills\States\GreaterWisp\WispAmalgamateCharge.cs" />
     <Compile Include="SubClasses\Skills\States\LesserWisp\ChargeArchwispCannon.cs" />
     <Compile Include="SubClasses\Skills\States\LesserWisp\FireArchwispCannon.cs" />
     <Compile Include="SubClasses\Skills\States\RoboBallBoss\DeploySwarm.cs" />
-    <Compile Include="SubClasses\Skills\States\VoidReaver\KamikazeBlink.cs" />
     <Compile Include="SubClasses\Skills\States\ClayDunestrider\XLRecover.cs" />
     <Compile Include="SubClasses\Skills\States\Scavenger\HoarderSit.cs" />
     <Compile Include="SubClasses\Skills\States\Parent\MultiSlam.cs" />
     <Compile Include="SubClasses\Skills\States\EmptySkill.cs" />
+    <Compile Include="SubClasses\Skills\States\StoneGolem\ChargeLaser.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

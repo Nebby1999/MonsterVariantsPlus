@@ -7,12 +7,20 @@ namespace MonsterVariantsPlus.SubClasses
 {
     public class MultiplyGold
     {
+        private static float RewardMultiplier = 1f;
         public static uint MultiplyMoney(uint monsterGold, VariantHandler enemyVariant)
         {
+            if (RunArtifactManager.instance.IsArtifactEnabled(Artifact.Variance))
+            {
+                if (ConfigLoader.ArtifactIncreasesRewards)
+                {
+                    RewardMultiplier = ConfigLoader.SpawnRateMultiplier;
+                }
+            }
             //Mult = Multiplier
-            float moneyMultCommon = ConfigLoader.CommonMoneyMult;
-            float moneyMultUncommon = ConfigLoader.UncommonMoneyMult;
-            float moneyMultRare = ConfigLoader.RareMoneyMult;
+            float moneyMultCommon = ConfigLoader.CommonMoneyMult * RewardMultiplier;
+            float moneyMultUncommon = ConfigLoader.UncommonMoneyMult * RewardMultiplier;
+            float moneyMultRare = ConfigLoader.RareMoneyMult * RewardMultiplier;
 
             if (enemyVariant.tier == MonsterVariantTier.Common)
             {

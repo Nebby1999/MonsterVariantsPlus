@@ -57,6 +57,7 @@ namespace MonsterVariantsPlus.SubClasses
             multiplierConfigs.Add(ConfigLoader.CommonXPMultConfig);
             multiplierConfigs.Add(ConfigLoader.UncommonXPMultConfig);
             multiplierConfigs.Add(ConfigLoader.RareXPMultConfig);
+            multiplierConfigs.Add(ConfigLoader.SpawnRateMultiplierConfig);
 
             List<ConfigEntry<float>> variantSpawnChanceConfigs = new List<ConfigEntry<float>>();
             variantSpawnChanceConfigs.Add(ConfigLoader.LeastestWispSpawnChance);
@@ -76,6 +77,7 @@ namespace MonsterVariantsPlus.SubClasses
             variantSpawnChanceConfigs.Add(ConfigLoader.KindaGreatButNotGreaterWispSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.SwarmerProbeSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.IncineratingElderLemurianSpawnChance);
+            variantSpawnChanceConfigs.Add(ConfigLoader.YeOldeGolemSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.SunPriestSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.HoarderSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.StarvingDunestriderSpawnChance);
