@@ -5,6 +5,11 @@ using UnityEngine;
 using MonsterVariants.Components;
 using System.Security;
 using System.Security.Permissions;
+using R2API.Utils;
+using R2API;
+using System.Reflection;
+using System.Linq;
+using MonsterVariantsPlus.SubClasses.Projectiles;
 
 [module: UnverifiableCode]
 [assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
@@ -16,6 +21,7 @@ namespace MonsterVariantsPlus
     [BepInDependency("com.Moffein.ClayMen", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.Moffein.AncientWisp", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.Nebby1999.ArchWisps", BepInDependency.DependencyFlags.SoftDependency)]
+    [R2APISubmoduleDependency(nameof(ProjectileAPI))]
     [BepInPlugin("com.Nebby1999.MonsterVariantsPlus", "Monster Variants +", "1.3.7")]
     public class MainPlugin : BaseUnityPlugin
     {
@@ -47,8 +53,13 @@ namespace MonsterVariantsPlus
             SubClasses.Skills.CustomSkills.RegisterSkills();
             //Register Artifact of Variance
             Artifact.InitializeArtifact();
-
-
+            //Registers Prefabs... hopefully?
+            var Prefabs = Assembly.GetExecutingAssembly().GetTypes().Where(type => !type.IsAbstract && type.IsSubclassOf(typeof(PrefabBase)));
+            foreach (var prefabType in Prefabs)
+            {
+                PrefabBase prefab = (PrefabBase)System.Activator.CreateInstance(prefabType);
+                prefab.Init();
+            }
             //main hook
             On.RoR2.DeathRewards.OnKilledServer += (orig, self, DamageReport) => {
                 foreach (VariantHandler enemy in DamageReport.victimBody.GetComponents<VariantHandler>())
