@@ -163,7 +163,7 @@ namespace MonsterVariantsPlus.SubClasses
             AluminumContraptionSpawnChance = SpawnRateConfig(false,"Aluminum Contraption", 7, config);
             MortarCrabSpawnChance = SpawnRateConfig(false, "Mortar Crab", 5, config);
             VampiricTemplarSpawnChance = SpawnRateConfig(false, "Vampiric Templar", 5, config);
-            ADShroomSpawnChance = SpawnRateConfig(false, "AD-Shroom (Area of Denial Shroom)", 6, config);
+            ADShroomSpawnChance = SpawnRateConfig(false, "AD-Shroom (Area of Denial Shroom)", 5, config);
             HealerShroomSpawnChance = SpawnRateConfig(false, "Healer Shroom", 10, config);
             MamaShroomSpawnChance = SpawnRateConfig(false, "Mama Shroom", 2, config);
             AdolescentSpawnChance = SpawnRateConfig(false, "Adolescent", 8, config);

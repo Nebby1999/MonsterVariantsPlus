@@ -150,7 +150,7 @@ namespace MonsterVariantsPlus.SubClasses
                 damageMultiplier = 0.062f,
                 armorMultiplier = 1f,
                 armorBonus = 0,
-                customInventory = MV.SimpleInventory("AlienHead", 10),
+                customInventory = ADInventory,
                 meshReplacement = null,
                 materialReplacement = MV.SimpleMaterialReplacement(AssetLoaderAndChecker.MainAssets.LoadAsset<Material>("ADShroom")),
                 skillReplacement = null
@@ -850,6 +850,12 @@ namespace MonsterVariantsPlus.SubClasses
             MV.SimpleItem("Phasing", 1),
             MV.SimpleItem("BleedOnHitAndExplode", 1)
 
+        };
+
+        private static readonly ItemInfo[] ADInventory = new ItemInfo[]
+        {
+            MV.SimpleItem("AlienHead", 10),
+            MV.SimpleItem("ArmorReductionOnHit", 1)
         };
         //Method to replace a monster's primary and utility skills. used for Child.
         internal static MonsterSkillReplacement[] PrimaryUtilityReplacement(SkillDef primarySkill, SkillDef utilitySkill)
