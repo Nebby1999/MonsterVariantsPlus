@@ -101,19 +101,19 @@ namespace MonsterVariantsPlus
                             self.expReward = multipliedXP;
                         }
                     }
-                }
-                //Remove this once rob implements deathState replacements.
-                if (DamageReport.victimBody.baseNameToken == "Wisp Amalgamate")
-                {
-                    SpawnEnemy("LesserWisp", 5, DamageReport);
-                }
-                else if (DamageReport.victimBody.baseNameToken == "Amalgamated Ancient Wisp")
-                {
-                    SpawnEnemy("GreaterWisp", 5, DamageReport);
-                }
-                else if (DamageReport.victimBody.baseNameToken == "M.O.A.J.")
-                {
-                    SpawnEnemy("Jellyfish", 5, DamageReport);
+                    //Remove this once rob implements deathState replacements.
+                    if (DamageReport.victimBody.baseNameToken == "Wisp Amalgamate")
+                    {
+                        SpawnEnemy("LesserWisp", 5, DamageReport);
+                    }
+                    else if (DamageReport.victimBody.baseNameToken == "Amalgamated Ancient Wisp")
+                    {
+                        SpawnEnemy("GreaterWisp", 5, DamageReport);
+                    }
+                    else if (DamageReport.victimBody.baseNameToken == "M.O.A.J.")
+                    {
+                        SpawnEnemy("Jellyfish", 5, DamageReport);
+                    }
                 }
                 orig(self, DamageReport);
             };
