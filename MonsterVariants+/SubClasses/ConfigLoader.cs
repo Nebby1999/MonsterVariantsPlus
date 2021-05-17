@@ -73,6 +73,7 @@ namespace MonsterVariantsPlus.SubClasses
         //Enemy Variants
         public static ConfigEntry<float> LeastestWispSpawnChance;
         public static ConfigEntry<float> AlmostButNotQuiteArchaicWispSpawnChance;
+        public static ConfigEntry<float> LesserStoneWispSpawnChance;
         public static ConfigEntry<float> SteelContraptionSpawnChance;
         public static ConfigEntry<float> AluminumContraptionSpawnChance;
         public static ConfigEntry<float> MortarCrabSpawnChance;
@@ -86,6 +87,7 @@ namespace MonsterVariantsPlus.SubClasses
         public static ConfigEntry<float> AlphaBisonSpawnChance;
         public static ConfigEntry<float> WispAmalgamateSpawnChance;
         public static ConfigEntry<float> KindaGreatButNotGreaterWispSpawnChance;
+        public static ConfigEntry<float> GreaterStoneWispSpawnChance;
         public static ConfigEntry<float> IncineratingElderLemurianSpawnChance;
         public static ConfigEntry<float> SwarmerProbeSpawnChance;
         public static ConfigEntry<float> YeOldeGolemSpawnChance;
@@ -111,6 +113,7 @@ namespace MonsterVariantsPlus.SubClasses
         public static ConfigEntry<float> AmalgamatedAncientWispSpawnChance;
         public static ConfigEntry<float> AeonicWispSpawnChance;
         public static ConfigEntry<float> KindaArchaicWispSpawnChance;
+        public static ConfigEntry<float> ArchaicStoneWispSpawnChance;
 
         //Other Variants
         public static ConfigEntry<float> GlandBeetleGuardBruteSpawnChance;
@@ -159,6 +162,7 @@ namespace MonsterVariantsPlus.SubClasses
         {
             LeastestWispSpawnChance = SpawnRateConfig(false, "Leastest Wisp", 7, config);
             AlmostButNotQuiteArchaicWispSpawnChance = SpawnRateConfig(false, "Almost-But-Not-Quite-Archaic-Wisp", 4, config);
+            LesserStoneWispSpawnChance = SpawnRateConfig(false, "Lesser Stone Wisp", 2, config);
             SteelContraptionSpawnChance = SpawnRateConfig(false, "Steel Contraption", 7, config);
             AluminumContraptionSpawnChance = SpawnRateConfig(false,"Aluminum Contraption", 7, config);
             MortarCrabSpawnChance = SpawnRateConfig(false, "Mortar Crab", 5, config);
@@ -172,6 +176,7 @@ namespace MonsterVariantsPlus.SubClasses
             AlphaBisonSpawnChance = SpawnRateConfig(false, "Alpha Bison", 5, config);
             WispAmalgamateSpawnChance = SpawnRateConfig(false, "Wisp Amalgamate", 8, config);
             KindaGreatButNotGreaterWispSpawnChance = SpawnRateConfig(false, "Kinda-Great-But-Not-Greater Wisp", 6, config);
+            GreaterStoneWispSpawnChance = SpawnRateConfig(false, "Greater Stone Wisp", 2, config);
             SwarmerProbeSpawnChance = SpawnRateConfig(false, "Swarmer Probe", 7, config);
             IncineratingElderLemurianSpawnChance = SpawnRateConfig(false, "Incinerating Elder Lemurian", 5, config);
             YeOldeGolemSpawnChance = SpawnRateConfig(false, "Ye Olde Golem", 3, config);
@@ -199,6 +204,7 @@ namespace MonsterVariantsPlus.SubClasses
             AmalgamatedAncientWispSpawnChance = SpawnRateConfig(false, "Amalgamated Ancient Wisp", 2, "Moffein", "AncientWisp", config);
             AeonicWispSpawnChance = SpawnRateConfig(false, "Aeonic Wisp", 4, "Nebby", "ArchaicWisp", config);
             KindaArchaicWispSpawnChance = SpawnRateConfig(false, "Kinda-Archaic-Wisp", 7, "Nebby", "ArchaicWisp", config);
+            ArchaicStoneWispSpawnChance = SpawnRateConfig(false, "Archaic Stone Wisp", 2, "Nebby", "ArchaicWisp", config);
 
             //Other Variants
             GlandBeetleGuardBruteSpawnChance = SpawnRateConfig(true, "Beetle Guard Brute - Gland", 25, config);

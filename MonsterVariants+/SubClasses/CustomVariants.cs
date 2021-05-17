@@ -21,6 +21,7 @@ namespace MonsterVariantsPlus.SubClasses
             Material archaicWispBodyMat = Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/ArchWispBody").GetComponent<ModelLocator>().modelTransform.GetComponent<CharacterModel>().baseRendererInfos[0].defaultMaterial);
             Material archaicWispFlameMat = Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/ArchWispBody").GetComponent<ModelLocator>().modelTransform.GetComponent<CharacterModel>().baseRendererInfos[1].defaultMaterial);
             Material perforatorMat = UnityEngine.Object.Instantiate(itemDisplayRuleSet.FindDisplayRuleGroup(RoR2Content.Items.FireballsOnHit).rules[0].followerPrefab.GetComponentInChildren<MeshRenderer>().material);
+            Material stoneGolemMat = Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/GolemBody").GetComponent<ModelLocator>().modelTransform.GetComponent<CharacterModel>().baseRendererInfos[0].defaultMaterial);
             Material spectralMat = Resources.Load<Material>("Materials/matGhostEffect");
             //Leastest Wisp
             MV.AddVariant(new MonsterVariantInfo
@@ -59,6 +60,25 @@ namespace MonsterVariantsPlus.SubClasses
                 meshReplacement = null,
                 materialReplacement = MV.MultiMaterialReplacement(new Dictionary<int, Material> { { 0, archaicWispBodyMat }, { 1, archaicWispFlameMat } }),
                 skillReplacement = MV.PrimaryReplacement(CustomSkills.chargeArchCannonDef)
+            });
+            //Stone Wisp
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "Wisp",
+                overrideName = "Lesser Stone Wisp",
+                spawnRate = 100,
+                variantTier = MonsterVariantTier.Uncommon,
+                sizeModifier = MV.FlyingSizeModifier(2.0f),
+                healthMultiplier = 8.0f,
+                moveSpeedMultiplier = 0.75f,
+                attackSpeedMultiplier = 1.0f,
+                damageMultiplier = 1f,
+                armorMultiplier = 1.0f,
+                armorBonus = 10,
+                customInventory = null,
+                meshReplacement = null,
+                materialReplacement = MV.SimpleMaterialReplacement(stoneGolemMat),
+                skillReplacement = MV.PrimaryReplacement(CustomSkills.chargeWispLaserDef)
             });
             //Steel Contraption
             MV.AddVariant(new MonsterVariantInfo

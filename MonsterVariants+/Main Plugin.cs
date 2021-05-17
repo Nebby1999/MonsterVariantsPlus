@@ -2,6 +2,7 @@
 using RoR2;
 using MonsterVariantsPlus.SubClasses;
 using UnityEngine;
+using UnityEngine.Rendering;
 using MonsterVariants.Components;
 using System.Security;
 using System.Security.Permissions;
@@ -41,6 +42,7 @@ namespace MonsterVariantsPlus
             hasAncientWisp = AssetLoaderAndChecker.CheckForMod("com.Moffein.AncientWisp");
             hasArchWisp = AssetLoaderAndChecker.CheckForMod("com.Nebby1999.ArchaicWisps");
             hasMysticItems = AssetLoaderAndChecker.CheckForMod("com.themysticsword.mysticsitems");
+
             //Load Monster Variant Assets
             AssetLoaderAndChecker.LoadAssets();
             //Initializes Config
