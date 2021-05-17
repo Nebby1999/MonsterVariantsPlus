@@ -41,11 +41,6 @@ namespace MonsterVariantsPlus
             hasAncientWisp = AssetLoaderAndChecker.CheckForMod("com.Moffein.AncientWisp");
             hasArchWisp = AssetLoaderAndChecker.CheckForMod("com.Nebby1999.ArchaicWisps");
             hasMysticItems = AssetLoaderAndChecker.CheckForMod("com.themysticsword.mysticsitems");
-            hasGreenAlienHead = AssetLoaderAndChecker.CheckForMod("com.Borbo.GreenAlienHead");
-            if(hasGreenAlienHead)
-            {
-                AlienHeadMult = 2.5f;
-            }
             //Load Monster Variant Assets
             AssetLoaderAndChecker.LoadAssets();
             //Initializes Config
