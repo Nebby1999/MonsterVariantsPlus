@@ -53,7 +53,7 @@ public class FireWispLaser : BaseState
         GetModelAnimator();
         Transform modelTransform = GetModelTransform();
         Util.PlaySound(attackSoundString, base.gameObject);
-        string muzzleName = "";
+        string muzzleName = "Muzzle";
         if ((bool)base.characterBody)
         {
             base.characterBody.SetAimTimer(2f);

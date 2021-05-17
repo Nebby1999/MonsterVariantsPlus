@@ -124,6 +124,8 @@
     <Compile Include="SubClasses\Skills\States\BrassContraption\MegaBrassBall.cs" />
     <Compile Include="SubClasses\Skills\States\ElderLemurian\ChargeSingleFireball.cs" />
     <Compile Include="SubClasses\Skills\States\ElderLemurian\FireSingleFireball.cs" />
+    <Compile Include="SubClasses\Skills\States\GreaterWisp\ChargeDoubleWispLaser.cs" />
+    <Compile Include="SubClasses\Skills\States\GreaterWisp\FireDoubleWispLaser.cs" />
     <Compile Include="SubClasses\Skills\States\GreaterWisp\WispAmalgamateFire.cs" />
     <Compile Include="SubClasses\Skills\States\GreaterWisp\WispAmalgamateCharge.cs" />
     <Compile Include="SubClasses\Skills\States\LesserWisp\ChargeArchwispCannon.cs" />

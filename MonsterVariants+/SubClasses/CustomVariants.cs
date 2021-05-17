@@ -299,7 +299,7 @@ namespace MonsterVariantsPlus.SubClasses
                 sizeModifier = MV.FlyingSizeModifier(0.75f),
                 healthMultiplier = 1,
                 moveSpeedMultiplier = 1,
-                attackSpeedMultiplier = 1,
+                attackSpeedMultiplier = 1.5f,
                 damageMultiplier = 1,
                 armorBonus = 0,
                 customInventory = null,
@@ -325,6 +325,25 @@ namespace MonsterVariantsPlus.SubClasses
                 meshReplacement = null,
                 materialReplacement = null,
                 skillReplacement = null
+            });
+            //Greater Stone Wisp
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "GreaterWisp",
+                overrideName = "Greater Stone Wisp",
+                spawnRate = 100,
+                variantTier = MonsterVariantTier.Rare,
+                sizeModifier = MV.FlyingSizeModifier(2.0f),
+                healthMultiplier = 2.5f,
+                moveSpeedMultiplier = 0.5f,
+                attackSpeedMultiplier = 1.0f,
+                damageMultiplier = 1.0f,
+                armorMultiplier = 1.0f,
+                armorBonus = 10,
+                customInventory = null,
+                meshReplacement = null,
+                materialReplacement = MV.SimpleMaterialReplacement(stoneGolemMat),
+                skillReplacement = MV.PrimaryReplacement(CustomSkills.chargeDoubleWispLaserDef),
             });
             //Swarmer Probe
             MV.AddVariant(new MonsterVariantInfo
