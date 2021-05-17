@@ -29,6 +29,10 @@ namespace MonsterVariantsPlus
         internal static bool hasClayMan;
         internal static bool hasAncientWisp;
         internal static bool hasArchWisp;
+        internal static bool hasMysticItems;
+        internal static bool hasGreenAlienHead;
+
+        internal static float AlienHeadMult = 1;
 
         public void Awake()
         {
@@ -36,13 +40,17 @@ namespace MonsterVariantsPlus
             hasClayMan = AssetLoaderAndChecker.CheckForMod("com.Moffein.ClayMen");
             hasAncientWisp = AssetLoaderAndChecker.CheckForMod("com.Moffein.AncientWisp");
             hasArchWisp = AssetLoaderAndChecker.CheckForMod("com.Nebby1999.ArchaicWisps");
-
+            hasMysticItems = AssetLoaderAndChecker.CheckForMod("com.themysticsword.mysticsitems");
+            hasGreenAlienHead = AssetLoaderAndChecker.CheckForMod("com.Borbo.GreenAlienHead");
+            if(hasGreenAlienHead)
+            {
+                AlienHeadMult = 2.5f;
+            }
             //Load Monster Variant Assets
             AssetLoaderAndChecker.LoadAssets();
-
-            //Initializes the rewards Config
+            //Initializes Config
             ConfigLoader.SetupConfigLoader(Config);
-            //Initializes the custom variants config
+            //Initializes variant spawn chances
             ConfigLoader.ReadConfig(Config);
             //Make sure config values aren't invalid.
             if (ConfigLoader.EnableConfigcheck)
