@@ -425,6 +425,9 @@ Dgosling and DestroyedClone for helping me with the Stone Wisps
 
 ## Changelog
 
+### '1.4.2' Nebby did a Poopy 2, Electric Boogaloo
+- Fixed a problem with the Artifact of Variance, it should no longer make all variants always spawn, whoops.
+
 ### '1.4.1' Stone Wisp Update
 - Added the Following Variants
 

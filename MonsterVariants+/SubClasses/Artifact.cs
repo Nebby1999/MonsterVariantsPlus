@@ -32,7 +32,7 @@ namespace MonsterVariantsPlus.SubClasses
             var origRate = self.spawnRate;
             if (RunArtifactManager.instance.IsArtifactEnabled(Variance))
             {
-                self.spawnRate = 100;//*= ConfigLoader.SpawnRateMultiplier;
+                self.spawnRate *= ConfigLoader.SpawnRateMultiplier;
                 //Avoid potentially bad spawn rates
                 if(self.spawnRate < 0)
                 {
