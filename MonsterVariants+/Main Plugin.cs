@@ -129,15 +129,19 @@ namespace MonsterVariantsPlus
                     {
                         if(body.name == "Ghost Of Kjaro")
                         {
-                            body.inventory.GiveEquipmentString("AfixRed");
+                            GiveEnemyEquipment(body, "AffixRed");
                         }
                         if(body.name == "Ghost of Runald")
                         {
-                            body.inventory.GiveEquipmentString("AffixWhite");
+                            GiveEnemyEquipment(body, "AffixWhite");
                         }
                     }
                 };
             }
+        }
+        public void Start()
+        {
+            CustomVariants.RegisterCustomVariants();
         }
 
         public void SpawnEnemy(string spawnCard, int amount, DamageReport damageReport)
@@ -164,9 +168,9 @@ namespace MonsterVariantsPlus
                 }
             }
         }
-        public void Start()
+        public void GiveEnemyEquipment(CharacterBody enemyBody, string equipmentToGive)
         {
-            CustomVariants.RegisterCustomVariants();
+            enemyBody.inventory.GiveEquipmentString(equipmentToGive);
         }
     }
 }
