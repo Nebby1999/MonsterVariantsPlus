@@ -106,6 +106,9 @@ namespace MonsterVariantsPlus.SubClasses
             variantSpawnChanceConfigs.Add(ConfigLoader.GlandBeetleGuardSharpshooterSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.SquidChaingunSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.SquidSniperSpawnChance);
+            variantSpawnChanceConfigs.Add(ConfigLoader.CannonSquidSpawnChance);
+            variantSpawnChanceConfigs.Add(ConfigLoader.LunarSquidSpawnChance);
+            variantSpawnChanceConfigs.Add(ConfigLoader.TimeBombSquidSpawnChance);
 
             ConfigEntry<string> hiddenRealmDropBehaviorConfig = ConfigLoader.HiddenRealmItemdropBehaviorConfig;
 

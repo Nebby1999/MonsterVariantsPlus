@@ -123,6 +123,9 @@ namespace MonsterVariantsPlus.SubClasses
         public static ConfigEntry<float> GlandBeetleGuardSharpshooterSpawnChance;
         public static ConfigEntry<float> SquidChaingunSpawnChance;
         public static ConfigEntry<float> SquidSniperSpawnChance;
+        public static ConfigEntry<float> LunarSquidSpawnChance;
+        public static ConfigEntry<float> TimeBombSquidSpawnChance;
+        public static ConfigEntry<float> CannonSquidSpawnChance;
 
         public static void SetupConfigLoader(ConfigFile config) //Creates the description and some mumbojumbo for the values.
         {
@@ -217,6 +220,9 @@ namespace MonsterVariantsPlus.SubClasses
             GlandBeetleGuardSharpshooterSpawnChance = SpawnRateConfig(true, "Beetle Guard Sharpshooter - Gland", 2, config);
             SquidChaingunSpawnChance = SpawnRateConfig(true, "Squid Chaingun", 10, config);
             SquidSniperSpawnChance = SpawnRateConfig(true, "Squid Sniper", 2, config);
+            LunarSquidSpawnChance = SpawnRateConfig(true, "Lunar Squid", 4, config);
+            TimeBombSquidSpawnChance = SpawnRateConfig(true, "Time Bomb Squid", 2, config);
+            CannonSquidSpawnChance = SpawnRateConfig(true, "Cannon Squid", 3, config);
         }
         private static ConfigEntry<float> SpawnRateConfig (bool isOther, string enemyName, float defaultValue, ConfigFile config)
         {

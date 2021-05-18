@@ -278,6 +278,7 @@ namespace MonsterVariantsPlus.SubClasses
                 bodyName = "Imp",
                 overrideName = "Ichor Imp",
                 spawnRate = ConfigLoader.IchorImpSpawnChance.Value,
+                variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.GroundSizeModifier(1.0f),
                 healthMultiplier = 1.0f,
                 moveSpeedMultiplier = 1.0f,
@@ -925,6 +926,60 @@ namespace MonsterVariantsPlus.SubClasses
                     armorMultiplier = 0f,
                     armorBonus = -100f,
                     customInventory = null,
+                    meshReplacement = null,
+                    materialReplacement = null,
+                    skillReplacement = null,
+                });
+                //Lunar Squid
+                MV.AddVariant(new MonsterVariantInfo
+                {
+                    bodyName = "SquidTurret",
+                    spawnRate = ConfigLoader.SquidChaingunSpawnChance.Value,
+                    overrideName = "Lunar Squid",
+                    variantTier = MonsterVariantTier.Common,
+                    sizeModifier = MV.GroundSizeModifier(1.0f),
+                    healthMultiplier = 1f,
+                    attackSpeedMultiplier = 1f,
+                    damageMultiplier = 1.5f,
+                    armorMultiplier = 0f,
+                    armorBonus = 0,
+                    customInventory = MV.SimpleInventory("LunarPrimaryReplacement", 1),
+                    meshReplacement = null,
+                    materialReplacement = null,
+                    skillReplacement = null,
+                });
+                //Time Bomb Squid
+                MV.AddVariant(new MonsterVariantInfo
+                {
+                    bodyName = "SquidTurret",
+                    spawnRate = ConfigLoader.SquidChaingunSpawnChance.Value,
+                    overrideName = "Time Bomb Squid",
+                    variantTier = MonsterVariantTier.Common,
+                    sizeModifier = MV.GroundSizeModifier(0.6f),
+                    healthMultiplier = 1f,
+                    attackSpeedMultiplier = 0f,
+                    damageMultiplier = 1.5f,
+                    armorMultiplier = 0f,
+                    armorBonus = 0,
+                    customInventory = MV.SimpleInventory("NovaOnLowHealth", 1),
+                    meshReplacement = null,
+                    materialReplacement = null,
+                    skillReplacement = null,
+                });
+                //Cannon Squid
+                MV.AddVariant(new MonsterVariantInfo
+                {
+                    bodyName = "SquidTurret",
+                    spawnRate = ConfigLoader.SquidChaingunSpawnChance.Value,
+                    overrideName = "Cannon Squid",
+                    variantTier = MonsterVariantTier.Common,
+                    sizeModifier = MV.GroundSizeModifier(1.5f),
+                    healthMultiplier = 1f,
+                    attackSpeedMultiplier = 0.25f,
+                    damageMultiplier = 2.5f,
+                    armorMultiplier = 0f,
+                    armorBonus = 0,
+                    customInventory = MV.SimpleInventory("Behemoth", 2),
                     meshReplacement = null,
                     materialReplacement = null,
                     skillReplacement = null,
