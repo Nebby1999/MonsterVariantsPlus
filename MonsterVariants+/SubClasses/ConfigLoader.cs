@@ -181,8 +181,8 @@ namespace MonsterVariantsPlus.SubClasses
             GreaterStoneWispSpawnChance = SpawnRateConfig(false, "Greater Stone Wisp", 2, config);
             SwarmerProbeSpawnChance = SpawnRateConfig(false, "Swarmer Probe", 7, config);
             IncineratingElderLemurianSpawnChance = SpawnRateConfig(false, "Incinerating Elder Lemurian", 5, config);
-            GhostOfKjaroSpawnChance = SpawnRateConfig(false, "Ghost of Kjaro", 8, config);
-            GhostOfRunaldSpawnChance = SpawnRateConfig(false, "Ghost of Runald", 8, config);
+            GhostOfKjaroSpawnChance = SpawnRateConfig(false, "Ghost of Kjaro", 4, config);
+            GhostOfRunaldSpawnChance = SpawnRateConfig(false, "Ghost of Runald", 4, config);
             YeOldeGolemSpawnChance = SpawnRateConfig(false, "Ye Olde Golem", 3, config);
             
             //Bosses

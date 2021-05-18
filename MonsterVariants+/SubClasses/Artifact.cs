@@ -1,8 +1,6 @@
 ﻿using RoR2;
 using R2API;
 using UnityEngine;
-using System.Collections.Generic;
-using RoR2.ContentManagement;
 using MonsterVariants.Components;
 using MonoMod.RuntimeDetour;
 using System.Reflection;
@@ -15,8 +13,6 @@ namespace MonsterVariantsPlus.SubClasses
         public static ArtifactDef Variance = ScriptableObject.CreateInstance<ArtifactDef>();
         public static void InitializeArtifact()
         {
-            //Sexy, Sexy hook <3
-            new Hook(typeof(VariantHandler).GetMethod("Awake", BindingFlags.NonPublic | BindingFlags.Instance), typeof(Artifact).GetMethod("MonsterVariantAwakeHook"));
             Variance.nameToken = "Artifact of Variance";
             if (ConfigLoader.ArtifactIncreasesRewards)
             {
@@ -36,7 +32,7 @@ namespace MonsterVariantsPlus.SubClasses
             var origRate = self.spawnRate;
             if (RunArtifactManager.instance.IsArtifactEnabled(Variance))
             {
-                self.spawnRate *= ConfigLoader.SpawnRateMultiplier;
+                self.spawnRate = 100;//*= ConfigLoader.SpawnRateMultiplier;
                 //Avoid potentially bad spawn rates
                 if(self.spawnRate < 0)
                 {

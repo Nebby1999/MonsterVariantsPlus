@@ -389,16 +389,35 @@ namespace MonsterVariantsPlus.SubClasses
             {
                 bodyName = "LemurianBruiser",
                 overrideName = "Ghost of Kjaro",
-                spawnRate = 100,
+                spawnRate = ConfigLoader.GhostOfKjaroSpawnChance.Value,
                 variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.GroundSizeModifier(1.5f),
                 healthMultiplier = 1.5f,
-                moveSpeedMultiplier = 1.0f,
+                moveSpeedMultiplier = 0.75f,
                 attackSpeedMultiplier = 1.0f,
                 damageMultiplier = 1.5f,
                 armorBonus = 0,
                 armorMultiplier = 0,
                 customInventory = kjaroInventory,
+                meshReplacement = null,
+                materialReplacement = MV.SimpleMaterialReplacement(spectralMat),
+                skillReplacement = null,
+            });
+            //Ghost of Kjaro
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "LemurianBruiser",
+                overrideName = "Ghost of Runald",
+                spawnRate = ConfigLoader.GhostOfRunaldSpawnChance.Value,
+                variantTier = MonsterVariantTier.Uncommon,
+                sizeModifier = MV.GroundSizeModifier(1.5f),
+                healthMultiplier = 1.5f,
+                moveSpeedMultiplier = 1.0f,
+                attackSpeedMultiplier = 1.5f,
+                damageMultiplier = 1.0f,
+                armorBonus = 0,
+                armorMultiplier = 0,
+                customInventory = runaldInventory,
                 meshReplacement = null,
                 materialReplacement = MV.SimpleMaterialReplacement(spectralMat),
                 skillReplacement = null,
@@ -1000,6 +1019,12 @@ namespace MonsterVariantsPlus.SubClasses
         private static readonly ItemInfo[] kjaroInventory = new ItemInfo[]
         {
             MV.SimpleItem("FireRing", 3),
+            MV.SimpleItem("Phasing", 5),
+        };
+
+        private static readonly ItemInfo[] runaldInventory = new ItemInfo[]
+        {
+            MV.SimpleItem("IceRing", 3),
             MV.SimpleItem("Phasing", 5),
         };
         //Method to replace a monster's primary and utility skills. used for Child.

@@ -11,6 +11,8 @@ using R2API;
 using System.Reflection;
 using System.Linq;
 using MonsterVariantsPlus.SubClasses.Projectiles;
+using MonoMod.RuntimeDetour;
+using System;
 
 [module: UnverifiableCode]
 [assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
@@ -41,7 +43,8 @@ namespace MonsterVariantsPlus
             hasAncientWisp = AssetLoaderAndChecker.CheckForMod("com.Moffein.AncientWisp");
             hasArchWisp = AssetLoaderAndChecker.CheckForMod("com.Nebby1999.ArchaicWisps");
             hasMysticItems = AssetLoaderAndChecker.CheckForMod("com.themysticsword.mysticsitems");
-
+            //Register Hooks
+            RegisterHooks();
             //Load Monster Variant Assets
             AssetLoaderAndChecker.LoadAssets();
             //Initializes Config
@@ -68,6 +71,7 @@ namespace MonsterVariantsPlus
             On.RoR2.DeathRewards.OnKilledServer += (orig, self, DamageReport) => {
                 foreach (VariantHandler enemy in DamageReport.victimBody.GetComponents<VariantHandler>())
                 {
+                    Debug.Log("Killed Enemy Name: " + DamageReport.victimBody.baseNameToken);
                     if (enemy.isVariant && (DamageReport.victimTeamIndex == (TeamIndex)2))
                     {
                         if (ConfigLoader.EnableItemRewards)
@@ -76,7 +80,7 @@ namespace MonsterVariantsPlus
                             {
                                 if (ConfigLoader.HiddenRealmItemdropBehavior == "Halved")
                                 {
-                                    int rng = Random.Range(1, 20);
+                                    int rng = UnityEngine.Random.Range(1, 20);
                                     if (rng > 10)
                                     {
                                         ExtraRewards.TryExtraReward(enemy, DamageReport.victimBody, DamageReport.attackerBody);
@@ -118,35 +122,57 @@ namespace MonsterVariantsPlus
                 }
                 orig(self, DamageReport);
             };
+            /*
             //Hook for modifying just spawned enemies, only gets registered if either the Ghost of Runald or Kjaro are enabled in the config
             if(ConfigLoader.GhostOfRunaldSpawnChance.Value > 0 || ConfigLoader.GhostOfKjaroSpawnChance.Value > 0)
             {
                 On.RoR2.CharacterMaster.OnBodyStart += (orig, self, body) => 
                 {
                     orig(self, body);
-                    
+                    Debug.Log("Enemy BaseNameToken: " + body.baseNameToken.ToString());
                     if(body)
                     {
-                        if(body.name == "Ghost Of Kjaro")
+                        if(body.baseNameToken == "Ghost of Kjaro")
                         {
                             GiveEnemyEquipment(body, "AffixRed");
                         }
-                        if(body.name == "Ghost of Runald")
+                        else if(body.baseNameToken == "Ghost of Runald")
                         {
                             GiveEnemyEquipment(body, "AffixWhite");
                         }
+                        else
+                        {
+                            Debug.Log("Could not give equipment since no name matches the given name tokens.");
+                        }
                     }
                 };
-            }
+            }*/
         }
         public void Start()
         {
             CustomVariants.RegisterCustomVariants();
         }
-
+        public static void RegisterHooks()
+        {
+            new Hook(typeof(VariantHandler).GetMethod("Start", BindingFlags.NonPublic | BindingFlags.Instance), typeof(MainPlugin).GetMethod("MonsterVariantStartHook"));
+            new Hook(typeof(VariantHandler).GetMethod("Awake", BindingFlags.NonPublic | BindingFlags.Instance), typeof(Artifact).GetMethod("MonsterVariantAwakeHook"));
+        }
+        public static void MonsterVariantStartHook(Action<VariantHandler> orig, VariantHandler self)
+        {
+            orig(self);
+            var variantCharacterBody = self.GetComponent<CharacterBody>();
+            if(variantCharacterBody.baseNameToken == "Ghost of Kjaro")
+            {
+                GiveEnemyEquipment(variantCharacterBody, "AffixRed");
+            }
+            if(variantCharacterBody.baseNameToken == "Ghost of Runald")
+            {
+                GiveEnemyEquipment(variantCharacterBody, "AffixWhite");
+            }
+        }
         public void SpawnEnemy(string spawnCard, int amount, DamageReport damageReport)
         {
-            Vector3 position = damageReport.victimBody.corePosition + (amount * Random.insideUnitSphere);
+            Vector3 position = damageReport.victimBody.corePosition + (amount * UnityEngine.Random.insideUnitSphere);
 
             DirectorSpawnRequest directorSpawnRequest = new DirectorSpawnRequest((SpawnCard)Resources.Load(string.Format("SpawnCards/CharacterSpawnCards/csc" + spawnCard)), new DirectorPlacementRule
             {
@@ -168,9 +194,29 @@ namespace MonsterVariantsPlus
                 }
             }
         }
-        public void GiveEnemyEquipment(CharacterBody enemyBody, string equipmentToGive)
+        public static void GiveEnemyEquipment(CharacterBody enemyBody, string equipmentToGive)
         {
-            enemyBody.inventory.GiveEquipmentString(equipmentToGive);
+            Debug.Log("Trying to give equipment to enemy...");
+            var characterMaster = enemyBody.master;
+            if(characterMaster)
+            {
+                Debug.Log("Found Character Master!");
+                var inventory = characterMaster.GetComponent<Inventory>();
+                if(inventory)
+                {
+                    Debug.Log("Found Inventory!");
+                    Debug.Log("Attempting to give equipment...");
+                    inventory.GiveEquipmentString(equipmentToGive);
+                }
+                else
+                {
+                    Debug.Log("Could not find Inventory...");
+                }
+            }
+            else
+            {
+                Debug.Log("Could not find Character Master...");
+            }
         }
     }
 }
