@@ -31,7 +31,6 @@ namespace MonsterVariantsPlus
         internal static bool hasAncientWisp;
         internal static bool hasArchWisp;
         internal static bool hasMysticItems;
-        internal static bool hasGreenAlienHead;
 
         internal static float AlienHeadMult = 1;
 
@@ -119,6 +118,8 @@ namespace MonsterVariantsPlus
                 }
                 orig(self, DamageReport);
             };
+            //Hook for modifying just spawned enemies
+            On.RoR2
         }
         public void SpawnEnemy(string spawnCard, int amount, DamageReport damageReport)
         {
