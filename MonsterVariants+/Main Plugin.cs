@@ -118,9 +118,28 @@ namespace MonsterVariantsPlus
                 }
                 orig(self, DamageReport);
             };
-            //Hook for modifying just spawned enemies
-            On.RoR2
+            //Hook for modifying just spawned enemies, only gets registered if either the Ghost of Runald or Kjaro are enabled in the config
+            if(ConfigLoader.GhostOfRunaldSpawnChance.Value > 0 || ConfigLoader.GhostOfKjaroSpawnChance.Value > 0)
+            {
+                On.RoR2.CharacterMaster.OnBodyStart += (orig, self, body) => 
+                {
+                    orig(self, body);
+                    
+                    if(body)
+                    {
+                        if(body.name == "Ghost Of Kjaro")
+                        {
+                            body.inventory.GiveEquipmentString("AfixRed");
+                        }
+                        if(body.name == "Ghost of Runald")
+                        {
+                            body.inventory.GiveEquipmentString("AffixWhite");
+                        }
+                    }
+                };
+            }
         }
+
         public void SpawnEnemy(string spawnCard, int amount, DamageReport damageReport)
         {
             Vector3 position = damageReport.victimBody.corePosition + (amount * Random.insideUnitSphere);
