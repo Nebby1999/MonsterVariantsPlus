@@ -22,6 +22,8 @@ namespace MonsterVariantsPlus.SubClasses.Skills
         public static SkillDef chargeWispLaserDef;
         public static SkillDef chargeDoubleWispLaserDef;
         public static SkillDef chargeMegaWispLaserDef;
+        public static SkillDef ichorClawsDef;
+
         //public static SkillDef DeploySwarmDef;
 
         internal static void RegisterSkills()
@@ -40,6 +42,7 @@ namespace MonsterVariantsPlus.SubClasses.Skills
             Loadouts.AddSkill(typeof(States.LesserWisp.ChargeWispLaser));
             Loadouts.AddSkill(typeof(States.GreaterWisp.ChargeDoubleWispLaser));
             Loadouts.AddSkill(typeof(States.ArchaicWisp.ChargeMegaWispLaser));
+            Loadouts.AddSkill(typeof(States.Imp.IchorClaws));
 
             //Loadouts.AddSkill(typeof(States.RoboBallBoss.DeploySwarm));
 
@@ -60,6 +63,7 @@ namespace MonsterVariantsPlus.SubClasses.Skills
             chargeWispLaserDef = NewSkillDef(new SerializableEntityStateType(typeof(States.LesserWisp.ChargeWispLaser)), "Weapon");
             chargeDoubleWispLaserDef = NewSkillDef(new SerializableEntityStateType(typeof(States.GreaterWisp.ChargeDoubleWispLaser)), "Weapon");
             chargeMegaWispLaserDef = NewSkillDef(new SerializableEntityStateType(typeof(States.ArchaicWisp.ChargeMegaWispLaser)), "Weapon");
+            ichorClawsDef = NewSkillDef(new SerializableEntityStateType(typeof(States.Imp.IchorClaws)), "Weapon");
 
             BuildSkillDefs(emptySkillDef, 0, 1000);
             BuildSkillDefs(hoarderSitDef, 1, 1, 10f, 1);
@@ -74,6 +78,7 @@ namespace MonsterVariantsPlus.SubClasses.Skills
             BuildSkillDefs(chargeWispLaserDef, 1, 1, 6, 1);
             BuildSkillDefs(chargeDoubleWispLaserDef, 1, 1, 9, 1);
             BuildSkillDefs(chargeMegaWispLaserDef, 1, 1, 10, 1);
+            BuildSkillDefs(ichorClawsDef, 1, 1, 1.5f, 1);
         }
 
         private static void BuildSkillDefs(SkillDef skillDef, int baseMaxStock, int requiredStock)

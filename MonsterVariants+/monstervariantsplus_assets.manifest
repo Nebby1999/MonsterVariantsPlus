@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 4109319587
+CRC: 3968923179
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 84f009a3b957fa00fc6109f6b8404899
+    Hash: e2dd472ae4554cfa525cbbaacf498d0c
   TypeTreeHash:
     serializedVersion: 2
     Hash: 011d1bb1b97750065fc8e33fbaec9bad
@@ -21,7 +21,9 @@ Assets:
 - Assets/Textures/ADShroom/ADShroomEmmision.png
 - Assets/Textures/ADShroom/ADShroom.png
 - Assets/Materials/ADShroom.mat
+- Assets/Textures/IchorImp/IchorImpEmission.png
 - Assets/Textures/SteelContraption/SteelContraption_Normal.png
+- Assets/Textures/IchorImp/IchorImpNormal.png
 - Assets/Textures/Artifact/VarianceEnabled.png
 - Assets/Textures/HealerShroom/HealerShroomEmmision.png
 - Assets/Materials/AluminumContraption.mat
@@ -29,10 +31,12 @@ Assets:
 - Assets/Textures/AlphaBison/AlphaBison.png
 - Assets/Textures/AluminumContraption/AluminumContraptionNormal.png
 - Assets/Materials/SteelContraption.mat
+- Assets/Textures/IchorImp/IchorImp.png
 - Assets/Materials/AlphaBison.mat
 - Assets/Materials/HealerShroom.mat
 - Assets/Textures/SteelContraption/SteelContraption.png
 - Assets/Textures/AlphaBison/AlphaBison_Hair.png
+- Assets/Materials/IchorImp.mat
 - Assets/Textures/AlphaBison/AlphaBison_Normal.png
 - Assets/Textures/HealerShroom/HealerShroom.png
 - Assets/Textures/ADShroom/ADShroom_Normal.png

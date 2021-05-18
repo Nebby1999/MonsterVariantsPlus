@@ -122,31 +122,6 @@ namespace MonsterVariantsPlus
                 }
                 orig(self, DamageReport);
             };
-            /*
-            //Hook for modifying just spawned enemies, only gets registered if either the Ghost of Runald or Kjaro are enabled in the config
-            if(ConfigLoader.GhostOfRunaldSpawnChance.Value > 0 || ConfigLoader.GhostOfKjaroSpawnChance.Value > 0)
-            {
-                On.RoR2.CharacterMaster.OnBodyStart += (orig, self, body) => 
-                {
-                    orig(self, body);
-                    Debug.Log("Enemy BaseNameToken: " + body.baseNameToken.ToString());
-                    if(body)
-                    {
-                        if(body.baseNameToken == "Ghost of Kjaro")
-                        {
-                            GiveEnemyEquipment(body, "AffixRed");
-                        }
-                        else if(body.baseNameToken == "Ghost of Runald")
-                        {
-                            GiveEnemyEquipment(body, "AffixWhite");
-                        }
-                        else
-                        {
-                            Debug.Log("Could not give equipment since no name matches the given name tokens.");
-                        }
-                    }
-                };
-            }*/
         }
         public void Start()
         {
@@ -196,27 +171,7 @@ namespace MonsterVariantsPlus
         }
         public static void GiveEnemyEquipment(CharacterBody enemyBody, string equipmentToGive)
         {
-            Debug.Log("Trying to give equipment to enemy...");
-            var characterMaster = enemyBody.master;
-            if(characterMaster)
-            {
-                Debug.Log("Found Character Master!");
-                var inventory = characterMaster.GetComponent<Inventory>();
-                if(inventory)
-                {
-                    Debug.Log("Found Inventory!");
-                    Debug.Log("Attempting to give equipment...");
-                    inventory.GiveEquipmentString(equipmentToGive);
-                }
-                else
-                {
-                    Debug.Log("Could not find Inventory...");
-                }
-            }
-            else
-            {
-                Debug.Log("Could not find Character Master...");
-            }
+            enemyBody.master.GetComponent<Inventory>().GiveEquipmentString(equipmentToGive);
         }
     }
 }

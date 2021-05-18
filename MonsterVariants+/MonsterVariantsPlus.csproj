@@ -134,6 +134,7 @@
     <Compile Include="SubClasses\Skills\States\GreaterWisp\FireDoubleWispLaser.cs" />
     <Compile Include="SubClasses\Skills\States\GreaterWisp\WispAmalgamateFire.cs" />
     <Compile Include="SubClasses\Skills\States\GreaterWisp\WispAmalgamateCharge.cs" />
+    <Compile Include="SubClasses\Skills\States\Imp\IchorClaws.cs" />
     <Compile Include="SubClasses\Skills\States\LesserWisp\ChargeArchwispCannon.cs" />
     <Compile Include="SubClasses\Skills\States\LesserWisp\ChargeWispLaser.cs" />
     <Compile Include="SubClasses\Skills\States\LesserWisp\FireWispLaser.cs" />

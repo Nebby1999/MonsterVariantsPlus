@@ -84,6 +84,7 @@ namespace MonsterVariantsPlus.SubClasses
         public static ConfigEntry<float> AdolescentSpawnChance;
         public static ConfigEntry<float> ChildSpawnChance;
         public static ConfigEntry<float> BruiserImpSpawnChance;
+        public static ConfigEntry<float> IchorImpSpawnChance;
         public static ConfigEntry<float> AlphaBisonSpawnChance;
         public static ConfigEntry<float> WispAmalgamateSpawnChance;
         public static ConfigEntry<float> KindaGreatButNotGreaterWispSpawnChance;
@@ -175,6 +176,7 @@ namespace MonsterVariantsPlus.SubClasses
             AdolescentSpawnChance = SpawnRateConfig(false, "Adolescent", 8, config);
             ChildSpawnChance = SpawnRateConfig(false, "Child", 6, config);
             BruiserImpSpawnChance = SpawnRateConfig(false, "Bruiser Imp", 10, config);
+            IchorImpSpawnChance = SpawnRateConfig(false, "Ichor Imp", 5, config);
             AlphaBisonSpawnChance = SpawnRateConfig(false, "Alpha Bison", 5, config);
             WispAmalgamateSpawnChance = SpawnRateConfig(false, "Wisp Amalgamate", 8, config);
             KindaGreatButNotGreaterWispSpawnChance = SpawnRateConfig(false, "Kinda-Great-But-Not-Greater Wisp", 6, config);

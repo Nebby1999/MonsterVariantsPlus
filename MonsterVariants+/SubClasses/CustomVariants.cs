@@ -272,6 +272,24 @@ namespace MonsterVariantsPlus.SubClasses
                 materialReplacement = null,
                 skillReplacement = MV.UtilityReplacement(CustomSkills.emptySkillDef),
             });
+            //Ichor Imp
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "Imp",
+                overrideName = "Ichor Imp",
+                spawnRate = ConfigLoader.IchorImpSpawnChance.Value,
+                sizeModifier = MV.GroundSizeModifier(1.0f),
+                healthMultiplier = 1.0f,
+                moveSpeedMultiplier = 1.0f,
+                attackSpeedMultiplier = 1.0f,
+                damageMultiplier = 1.0f,
+                armorMultiplier = 1.0f,
+                armorBonus = 10,
+                customInventory = null,
+                meshReplacement = null,
+                materialReplacement = MV.SimpleMaterialReplacement(AssetLoaderAndChecker.MainAssets.LoadAsset<Material>("IchorImp")),
+                skillReplacement = MV.PrimaryReplacement(CustomSkills.ichorClawsDef)
+            });
             //Alpha Bison
             MV.AddVariant(new MonsterVariantInfo
             {
@@ -403,7 +421,7 @@ namespace MonsterVariantsPlus.SubClasses
                 materialReplacement = MV.SimpleMaterialReplacement(spectralMat),
                 skillReplacement = null,
             });
-            //Ghost of Kjaro
+            //Ghost of Runald
             MV.AddVariant(new MonsterVariantInfo
             {
                 bodyName = "LemurianBruiser",
@@ -822,7 +840,7 @@ namespace MonsterVariantsPlus.SubClasses
                     overrideName = "Archaic Stone Wisp",
                     variantTier = MonsterVariantTier.Rare,
                     sizeModifier = MV.FlyingSizeModifier(1.5f),
-                    spawnRate = 100,//ConfigLoader.ArchaicStoneWispSpawnChance.Value,
+                    spawnRate = ConfigLoader.ArchaicStoneWispSpawnChance.Value,
                     healthMultiplier = 2.0f,
                     moveSpeedMultiplier = 0.5f,
                     attackSpeedMultiplier = 1.0f,

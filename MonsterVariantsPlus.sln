@@ -25,6 +25,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Materials", "Materials", "{
 		Unity\Assets\Materials\AlphaBison.mat = Unity\Assets\Materials\AlphaBison.mat
 		Unity\Assets\Materials\AluminumContraption.mat = Unity\Assets\Materials\AluminumContraption.mat
 		Unity\Assets\Materials\HealerShroom.mat = Unity\Assets\Materials\HealerShroom.mat
+		Unity\Assets\Materials\IchorImp.mat = Unity\Assets\Materials\IchorImp.mat
 		Unity\Assets\Materials\SteelContraption.mat = Unity\Assets\Materials\SteelContraption.mat
 	EndProjectSection
 EndProject
@@ -84,6 +85,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Artifact", "Artifact", "{A7
 		Unity\Assets\Textures\Artifact\VarianceEnabled.png = Unity\Assets\Textures\Artifact\VarianceEnabled.png
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IchorImp", "IchorImp", "{07BEDB95-9E4B-4E43-A249-D5CEB802F765}"
+	ProjectSection(SolutionItems) = preProject
+		Unity\Assets\Textures\IchorImp\IchorImp.png = Unity\Assets\Textures\IchorImp\IchorImp.png
+		Unity\Assets\Textures\IchorImp\IchorImpEmission.png = Unity\Assets\Textures\IchorImp\IchorImpEmission.png
+		Unity\Assets\Textures\IchorImp\IchorImpNormal.png = Unity\Assets\Textures\IchorImp\IchorImpNormal.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -110,6 +118,7 @@ Global
 		{4FEB17A0-60B5-43D5-A8AD-C07988B376E5} = {C545788F-0718-4E3B-8D38-71C81B0460BB}
 		{92C97A03-E7EF-44B0-815C-99470341AB6A} = {C545788F-0718-4E3B-8D38-71C81B0460BB}
 		{A72BF007-5422-4043-98E3-79A3A16D7F1B} = {C545788F-0718-4E3B-8D38-71C81B0460BB}
+		{07BEDB95-9E4B-4E43-A249-D5CEB802F765} = {C545788F-0718-4E3B-8D38-71C81B0460BB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B0142633-C6E9-49CD-88D9-D98C3E562443}

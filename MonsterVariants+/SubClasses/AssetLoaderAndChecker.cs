@@ -62,6 +62,7 @@ namespace MonsterVariantsPlus.SubClasses
             List<ConfigEntry<float>> variantSpawnChanceConfigs = new List<ConfigEntry<float>>();
             variantSpawnChanceConfigs.Add(ConfigLoader.LeastestWispSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.AlmostButNotQuiteArchaicWispSpawnChance);
+            variantSpawnChanceConfigs.Add(ConfigLoader.LesserStoneWispSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.SteelContraptionSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.AluminumContraptionSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.MortarCrabSpawnChance);
@@ -72,11 +73,15 @@ namespace MonsterVariantsPlus.SubClasses
             variantSpawnChanceConfigs.Add(ConfigLoader.AdolescentSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.ChildSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.BruiserImpSpawnChance);
+            variantSpawnChanceConfigs.Add(ConfigLoader.IchorImpSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.AlphaBisonSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.WispAmalgamateSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.KindaGreatButNotGreaterWispSpawnChance);
+            variantSpawnChanceConfigs.Add(ConfigLoader.GreaterStoneWispSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.SwarmerProbeSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.IncineratingElderLemurianSpawnChance);
+            variantSpawnChanceConfigs.Add(ConfigLoader.GhostOfKjaroSpawnChance);
+            variantSpawnChanceConfigs.Add(ConfigLoader.GhostOfRunaldSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.YeOldeGolemSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.SunPriestSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.HoarderSpawnChance);
@@ -95,6 +100,7 @@ namespace MonsterVariantsPlus.SubClasses
             variantSpawnChanceConfigs.Add(ConfigLoader.EnragedWispSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.AmalgamatedAncientWispSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.AeonicWispSpawnChance);
+            variantSpawnChanceConfigs.Add(ConfigLoader.ArchaicStoneWispSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.KindaArchaicWispSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.GlandBeetleGuardBruteSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.GlandBeetleGuardSharpshooterSpawnChance);
