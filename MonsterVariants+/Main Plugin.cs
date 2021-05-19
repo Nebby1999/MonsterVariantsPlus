@@ -34,6 +34,7 @@ namespace MonsterVariantsPlus
         internal static bool hasArchWisp;
         internal static bool hasMysticItems;
 
+        //Used in enemy spawning behavior of new variants
         private static int amount;
         private static string enemyCard;
 
@@ -74,7 +75,10 @@ namespace MonsterVariantsPlus
                 {
                     if (enemy.isVariant && (DamageReport.victimTeamIndex == (TeamIndex)2))
                     {
-                        TrySpawnEnemy(DamageReport.victimBody);
+                        if(ConfigLoader.CertainVariantsSpawnMoreEnemies)
+                        {
+                            TrySpawnEnemy(DamageReport.victimBody);
+                        }
                         if (ConfigLoader.EnableItemRewards)
                         {
                             if (Run.instance.isRunStopwatchPaused && ConfigLoader.HiddenRealmItemdropBehavior != "Unchanged")
@@ -137,6 +141,7 @@ namespace MonsterVariantsPlus
         public static void TrySpawnEnemy(CharacterBody body)
         {
             string variantName = body.baseNameToken;
+            bool variantIsSpecial = true;
             switch (variantName)
             {
                 case "Wisp Amalgamate":
@@ -151,26 +156,32 @@ namespace MonsterVariantsPlus
                     enemyCard = "GreaterWisp";
                     amount = 5;
                     break;
+                default:
+                    variantIsSpecial = false;
+                    break;
             }
-            Vector3 position = body.corePosition + (amount * UnityEngine.Random.insideUnitSphere);
-
-            DirectorSpawnRequest directorSpawnRequest = new DirectorSpawnRequest((SpawnCard)Resources.Load(string.Format("SpawnCards/CharacterSpawnCards/csc" + enemyCard)), new DirectorPlacementRule
+            if(variantIsSpecial)
             {
-                placementMode = DirectorPlacementRule.PlacementMode.Direct,
-                minDistance = 0f,
-                maxDistance = 4f,
-                position = position
-            }, RoR2Application.rng);
+                Vector3 position = body.corePosition + (amount * UnityEngine.Random.insideUnitSphere);
 
-            directorSpawnRequest.summonerBodyObject = body.gameObject;
-            for (int i = 0; i < amount; i++)
-            {
-
-                GameObject enemy = DirectorCore.instance.TrySpawnObject(directorSpawnRequest);
-                if (enemy)
+                DirectorSpawnRequest directorSpawnRequest = new DirectorSpawnRequest((SpawnCard)Resources.Load(string.Format("SpawnCards/CharacterSpawnCards/csc" + enemyCard)), new DirectorPlacementRule
                 {
-                    CharacterMaster master = enemy.GetComponent<CharacterMaster>();
-                    enemy.GetComponent<Inventory>().SetEquipmentIndex(body.inventory.currentEquipmentIndex);
+                    placementMode = DirectorPlacementRule.PlacementMode.Direct,
+                    minDistance = 0f,
+                    maxDistance = 4f,
+                    position = position
+                }, RoR2Application.rng);
+
+                directorSpawnRequest.summonerBodyObject = body.gameObject;
+                for (int i = 0; i < amount; i++)
+                {
+
+                    GameObject enemy = DirectorCore.instance.TrySpawnObject(directorSpawnRequest);
+                    if (enemy)
+                    {
+                        CharacterMaster master = enemy.GetComponent<CharacterMaster>();
+                        enemy.GetComponent<Inventory>().SetEquipmentIndex(body.inventory.currentEquipmentIndex);
+                    }
                 }
             }
         }

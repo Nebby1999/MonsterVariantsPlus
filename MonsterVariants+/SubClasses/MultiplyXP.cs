@@ -21,24 +21,24 @@ namespace MonsterVariantsPlus.SubClasses
             float xpMultCommon = ConfigLoader.CommonXPMult * RewardMultiplier;
             float xpMultUncommon = ConfigLoader.UncommonXPMult * RewardMultiplier;
             float xpMultRare = ConfigLoader.RareXPMult * RewardMultiplier;
-            if (enemyVariant.tier == MonsterVariantTier.Common)
+            
+            switch (enemyVariant.tier)
             {
-                float commonXP = Convert.ToInt32(monsterXP);
-                commonXP *= xpMultCommon;
-                return Convert.ToUInt32(commonXP);
+                case MonsterVariantTier.Common:
+                    float commonXP = Convert.ToInt32(monsterXP);
+                    commonXP *= xpMultCommon;
+                    return Convert.ToUInt32(commonXP);
+                case MonsterVariantTier.Uncommon:
+                    float uncommonXP = Convert.ToInt32(monsterXP);
+                    uncommonXP *= xpMultUncommon;
+                    return Convert.ToUInt32(uncommonXP);
+                case MonsterVariantTier.Rare:
+                    float rareXP = Convert.ToInt32(monsterXP);
+                    rareXP *= xpMultRare;
+                    return Convert.ToUInt32(rareXP);
             }
-            else if (enemyVariant.tier == MonsterVariantTier.Uncommon)
-            {
-                float uncommonXP = Convert.ToInt32(monsterXP);
-                uncommonXP *= xpMultUncommon;
-                return Convert.ToUInt32(uncommonXP);
-            }
-            else
-            {
-                float rareXP = Convert.ToInt32(monsterXP);
-                rareXP *= xpMultRare;
-                return Convert.ToUInt32(rareXP);
-            }
+            //This return shouldnt even exist, but its needed for the code to work.
+            return monsterXP;
         }
     }
 }

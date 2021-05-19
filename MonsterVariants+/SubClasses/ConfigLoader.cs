@@ -70,6 +70,8 @@ namespace MonsterVariantsPlus.SubClasses
         public static bool ArtifactDecreasesRewards => ArtifactDecreasesRewardsConfig.Value;
 
         //Custom Variants
+        internal static ConfigEntry<bool> CertainVariantsSpawnMoreEnemiesConfig { get; set; }
+        public static bool CertainVariantsSpawnMoreEnemies => CertainVariantsSpawnMoreEnemiesConfig.Value;
         //Enemy Variants
         public static ConfigEntry<float> LeastestWispSpawnChance;
         public static ConfigEntry<float> AlmostButNotQuiteArchaicWispSpawnChance;
@@ -136,6 +138,7 @@ namespace MonsterVariantsPlus.SubClasses
             EnableCustomVariantsConfig = config.Bind<bool>("4 - Custom Variants", "Enable Custom Variants", true, "If this is set to True, then new Enemy Variants designed by nebby will begin spawning, all the effects of killing a regular variant also apply to these.\nIf this is set to False, then the rest of the available options in this category are disabled.");
             EnableOtherVariantsConfig = config.Bind<bool>("5 - Other Variants", "Enable Other Variants", true, "If this is set to True, then living entities other than enemies will get variants, examples include the Queen's Gland's Beetle Guards\nVariants in this category will not spawn rewards if theyre in your Team! (AKA The sidebar with the health bars.)\nIf this is set to false, then the rest of the available options of this category are disabled.");
             EnableArtifactOfVarianceConfig = config.Bind<bool>("6 - Artifact of Variance", "Enable Artifact of Variance", true, "If this is set to True, then the Artifact of Variance is Enabled\nThe artifact of variance multiplies the SpawnRates of ALL Variants by a certain number.\nIf this is ser to false, then the rest of the available options in this category are disabled.");
+            CertainVariantsSpawnMoreEnemiesConfig = config.Bind<bool>("4 - Custom Variants", "Do Certain Variants Spawn More Enemies", true, "When this is set to true, certain variants such as the M.O.A.J. & the wisp amalgamate will have the ability to spawn more enemies on death.\n disable in case these variants cause large framedrops when they die.");
 
             ItemSpawnsOnPlayerConfig = config.Bind<bool>("1 - Item Rewards", "Item Rewards Spawns on Player", false, "Normally the item reward's droplet spawns from the center of the slain Variant.\nThis can cause some issues with killing Variants that are on top of the death plane, or get knocked back onto it, Since the item will be lost in the process.\nSetting this to True causes all Item Rewards to be spawned at the center of the Player who killed the variant.");
             HiddenRealmItemdropBehaviorConfig = config.Bind<string>("1 - Item Rewards", "Item Rewards Hidden Realm Behavior", "Unchanged", "How the item rewards module handles item rewards on hidden realms.\n3 Accepted values, ranging from 'Unchanged', 'Halved', and 'Never'.\nUnchanged: No changes are made. item drop rates are the same as they are in normal stages.\nHalved: Item drop rates are lowered by 50%.\nNever: Enemy Variants never drop items in hidden realms.");
