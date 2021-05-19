@@ -957,14 +957,14 @@ namespace MonsterVariantsPlus.SubClasses
                     variantTier = MonsterVariantTier.Common,
                     sizeModifier = MV.GroundSizeModifier(0.6f),
                     healthMultiplier = 1f,
-                    attackSpeedMultiplier = 0f,
+                    attackSpeedMultiplier = 1f,
                     damageMultiplier = 1.5f,
                     armorMultiplier = 0f,
                     armorBonus = 0,
                     customInventory = MV.SimpleInventory("NovaOnLowHealth", 1),
                     meshReplacement = null,
                     materialReplacement = null,
-                    skillReplacement = null,
+                    skillReplacement = MV.PrimaryReplacement(CustomSkills.emptySkillDef),
                 });
                 //Cannon Squid
                 MV.AddVariant(new MonsterVariantInfo
