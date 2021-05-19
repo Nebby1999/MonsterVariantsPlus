@@ -34,7 +34,8 @@ namespace MonsterVariantsPlus
         internal static bool hasArchWisp;
         internal static bool hasMysticItems;
 
-        internal static float AlienHeadMult = 1;
+        private static int amount;
+        private static string enemyCard;
 
         public void Awake()
         {
@@ -71,9 +72,9 @@ namespace MonsterVariantsPlus
             On.RoR2.DeathRewards.OnKilledServer += (orig, self, DamageReport) => {
                 foreach (VariantHandler enemy in DamageReport.victimBody.GetComponents<VariantHandler>())
                 {
-                    Debug.Log("Killed Enemy Name: " + DamageReport.victimBody.baseNameToken);
                     if (enemy.isVariant && (DamageReport.victimTeamIndex == (TeamIndex)2))
                     {
+                        TrySpawnEnemy(DamageReport.victimBody);
                         if (ConfigLoader.EnableItemRewards)
                         {
                             if (Run.instance.isRunStopwatchPaused && ConfigLoader.HiddenRealmItemdropBehavior != "Unchanged")
@@ -106,19 +107,6 @@ namespace MonsterVariantsPlus
                             self.expReward = multipliedXP;
                         }
                     }
-                    //Remove this once rob implements deathState replacements.
-                    if (DamageReport.victimBody.baseNameToken == "Wisp Amalgamate")
-                    {
-                        SpawnEnemy("LesserWisp", 5, DamageReport);
-                    }
-                    else if (DamageReport.victimBody.baseNameToken == "Amalgamated Ancient Wisp")
-                    {
-                        SpawnEnemy("GreaterWisp", 5, DamageReport);
-                    }
-                    else if (DamageReport.victimBody.baseNameToken == "M.O.A.J.")
-                    {
-                        SpawnEnemy("Jellyfish", 5, DamageReport);
-                    }
                 }
                 orig(self, DamageReport);
             };
@@ -145,11 +133,28 @@ namespace MonsterVariantsPlus
                 GiveEnemyEquipment(variantCharacterBody, "AffixWhite");
             }
         }
-        public void SpawnEnemy(string spawnCard, int amount, DamageReport damageReport)
-        {
-            Vector3 position = damageReport.victimBody.corePosition + (amount * UnityEngine.Random.insideUnitSphere);
 
-            DirectorSpawnRequest directorSpawnRequest = new DirectorSpawnRequest((SpawnCard)Resources.Load(string.Format("SpawnCards/CharacterSpawnCards/csc" + spawnCard)), new DirectorPlacementRule
+        public static void TrySpawnEnemy(CharacterBody body)
+        {
+            string variantName = body.baseNameToken;
+            switch (variantName)
+            {
+                case "Wisp Amalgamate":
+                    enemyCard = "LesserWisp";
+                    amount = 5;
+                    break;
+                case "M.O.A.J.":
+                    enemyCard = "Jellyfish";
+                    amount = 5;
+                    break;
+                case "Amalgamated Ancient Wisp":
+                    enemyCard = "GreaterWisp";
+                    amount = 5;
+                    break;
+            }
+            Vector3 position = body.corePosition + (amount * UnityEngine.Random.insideUnitSphere);
+
+            DirectorSpawnRequest directorSpawnRequest = new DirectorSpawnRequest((SpawnCard)Resources.Load(string.Format("SpawnCards/CharacterSpawnCards/csc" + enemyCard)), new DirectorPlacementRule
             {
                 placementMode = DirectorPlacementRule.PlacementMode.Direct,
                 minDistance = 0f,
@@ -157,7 +162,7 @@ namespace MonsterVariantsPlus
                 position = position
             }, RoR2Application.rng);
 
-            directorSpawnRequest.summonerBodyObject = damageReport.victimBody.gameObject;
+            directorSpawnRequest.summonerBodyObject = body.gameObject;
             for (int i = 0; i < amount; i++)
             {
 
@@ -165,7 +170,7 @@ namespace MonsterVariantsPlus
                 if (enemy)
                 {
                     CharacterMaster master = enemy.GetComponent<CharacterMaster>();
-                    enemy.GetComponent<Inventory>().SetEquipmentIndex(damageReport.victimBody.inventory.currentEquipmentIndex);
+                    enemy.GetComponent<Inventory>().SetEquipmentIndex(body.inventory.currentEquipmentIndex);
                 }
             }
         }
