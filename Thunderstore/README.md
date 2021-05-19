@@ -424,6 +424,12 @@ Aaron, which helped making the Artifact of Variance a reality.
 Dgosling and DestroyedClone for helping me with the Stone Wisps
 
 ## Changelog
+### '1.4.3' Optimization n stuff
+- Fixed Time Bomb Squids never detonating their Genesis Loop.
+
+- Tweaked code related to rewards and enemy spawning from other variants to use switch statements instead of if else chaincs
+
+- Added a new config entry to determine wether certain variants can spawn enemies.
 
 ### '1.4.2' Nebby did a Poopy 2, Electric Boogaloo
 - Fixed a problem with the Artifact of Variance, it should no longer make all variants always spawn, whoops.

@@ -25,7 +25,7 @@ namespace MonsterVariantsPlus
     [BepInDependency("com.Moffein.AncientWisp", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.Nebby1999.ArchWisps", BepInDependency.DependencyFlags.SoftDependency)]
     [R2APISubmoduleDependency(nameof(ProjectileAPI))]
-    [BepInPlugin("com.Nebby1999.MonsterVariantsPlus", "Monster Variants +", "1.4.2")]
+    [BepInPlugin("com.Nebby1999.MonsterVariantsPlus", "Monster Variants +", "1.4.3")]
     public class MainPlugin : BaseUnityPlugin
     {
         public static MainPlugin instance;
