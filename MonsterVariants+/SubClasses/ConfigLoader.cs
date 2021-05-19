@@ -70,9 +70,12 @@ namespace MonsterVariantsPlus.SubClasses
         public static bool ArtifactDecreasesRewards => ArtifactDecreasesRewardsConfig.Value;
 
         //Custom Variants
+        internal static ConfigEntry<bool> CertainVariantsSpawnMoreEnemiesConfig { get; set; }
+        public static bool CertainVariantsSpawnMoreEnemies => CertainVariantsSpawnMoreEnemiesConfig.Value;
         //Enemy Variants
         public static ConfigEntry<float> LeastestWispSpawnChance;
         public static ConfigEntry<float> AlmostButNotQuiteArchaicWispSpawnChance;
+        public static ConfigEntry<float> LesserStoneWispSpawnChance;
         public static ConfigEntry<float> SteelContraptionSpawnChance;
         public static ConfigEntry<float> AluminumContraptionSpawnChance;
         public static ConfigEntry<float> MortarCrabSpawnChance;
@@ -83,10 +86,14 @@ namespace MonsterVariantsPlus.SubClasses
         public static ConfigEntry<float> AdolescentSpawnChance;
         public static ConfigEntry<float> ChildSpawnChance;
         public static ConfigEntry<float> BruiserImpSpawnChance;
+        public static ConfigEntry<float> IchorImpSpawnChance;
         public static ConfigEntry<float> AlphaBisonSpawnChance;
         public static ConfigEntry<float> WispAmalgamateSpawnChance;
         public static ConfigEntry<float> KindaGreatButNotGreaterWispSpawnChance;
+        public static ConfigEntry<float> GreaterStoneWispSpawnChance;
         public static ConfigEntry<float> IncineratingElderLemurianSpawnChance;
+        public static ConfigEntry<float> GhostOfKjaroSpawnChance;
+        public static ConfigEntry<float> GhostOfRunaldSpawnChance;
         public static ConfigEntry<float> SwarmerProbeSpawnChance;
         public static ConfigEntry<float> YeOldeGolemSpawnChance;
         //Boss Variants
@@ -111,12 +118,16 @@ namespace MonsterVariantsPlus.SubClasses
         public static ConfigEntry<float> AmalgamatedAncientWispSpawnChance;
         public static ConfigEntry<float> AeonicWispSpawnChance;
         public static ConfigEntry<float> KindaArchaicWispSpawnChance;
+        public static ConfigEntry<float> ArchaicStoneWispSpawnChance;
 
         //Other Variants
         public static ConfigEntry<float> GlandBeetleGuardBruteSpawnChance;
         public static ConfigEntry<float> GlandBeetleGuardSharpshooterSpawnChance;
         public static ConfigEntry<float> SquidChaingunSpawnChance;
         public static ConfigEntry<float> SquidSniperSpawnChance;
+        public static ConfigEntry<float> LunarSquidSpawnChance;
+        public static ConfigEntry<float> TimeBombSquidSpawnChance;
+        public static ConfigEntry<float> CannonSquidSpawnChance;
 
         public static void SetupConfigLoader(ConfigFile config) //Creates the description and some mumbojumbo for the values.
         {
@@ -127,6 +138,7 @@ namespace MonsterVariantsPlus.SubClasses
             EnableCustomVariantsConfig = config.Bind<bool>("4 - Custom Variants", "Enable Custom Variants", true, "If this is set to True, then new Enemy Variants designed by nebby will begin spawning, all the effects of killing a regular variant also apply to these.\nIf this is set to False, then the rest of the available options in this category are disabled.");
             EnableOtherVariantsConfig = config.Bind<bool>("5 - Other Variants", "Enable Other Variants", true, "If this is set to True, then living entities other than enemies will get variants, examples include the Queen's Gland's Beetle Guards\nVariants in this category will not spawn rewards if theyre in your Team! (AKA The sidebar with the health bars.)\nIf this is set to false, then the rest of the available options of this category are disabled.");
             EnableArtifactOfVarianceConfig = config.Bind<bool>("6 - Artifact of Variance", "Enable Artifact of Variance", true, "If this is set to True, then the Artifact of Variance is Enabled\nThe artifact of variance multiplies the SpawnRates of ALL Variants by a certain number.\nIf this is ser to false, then the rest of the available options in this category are disabled.");
+            CertainVariantsSpawnMoreEnemiesConfig = config.Bind<bool>("4 - Custom Variants", "Do Certain Variants Spawn More Enemies", true, "When this is set to true, certain variants such as the M.O.A.J. & the wisp amalgamate will have the ability to spawn more enemies on death.\n disable in case these variants cause large framedrops when they die.");
 
             ItemSpawnsOnPlayerConfig = config.Bind<bool>("1 - Item Rewards", "Item Rewards Spawns on Player", false, "Normally the item reward's droplet spawns from the center of the slain Variant.\nThis can cause some issues with killing Variants that are on top of the death plane, or get knocked back onto it, Since the item will be lost in the process.\nSetting this to True causes all Item Rewards to be spawned at the center of the Player who killed the variant.");
             HiddenRealmItemdropBehaviorConfig = config.Bind<string>("1 - Item Rewards", "Item Rewards Hidden Realm Behavior", "Unchanged", "How the item rewards module handles item rewards on hidden realms.\n3 Accepted values, ranging from 'Unchanged', 'Halved', and 'Never'.\nUnchanged: No changes are made. item drop rates are the same as they are in normal stages.\nHalved: Item drop rates are lowered by 50%.\nNever: Enemy Variants never drop items in hidden realms.");
@@ -159,6 +171,7 @@ namespace MonsterVariantsPlus.SubClasses
         {
             LeastestWispSpawnChance = SpawnRateConfig(false, "Leastest Wisp", 7, config);
             AlmostButNotQuiteArchaicWispSpawnChance = SpawnRateConfig(false, "Almost-But-Not-Quite-Archaic-Wisp", 4, config);
+            LesserStoneWispSpawnChance = SpawnRateConfig(false, "Lesser Stone Wisp", 2, config);
             SteelContraptionSpawnChance = SpawnRateConfig(false, "Steel Contraption", 7, config);
             AluminumContraptionSpawnChance = SpawnRateConfig(false,"Aluminum Contraption", 7, config);
             MortarCrabSpawnChance = SpawnRateConfig(false, "Mortar Crab", 5, config);
@@ -169,11 +182,15 @@ namespace MonsterVariantsPlus.SubClasses
             AdolescentSpawnChance = SpawnRateConfig(false, "Adolescent", 8, config);
             ChildSpawnChance = SpawnRateConfig(false, "Child", 6, config);
             BruiserImpSpawnChance = SpawnRateConfig(false, "Bruiser Imp", 10, config);
+            IchorImpSpawnChance = SpawnRateConfig(false, "Ichor Imp", 5, config);
             AlphaBisonSpawnChance = SpawnRateConfig(false, "Alpha Bison", 5, config);
             WispAmalgamateSpawnChance = SpawnRateConfig(false, "Wisp Amalgamate", 8, config);
             KindaGreatButNotGreaterWispSpawnChance = SpawnRateConfig(false, "Kinda-Great-But-Not-Greater Wisp", 6, config);
+            GreaterStoneWispSpawnChance = SpawnRateConfig(false, "Greater Stone Wisp", 2, config);
             SwarmerProbeSpawnChance = SpawnRateConfig(false, "Swarmer Probe", 7, config);
             IncineratingElderLemurianSpawnChance = SpawnRateConfig(false, "Incinerating Elder Lemurian", 5, config);
+            GhostOfKjaroSpawnChance = SpawnRateConfig(false, "Ghost of Kjaro", 4, config);
+            GhostOfRunaldSpawnChance = SpawnRateConfig(false, "Ghost of Runald", 4, config);
             YeOldeGolemSpawnChance = SpawnRateConfig(false, "Ye Olde Golem", 3, config);
             
             //Bosses
@@ -199,12 +216,16 @@ namespace MonsterVariantsPlus.SubClasses
             AmalgamatedAncientWispSpawnChance = SpawnRateConfig(false, "Amalgamated Ancient Wisp", 2, "Moffein", "AncientWisp", config);
             AeonicWispSpawnChance = SpawnRateConfig(false, "Aeonic Wisp", 4, "Nebby", "ArchaicWisp", config);
             KindaArchaicWispSpawnChance = SpawnRateConfig(false, "Kinda-Archaic-Wisp", 7, "Nebby", "ArchaicWisp", config);
+            ArchaicStoneWispSpawnChance = SpawnRateConfig(false, "Archaic Stone Wisp", 2, "Nebby", "ArchaicWisp", config);
 
             //Other Variants
             GlandBeetleGuardBruteSpawnChance = SpawnRateConfig(true, "Beetle Guard Brute - Gland", 25, config);
             GlandBeetleGuardSharpshooterSpawnChance = SpawnRateConfig(true, "Beetle Guard Sharpshooter - Gland", 2, config);
             SquidChaingunSpawnChance = SpawnRateConfig(true, "Squid Chaingun", 10, config);
             SquidSniperSpawnChance = SpawnRateConfig(true, "Squid Sniper", 2, config);
+            LunarSquidSpawnChance = SpawnRateConfig(true, "Lunar Squid", 4, config);
+            TimeBombSquidSpawnChance = SpawnRateConfig(true, "Time Bomb Squid", 2, config);
+            CannonSquidSpawnChance = SpawnRateConfig(true, "Cannon Squid", 3, config);
         }
         private static ConfigEntry<float> SpawnRateConfig (bool isOther, string enemyName, float defaultValue, ConfigFile config)
         {

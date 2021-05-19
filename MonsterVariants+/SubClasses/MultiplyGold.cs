@@ -22,24 +22,23 @@ namespace MonsterVariantsPlus.SubClasses
             float moneyMultUncommon = ConfigLoader.UncommonMoneyMult * RewardMultiplier;
             float moneyMultRare = ConfigLoader.RareMoneyMult * RewardMultiplier;
 
-            if (enemyVariant.tier == MonsterVariantTier.Common)
+            switch (enemyVariant.tier)
             {
-                float commonGold = Convert.ToInt32(monsterGold);
-                commonGold *= moneyMultCommon;
-                return Convert.ToUInt32(commonGold);
+                case MonsterVariantTier.Common:
+                    float commonGold = Convert.ToInt32(monsterGold);
+                    commonGold *= moneyMultCommon;
+                    return Convert.ToUInt32(commonGold);
+                case MonsterVariantTier.Uncommon:
+                    float uncommonGold = Convert.ToInt32(monsterGold);
+                    uncommonGold *= moneyMultUncommon;
+                    return Convert.ToUInt32(uncommonGold);
+                case MonsterVariantTier.Rare:
+                    float rareGold = Convert.ToInt32(monsterGold);
+                    rareGold *= moneyMultRare;
+                    return Convert.ToUInt32(rareGold);
             }
-            else if (enemyVariant.tier == MonsterVariantTier.Uncommon)
-            {
-                float uncommonGold = Convert.ToInt32(monsterGold);
-                uncommonGold *= moneyMultUncommon;
-                return Convert.ToUInt32(uncommonGold);
-            }
-            else
-            {
-                float rareGold = Convert.ToInt32(monsterGold);
-                rareGold *= moneyMultRare;
-                return Convert.ToUInt32(rareGold);
-            }
+            //This return shouldnt even exist, but its needed for the code to work.
+            return monsterGold;
         }
     }
 }

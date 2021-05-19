@@ -21,7 +21,10 @@ namespace MonsterVariantsPlus.SubClasses
             Material archaicWispBodyMat = Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/ArchWispBody").GetComponent<ModelLocator>().modelTransform.GetComponent<CharacterModel>().baseRendererInfos[0].defaultMaterial);
             Material archaicWispFlameMat = Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/ArchWispBody").GetComponent<ModelLocator>().modelTransform.GetComponent<CharacterModel>().baseRendererInfos[1].defaultMaterial);
             Material perforatorMat = UnityEngine.Object.Instantiate(itemDisplayRuleSet.FindDisplayRuleGroup(RoR2Content.Items.FireballsOnHit).rules[0].followerPrefab.GetComponentInChildren<MeshRenderer>().material);
+            Material stoneGolemMat = Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/GolemBody").GetComponent<ModelLocator>().modelTransform.GetComponent<CharacterModel>().baseRendererInfos[0].defaultMaterial);
             Material spectralMat = Resources.Load<Material>("Materials/matGhostEffect");
+            Material afterburnerFireMat = Object.Instantiate(Resources.Load<GameObject>("Prefabs/PickupModels/PickupAfterburner").GetComponentInChildren<ParticleSystemRenderer>(true).material);
+            Material stoneTitanMat = Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/TitanBody").GetComponent<ModelLocator>().modelTransform.GetComponent<CharacterModel>().baseRendererInfos[0].defaultMaterial);
             //Leastest Wisp
             MV.AddVariant(new MonsterVariantInfo
             {
@@ -59,6 +62,25 @@ namespace MonsterVariantsPlus.SubClasses
                 meshReplacement = null,
                 materialReplacement = MV.MultiMaterialReplacement(new Dictionary<int, Material> { { 0, archaicWispBodyMat }, { 1, archaicWispFlameMat } }),
                 skillReplacement = MV.PrimaryReplacement(CustomSkills.chargeArchCannonDef)
+            });
+            //Stone Wisp
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "Wisp",
+                overrideName = "Lesser Stone Wisp",
+                spawnRate = ConfigLoader.LesserStoneWispSpawnChance.Value,
+                variantTier = MonsterVariantTier.Uncommon,
+                sizeModifier = MV.FlyingSizeModifier(1.5f),
+                healthMultiplier = 8.0f,
+                moveSpeedMultiplier = 0.75f,
+                attackSpeedMultiplier = 1.0f,
+                damageMultiplier = 1f,
+                armorMultiplier = 1.0f,
+                armorBonus = 10,
+                customInventory = null,
+                meshReplacement = null,
+                materialReplacement = MV.MultiMaterialReplacement(new Dictionary<int, Material> { { 0, stoneGolemMat }, { 1, afterburnerFireMat } }),
+                skillReplacement = MV.PrimaryReplacement(CustomSkills.chargeWispLaserDef)
             });
             //Steel Contraption
             MV.AddVariant(new MonsterVariantInfo
@@ -250,6 +272,25 @@ namespace MonsterVariantsPlus.SubClasses
                 materialReplacement = null,
                 skillReplacement = MV.UtilityReplacement(CustomSkills.emptySkillDef),
             });
+            //Ichor Imp
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "Imp",
+                overrideName = "Ichor Imp",
+                spawnRate = ConfigLoader.IchorImpSpawnChance.Value,
+                variantTier = MonsterVariantTier.Uncommon,
+                sizeModifier = MV.GroundSizeModifier(1.0f),
+                healthMultiplier = 1.0f,
+                moveSpeedMultiplier = 1.0f,
+                attackSpeedMultiplier = 1.0f,
+                damageMultiplier = 1.0f,
+                armorMultiplier = 1.0f,
+                armorBonus = 10,
+                customInventory = null,
+                meshReplacement = null,
+                materialReplacement = MV.SimpleMaterialReplacement(AssetLoaderAndChecker.MainAssets.LoadAsset<Material>("IchorImp")),
+                skillReplacement = MV.PrimaryReplacement(CustomSkills.ichorClawsDef)
+            });
             //Alpha Bison
             MV.AddVariant(new MonsterVariantInfo
             {
@@ -279,7 +320,7 @@ namespace MonsterVariantsPlus.SubClasses
                 sizeModifier = MV.FlyingSizeModifier(0.75f),
                 healthMultiplier = 1,
                 moveSpeedMultiplier = 1,
-                attackSpeedMultiplier = 1,
+                attackSpeedMultiplier = 1.5f,
                 damageMultiplier = 1,
                 armorBonus = 0,
                 customInventory = null,
@@ -305,6 +346,25 @@ namespace MonsterVariantsPlus.SubClasses
                 meshReplacement = null,
                 materialReplacement = null,
                 skillReplacement = null
+            });
+            //Greater Stone Wisp
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "GreaterWisp",
+                overrideName = "Greater Stone Wisp",
+                spawnRate = ConfigLoader.GreaterStoneWispSpawnChance.Value,
+                variantTier = MonsterVariantTier.Rare,
+                sizeModifier = MV.FlyingSizeModifier(1.5f),
+                healthMultiplier = 2.5f,
+                moveSpeedMultiplier = 0.5f,
+                attackSpeedMultiplier = 1.0f,
+                damageMultiplier = 1.0f,
+                armorMultiplier = 1.0f,
+                armorBonus = 10,
+                customInventory = null,
+                meshReplacement = null,
+                materialReplacement = MV.MultiMaterialReplacement(new Dictionary<int, Material> { { 0, stoneGolemMat }, { 1, afterburnerFireMat } }),
+                skillReplacement = MV.PrimaryReplacement(CustomSkills.chargeDoubleWispLaserDef),
             });
             //Swarmer Probe
             MV.AddVariant(new MonsterVariantInfo
@@ -339,9 +399,47 @@ namespace MonsterVariantsPlus.SubClasses
                 damageMultiplier = 7.5f,
                 armorBonus = -10,
                 customInventory = MV.SimpleInventory("Behemoth", 5),
-                meshReplacement  = null,
+                meshReplacement = null,
                 materialReplacement = MV.SimpleMaterialReplacement(perforatorMat),
                 skillReplacement = MV.PrimaryReplacement(CustomSkills.chargeSingleFireballDef)
+            });
+            //Ghost of Kjaro
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "LemurianBruiser",
+                overrideName = "Ghost of Kjaro",
+                spawnRate = ConfigLoader.GhostOfKjaroSpawnChance.Value,
+                variantTier = MonsterVariantTier.Uncommon,
+                sizeModifier = MV.GroundSizeModifier(1.5f),
+                healthMultiplier = 1.5f,
+                moveSpeedMultiplier = 0.75f,
+                attackSpeedMultiplier = 1.0f,
+                damageMultiplier = 1.5f,
+                armorBonus = 0,
+                armorMultiplier = 0,
+                customInventory = kjaroInventory,
+                meshReplacement = null,
+                materialReplacement = MV.SimpleMaterialReplacement(spectralMat),
+                skillReplacement = null,
+            });
+            //Ghost of Runald
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "LemurianBruiser",
+                overrideName = "Ghost of Runald",
+                spawnRate = ConfigLoader.GhostOfRunaldSpawnChance.Value,
+                variantTier = MonsterVariantTier.Uncommon,
+                sizeModifier = MV.GroundSizeModifier(1.5f),
+                healthMultiplier = 1.5f,
+                moveSpeedMultiplier = 1.0f,
+                attackSpeedMultiplier = 1.5f,
+                damageMultiplier = 1.0f,
+                armorBonus = 0,
+                armorMultiplier = 0,
+                customInventory = runaldInventory,
+                meshReplacement = null,
+                materialReplacement = MV.SimpleMaterialReplacement(spectralMat),
+                skillReplacement = null,
             });
             //Ye Old Golem
             MV.AddVariant(new MonsterVariantInfo
@@ -413,7 +511,7 @@ namespace MonsterVariantsPlus.SubClasses
                 attackSpeedMultiplier = 1,
                 damageMultiplier = 1,
                 armorMultiplier = 1,
-                armorBonus =-50,
+                armorBonus = -50,
                 customInventory = MV.SimpleInventory("UtilitySkillMagazine", 1),
                 meshReplacement = null,
                 materialReplacement = null,
@@ -703,7 +801,7 @@ namespace MonsterVariantsPlus.SubClasses
                 {
                     bodyName = "NebbyArchWisp",
                     overrideName = "Aeonic Wisp",
-                    variantTier = MonsterVariantTier.Rare,
+                    variantTier = MonsterVariantTier.Uncommon,
                     sizeModifier = MV.FlyingSizeModifier(1.25f),
                     spawnRate = ConfigLoader.AeonicWispSpawnChance.Value,
                     healthMultiplier = 1.5f,
@@ -722,7 +820,7 @@ namespace MonsterVariantsPlus.SubClasses
                 {
                     bodyName = "NebbyArchWisp",
                     overrideName = "Kinda-Archaic Wisp",
-                    variantTier = MonsterVariantTier.Rare,
+                    variantTier = MonsterVariantTier.Uncommon,
                     sizeModifier = MV.FlyingSizeModifier(0.5f),
                     spawnRate = ConfigLoader.KindaArchaicWispSpawnChance.Value,
                     healthMultiplier = 0.5f,
@@ -735,6 +833,25 @@ namespace MonsterVariantsPlus.SubClasses
                     meshReplacement = null,
                     materialReplacement = null,
                     skillReplacement = null
+                });
+                //Archaic Stone Wisp
+                MV.AddModdedVariant(new MonsterVariantInfo
+                {
+                    bodyName = "NebbyArchWisp",
+                    overrideName = "Archaic Stone Wisp",
+                    variantTier = MonsterVariantTier.Rare,
+                    sizeModifier = MV.FlyingSizeModifier(1.5f),
+                    spawnRate = ConfigLoader.ArchaicStoneWispSpawnChance.Value,
+                    healthMultiplier = 2.0f,
+                    moveSpeedMultiplier = 0.5f,
+                    attackSpeedMultiplier = 1.0f,
+                    damageMultiplier = 1,
+                    armorBonus = 10,
+                    armorMultiplier = 1,
+                    customInventory = null,
+                    meshReplacement = null,
+                    materialReplacement = MV.MultiMaterialReplacement(new Dictionary<int, Material> { { 0, perforatorMat }, { 1, afterburnerFireMat } }),
+                    skillReplacement = MV.PrimaryReplacement(CustomSkills.chargeMegaWispLaserDef)
                 });
             }
             if (ConfigLoader.EnableOtherVariants)
@@ -757,7 +874,7 @@ namespace MonsterVariantsPlus.SubClasses
                     meshReplacement = null,
                     materialReplacement = null,
                     skillReplacement = null,
-                });;
+                }); ;
                 //Gland - Beetle Guard Sharpshooter
                 MV.AddVariant(new MonsterVariantInfo
                 {
@@ -813,6 +930,120 @@ namespace MonsterVariantsPlus.SubClasses
                     materialReplacement = null,
                     skillReplacement = null,
                 });
+                //Lunar Squid
+                MV.AddVariant(new MonsterVariantInfo
+                {
+                    bodyName = "SquidTurret",
+                    spawnRate = ConfigLoader.SquidChaingunSpawnChance.Value,
+                    overrideName = "Lunar Squid",
+                    variantTier = MonsterVariantTier.Common,
+                    sizeModifier = MV.GroundSizeModifier(1.0f),
+                    healthMultiplier = 1f,
+                    attackSpeedMultiplier = 1f,
+                    damageMultiplier = 1.5f,
+                    armorMultiplier = 0f,
+                    armorBonus = 0,
+                    customInventory = MV.SimpleInventory("LunarPrimaryReplacement", 1),
+                    meshReplacement = null,
+                    materialReplacement = null,
+                    skillReplacement = null,
+                });
+                //Time Bomb Squid
+                MV.AddVariant(new MonsterVariantInfo
+                {
+                    bodyName = "SquidTurret",
+                    spawnRate = ConfigLoader.SquidChaingunSpawnChance.Value,
+                    overrideName = "Time Bomb Squid",
+                    variantTier = MonsterVariantTier.Common,
+                    sizeModifier = MV.GroundSizeModifier(0.6f),
+                    healthMultiplier = 1f,
+                    attackSpeedMultiplier = 1f,
+                    damageMultiplier = 1.5f,
+                    armorMultiplier = 0f,
+                    armorBonus = 0,
+                    customInventory = MV.SimpleInventory("NovaOnLowHealth", 1),
+                    meshReplacement = null,
+                    materialReplacement = null,
+                    skillReplacement = MV.PrimaryReplacement(CustomSkills.emptySkillDef),
+                });
+                //Cannon Squid
+                MV.AddVariant(new MonsterVariantInfo
+                {
+                    bodyName = "SquidTurret",
+                    spawnRate = ConfigLoader.SquidChaingunSpawnChance.Value,
+                    overrideName = "Cannon Squid",
+                    variantTier = MonsterVariantTier.Common,
+                    sizeModifier = MV.GroundSizeModifier(1.5f),
+                    healthMultiplier = 1f,
+                    attackSpeedMultiplier = 0.25f,
+                    damageMultiplier = 2.5f,
+                    armorMultiplier = 0f,
+                    armorBonus = 0,
+                    customInventory = MV.SimpleInventory("Behemoth", 2),
+                    meshReplacement = null,
+                    materialReplacement = null,
+                    skillReplacement = null,
+                });
+                if (MainPlugin.hasMysticItems)
+                {
+                    //Aeonic Wisp
+                    MV.AddModdedVariant(new MonsterVariantInfo
+                    {
+                        bodyName = "ArchWisp",
+                        overrideName = "Aeonic Wisp",
+                        variantTier = MonsterVariantTier.Uncommon,
+                        sizeModifier = MV.FlyingSizeModifier(1.25f),
+                        spawnRate = ConfigLoader.AeonicWispSpawnChance.Value,
+                        healthMultiplier = 1.5f,
+                        moveSpeedMultiplier = 0.75f,
+                        attackSpeedMultiplier = 0.9f,
+                        damageMultiplier = 1.0f,
+                        armorMultiplier = 1.0f,
+                        armorBonus = 20,
+                        customInventory = MV.SimpleInventory("Behemoth", 1),
+                        meshReplacement = null,
+                        materialReplacement = null,
+                        skillReplacement = null,
+                    });
+                    //Kinda Archaic Wisp
+                    MV.AddModdedVariant(new MonsterVariantInfo
+                    {
+                        bodyName = "ArchWisp",
+                        overrideName = "Kinda-Archaic Wisp",
+                        variantTier = MonsterVariantTier.Uncommon,
+                        sizeModifier = MV.FlyingSizeModifier(0.5f),
+                        spawnRate = ConfigLoader.KindaArchaicWispSpawnChance.Value,
+                        healthMultiplier = 0.5f,
+                        moveSpeedMultiplier = 5.0f,
+                        attackSpeedMultiplier = 2.5f,
+                        damageMultiplier = 1,
+                        armorBonus = 0,
+                        armorMultiplier = 1,
+                        customInventory = MV.SimpleInventory("AlienHead", 2),
+                        meshReplacement = null,
+                        materialReplacement = null,
+                        skillReplacement = null
+                    });
+                    //Archaic Stone Wisp
+                    MV.AddModdedVariant(new MonsterVariantInfo
+                    {
+                        bodyName = "ArchWisp",
+                        overrideName = "Archaic Stone Wisp",
+                        variantTier = MonsterVariantTier.Rare,
+                        sizeModifier = MV.FlyingSizeModifier(1.5f),
+                        spawnRate = ConfigLoader.ArchaicStoneWispSpawnChance.Value,
+                        healthMultiplier = 2.0f,
+                        moveSpeedMultiplier = 0.5f,
+                        attackSpeedMultiplier = 1.0f,
+                        damageMultiplier = 1,
+                        armorBonus = 10,
+                        armorMultiplier = 1,
+                        customInventory = null,
+                        meshReplacement = null,
+                        materialReplacement = MV.MultiMaterialReplacement(new Dictionary<int, Material> { { 0, archaicWispBodyMat }, { 1, afterburnerFireMat } }),
+                        skillReplacement = MV.PrimaryReplacement(CustomSkills.chargeMegaWispLaserDef)
+                    });
+                }
             }
         }
         private static readonly ItemInfo[] vampiricInventory = new ItemInfo[]
@@ -856,6 +1087,18 @@ namespace MonsterVariantsPlus.SubClasses
         {
             MV.SimpleItem("AlienHead", 10),
             MV.SimpleItem("ArmorReductionOnHit", 1)
+        };
+
+        private static readonly ItemInfo[] kjaroInventory = new ItemInfo[]
+        {
+            MV.SimpleItem("FireRing", 3),
+            MV.SimpleItem("Phasing", 5),
+        };
+
+        private static readonly ItemInfo[] runaldInventory = new ItemInfo[]
+        {
+            MV.SimpleItem("IceRing", 3),
+            MV.SimpleItem("Phasing", 5),
         };
         //Method to replace a monster's primary and utility skills. used for Child.
         internal static MonsterSkillReplacement[] PrimaryUtilityReplacement(SkillDef primarySkill, SkillDef utilitySkill)
