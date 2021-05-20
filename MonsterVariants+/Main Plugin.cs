@@ -2,6 +2,7 @@
 using RoR2;
 using MonsterVariantsPlus.SubClasses;
 using MonsterVariantsPlus.SubClasses.RewardsSystem;
+using MonsterVariantsPlus.SubClasses.Items;
 using UnityEngine;
 using MonsterVariants.Components;
 using System.Security;
@@ -13,6 +14,7 @@ using System.Linq;
 using MonsterVariantsPlus.SubClasses.Projectiles;
 using MonoMod.RuntimeDetour;
 using System;
+using System.Collections.Generic;
 
 [module: UnverifiableCode]
 [assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
@@ -24,8 +26,7 @@ namespace MonsterVariantsPlus
     [BepInDependency("com.Moffein.ClayMen", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.Moffein.AncientWisp", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.Nebby1999.ArchWisps", BepInDependency.DependencyFlags.SoftDependency)]
-    [R2APISubmoduleDependency(nameof(ProjectileAPI))]
-    [R2APISubmoduleDependency(nameof(ArtifactAPI))]
+    [R2APISubmoduleDependency(nameof(ProjectileAPI), nameof(LanguageAPI), nameof(ArtifactAPI))]
     [BepInPlugin("com.Nebby1999.MonsterVariantsPlus", "Monster Variants +", "1.4.3")]
     public class MainPlugin : BaseUnityPlugin
     {
@@ -34,6 +35,9 @@ namespace MonsterVariantsPlus
         internal static bool hasAncientWisp;
         internal static bool hasArchWisp;
         internal static bool hasMysticItems;
+
+        //used in variant items
+        public List<MVPItemBase> Items = new List<MVPItemBase>();
 
         //Used in enemy spawning behavior of new variants
         private static int amount;
@@ -92,6 +96,16 @@ namespace MonsterVariantsPlus
             }
             //Initializes custom items for monster variants, thanks Komrade for the boilerplate! <3
             var ItemTypes = Assembly.GetExecutingAssembly().GetTypes().Where(type => !type.IsAbstract && type.IsSubclassOf(typeof(MVPItemBase)));
+
+            foreach (var itemType in ItemTypes)
+            {
+                MVPItemBase item = (MVPItemBase)System.Activator.CreateInstance(itemType);
+                
+                if (ValidateItem(item, Items))
+                {
+                    item.Init();
+                }
+            }
             //main hook
             On.RoR2.DeathRewards.OnKilledServer += (orig, self, DamageReport) => {
                 foreach (VariantHandler enemy in DamageReport.victimBody.GetComponents<VariantHandler>())
@@ -213,6 +227,11 @@ namespace MonsterVariantsPlus
         public static void GiveEnemyEquipment(CharacterBody enemyBody, string equipmentToGive)
         {
             enemyBody.master.GetComponent<Inventory>().GiveEquipmentString(equipmentToGive);
+        }
+        public bool ValidateItem(MVPItemBase item, List<MVPItemBase> itemList)
+        {
+            itemList.Add(item);
+            return true;
         }
     }
 }
