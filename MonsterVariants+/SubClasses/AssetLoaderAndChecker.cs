@@ -10,6 +10,7 @@ namespace MonsterVariantsPlus.SubClasses
     public class AssetLoaderAndChecker
     {
         public static AssetBundle MainAssets; //Contains custom assets
+        public static Material impMaterial = Resources.Load<GameObject>("Prefabs/CharacterBodies/ImpBody").GetComponent<ModelLocator>().modelTransform.GetComponent<CharacterModel>().baseRendererInfos[0].defaultMaterial;
         public static bool CheckForMod(string modKey)
         {
             if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey(modKey))
@@ -38,6 +39,12 @@ namespace MonsterVariantsPlus.SubClasses
                 var replacementShader = Resources.Load<Shader>(ShaderLookup[material.shader.name.ToLower()]);
                 if (replacementShader) { material.shader = replacementShader; }
                 Debug.Log("MVP: Succesfully replaced " + material.name + "'s shaders with Hopoo shaders");
+                switch(material.name)
+                {
+                    case "IchorImp":
+                        material.shaderKeywords = impMaterial.shaderKeywords;
+                        return;
+                }
             }
             Debug.Log("MVP: Succesfully managed to load all assets!");
         }

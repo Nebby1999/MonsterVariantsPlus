@@ -13,10 +13,10 @@ namespace MonsterVariantsPlus.SubClasses.Items
     public class PulverizeOnHit : MVPItemBase
     {
         public override string ItemName => "MVP_PULVERIZE_ON_HIT";
-        public override string ItemLangTokenName => "";
-        public override string ItemPickupDesc => "";
-        public override string ItemFullDescription => "";
-        public override string ItemLore => "";
+        public override string ItemLangTokenName => "MVP_PULVERIZE_ON_HIT";
+        public override string ItemPickupDesc => "MVP_PULVERIZE_ON_HIT_DESC";
+        public override string ItemFullDescription => "MVP_PULVERIZE_ON_HIT_FULLDESC";
+        public override string ItemLore => "MVP_PULVERIZE_ON_HIT_LORE";
         public override ItemTier Tier => ItemTier.NoTier;
         public override GameObject ItemModel => null;
         public override Sprite ItemIcon => null;

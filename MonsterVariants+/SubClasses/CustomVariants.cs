@@ -286,7 +286,7 @@ namespace MonsterVariantsPlus.SubClasses
                 damageMultiplier = 1.0f,
                 armorMultiplier = 1.0f,
                 armorBonus = 10,
-                customInventory = MV.SimpleInventory("BleedOnHit", 17),
+                customInventory = ichorInventory,
                 meshReplacement = null,
                 materialReplacement = MV.SimpleMaterialReplacement(AssetLoaderAndChecker.MainAssets.LoadAsset<Material>("IchorImp")),
                 skillReplacement = MV.PrimaryReplacement(CustomSkills.ichorClawsDef)
@@ -1099,6 +1099,12 @@ namespace MonsterVariantsPlus.SubClasses
         {
             MV.SimpleItem("IceRing", 3),
             MV.SimpleItem("Phasing", 5),
+        };
+
+        private static readonly ItemInfo[] ichorInventory = new ItemInfo[]
+        {
+            MV.SimpleItem("BleedOnHit", 17),
+            MV.SimpleItem("ITEM_MVP_PULVERIZE_ON_HIT", 1)
         };
         //Method to replace a monster's primary and utility skills. used for Child.
         internal static MonsterSkillReplacement[] PrimaryUtilityReplacement(SkillDef primarySkill, SkillDef utilitySkill)
