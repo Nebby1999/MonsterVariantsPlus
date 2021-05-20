@@ -427,6 +427,17 @@ Aaron, which helped making the Artifact of Variance a reality.
 Dgosling and DestroyedClone for helping me with the Stone Wisps
 
 ## Changelog
+## '1.4.5' Totally Didn't forget about adding this to 1.4.4
+- Tweaked the following Variants
+
+	- Incinerating Elder Lemurian
+
+		* 750% Damage -> 200% Damage
+
+		* 5 Brilliant Behemoths -> 2 Brilliant Behemoths
+
+		* Now has 20 Focus Crystals
+
 ### '1.4.4' *Shrug*
 - Fixed missing R2API dependency. Mod should load now without needing to depend on another mod that loads ArtifactAPI
 

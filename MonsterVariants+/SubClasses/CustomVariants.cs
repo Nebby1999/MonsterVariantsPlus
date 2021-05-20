@@ -396,9 +396,9 @@ namespace MonsterVariantsPlus.SubClasses
                 healthMultiplier = 1.0f,
                 moveSpeedMultiplier = 2.0f,
                 attackSpeedMultiplier = 30f,
-                damageMultiplier = 7.5f,
+                damageMultiplier = 2.0f,
                 armorBonus = -10,
-                customInventory = MV.SimpleInventory("Behemoth", 5),
+                customInventory = incineratingInventory,
                 meshReplacement = null,
                 materialReplacement = MV.SimpleMaterialReplacement(perforatorMat),
                 skillReplacement = MV.PrimaryReplacement(CustomSkills.chargeSingleFireballDef)
@@ -1105,6 +1105,12 @@ namespace MonsterVariantsPlus.SubClasses
         {
             MV.SimpleItem("BleedOnHit", 17),
             MV.SimpleItem("ITEM_MVP_PULVERIZE_ON_HIT", 1)
+        };
+
+        private static readonly ItemInfo[] incineratingInventory = new ItemInfo[]
+        {
+            MV.SimpleItem("Behemoth", 2),
+            MV.SimpleItem("NearbyDamageBonus", 20)
         };
         //Method to replace a monster's primary and utility skills. used for Child.
         internal static MonsterSkillReplacement[] PrimaryUtilityReplacement(SkillDef primarySkill, SkillDef utilitySkill)
