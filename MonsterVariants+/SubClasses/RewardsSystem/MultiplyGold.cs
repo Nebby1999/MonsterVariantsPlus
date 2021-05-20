@@ -3,7 +3,7 @@ using MonsterVariants.Components;
 using RoR2;
 using System;
 
-namespace MonsterVariantsPlus.SubClasses
+namespace MonsterVariantsPlus.SubClasses.RewardsSystem
 {
     public class MultiplyGold
     {

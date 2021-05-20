@@ -61,7 +61,7 @@ namespace MonsterVariantsPlus.SubClasses.Skills.States.Imp
             attack.hitEffectPrefab = hitEffectPrefab;
             attack.isCrit = Util.CheckRoll(critStat, base.characterBody.master);
             attack.procCoefficient = procCoefficient;
-            attack.damageType = DamageType.BlightOnHit;
+            attack.damageType = DamageType.WeakOnHit;
             Util.PlayAttackSpeedSound(enterSoundString, base.gameObject, attackSpeedStat);
             if ((bool)modelAnimator)
             {

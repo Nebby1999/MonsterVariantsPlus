@@ -12,7 +12,6 @@ namespace MonsterVariantsPlus.SubClasses
         public static AssetBundle MainAssets; //Contains custom assets
         public static bool CheckForMod(string modKey)
         {
-            Debug.Log("MVP: Proceeding to check for mod compatibility...");
             if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey(modKey))
             {
                 Debug.Log("MVP: " + modKey + " Detected! enabling the compatibility tied to the mod...");

@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using MonsterVariants;
 
-namespace MonsterVariantsPlus.SubClasses
+namespace MonsterVariantsPlus.SubClasses.RewardsSystem
 {
     public class ExtraRewards
     {

@@ -286,7 +286,7 @@ namespace MonsterVariantsPlus.SubClasses
                 damageMultiplier = 1.0f,
                 armorMultiplier = 1.0f,
                 armorBonus = 10,
-                customInventory = null,
+                customInventory = MV.SimpleInventory("BleedOnHit", 17),
                 meshReplacement = null,
                 materialReplacement = MV.SimpleMaterialReplacement(AssetLoaderAndChecker.MainAssets.LoadAsset<Material>("IchorImp")),
                 skillReplacement = MV.PrimaryReplacement(CustomSkills.ichorClawsDef)
