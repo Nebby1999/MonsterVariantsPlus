@@ -403,6 +403,9 @@ Not listed here are special other Variants for Mystic Items. When Mystic Items i
 ## Installation
 - To install the addon, simply drag the MonsterVariantsPlus.dll onto your plugins folder. Make sure Rob's DLL is also there, or else the plugin will not activate.
 
+## Known Issues
+- The Ichor Imp's Material causes the imp to have a weird blotch of yellow on its back, no clue what causes this.
+
 ## Future Plans
 - Have Boss variants drop their Boss item based off Chance.
 - Create actually pleasing to the eyes textures for the variants instead of the awful look of some of them *cough cough* Alpha Bison *cough cough*
@@ -424,6 +427,24 @@ Aaron, which helped making the Artifact of Variance a reality.
 Dgosling and DestroyedClone for helping me with the Stone Wisps
 
 ## Changelog
+### '1.4.4' *Shrug*
+- Fixed missing R2API dependency. Mod should load now without needing to depend on another mod that loads ArtifactAPI
+
+- Added code from KomradeSpectre's [ItemModCreationBoilerplate](https://github.com/KomradeSpectre/ItemModCreationBoilerplate) repository, allowing the creation of custom items for MVP's Variants.
+
+- Internal Code Changes.
+
+- Tweaked the Following Variants
+
+	- Ichor Imp
+
+		* No longer applies blight
+
+		* Instead of applying blight, the imp now has a 50% chance of applying Bleed.
+
+		* Uses a special item which gives them the ability to apply the Shattering Justice's Pulverized on hit. Reducing armor by 60 points.
+
+
 ### '1.4.3' Optimization n stuff
 - Fixed Time Bomb Squids never detonating their Genesis Loop.
 
