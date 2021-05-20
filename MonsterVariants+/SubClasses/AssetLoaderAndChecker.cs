@@ -1,4 +1,5 @@
 ﻿using BepInEx.Configuration;
+using RoR2;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -11,9 +12,10 @@ namespace MonsterVariantsPlus.SubClasses
         public static AssetBundle MainAssets; //Contains custom assets
         public static bool CheckForMod(string modKey)
         {
+            Debug.Log("MVP: Proceeding to check for mod compatibility...");
             if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey(modKey))
             {
-                Debug.Log(modKey + " Detected! enabling the variants tied to the mod...");
+                Debug.Log("MVP: " + modKey + " Detected! enabling the compatibility tied to the mod...");
                 return true;
             }
             return false;
@@ -25,6 +27,7 @@ namespace MonsterVariantsPlus.SubClasses
         };
         public static void LoadAssets()
         {
+            Debug.Log("MVP: Proceeding to load Assets...");
             using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("MonsterVariantsPlus.monstervariantsplus_assets"))
             {
                 MainAssets = AssetBundle.LoadFromStream(stream);
@@ -35,10 +38,13 @@ namespace MonsterVariantsPlus.SubClasses
                 if (!material.shader.name.StartsWith("Stubbed")) { continue; }
                 var replacementShader = Resources.Load<Shader>(ShaderLookup[material.shader.name.ToLower()]);
                 if (replacementShader) { material.shader = replacementShader; }
+                Debug.Log("MVP: Succesfully replaced " + material.name + "'s shaders with Hopoo shaders");
             }
+            Debug.Log("MVP: Succesfully managed to load all assets!");
         }
         public static bool PreventBadValues(ConfigFile config)
         {
+            Debug.Log("MVP: Creating Lists for Config Checking...");
             List<ConfigEntry<int>> itemDropChanceConfigs = new List<ConfigEntry<int>>();
             itemDropChanceConfigs.Add(ConfigLoader.CommonWhiteChanceConfig);
             itemDropChanceConfigs.Add(ConfigLoader.CommonGreenChanceConfig);
@@ -49,6 +55,7 @@ namespace MonsterVariantsPlus.SubClasses
             itemDropChanceConfigs.Add(ConfigLoader.RareWhiteChanceConfig);
             itemDropChanceConfigs.Add(ConfigLoader.RareGreenChanceConfig);
             itemDropChanceConfigs.Add(ConfigLoader.RareRedChanceConfig);
+            Debug.Log("MVP: Succesfully created the " + itemDropChanceConfigs.ToString() + "List!");
 
             List<ConfigEntry<float>> multiplierConfigs = new List<ConfigEntry<float>>();
             multiplierConfigs.Add(ConfigLoader.CommonMoneyMultConfig);
@@ -58,6 +65,7 @@ namespace MonsterVariantsPlus.SubClasses
             multiplierConfigs.Add(ConfigLoader.UncommonXPMultConfig);
             multiplierConfigs.Add(ConfigLoader.RareXPMultConfig);
             multiplierConfigs.Add(ConfigLoader.SpawnRateMultiplierConfig);
+            Debug.Log("MVP: Succesfully created the " + multiplierConfigs.ToString() + "List!");
 
             List<ConfigEntry<float>> variantSpawnChanceConfigs = new List<ConfigEntry<float>>();
             variantSpawnChanceConfigs.Add(ConfigLoader.LeastestWispSpawnChance);
@@ -109,6 +117,7 @@ namespace MonsterVariantsPlus.SubClasses
             variantSpawnChanceConfigs.Add(ConfigLoader.CannonSquidSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.LunarSquidSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.TimeBombSquidSpawnChance);
+            Debug.Log("MVP: Succesfully created the " + variantSpawnChanceConfigs.ToString() + "List!");
 
             ConfigEntry<string> hiddenRealmDropBehaviorConfig = ConfigLoader.HiddenRealmItemdropBehaviorConfig;
 
@@ -116,7 +125,7 @@ namespace MonsterVariantsPlus.SubClasses
             {
                 if(entry.Value < 0 || entry.Value > 100)
                 {
-                    Debug.LogError("Invalid Value detected in " + entry.Definition.Key + "! Restoring value to default Value.");
+                    Debug.LogError("MVP: Invalid Value detected in " + entry.Definition.Key + "! Restoring value to default Value.");
                     entry.Value = (int)entry.DefaultValue;
                 }
             }
@@ -124,7 +133,7 @@ namespace MonsterVariantsPlus.SubClasses
             {
                 if(entry.Value < 1.0)
                 {
-                    Debug.LogError("Invalid Value deceted in " + entry.Definition.Key + "! Restoring value to default Value.");
+                    Debug.LogError("MVP: Invalid Value deceted in " + entry.Definition.Key + "! Restoring value to default Value.");
                     entry.Value = (float)entry.DefaultValue;
                 }
             }
@@ -132,17 +141,17 @@ namespace MonsterVariantsPlus.SubClasses
             {
                 if(entry.Value < 0 || entry.Value > 100)
                 {
-                    Debug.LogError("Invalid value detected in " + entry.Definition.Key + "! Restoring value to default Value.");
+                    Debug.LogError("MVP: Invalid value detected in " + entry.Definition.Key + "! Restoring value to default Value.");
                     entry.Value = (float)entry.DefaultValue;
                 }
             }
             string[] validValues = new string[] { "Unchanged", "Halved", "Never" };
             if (!validValues.Contains(hiddenRealmDropBehaviorConfig.Value))
             {
-                Debug.LogError("Invalid value detected in " + hiddenRealmDropBehaviorConfig.Definition.Key + "! Restoring value to default Value.");
+                Debug.LogError("MVP: Invalid value detected in " + hiddenRealmDropBehaviorConfig.Definition.Key + "! Restoring value to default Value.");
                 hiddenRealmDropBehaviorConfig.Value = (string)hiddenRealmDropBehaviorConfig.DefaultValue;
             }
-            Debug.Log("Config Checker finished succesfully.");
+            Debug.Log("MVP: Config Checker finished succesfully!");
             return false;
         }
     }

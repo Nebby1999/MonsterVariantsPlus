@@ -11,7 +11,7 @@ namespace MonsterVariantsPlus.SubClasses.Skills.States.Imp
     {
         public static float baseDuration = 1.0f;
 
-        public static float damageCoefficient = 4f;
+        public static float damageCoefficient = 0.4f;
 
         public static float procCoefficient;
 

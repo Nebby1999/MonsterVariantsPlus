@@ -90,6 +90,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IchorImp", "IchorImp", "{07
 		Unity\Assets\Textures\IchorImp\IchorImp.png = Unity\Assets\Textures\IchorImp\IchorImp.png
 		Unity\Assets\Textures\IchorImp\IchorImpEmission.png = Unity\Assets\Textures\IchorImp\IchorImpEmission.png
 		Unity\Assets\Textures\IchorImp\IchorImpNormal.png = Unity\Assets\Textures\IchorImp\IchorImpNormal.png
+		Unity\Assets\Textures\IchorImp\IchorImpPrint1.png = Unity\Assets\Textures\IchorImp\IchorImpPrint1.png
+		Unity\Assets\Textures\IchorImp\IchorImpRamp.png = Unity\Assets\Textures\IchorImp\IchorImpRamp.png
 	EndProjectSection
 EndProject
 Global

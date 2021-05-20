@@ -2,7 +2,6 @@
 using RoR2;
 using MonsterVariantsPlus.SubClasses;
 using UnityEngine;
-using UnityEngine.Rendering;
 using MonsterVariants.Components;
 using System.Security;
 using System.Security.Permissions;
@@ -25,6 +24,7 @@ namespace MonsterVariantsPlus
     [BepInDependency("com.Moffein.AncientWisp", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.Nebby1999.ArchWisps", BepInDependency.DependencyFlags.SoftDependency)]
     [R2APISubmoduleDependency(nameof(ProjectileAPI))]
+    [R2APISubmoduleDependency(nameof(ArtifactAPI))]
     [BepInPlugin("com.Nebby1999.MonsterVariantsPlus", "Monster Variants +", "1.4.3")]
     public class MainPlugin : BaseUnityPlugin
     {
