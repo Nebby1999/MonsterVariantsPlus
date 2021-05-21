@@ -26,7 +26,7 @@ namespace MonsterVariantsPlus
     [BepInDependency("com.Moffein.ClayMen", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.Moffein.AncientWisp", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.Nebby1999.ArchWisps", BepInDependency.DependencyFlags.SoftDependency)]
-    [R2APISubmoduleDependency(nameof(ProjectileAPI), nameof(LanguageAPI), nameof(ArtifactAPI))]
+    [R2APISubmoduleDependency(nameof(ProjectileAPI), nameof(LanguageAPI), nameof(ArtifactAPI), nameof(PrefabAPI))]
     [BepInPlugin("com.Nebby1999.MonsterVariantsPlus", "Monster Variants +", "1.4.5")]
     public class MainPlugin : BaseUnityPlugin
     {
@@ -180,7 +180,7 @@ namespace MonsterVariantsPlus
         public static void TrySpawnEnemy(CharacterBody body)
         {
             string variantName = body.baseNameToken;
-            bool variantIsSpecial = true;
+            bool variantIsSpecial = true; //Wether or not this variant spawns enemies on death.
             switch (variantName)
             {
                 case "Wisp Amalgamate":
