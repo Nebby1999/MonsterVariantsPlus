@@ -11,7 +11,7 @@ namespace MonsterVariantsPlus.SubClasses.Skills.States.Imp
     {
         public static float baseDuration = 1.0f;
 
-        public static float damageCoefficient = 4f;
+        public static float damageCoefficient = 0.4f;
 
         public static float procCoefficient;
 
@@ -61,7 +61,7 @@ namespace MonsterVariantsPlus.SubClasses.Skills.States.Imp
             attack.hitEffectPrefab = hitEffectPrefab;
             attack.isCrit = Util.CheckRoll(critStat, base.characterBody.master);
             attack.procCoefficient = procCoefficient;
-            attack.damageType = DamageType.BlightOnHit;
+            attack.damageType = DamageType.Generic;
             Util.PlayAttackSpeedSound(enterSoundString, base.gameObject, attackSpeedStat);
             if ((bool)modelAnimator)
             {

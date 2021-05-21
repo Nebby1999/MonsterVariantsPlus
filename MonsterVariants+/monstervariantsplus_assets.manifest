@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3968923179
+CRC: 2810354563
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: e2dd472ae4554cfa525cbbaacf498d0c
+    Hash: 8ed48be581b90d220479534fc38887f2
   TypeTreeHash:
     serializedVersion: 2
     Hash: 011d1bb1b97750065fc8e33fbaec9bad
@@ -19,15 +19,16 @@ ClassTypes:
   Script: {instanceID: 0}
 Assets:
 - Assets/Textures/ADShroom/ADShroomEmmision.png
+- Assets/Textures/IchorImp/IchorImpNormal.png
 - Assets/Textures/ADShroom/ADShroom.png
 - Assets/Materials/ADShroom.mat
-- Assets/Textures/IchorImp/IchorImpEmission.png
 - Assets/Textures/SteelContraption/SteelContraption_Normal.png
-- Assets/Textures/IchorImp/IchorImpNormal.png
 - Assets/Textures/Artifact/VarianceEnabled.png
 - Assets/Textures/HealerShroom/HealerShroomEmmision.png
 - Assets/Materials/AluminumContraption.mat
+- Assets/Textures/IchorImp/IchorImpEmission.png
 - Assets/Textures/Artifact/VarianceDisabled.png
+- Assets/Textures/IchorImp/IchorImpRamp.png
 - Assets/Textures/AlphaBison/AlphaBison.png
 - Assets/Textures/AluminumContraption/AluminumContraptionNormal.png
 - Assets/Materials/SteelContraption.mat
@@ -40,6 +41,7 @@ Assets:
 - Assets/Textures/AlphaBison/AlphaBison_Normal.png
 - Assets/Textures/HealerShroom/HealerShroom.png
 - Assets/Textures/ADShroom/ADShroom_Normal.png
+- Assets/Textures/IchorImp/IchorImpPrint1.png
 - Assets/Textures/HealerShroom/HealerShroomNormal.png
 - Assets/Textures/AluminumContraption/AluminumContraptionDiffuse.png
 Dependencies: []
