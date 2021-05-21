@@ -427,6 +427,9 @@ Aaron, which helped making the Artifact of Variance a reality.
 Dgosling and DestroyedClone for helping me with the Stone Wisps
 
 ## Changelog
+## '1.4.6' Totally did realize about another r2api missing dependency
+- Fixed missing PrefabAPI dependency. that's it.
+
 ## '1.4.5' Totally Didn't forget about adding this to 1.4.4
 - Tweaked the following Variants
 
