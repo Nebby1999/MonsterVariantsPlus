@@ -386,6 +386,25 @@ namespace MonsterVariantsPlus.SubClasses
                 materialReplacement = null,
                 skillReplacement = null,
             });
+            //Gaussian Probe
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "RoboBallMini",
+                overrideName = "Gaussian Probe",
+                spawnRate = 100,
+                variantTier = MonsterVariantTier.Uncommon,
+                sizeModifier = MV.FlyingSizeModifier(1.5f),
+                healthMultiplier = 2.0f,
+                moveSpeedMultiplier = 0.75f,
+                attackSpeedMultiplier = 1.0f,
+                damageMultiplier = 1.0f,
+                armorBonus = 25,
+                armorMultiplier = 1,
+                customInventory = null,
+                meshReplacement = null,
+                materialReplacement = null,
+                skillReplacement = MV.PrimaryReplacement(CustomSkills.gaussianBurstDef),
+            });
             //Incinerating Elder Lemurian
             MV.AddVariant(new MonsterVariantInfo
             {

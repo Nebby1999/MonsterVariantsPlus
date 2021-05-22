@@ -148,6 +148,7 @@
     <Compile Include="SubClasses\Skills\States\Scavenger\HoarderSit.cs" />
     <Compile Include="SubClasses\Skills\States\Parent\MultiSlam.cs" />
     <Compile Include="SubClasses\Skills\States\EmptySkill.cs" />
+    <Compile Include="SubClasses\Skills\States\SolusProbe\GaussianBurst.cs" />
     <Compile Include="SubClasses\Skills\States\StoneGolem\ChargeLaser.cs" />
   </ItemGroup>
   <ItemGroup />
