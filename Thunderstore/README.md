@@ -440,6 +440,10 @@ Dgosling and DestroyedClone for helping me with the Stone Wisps
 
 	- Solus Probe MK2
 
+	- The Solus Probes from the Empathy Cores can now be variants, Spawn chances by default are the same as the enemy version's spawn chances.
+
+	- Archaic Wisps Variants from MysticItems' LegendaryMask now have it's own spawn rates, these by default are the same as the enemy version' spawn chances.
+
 - Tweaked the Following Variants
 
 	- Clay Soldier
