@@ -132,6 +132,15 @@ namespace MonsterVariantsPlus.SubClasses
         public static ConfigEntry<float> LunarSquidSpawnChance;
         public static ConfigEntry<float> TimeBombSquidSpawnChance;
         public static ConfigEntry<float> CannonSquidSpawnChance;
+        public static ConfigEntry<float> RECSwarmerProbeSpawnChance;
+        public static ConfigEntry<float> RECGaussianProbeSpawnChance;
+        public static ConfigEntry<float> RECSolusProbeMK2SpawnChance;
+        public static ConfigEntry<float> GECSwarmerProbeSpawnChance;
+        public static ConfigEntry<float> GECGaussianProbeSpawnChance;
+        public static ConfigEntry<float> GECSolusProbeMK2SpawnChance;
+        public static ConfigEntry<float> MIAeonicWispSpawnChance;
+        public static ConfigEntry<float> MIKindaArchaicWispSpawnChance;
+        public static ConfigEntry<float> MIArchaicStoneWispSpawnChance;
 
         public static void SetupConfigLoader(ConfigFile config) //Creates the description and some mumbojumbo for the values.
         {
@@ -234,6 +243,15 @@ namespace MonsterVariantsPlus.SubClasses
             LunarSquidSpawnChance = SpawnRateConfig(true, "Lunar Squid", 4, config);
             TimeBombSquidSpawnChance = SpawnRateConfig(true, "Time Bomb Squid", 2, config);
             CannonSquidSpawnChance = SpawnRateConfig(true, "Cannon Squid", 3, config);
+            RECSwarmerProbeSpawnChance = SpawnRateConfig(true, "Red Empathy Core Swarmer Probe Spawn Chance", 7, config);
+            RECGaussianProbeSpawnChance = SpawnRateConfig(true, "Red Empathy Core Gaussian Probe Spawn Chance", 10, config);
+            RECSolusProbeMK2SpawnChance = SpawnRateConfig(true, "Red Empathy Core Solus Probe MK2 Spawn Chance", 5, config);
+            GECSwarmerProbeSpawnChance = SpawnRateConfig(true, "Green Empathy Core Swarmer Probe Spawn Chance", 7, config);
+            GECGaussianProbeSpawnChance = SpawnRateConfig(true, "Green Empathy Core Gaussian Probe Spawn Chance", 10, config);
+            GECSolusProbeMK2SpawnChance = SpawnRateConfig(true, "Green Empathy Core Solus Probe MK2 Spawn Chance", 5, config);
+            MIAeonicWispSpawnChance = SpawnRateConfig(true, "Aeonic Wisp Spawn Chance - Legendary Mask", 4, "TheMysticSword", "MysticsItems", config);
+            MIKindaArchaicWispSpawnChance = SpawnRateConfig(true, "Kinda Archaic Wisp Spawn Chance - Legendary Mask", 7, "TheMysticSword", "MysticsItems", config);
+            MIArchaicStoneWispSpawnChance = SpawnRateConfig(true, "Archaic Stone Wisp Spawn Chance - Legendary Mask", 2, "TheMysticSword", "MysticsItems", config);
         }
         private static ConfigEntry<float> SpawnRateConfig (bool isOther, string enemyName, float defaultValue, ConfigFile config)
         {
