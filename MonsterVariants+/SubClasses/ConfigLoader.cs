@@ -91,10 +91,11 @@ namespace MonsterVariantsPlus.SubClasses
         public static ConfigEntry<float> WispAmalgamateSpawnChance;
         public static ConfigEntry<float> KindaGreatButNotGreaterWispSpawnChance;
         public static ConfigEntry<float> GreaterStoneWispSpawnChance;
+        public static ConfigEntry<float> SwarmerProbeSpawnChance;
+        public static ConfigEntry<float> GaussianProbeSpawnChance;
         public static ConfigEntry<float> IncineratingElderLemurianSpawnChance;
         public static ConfigEntry<float> GhostOfKjaroSpawnChance;
         public static ConfigEntry<float> GhostOfRunaldSpawnChance;
-        public static ConfigEntry<float> SwarmerProbeSpawnChance;
         public static ConfigEntry<float> YeOldeGolemSpawnChance;
         //Boss Variants
         public static ConfigEntry<float> SunPriestSpawnChance;
@@ -190,6 +191,7 @@ namespace MonsterVariantsPlus.SubClasses
             KindaGreatButNotGreaterWispSpawnChance = SpawnRateConfig(false, "Kinda-Great-But-Not-Greater Wisp", 6, config);
             GreaterStoneWispSpawnChance = SpawnRateConfig(false, "Greater Stone Wisp", 2, config);
             SwarmerProbeSpawnChance = SpawnRateConfig(false, "Swarmer Probe", 7, config);
+            GaussianProbeSpawnChance = SpawnRateConfig(false, "Gaussian Probe", 10, config);
             IncineratingElderLemurianSpawnChance = SpawnRateConfig(false, "Incinerating Elder Lemurian", 5, config);
             GhostOfKjaroSpawnChance = SpawnRateConfig(false, "Ghost of Kjaro", 4, config);
             GhostOfRunaldSpawnChance = SpawnRateConfig(false, "Ghost of Runald", 4, config);

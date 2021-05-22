@@ -114,6 +114,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SubClasses\AssetLoaderAndChecker.cs" />
     <Compile Include="SubClasses\Artifact.cs" />
+    <Compile Include="SubClasses\Items\HemorrageOnHit.cs" />
     <Compile Include="SubClasses\Items\PulverizeOnHit.cs" />
     <Compile Include="SubClasses\Items\MVPItemBase.cs" />
     <Compile Include="SubClasses\Prefabs\PrefabBase.cs" />
@@ -148,6 +149,8 @@
     <Compile Include="SubClasses\Skills\States\Scavenger\HoarderSit.cs" />
     <Compile Include="SubClasses\Skills\States\Parent\MultiSlam.cs" />
     <Compile Include="SubClasses\Skills\States\EmptySkill.cs" />
+    <Compile Include="SubClasses\Skills\States\SolusProbe\MK2Fire.cs" />
+    <Compile Include="SubClasses\Skills\States\SolusProbe\MK2Charge.cs" />
     <Compile Include="SubClasses\Skills\States\SolusProbe\GaussianBurst.cs" />
     <Compile Include="SubClasses\Skills\States\StoneGolem\ChargeLaser.cs" />
   </ItemGroup>

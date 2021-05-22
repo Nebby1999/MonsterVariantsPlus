@@ -26,6 +26,7 @@ namespace MonsterVariantsPlus.SubClasses
             Material afterburnerFireMat = Object.Instantiate(Resources.Load<GameObject>("Prefabs/PickupModels/PickupAfterburner").GetComponentInChildren<ParticleSystemRenderer>(true).material);
             Material impOverlord1 = Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/ImpBossBody").GetComponent<ModelLocator>().modelTransform.GetComponent<CharacterModel>().baseRendererInfos[0].defaultMaterial);
             Material impOverlord2 = Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/ImpBossBody").GetComponent<ModelLocator>().modelTransform.GetComponent<CharacterModel>().baseRendererInfos[1].defaultMaterial);
+            Material SCUMat = Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/RoboBallBossBody").GetComponent<ModelLocator>().modelTransform.GetComponent<CharacterModel>().baseRendererInfos[0].defaultMaterial);
             //Leastest Wisp
             MV.AddVariant(new MonsterVariantInfo
             {
@@ -373,7 +374,7 @@ namespace MonsterVariantsPlus.SubClasses
                 bodyName = "RoboBallMini",
                 overrideName = "Swarmer Probe",
                 spawnRate = ConfigLoader.SwarmerProbeSpawnChance.Value,
-                variantTier = MonsterVariantTier.Common,
+                variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.FlyingSizeModifier(0.5f),
                 healthMultiplier = 0.5f,
                 moveSpeedMultiplier = 4.0f,
@@ -391,8 +392,8 @@ namespace MonsterVariantsPlus.SubClasses
             {
                 bodyName = "RoboBallMini",
                 overrideName = "Gaussian Probe",
-                spawnRate = 100,
-                variantTier = MonsterVariantTier.Uncommon,
+                spawnRate = ConfigLoader.GaussianProbeSpawnChance.Value,
+                variantTier = MonsterVariantTier.Common,
                 sizeModifier = MV.FlyingSizeModifier(1.5f),
                 healthMultiplier = 2.0f,
                 moveSpeedMultiplier = 0.75f,
@@ -404,6 +405,25 @@ namespace MonsterVariantsPlus.SubClasses
                 meshReplacement = null,
                 materialReplacement = null,
                 skillReplacement = MV.PrimaryReplacement(CustomSkills.gaussianBurstDef),
+            });
+            //Solus Probe MK2
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "RoboBallMini",
+                overrideName = "Solus Probe MK2",
+                spawnRate = 100,
+                variantTier = MonsterVariantTier.Uncommon,
+                sizeModifier = MV.FlyingSizeModifier(2.0f),
+                healthMultiplier = 3.0f,
+                moveSpeedMultiplier = 1.0f,
+                attackSpeedMultiplier = 1.0f,
+                damageMultiplier = 1.0f,
+                armorBonus = -25,
+                armorMultiplier = 1,
+                customInventory = null,
+                meshReplacement = null,
+                materialReplacement = MV.SimpleMaterialReplacement(SCUMat),
+                skillReplacement = MV.PrimaryReplacement(CustomSkills.mk2ChargeDef),
             });
             //Incinerating Elder Lemurian
             MV.AddVariant(new MonsterVariantInfo
@@ -804,7 +824,7 @@ namespace MonsterVariantsPlus.SubClasses
                     damageMultiplier = 1.0f,
                     armorMultiplier = 1f,
                     armorBonus = -25f,
-                    customInventory = null,
+                    customInventory = MV.SimpleInventory("ITEM_MVP_HEMORRAGE_ON_HIT"),
                     meshReplacement = null,
                     materialReplacement = MV.MultiMaterialReplacement(new Dictionary<int, Material> { { 0, spectralMat }, { 1, spectralMat }, { 2, spectralMat } }),
                     skillReplacement = null,
