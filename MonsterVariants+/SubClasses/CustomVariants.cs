@@ -411,7 +411,7 @@ namespace MonsterVariantsPlus.SubClasses
             {
                 bodyName = "RoboBallMini",
                 overrideName = "Solus Probe MK2",
-                spawnRate = 100,
+                spawnRate = ConfigLoader.SolusProbeMK2SpawnChance.Value,
                 variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.FlyingSizeModifier(2.0f),
                 healthMultiplier = 3.0f,
@@ -939,7 +939,7 @@ namespace MonsterVariantsPlus.SubClasses
                 {
                     bodyName = "BeetleGuardAlly",
                     overrideName = "Beetle Guard Brute",
-                    spawnRate = ConfigLoader.GlandBeetleGuardBruteSpawnChance.Value,
+                    spawnRate = MonsterVariants.Modules.Config.beetleGuardBruteSpawnRate.Value,
                     variantTier = MonsterVariantTier.Uncommon,
                     sizeModifier = MV.GroundSizeModifier(1.1f),
                     healthMultiplier = 2f,
@@ -957,7 +957,7 @@ namespace MonsterVariantsPlus.SubClasses
                 MV.AddVariant(new MonsterVariantInfo
                 {
                     bodyName = "BeetleGuardAlly",
-                    spawnRate = ConfigLoader.GlandBeetleGuardSharpshooterSpawnChance.Value,
+                    spawnRate = MonsterVariants.Modules.Config.beetleGuardSharpshooterSpawnRate.Value,
                     overrideName = "Beetle Guard Sharpshooter",
                     variantTier = MonsterVariantTier.Common,
                     sizeModifier = MV.GroundSizeModifier(0.8f),
