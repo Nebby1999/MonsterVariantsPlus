@@ -427,10 +427,44 @@ Aaron, which helped making the Artifact of Variance a reality.
 Dgosling and DestroyedClone for helping me with the Stone Wisps
 
 ## Changelog
-## '1.4.6' Totally did realize about another r2api missing dependency
+### '1.4.7' I'm running out of ideas for these titles
+- Features such as Variant spawning enemies or Variants gettinc specific equipments on start will always apply, regardless wether they're an overlapped variant or not.
+
+- Added the following Variants
+
+	- Berserker Overlord
+
+	- Ichor Overlord
+
+	- Gaussian Probe
+
+	- Solus Probe MK2
+
+- Tweaked the Following Variants
+
+	- Clay Soldier
+
+		* now has 20 armor
+
+	- Clay Assasin
+
+		* 7% Spawn Chance -> 4% Spawn Chance.
+
+		* No Longer has items.
+
+		* No longer deals bleed damage.
+
+		* Now causes Hemorrage on hit, youre welcome.
+
+	- Time Bomb, Lunar & Cannon Squids
+
+		* No longer uses the Squid Chaingun's Spawn Chance
+
+
+### '1.4.6' Totally did realize about another r2api missing dependency
 - Fixed missing PrefabAPI dependency. that's it.
 
-## '1.4.5' Totally Didn't forget about adding this to 1.4.4
+### '1.4.5' Totally Didn't forget about adding this to 1.4.4
 - Tweaked the following Variants
 
 	- Incinerating Elder Lemurian

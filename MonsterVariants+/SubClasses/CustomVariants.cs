@@ -24,7 +24,8 @@ namespace MonsterVariantsPlus.SubClasses
             Material stoneGolemMat = Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/GolemBody").GetComponent<ModelLocator>().modelTransform.GetComponent<CharacterModel>().baseRendererInfos[0].defaultMaterial);
             Material spectralMat = Resources.Load<Material>("Materials/matGhostEffect");
             Material afterburnerFireMat = Object.Instantiate(Resources.Load<GameObject>("Prefabs/PickupModels/PickupAfterburner").GetComponentInChildren<ParticleSystemRenderer>(true).material);
-            Material stoneTitanMat = Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/TitanBody").GetComponent<ModelLocator>().modelTransform.GetComponent<CharacterModel>().baseRendererInfos[0].defaultMaterial);
+            Material impOverlord1 = Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/ImpBossBody").GetComponent<ModelLocator>().modelTransform.GetComponent<CharacterModel>().baseRendererInfos[0].defaultMaterial);
+            Material impOverlord2 = Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/ImpBossBody").GetComponent<ModelLocator>().modelTransform.GetComponent<CharacterModel>().baseRendererInfos[1].defaultMaterial);
             //Leastest Wisp
             MV.AddVariant(new MonsterVariantInfo
             {
@@ -286,7 +287,7 @@ namespace MonsterVariantsPlus.SubClasses
                 damageMultiplier = 1.0f,
                 armorMultiplier = 1.0f,
                 armorBonus = 10,
-                customInventory = ichorInventory,
+                customInventory = ichorImpInventory,
                 meshReplacement = null,
                 materialReplacement = MV.SimpleMaterialReplacement(AssetLoaderAndChecker.MainAssets.LoadAsset<Material>("IchorImp")),
                 skillReplacement = MV.PrimaryReplacement(CustomSkills.ichorClawsDef)
@@ -711,6 +712,44 @@ namespace MonsterVariantsPlus.SubClasses
                 materialReplacement = null,
                 skillReplacement = MV.SpecialReplacement(CustomSkills.onlyBeetleSwarmDef),
             });
+            //Berserker Overlord
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "ImpBoss",
+                overrideName = "Berserker Overlord",
+                spawnRate = ConfigLoader.BerserkerOverlordSpawnChance.Value,
+                variantTier = MonsterVariantTier.Uncommon,
+                sizeModifier = MV.GroundSizeModifier(1.25f),
+                healthMultiplier = 1.0f,
+                moveSpeedMultiplier = 2.0f,
+                attackSpeedMultiplier = 2.0f,
+                damageMultiplier = 1.0f,
+                armorMultiplier = 1.0f,
+                armorBonus = -50,
+                customInventory = berserkerInventory,
+                meshReplacement = null,
+                materialReplacement = null,
+                skillReplacement = MV.PrimaryReplacement(CustomSkills.emptySkillDef),
+            });
+            //Ichor Overlord
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "ImpBoss",
+                overrideName = "Ichor Overlord",
+                spawnRate = 100,
+                variantTier = MonsterVariantTier.Common,
+                sizeModifier = MV.GroundSizeModifier(1.0f),
+                healthMultiplier = 1.0f,
+                moveSpeedMultiplier = 1.0f,
+                attackSpeedMultiplier = 1.0f,
+                damageMultiplier = 1.0f,
+                armorMultiplier = 1.0f,
+                armorBonus = 0, 
+                customInventory = ichorOverlordInventory,
+                meshReplacement = null,
+                materialReplacement = MV.MultiMaterialReplacement(new Dictionary<int, Material> { { 0, impOverlord1 }, { 1, impOverlord2 }, { 2, AssetLoaderAndChecker.MainAssets.LoadAsset<Material>("IchorOverlord") } }),
+                skillReplacement = MV.PrimaryReplacement(CustomSkills.fireIchorSpikesDef)
+            });
             if (MainPlugin.hasClayMan)
             {
                 //Clay Soldier
@@ -726,7 +765,7 @@ namespace MonsterVariantsPlus.SubClasses
                     attackSpeedMultiplier = 1.5f,
                     damageMultiplier = 0.75f,
                     armorMultiplier = 1f,
-                    armorBonus = 0f,
+                    armorBonus = 20f,
                     customInventory = MV.SimpleInventory("AlienHead", 1),
                     meshReplacement = null,
                     materialReplacement = null,
@@ -743,10 +782,10 @@ namespace MonsterVariantsPlus.SubClasses
                     healthMultiplier = 1.0f,
                     moveSpeedMultiplier = 1.2f,
                     attackSpeedMultiplier = 1.0f,
-                    damageMultiplier = 0.5f,
+                    damageMultiplier = 1.0f,
                     armorMultiplier = 1f,
                     armorBonus = -25f,
-                    customInventory = assasinInventory,
+                    customInventory = null,
                     meshReplacement = null,
                     materialReplacement = MV.MultiMaterialReplacement(new Dictionary<int, Material> { { 0, spectralMat }, { 1, spectralMat }, { 2, spectralMat } }),
                     skillReplacement = null,
@@ -934,7 +973,7 @@ namespace MonsterVariantsPlus.SubClasses
                 MV.AddVariant(new MonsterVariantInfo
                 {
                     bodyName = "SquidTurret",
-                    spawnRate = ConfigLoader.SquidChaingunSpawnChance.Value,
+                    spawnRate = ConfigLoader.LunarSquidSpawnChance.Value,
                     overrideName = "Lunar Squid",
                     variantTier = MonsterVariantTier.Common,
                     sizeModifier = MV.GroundSizeModifier(1.0f),
@@ -952,7 +991,7 @@ namespace MonsterVariantsPlus.SubClasses
                 MV.AddVariant(new MonsterVariantInfo
                 {
                     bodyName = "SquidTurret",
-                    spawnRate = ConfigLoader.SquidChaingunSpawnChance.Value,
+                    spawnRate = ConfigLoader.TimeBombSquidSpawnChance.Value,
                     overrideName = "Time Bomb Squid",
                     variantTier = MonsterVariantTier.Common,
                     sizeModifier = MV.GroundSizeModifier(0.6f),
@@ -970,7 +1009,7 @@ namespace MonsterVariantsPlus.SubClasses
                 MV.AddVariant(new MonsterVariantInfo
                 {
                     bodyName = "SquidTurret",
-                    spawnRate = ConfigLoader.SquidChaingunSpawnChance.Value,
+                    spawnRate = ConfigLoader.CannonSquidSpawnChance.Value,
                     overrideName = "Cannon Squid",
                     variantTier = MonsterVariantTier.Common,
                     sizeModifier = MV.GroundSizeModifier(1.5f),
@@ -1075,13 +1114,6 @@ namespace MonsterVariantsPlus.SubClasses
             MV.SimpleItem("Mushroom", 10),
             MV.SimpleItem("BarrierOnOverHeal", 1),
         };
-        private static readonly ItemInfo[] assasinInventory = new ItemInfo[]
-        {
-            MV.SimpleItem("CrtGlasses", 10),
-            MV.SimpleItem("Phasing", 1),
-            MV.SimpleItem("BleedOnHitAndExplode", 1)
-
-        };
 
         private static readonly ItemInfo[] ADInventory = new ItemInfo[]
         {
@@ -1101,7 +1133,7 @@ namespace MonsterVariantsPlus.SubClasses
             MV.SimpleItem("Phasing", 5),
         };
 
-        private static readonly ItemInfo[] ichorInventory = new ItemInfo[]
+        private static readonly ItemInfo[] ichorImpInventory = new ItemInfo[]
         {
             MV.SimpleItem("BleedOnHit", 17),
             MV.SimpleItem("ITEM_MVP_PULVERIZE_ON_HIT", 1)
@@ -1112,6 +1144,17 @@ namespace MonsterVariantsPlus.SubClasses
             MV.SimpleItem("Behemoth", 2),
             MV.SimpleItem("NearbyDamageBonus", 20)
         };
+
+        private static readonly ItemInfo[] berserkerInventory = new ItemInfo[]
+        {
+            MV.SimpleItem("AlienHead", 2),
+            MV.SimpleItem("SecondarySkillMagazine", 2)
+        };
+        private static readonly ItemInfo[] ichorOverlordInventory = new ItemInfo[]
+{
+            MV.SimpleItem("BleedOnHit", 5),
+            MV.SimpleItem("ITEM_MVP_PULVERIZE_ON_HIT", 1)
+};
         //Method to replace a monster's primary and utility skills. used for Child.
         internal static MonsterSkillReplacement[] PrimaryUtilityReplacement(SkillDef primarySkill, SkillDef utilitySkill)
         {

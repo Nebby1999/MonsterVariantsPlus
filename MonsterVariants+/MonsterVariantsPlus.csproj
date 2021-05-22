@@ -118,6 +118,7 @@
     <Compile Include="SubClasses\Items\MVPItemBase.cs" />
     <Compile Include="SubClasses\Prefabs\PrefabBase.cs" />
     <Compile Include="SubClasses\Prefabs\Projectiles\BrassContraption\MegaBrassBallPrefab.cs" />
+    <Compile Include="SubClasses\Prefabs\Projectiles\ImpOverlord\IchorSpikePrefab.cs" />
     <Compile Include="SubClasses\Skills\Loadouts.cs" />
     <Compile Include="SubClasses\Skills\CustomSkills.cs" />
     <Compile Include="SubClasses\CustomVariants.cs" />
@@ -136,6 +137,7 @@
     <Compile Include="SubClasses\Skills\States\GreaterWisp\FireDoubleWispLaser.cs" />
     <Compile Include="SubClasses\Skills\States\GreaterWisp\WispAmalgamateFire.cs" />
     <Compile Include="SubClasses\Skills\States\GreaterWisp\WispAmalgamateCharge.cs" />
+    <Compile Include="SubClasses\Skills\States\ImpOverlord\FireIchorSpikes.cs" />
     <Compile Include="SubClasses\Skills\States\Imp\IchorClaws.cs" />
     <Compile Include="SubClasses\Skills\States\LesserWisp\ChargeArchwispCannon.cs" />
     <Compile Include="SubClasses\Skills\States\LesserWisp\ChargeWispLaser.cs" />

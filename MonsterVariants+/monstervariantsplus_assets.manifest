@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2810354563
+CRC: 3813874123
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 8ed48be581b90d220479534fc38887f2
+    Hash: a65059e8c519d3c6df15c8d2799f10ed
   TypeTreeHash:
     serializedVersion: 2
     Hash: 011d1bb1b97750065fc8e33fbaec9bad
@@ -21,27 +21,36 @@ Assets:
 - Assets/Textures/ADShroom/ADShroomEmmision.png
 - Assets/Textures/IchorImp/IchorImpNormal.png
 - Assets/Textures/ADShroom/ADShroom.png
+- Assets/Textures/IchorImp/fx/texCloudOrganic2.png
 - Assets/Materials/ADShroom.mat
 - Assets/Textures/SteelContraption/SteelContraption_Normal.png
 - Assets/Textures/Artifact/VarianceEnabled.png
 - Assets/Textures/HealerShroom/HealerShroomEmmision.png
+- Assets/Textures/IchorOverlord/IchorOverlordFresnell.png
 - Assets/Materials/AluminumContraption.mat
 - Assets/Textures/IchorImp/IchorImpEmission.png
 - Assets/Textures/Artifact/VarianceDisabled.png
+- Assets/Materials/IchorOverlord.mat
 - Assets/Textures/IchorImp/IchorImpRamp.png
+- Assets/Textures/IchorOverlord/IchorOverlord.png
 - Assets/Textures/AlphaBison/AlphaBison.png
 - Assets/Textures/AluminumContraption/AluminumContraptionNormal.png
 - Assets/Materials/SteelContraption.mat
+- Assets/Shaders/hgcloudremap.shader
 - Assets/Textures/IchorImp/IchorImp.png
+- Assets/Textures/IchorOverlord/IchorOverlordEmission.png
 - Assets/Materials/AlphaBison.mat
 - Assets/Materials/HealerShroom.mat
 - Assets/Textures/SteelContraption/SteelContraption.png
 - Assets/Textures/AlphaBison/AlphaBison_Hair.png
 - Assets/Materials/IchorImp.mat
+- Assets/Materials/Other/Imp/IchorClaw.mat
 - Assets/Textures/AlphaBison/AlphaBison_Normal.png
+- Assets/Textures/IchorOverlord/IchorOverlordNormal.png
 - Assets/Textures/HealerShroom/HealerShroom.png
 - Assets/Textures/ADShroom/ADShroom_Normal.png
 - Assets/Textures/IchorImp/IchorImpPrint1.png
 - Assets/Textures/HealerShroom/HealerShroomNormal.png
+- Assets/Textures/IchorImp/fx/IchorClawsRamp.png
 - Assets/Textures/AluminumContraption/AluminumContraptionDiffuse.png
 Dependencies: []

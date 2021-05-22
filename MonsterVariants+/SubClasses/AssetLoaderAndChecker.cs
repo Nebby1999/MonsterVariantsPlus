@@ -10,7 +10,6 @@ namespace MonsterVariantsPlus.SubClasses
     public class AssetLoaderAndChecker
     {
         public static AssetBundle MainAssets; //Contains custom assets
-        public static Material impMaterial = Resources.Load<GameObject>("Prefabs/CharacterBodies/ImpBody").GetComponent<ModelLocator>().modelTransform.GetComponent<CharacterModel>().baseRendererInfos[0].defaultMaterial;
         public static bool CheckForMod(string modKey)
         {
             if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey(modKey))
@@ -23,7 +22,8 @@ namespace MonsterVariantsPlus.SubClasses
         //Asset Loading Shenanigans, huge thanks to komrade spectre for helping tons with this.
         public static Dictionary<string, string> ShaderLookup = new Dictionary<string, string>()
         {
-            {"stubbed hopoo games/deferred/standard", "shaders/deferred/hgstandard"} //Dictionary for checking the default shader values
+            {"stubbed hopoo games/deferred/standard", "shaders/deferred/hgstandard"}, //Dictionary for checking the default shader values
+            {"stubbed hopoo games/fx/cloud remap", "shaders/fx/hgcloudremap"}
         };
         public static void LoadAssets()
         {
@@ -39,12 +39,6 @@ namespace MonsterVariantsPlus.SubClasses
                 var replacementShader = Resources.Load<Shader>(ShaderLookup[material.shader.name.ToLower()]);
                 if (replacementShader) { material.shader = replacementShader; }
                 Debug.Log("MVP: Succesfully replaced " + material.name + "'s shaders with Hopoo shaders");
-                switch(material.name)
-                {
-                    case "IchorImp":
-                        material.shaderKeywords = impMaterial.shaderKeywords;
-                        return;
-                }
             }
             Debug.Log("MVP: Succesfully managed to load all assets!");
         }
@@ -109,6 +103,7 @@ namespace MonsterVariantsPlus.SubClasses
             variantSpawnChanceConfigs.Add(ConfigLoader.PygmyAurelioniteSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.BeetleMatriarchSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.BeetleEmpressSpawnChance);
+            variantSpawnChanceConfigs.Add(ConfigLoader.BerserkerOverlordSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.ClaySoldierSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.ClayAssasinSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.EnragedWispSpawnChance);
@@ -123,7 +118,7 @@ namespace MonsterVariantsPlus.SubClasses
             variantSpawnChanceConfigs.Add(ConfigLoader.CannonSquidSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.LunarSquidSpawnChance);
             variantSpawnChanceConfigs.Add(ConfigLoader.TimeBombSquidSpawnChance);
-            Debug.Log("MVP: Succesfully created the " + variantSpawnChanceConfigs.ToString() + "List!");
+            Debug.Log("MVP: Succesfully created the variantSpawnChanceConfigs List!");
 
             ConfigEntry<string> hiddenRealmDropBehaviorConfig = ConfigLoader.HiddenRealmItemdropBehaviorConfig;
 
