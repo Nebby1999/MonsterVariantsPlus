@@ -300,6 +300,17 @@ AD-Shroom
 	
 	- 2% Chance
 
+### Imp Overlord Variants
+
+---
+
+[Berserker Overlord](https://github.com/Nebby1999/MonsterVariantsPlus/wiki/Imp-Overlord-Variants#berserker-overlord)
+
+	- 2% Spawn Chance
+[Ichor Overlord](https://github.com/Nebby1999/MonsterVariantsPlus/wiki/Imp-Overlord-Variants#ichor-overlord)
+	
+	- 4% Spawn Chance
+
 ---
 
 ## Modded Variants
@@ -385,7 +396,9 @@ ___
  
 	- 2% Spawn Chance
 
-Not listed here are special other Variants for Mystic Items. When Mystic Items is found in your mod list, MVP will enable special variants for the Legendary Mask's Archaic Wisps. These variants are exactly the same as the normal archaic wisp variants and have their same spawn chances.
+Not Listed here are variants for the Empathy Cores' Solus Probes. These variants are exactly the same as the normal Solus Probe variants and have their same spawn chances by default.
+
+If you have [Mystic Items](https://thunderstore.io/package/TheMysticSword/MysticsItems/) installed, MVP will enable special variants for the Legendary Mask's Archaic Wisps. These variants are exactly the same as the normal archaic wisp variants and have their same spawn chances by default.
 
 ### Artifact of Variance
 ![](https://media.discordapp.net/attachments/461597592825102369/843631169102020658/VarianceEnabled.png)
@@ -427,10 +440,50 @@ Aaron, which helped making the Artifact of Variance a reality.
 Dgosling and DestroyedClone for helping me with the Stone Wisps
 
 ## Changelog
-## '1.4.6' Totally did realize about another r2api missing dependency
+### '1.4.8' I havent Learnt my lesson yet.
+- Fixed wrong mod version being shipped with the dll, no longer should cause a 100% spawn rate on assasins.
+
+### '1.4.7' I'm running out of ideas for these titles
+- Added the following Variants
+
+	- Berserker Overlord
+
+	- Ichor Overlord
+
+	- Gaussian Probe
+
+	- Solus Probe MK2
+
+	- The Solus Probes from the Empathy Cores can now be variants, Spawn chances by default are the same as the enemy version's spawn chances.
+
+- Tweaked the Following Variants
+
+	- Clay Soldier
+
+		* now has 20 armor
+
+	- Clay Assasin
+
+		* 7% Spawn Chance -> 4% Spawn Chance.
+
+		* 50% Damage -> 25% Damage
+
+		* Now only has 10 LensmarkerLenses
+
+		* No longer deals bleed damage.
+
+		* Now causes Hemorrage on hit, youre welcome. (Feedback apreciated because i dont know how busted this can be lololol)
+
+	- Time Bomb, Lunar & Cannon Squids
+
+		* No longer uses the Squid Chaingun's Spawn Chance
+
+	- Archaic Wisps Variants from MysticItems' LegendaryMask now have it's own spawn rates, these by default are the same as the enemy version' spawn chances.
+
+### '1.4.6' Totally did realize about another r2api missing dependency
 - Fixed missing PrefabAPI dependency. that's it.
 
-## '1.4.5' Totally Didn't forget about adding this to 1.4.4
+### '1.4.5' Totally Didn't forget about adding this to 1.4.4
 - Tweaked the following Variants
 
 	- Incinerating Elder Lemurian

@@ -91,10 +91,12 @@ namespace MonsterVariantsPlus.SubClasses
         public static ConfigEntry<float> WispAmalgamateSpawnChance;
         public static ConfigEntry<float> KindaGreatButNotGreaterWispSpawnChance;
         public static ConfigEntry<float> GreaterStoneWispSpawnChance;
+        public static ConfigEntry<float> SwarmerProbeSpawnChance;
+        public static ConfigEntry<float> GaussianProbeSpawnChance;
+        public static ConfigEntry<float> SolusProbeMK2SpawnChance;
         public static ConfigEntry<float> IncineratingElderLemurianSpawnChance;
         public static ConfigEntry<float> GhostOfKjaroSpawnChance;
         public static ConfigEntry<float> GhostOfRunaldSpawnChance;
-        public static ConfigEntry<float> SwarmerProbeSpawnChance;
         public static ConfigEntry<float> YeOldeGolemSpawnChance;
         //Boss Variants
         public static ConfigEntry<float> SunPriestSpawnChance;
@@ -111,6 +113,9 @@ namespace MonsterVariantsPlus.SubClasses
         public static ConfigEntry<float> PygmyAurelioniteSpawnChance;
         public static ConfigEntry<float> BeetleMatriarchSpawnChance;
         public static ConfigEntry<float> BeetleEmpressSpawnChance;
+        public static ConfigEntry<float> BerserkerOverlordSpawnChance;
+        public static ConfigEntry<float> IchorOverlordSpawnChance;
+
         //Modded Variants
         public static ConfigEntry<float> ClaySoldierSpawnChance;
         public static ConfigEntry<float> ClayAssasinSpawnChance;
@@ -128,6 +133,15 @@ namespace MonsterVariantsPlus.SubClasses
         public static ConfigEntry<float> LunarSquidSpawnChance;
         public static ConfigEntry<float> TimeBombSquidSpawnChance;
         public static ConfigEntry<float> CannonSquidSpawnChance;
+        public static ConfigEntry<float> RECSwarmerProbeSpawnChance;
+        public static ConfigEntry<float> RECGaussianProbeSpawnChance;
+        public static ConfigEntry<float> RECSolusProbeMK2SpawnChance;
+        public static ConfigEntry<float> GECSwarmerProbeSpawnChance;
+        public static ConfigEntry<float> GECGaussianProbeSpawnChance;
+        public static ConfigEntry<float> GECSolusProbeMK2SpawnChance;
+        public static ConfigEntry<float> MIAeonicWispSpawnChance;
+        public static ConfigEntry<float> MIKindaArchaicWispSpawnChance;
+        public static ConfigEntry<float> MIArchaicStoneWispSpawnChance;
 
         public static void SetupConfigLoader(ConfigFile config) //Creates the description and some mumbojumbo for the values.
         {
@@ -188,6 +202,8 @@ namespace MonsterVariantsPlus.SubClasses
             KindaGreatButNotGreaterWispSpawnChance = SpawnRateConfig(false, "Kinda-Great-But-Not-Greater Wisp", 6, config);
             GreaterStoneWispSpawnChance = SpawnRateConfig(false, "Greater Stone Wisp", 2, config);
             SwarmerProbeSpawnChance = SpawnRateConfig(false, "Swarmer Probe", 7, config);
+            GaussianProbeSpawnChance = SpawnRateConfig(false, "Gaussian Probe", 10, config);
+            SolusProbeMK2SpawnChance = SpawnRateConfig(false, "Solus Probe MK2", 5, config);
             IncineratingElderLemurianSpawnChance = SpawnRateConfig(false, "Incinerating Elder Lemurian", 5, config);
             GhostOfKjaroSpawnChance = SpawnRateConfig(false, "Ghost of Kjaro", 4, config);
             GhostOfRunaldSpawnChance = SpawnRateConfig(false, "Ghost of Runald", 4, config);
@@ -208,10 +224,12 @@ namespace MonsterVariantsPlus.SubClasses
             PygmyAurelioniteSpawnChance = SpawnRateConfig(false, "Pygmy Aurelionite", 2, config);
             BeetleMatriarchSpawnChance = SpawnRateConfig(false, "Beetle Matriarch", 4, config);
             BeetleEmpressSpawnChance = SpawnRateConfig(false, "Beetle Empress", 2, config);
+            IchorOverlordSpawnChance = SpawnRateConfig(false, "Ichor Overlord Spawn Chance", 4, config);
+            BerserkerOverlordSpawnChance = SpawnRateConfig(false, "Berserker Overlord", 2, config);
 
             //Modded
             ClaySoldierSpawnChance = SpawnRateConfig(false, "Clay Soldier", 15, "Moffein", "ClayMen", config);
-            ClayAssasinSpawnChance = SpawnRateConfig(false, "Clay Assasin", 7, "Moffein", "ClayMen", config);
+            ClayAssasinSpawnChance = SpawnRateConfig(false, "Clay Assasin", 4, "Moffein", "ClayMen", config);
             EnragedWispSpawnChance = SpawnRateConfig(false, "Enraged Wisp", 4, "Moffein", "AncientWisp", config);
             AmalgamatedAncientWispSpawnChance = SpawnRateConfig(false, "Amalgamated Ancient Wisp", 2, "Moffein", "AncientWisp", config);
             AeonicWispSpawnChance = SpawnRateConfig(false, "Aeonic Wisp", 4, "Nebby", "ArchaicWisp", config);
@@ -226,6 +244,15 @@ namespace MonsterVariantsPlus.SubClasses
             LunarSquidSpawnChance = SpawnRateConfig(true, "Lunar Squid", 4, config);
             TimeBombSquidSpawnChance = SpawnRateConfig(true, "Time Bomb Squid", 2, config);
             CannonSquidSpawnChance = SpawnRateConfig(true, "Cannon Squid", 3, config);
+            RECSwarmerProbeSpawnChance = SpawnRateConfig(true, "Red Empathy Core Swarmer Probe Spawn Chance", 7, config);
+            RECGaussianProbeSpawnChance = SpawnRateConfig(true, "Red Empathy Core Gaussian Probe Spawn Chance", 10, config);
+            RECSolusProbeMK2SpawnChance = SpawnRateConfig(true, "Red Empathy Core Solus Probe MK2 Spawn Chance", 5, config);
+            GECSwarmerProbeSpawnChance = SpawnRateConfig(true, "Green Empathy Core Swarmer Probe Spawn Chance", 7, config);
+            GECGaussianProbeSpawnChance = SpawnRateConfig(true, "Green Empathy Core Gaussian Probe Spawn Chance", 10, config);
+            GECSolusProbeMK2SpawnChance = SpawnRateConfig(true, "Green Empathy Core Solus Probe MK2 Spawn Chance", 5, config);
+            MIAeonicWispSpawnChance = SpawnRateConfig(true, "Aeonic Wisp Spawn Chance - Legendary Mask", 4, "TheMysticSword", "MysticsItems", config);
+            MIKindaArchaicWispSpawnChance = SpawnRateConfig(true, "Kinda Archaic Wisp Spawn Chance - Legendary Mask", 7, "TheMysticSword", "MysticsItems", config);
+            MIArchaicStoneWispSpawnChance = SpawnRateConfig(true, "Archaic Stone Wisp Spawn Chance - Legendary Mask", 2, "TheMysticSword", "MysticsItems", config);
         }
         private static ConfigEntry<float> SpawnRateConfig (bool isOther, string enemyName, float defaultValue, ConfigFile config)
         {

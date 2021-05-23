@@ -118,6 +118,7 @@
     <Compile Include="SubClasses\Items\MVPItemBase.cs" />
     <Compile Include="SubClasses\Prefabs\PrefabBase.cs" />
     <Compile Include="SubClasses\Prefabs\Projectiles\BrassContraption\MegaBrassBallPrefab.cs" />
+    <Compile Include="SubClasses\Prefabs\Projectiles\ImpOverlord\IchorSpikePrefab.cs" />
     <Compile Include="SubClasses\Skills\Loadouts.cs" />
     <Compile Include="SubClasses\Skills\CustomSkills.cs" />
     <Compile Include="SubClasses\CustomVariants.cs" />
@@ -130,12 +131,14 @@
     <Compile Include="SubClasses\Skills\States\BeetleQueen\BeetleSwarm.cs" />
     <Compile Include="SubClasses\Skills\States\BeetleQueen\OnlyBeetleSwarm.cs" />
     <Compile Include="SubClasses\Skills\States\BrassContraption\MegaBrassBall.cs" />
+    <Compile Include="SubClasses\Skills\States\ClayMan\SuperbleedSwipe.cs" />
     <Compile Include="SubClasses\Skills\States\ElderLemurian\ChargeSingleFireball.cs" />
     <Compile Include="SubClasses\Skills\States\ElderLemurian\FireSingleFireball.cs" />
     <Compile Include="SubClasses\Skills\States\GreaterWisp\ChargeDoubleWispLaser.cs" />
     <Compile Include="SubClasses\Skills\States\GreaterWisp\FireDoubleWispLaser.cs" />
     <Compile Include="SubClasses\Skills\States\GreaterWisp\WispAmalgamateFire.cs" />
     <Compile Include="SubClasses\Skills\States\GreaterWisp\WispAmalgamateCharge.cs" />
+    <Compile Include="SubClasses\Skills\States\ImpOverlord\FireIchorSpikes.cs" />
     <Compile Include="SubClasses\Skills\States\Imp\IchorClaws.cs" />
     <Compile Include="SubClasses\Skills\States\LesserWisp\ChargeArchwispCannon.cs" />
     <Compile Include="SubClasses\Skills\States\LesserWisp\ChargeWispLaser.cs" />
@@ -146,6 +149,9 @@
     <Compile Include="SubClasses\Skills\States\Scavenger\HoarderSit.cs" />
     <Compile Include="SubClasses\Skills\States\Parent\MultiSlam.cs" />
     <Compile Include="SubClasses\Skills\States\EmptySkill.cs" />
+    <Compile Include="SubClasses\Skills\States\SolusProbe\MK2Fire.cs" />
+    <Compile Include="SubClasses\Skills\States\SolusProbe\MK2Charge.cs" />
+    <Compile Include="SubClasses\Skills\States\SolusProbe\GaussianBurst.cs" />
     <Compile Include="SubClasses\Skills\States\StoneGolem\ChargeLaser.cs" />
   </ItemGroup>
   <ItemGroup />

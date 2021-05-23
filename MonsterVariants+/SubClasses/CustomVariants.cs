@@ -24,7 +24,9 @@ namespace MonsterVariantsPlus.SubClasses
             Material stoneGolemMat = Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/GolemBody").GetComponent<ModelLocator>().modelTransform.GetComponent<CharacterModel>().baseRendererInfos[0].defaultMaterial);
             Material spectralMat = Resources.Load<Material>("Materials/matGhostEffect");
             Material afterburnerFireMat = Object.Instantiate(Resources.Load<GameObject>("Prefabs/PickupModels/PickupAfterburner").GetComponentInChildren<ParticleSystemRenderer>(true).material);
-            Material stoneTitanMat = Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/TitanBody").GetComponent<ModelLocator>().modelTransform.GetComponent<CharacterModel>().baseRendererInfos[0].defaultMaterial);
+            Material impOverlord1 = Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/ImpBossBody").GetComponent<ModelLocator>().modelTransform.GetComponent<CharacterModel>().baseRendererInfos[0].defaultMaterial);
+            Material impOverlord2 = Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/ImpBossBody").GetComponent<ModelLocator>().modelTransform.GetComponent<CharacterModel>().baseRendererInfos[1].defaultMaterial);
+            Material SCUMat = Object.Instantiate(Resources.Load<GameObject>("Prefabs/CharacterBodies/RoboBallBossBody").GetComponent<ModelLocator>().modelTransform.GetComponent<CharacterModel>().baseRendererInfos[0].defaultMaterial);
             //Leastest Wisp
             MV.AddVariant(new MonsterVariantInfo
             {
@@ -286,7 +288,7 @@ namespace MonsterVariantsPlus.SubClasses
                 damageMultiplier = 1.0f,
                 armorMultiplier = 1.0f,
                 armorBonus = 10,
-                customInventory = ichorInventory,
+                customInventory = ichorImpInventory,
                 meshReplacement = null,
                 materialReplacement = MV.SimpleMaterialReplacement(AssetLoaderAndChecker.MainAssets.LoadAsset<Material>("IchorImp")),
                 skillReplacement = MV.PrimaryReplacement(CustomSkills.ichorClawsDef)
@@ -372,7 +374,7 @@ namespace MonsterVariantsPlus.SubClasses
                 bodyName = "RoboBallMini",
                 overrideName = "Swarmer Probe",
                 spawnRate = ConfigLoader.SwarmerProbeSpawnChance.Value,
-                variantTier = MonsterVariantTier.Common,
+                variantTier = MonsterVariantTier.Uncommon,
                 sizeModifier = MV.FlyingSizeModifier(0.5f),
                 healthMultiplier = 0.5f,
                 moveSpeedMultiplier = 4.0f,
@@ -384,6 +386,44 @@ namespace MonsterVariantsPlus.SubClasses
                 meshReplacement = null,
                 materialReplacement = null,
                 skillReplacement = null,
+            });
+            //Gaussian Probe
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "RoboBallMini",
+                overrideName = "Gaussian Probe",
+                spawnRate = ConfigLoader.GaussianProbeSpawnChance.Value,
+                variantTier = MonsterVariantTier.Common,
+                sizeModifier = MV.FlyingSizeModifier(1.5f),
+                healthMultiplier = 2.0f,
+                moveSpeedMultiplier = 0.75f,
+                attackSpeedMultiplier = 1.0f,
+                damageMultiplier = 1.0f,
+                armorBonus = 25,
+                armorMultiplier = 1,
+                customInventory = null,
+                meshReplacement = null,
+                materialReplacement = null,
+                skillReplacement = MV.PrimaryReplacement(CustomSkills.gaussianBurstDef),
+            });
+            //Solus Probe MK2
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "RoboBallMini",
+                overrideName = "Solus Probe MK2",
+                spawnRate = ConfigLoader.SolusProbeMK2SpawnChance.Value,
+                variantTier = MonsterVariantTier.Uncommon,
+                sizeModifier = MV.FlyingSizeModifier(2.0f),
+                healthMultiplier = 3.0f,
+                moveSpeedMultiplier = 1.0f,
+                attackSpeedMultiplier = 1.0f,
+                damageMultiplier = 1.0f,
+                armorBonus = -25,
+                armorMultiplier = 1,
+                customInventory = null,
+                meshReplacement = null,
+                materialReplacement = MV.SimpleMaterialReplacement(SCUMat),
+                skillReplacement = MV.PrimaryReplacement(CustomSkills.mk2ChargeDef),
             });
             //Incinerating Elder Lemurian
             MV.AddVariant(new MonsterVariantInfo
@@ -711,6 +751,44 @@ namespace MonsterVariantsPlus.SubClasses
                 materialReplacement = null,
                 skillReplacement = MV.SpecialReplacement(CustomSkills.onlyBeetleSwarmDef),
             });
+            //Berserker Overlord
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "ImpBoss",
+                overrideName = "Berserker Overlord",
+                spawnRate = ConfigLoader.BerserkerOverlordSpawnChance.Value,
+                variantTier = MonsterVariantTier.Uncommon,
+                sizeModifier = MV.GroundSizeModifier(1.25f),
+                healthMultiplier = 1.0f,
+                moveSpeedMultiplier = 2.0f,
+                attackSpeedMultiplier = 2.0f,
+                damageMultiplier = 1.0f,
+                armorMultiplier = 1.0f,
+                armorBonus = -50,
+                customInventory = berserkerInventory,
+                meshReplacement = null,
+                materialReplacement = null,
+                skillReplacement = MV.PrimaryReplacement(CustomSkills.emptySkillDef),
+            });
+            //Ichor Overlord
+            MV.AddVariant(new MonsterVariantInfo
+            {
+                bodyName = "ImpBoss",
+                overrideName = "Ichor Overlord",
+                spawnRate = ConfigLoader.IchorOverlordSpawnChance.Value,
+                variantTier = MonsterVariantTier.Common,
+                sizeModifier = MV.GroundSizeModifier(1.0f),
+                healthMultiplier = 1.0f,
+                moveSpeedMultiplier = 1.0f,
+                attackSpeedMultiplier = 1.0f,
+                damageMultiplier = 1.0f,
+                armorMultiplier = 1.0f,
+                armorBonus = -50, 
+                customInventory = ichorOverlordInventory,
+                meshReplacement = null,
+                materialReplacement = MV.MultiMaterialReplacement(new Dictionary<int, Material> { { 0, impOverlord1 }, { 1, impOverlord2 }, { 2, AssetLoaderAndChecker.MainAssets.LoadAsset<Material>("IchorOverlord") } }),
+                skillReplacement = MV.PrimaryReplacement(CustomSkills.fireIchorSpikesDef)
+            });
             if (MainPlugin.hasClayMan)
             {
                 //Clay Soldier
@@ -726,7 +804,7 @@ namespace MonsterVariantsPlus.SubClasses
                     attackSpeedMultiplier = 1.5f,
                     damageMultiplier = 0.75f,
                     armorMultiplier = 1f,
-                    armorBonus = 0f,
+                    armorBonus = 20f,
                     customInventory = MV.SimpleInventory("AlienHead", 1),
                     meshReplacement = null,
                     materialReplacement = null,
@@ -746,10 +824,10 @@ namespace MonsterVariantsPlus.SubClasses
                     damageMultiplier = 0.5f,
                     armorMultiplier = 1f,
                     armorBonus = -25f,
-                    customInventory = assasinInventory,
+                    customInventory = MV.SimpleInventory("CritGlasses", 10),
                     meshReplacement = null,
                     materialReplacement = MV.MultiMaterialReplacement(new Dictionary<int, Material> { { 0, spectralMat }, { 1, spectralMat }, { 2, spectralMat } }),
-                    skillReplacement = null,
+                    skillReplacement = MV.PrimaryReplacement(CustomSkills.superbleedSwipeDef),
                 });
             }
             if (MainPlugin.hasAncientWisp)
@@ -934,7 +1012,7 @@ namespace MonsterVariantsPlus.SubClasses
                 MV.AddVariant(new MonsterVariantInfo
                 {
                     bodyName = "SquidTurret",
-                    spawnRate = ConfigLoader.SquidChaingunSpawnChance.Value,
+                    spawnRate = ConfigLoader.LunarSquidSpawnChance.Value,
                     overrideName = "Lunar Squid",
                     variantTier = MonsterVariantTier.Common,
                     sizeModifier = MV.GroundSizeModifier(1.0f),
@@ -952,7 +1030,7 @@ namespace MonsterVariantsPlus.SubClasses
                 MV.AddVariant(new MonsterVariantInfo
                 {
                     bodyName = "SquidTurret",
-                    spawnRate = ConfigLoader.SquidChaingunSpawnChance.Value,
+                    spawnRate = ConfigLoader.TimeBombSquidSpawnChance.Value,
                     overrideName = "Time Bomb Squid",
                     variantTier = MonsterVariantTier.Common,
                     sizeModifier = MV.GroundSizeModifier(0.6f),
@@ -970,7 +1048,7 @@ namespace MonsterVariantsPlus.SubClasses
                 MV.AddVariant(new MonsterVariantInfo
                 {
                     bodyName = "SquidTurret",
-                    spawnRate = ConfigLoader.SquidChaingunSpawnChance.Value,
+                    spawnRate = ConfigLoader.CannonSquidSpawnChance.Value,
                     overrideName = "Cannon Squid",
                     variantTier = MonsterVariantTier.Common,
                     sizeModifier = MV.GroundSizeModifier(1.5f),
@@ -984,6 +1062,120 @@ namespace MonsterVariantsPlus.SubClasses
                     materialReplacement = null,
                     skillReplacement = null,
                 });
+                //Swarmer Probe Red
+                MV.AddVariant(new MonsterVariantInfo
+                {
+                    bodyName = "RoboBallRedBuddy",
+                    overrideName = "Quiet Swarmer Probe",
+                    spawnRate = ConfigLoader.RECSwarmerProbeSpawnChance.Value,
+                    variantTier = MonsterVariantTier.Uncommon,
+                    sizeModifier = MV.FlyingSizeModifier(0.5f),
+                    healthMultiplier = 0.5f,
+                    moveSpeedMultiplier = 4.0f,
+                    attackSpeedMultiplier = 4.0f,
+                    damageMultiplier = 0.3f,
+                    armorBonus = 0,
+                    armorMultiplier = 1,
+                    customInventory = null,
+                    meshReplacement = null,
+                    materialReplacement = null,
+                    skillReplacement = null,
+                });
+                //Gaussian Probe Red
+                MV.AddVariant(new MonsterVariantInfo
+                {
+                    bodyName = "RoboBallRedBuddy",
+                    overrideName = "Quiet Gaussian Probe",
+                    spawnRate = ConfigLoader.RECGaussianProbeSpawnChance.Value,
+                    variantTier = MonsterVariantTier.Common,
+                    sizeModifier = MV.FlyingSizeModifier(1.5f),
+                    healthMultiplier = 2.0f,
+                    moveSpeedMultiplier = 0.75f,
+                    attackSpeedMultiplier = 1.0f,
+                    damageMultiplier = 1.0f,
+                    armorBonus = 25,
+                    armorMultiplier = 1,
+                    customInventory = null,
+                    meshReplacement = null,
+                    materialReplacement = null,
+                    skillReplacement = MV.PrimaryReplacement(CustomSkills.gaussianBurstDef),
+                });
+                //Solus Probe MK2 Red
+                MV.AddVariant(new MonsterVariantInfo
+                {
+                    bodyName = "RoboBallRedBuddy",
+                    overrideName = "Quiet Solus Probe MK2",
+                    spawnRate = ConfigLoader.RECSolusProbeMK2SpawnChance.Value,
+                    variantTier = MonsterVariantTier.Uncommon,
+                    sizeModifier = MV.FlyingSizeModifier(2.0f),
+                    healthMultiplier = 3.0f,
+                    moveSpeedMultiplier = 1.0f,
+                    attackSpeedMultiplier = 1.0f,
+                    damageMultiplier = 1.0f,
+                    armorBonus = -25,
+                    armorMultiplier = 1,
+                    customInventory = null,
+                    meshReplacement = null,
+                    materialReplacement = null,
+                    skillReplacement = MV.PrimaryReplacement(CustomSkills.mk2ChargeDef),
+                });
+                //Swarmer Probe Green
+                MV.AddVariant(new MonsterVariantInfo
+                {
+                    bodyName = "RoboBallRedBuddy",
+                    overrideName = "Delighted Swarmer Probe",
+                    spawnRate = ConfigLoader.GECSwarmerProbeSpawnChance.Value,
+                    variantTier = MonsterVariantTier.Uncommon,
+                    sizeModifier = MV.FlyingSizeModifier(0.5f),
+                    healthMultiplier = 0.5f,
+                    moveSpeedMultiplier = 4.0f,
+                    attackSpeedMultiplier = 4.0f,
+                    damageMultiplier = 0.3f,
+                    armorBonus = 0,
+                    armorMultiplier = 1,
+                    customInventory = null,
+                    meshReplacement = null,
+                    materialReplacement = null,
+                    skillReplacement = null,
+                });
+                //Gaussian Probe Green
+                MV.AddVariant(new MonsterVariantInfo
+                {
+                    bodyName = "RoboBallRedBuddy",
+                    overrideName = "Delighted Gaussian Probe",
+                    spawnRate = ConfigLoader.GECGaussianProbeSpawnChance.Value,
+                    variantTier = MonsterVariantTier.Common,
+                    sizeModifier = MV.FlyingSizeModifier(1.5f),
+                    healthMultiplier = 2.0f,
+                    moveSpeedMultiplier = 0.75f,
+                    attackSpeedMultiplier = 1.0f,
+                    damageMultiplier = 1.0f,
+                    armorBonus = 25,
+                    armorMultiplier = 1,
+                    customInventory = null,
+                    meshReplacement = null,
+                    materialReplacement = null,
+                    skillReplacement = MV.PrimaryReplacement(CustomSkills.gaussianBurstDef),
+                });
+                //Solus Probe MK2 Green
+                MV.AddVariant(new MonsterVariantInfo
+                {
+                    bodyName = "RoboBallRedBuddy",
+                    overrideName = "Delighted Solus Probe MK2",
+                    spawnRate = ConfigLoader.GECSolusProbeMK2SpawnChance.Value,
+                    variantTier = MonsterVariantTier.Uncommon,
+                    sizeModifier = MV.FlyingSizeModifier(2.0f),
+                    healthMultiplier = 3.0f,
+                    moveSpeedMultiplier = 1.0f,
+                    attackSpeedMultiplier = 1.0f,
+                    damageMultiplier = 1.0f,
+                    armorBonus = -25,
+                    armorMultiplier = 1,
+                    customInventory = null,
+                    meshReplacement = null,
+                    materialReplacement = null,
+                    skillReplacement = MV.PrimaryReplacement(CustomSkills.mk2ChargeDef),
+                });
                 if (MainPlugin.hasMysticItems)
                 {
                     //Aeonic Wisp
@@ -993,7 +1185,7 @@ namespace MonsterVariantsPlus.SubClasses
                         overrideName = "Aeonic Wisp",
                         variantTier = MonsterVariantTier.Uncommon,
                         sizeModifier = MV.FlyingSizeModifier(1.25f),
-                        spawnRate = ConfigLoader.AeonicWispSpawnChance.Value,
+                        spawnRate = ConfigLoader.MIAeonicWispSpawnChance.Value,
                         healthMultiplier = 1.5f,
                         moveSpeedMultiplier = 0.75f,
                         attackSpeedMultiplier = 0.9f,
@@ -1012,7 +1204,7 @@ namespace MonsterVariantsPlus.SubClasses
                         overrideName = "Kinda-Archaic Wisp",
                         variantTier = MonsterVariantTier.Uncommon,
                         sizeModifier = MV.FlyingSizeModifier(0.5f),
-                        spawnRate = ConfigLoader.KindaArchaicWispSpawnChance.Value,
+                        spawnRate = ConfigLoader.MIKindaArchaicWispSpawnChance.Value,
                         healthMultiplier = 0.5f,
                         moveSpeedMultiplier = 5.0f,
                         attackSpeedMultiplier = 2.5f,
@@ -1031,7 +1223,7 @@ namespace MonsterVariantsPlus.SubClasses
                         overrideName = "Archaic Stone Wisp",
                         variantTier = MonsterVariantTier.Rare,
                         sizeModifier = MV.FlyingSizeModifier(1.5f),
-                        spawnRate = ConfigLoader.ArchaicStoneWispSpawnChance.Value,
+                        spawnRate = ConfigLoader.MIArchaicStoneWispSpawnChance.Value,
                         healthMultiplier = 2.0f,
                         moveSpeedMultiplier = 0.5f,
                         attackSpeedMultiplier = 1.0f,
@@ -1075,13 +1267,6 @@ namespace MonsterVariantsPlus.SubClasses
             MV.SimpleItem("Mushroom", 10),
             MV.SimpleItem("BarrierOnOverHeal", 1),
         };
-        private static readonly ItemInfo[] assasinInventory = new ItemInfo[]
-        {
-            MV.SimpleItem("CrtGlasses", 10),
-            MV.SimpleItem("Phasing", 1),
-            MV.SimpleItem("BleedOnHitAndExplode", 1)
-
-        };
 
         private static readonly ItemInfo[] ADInventory = new ItemInfo[]
         {
@@ -1101,7 +1286,7 @@ namespace MonsterVariantsPlus.SubClasses
             MV.SimpleItem("Phasing", 5),
         };
 
-        private static readonly ItemInfo[] ichorInventory = new ItemInfo[]
+        private static readonly ItemInfo[] ichorImpInventory = new ItemInfo[]
         {
             MV.SimpleItem("BleedOnHit", 17),
             MV.SimpleItem("ITEM_MVP_PULVERIZE_ON_HIT", 1)
@@ -1111,6 +1296,17 @@ namespace MonsterVariantsPlus.SubClasses
         {
             MV.SimpleItem("Behemoth", 2),
             MV.SimpleItem("NearbyDamageBonus", 20)
+        };
+
+        private static readonly ItemInfo[] berserkerInventory = new ItemInfo[]
+        {
+            MV.SimpleItem("AlienHead", 2),
+            MV.SimpleItem("SecondarySkillMagazine", 2)
+        };
+        private static readonly ItemInfo[] ichorOverlordInventory = new ItemInfo[]
+        {
+            MV.SimpleItem("BleedOnHit", 5),
+            MV.SimpleItem("ITEM_MVP_PULVERIZE_ON_HIT", 1)
         };
         //Method to replace a monster's primary and utility skills. used for Child.
         internal static MonsterSkillReplacement[] PrimaryUtilityReplacement(SkillDef primarySkill, SkillDef utilitySkill)
