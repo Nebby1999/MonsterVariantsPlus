@@ -224,7 +224,7 @@ namespace MonsterVariantsPlus.SubClasses
             PygmyAurelioniteSpawnChance = SpawnRateConfig(false, "Pygmy Aurelionite", 2, config);
             BeetleMatriarchSpawnChance = SpawnRateConfig(false, "Beetle Matriarch", 4, config);
             BeetleEmpressSpawnChance = SpawnRateConfig(false, "Beetle Empress", 2, config);
-            IchorOverlordSpawnChance = SpawnRateConfig(false, "Ichor Overlord Spawn Chance", 4, config)
+            IchorOverlordSpawnChance = SpawnRateConfig(false, "Ichor Overlord Spawn Chance", 4, config);
             BerserkerOverlordSpawnChance = SpawnRateConfig(false, "Berserker Overlord", 2, config);
 
             //Modded

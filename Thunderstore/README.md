@@ -440,6 +440,9 @@ Aaron, which helped making the Artifact of Variance a reality.
 Dgosling and DestroyedClone for helping me with the Stone Wisps
 
 ## Changelog
+### '1.4.8' I havent Learnt my lesson yet.
+- Fixed wrong mod version being shipped with the dll, no longer should cause a 100% spawn rate on assasins.
+
 ### '1.4.7' I'm running out of ideas for these titles
 - Added the following Variants
 

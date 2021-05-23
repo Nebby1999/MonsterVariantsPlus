@@ -821,7 +821,7 @@ namespace MonsterVariantsPlus.SubClasses
                     healthMultiplier = 1.0f,
                     moveSpeedMultiplier = 1.2f,
                     attackSpeedMultiplier = 1.0f,
-                    damageMultiplier = 0.25f,
+                    damageMultiplier = 0.5f,
                     armorMultiplier = 1f,
                     armorBonus = -25f,
                     customInventory = MV.SimpleInventory("CritGlasses", 10),
