@@ -300,6 +300,17 @@ AD-Shroom
 	
 	- 2% Chance
 
+### Imp Overlord Variants
+
+---
+
+[Berserker Overlord](https://github.com/Nebby1999/MonsterVariantsPlus/wiki/Imp-Overlord-Variants#berserker-overlord)
+
+	- 2% Spawn Chance
+[Ichor Overlord](https://github.com/Nebby1999/MonsterVariantsPlus/wiki/Imp-Overlord-Variants#ichor-overlord)
+	
+	- 4% Spawn Chance
+
 ---
 
 ## Modded Variants
@@ -385,7 +396,9 @@ ___
  
 	- 2% Spawn Chance
 
-Not listed here are special other Variants for Mystic Items. When Mystic Items is found in your mod list, MVP will enable special variants for the Legendary Mask's Archaic Wisps. These variants are exactly the same as the normal archaic wisp variants and have their same spawn chances.
+Not Listed here are variants for the Empathy Cores' Solus Probes. These variants are exactly the same as the normal Solus Probe variants and have their same spawn chances by default.
+
+If you have [Mystic Items](https://thunderstore.io/package/TheMysticSword/MysticsItems/) installed, MVP will enable special variants for the Legendary Mask's Archaic Wisps. These variants are exactly the same as the normal archaic wisp variants and have their same spawn chances by default.
 
 ### Artifact of Variance
 ![](https://media.discordapp.net/attachments/461597592825102369/843631169102020658/VarianceEnabled.png)
@@ -428,8 +441,6 @@ Dgosling and DestroyedClone for helping me with the Stone Wisps
 
 ## Changelog
 ### '1.4.7' I'm running out of ideas for these titles
-- Features such as Variant spawning enemies or Variants gettinc specific equipments on start will always apply, regardless wether they're an overlapped variant or not.
-
 - Added the following Variants
 
 	- Berserker Overlord
@@ -465,7 +476,6 @@ Dgosling and DestroyedClone for helping me with the Stone Wisps
 		* No longer uses the Squid Chaingun's Spawn Chance
 
 	- Archaic Wisps Variants from MysticItems' LegendaryMask now have it's own spawn rates, these by default are the same as the enemy version' spawn chances.
-
 
 ### '1.4.6' Totally did realize about another r2api missing dependency
 - Fixed missing PrefabAPI dependency. that's it.

@@ -775,7 +775,7 @@ namespace MonsterVariantsPlus.SubClasses
             {
                 bodyName = "ImpBoss",
                 overrideName = "Ichor Overlord",
-                spawnRate = 100,
+                spawnRate = ConfigLoader.IchorOverlordSpawnChance.Value,
                 variantTier = MonsterVariantTier.Common,
                 sizeModifier = MV.GroundSizeModifier(1.0f),
                 healthMultiplier = 1.0f,
@@ -783,7 +783,7 @@ namespace MonsterVariantsPlus.SubClasses
                 attackSpeedMultiplier = 1.0f,
                 damageMultiplier = 1.0f,
                 armorMultiplier = 1.0f,
-                armorBonus = 0, 
+                armorBonus = -50, 
                 customInventory = ichorOverlordInventory,
                 meshReplacement = null,
                 materialReplacement = MV.MultiMaterialReplacement(new Dictionary<int, Material> { { 0, impOverlord1 }, { 1, impOverlord2 }, { 2, AssetLoaderAndChecker.MainAssets.LoadAsset<Material>("IchorOverlord") } }),
@@ -815,7 +815,7 @@ namespace MonsterVariantsPlus.SubClasses
                 {
                     bodyName = "MoffeinClayMan",
                     overrideName = "Clay Assasin",
-                    spawnRate = 100, //ConfigLoader.ClayAssasinSpawnChance.Value,
+                    spawnRate = ConfigLoader.ClayAssasinSpawnChance.Value,
                     variantTier = MonsterVariantTier.Uncommon,
                     sizeModifier = MV.GroundSizeModifier(0.75f),
                     healthMultiplier = 1.0f,

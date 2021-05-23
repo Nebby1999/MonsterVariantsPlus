@@ -53,7 +53,7 @@ namespace MonsterVariantsPlus.SubClasses.Skills.States.SolusProbe
             projectilePrefab = orig.projectilePrefab;
             muzzleflashEffectPrefab = FireEyeBlast.muzzleflashEffectPrefab;
             projectileSpeed = orig.projectileSpeed;
-            selfForce = FireEyeBlast.selfForce;
+            selfForce = FireEyeBlast.selfForce / 2;
             attackString = FireEyeBlast.attackString;
             muzzleString = FireEyeBlast.muzzleString;
             base.OnEnter();
