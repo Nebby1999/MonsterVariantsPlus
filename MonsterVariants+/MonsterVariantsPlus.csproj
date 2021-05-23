@@ -114,7 +114,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SubClasses\AssetLoaderAndChecker.cs" />
     <Compile Include="SubClasses\Artifact.cs" />
-    <Compile Include="SubClasses\Items\HemorrageOnHit.cs" />
     <Compile Include="SubClasses\Items\PulverizeOnHit.cs" />
     <Compile Include="SubClasses\Items\MVPItemBase.cs" />
     <Compile Include="SubClasses\Prefabs\PrefabBase.cs" />
@@ -132,6 +131,7 @@
     <Compile Include="SubClasses\Skills\States\BeetleQueen\BeetleSwarm.cs" />
     <Compile Include="SubClasses\Skills\States\BeetleQueen\OnlyBeetleSwarm.cs" />
     <Compile Include="SubClasses\Skills\States\BrassContraption\MegaBrassBall.cs" />
+    <Compile Include="SubClasses\Skills\States\ClayMan\SuperbleedSwipe.cs" />
     <Compile Include="SubClasses\Skills\States\ElderLemurian\ChargeSingleFireball.cs" />
     <Compile Include="SubClasses\Skills\States\ElderLemurian\FireSingleFireball.cs" />
     <Compile Include="SubClasses\Skills\States\GreaterWisp\ChargeDoubleWispLaser.cs" />

@@ -442,8 +442,6 @@ Dgosling and DestroyedClone for helping me with the Stone Wisps
 
 	- The Solus Probes from the Empathy Cores can now be variants, Spawn chances by default are the same as the enemy version's spawn chances.
 
-	- Archaic Wisps Variants from MysticItems' LegendaryMask now have it's own spawn rates, these by default are the same as the enemy version' spawn chances.
-
 - Tweaked the Following Variants
 
 	- Clay Soldier
@@ -454,15 +452,19 @@ Dgosling and DestroyedClone for helping me with the Stone Wisps
 
 		* 7% Spawn Chance -> 4% Spawn Chance.
 
-		* No Longer has items.
+		* 50% Damage -> 25% Damage
+
+		* Now only has 10 LensmarkerLenses
 
 		* No longer deals bleed damage.
 
-		* Now causes Hemorrage on hit, youre welcome.
+		* Now causes Hemorrage on hit, youre welcome. (Feedback apreciated because i dont know how busted this can be lololol)
 
 	- Time Bomb, Lunar & Cannon Squids
 
 		* No longer uses the Squid Chaingun's Spawn Chance
+
+	- Archaic Wisps Variants from MysticItems' LegendaryMask now have it's own spawn rates, these by default are the same as the enemy version' spawn chances.
 
 
 ### '1.4.6' Totally did realize about another r2api missing dependency

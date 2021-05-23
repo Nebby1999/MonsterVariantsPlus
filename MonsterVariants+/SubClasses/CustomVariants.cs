@@ -815,19 +815,19 @@ namespace MonsterVariantsPlus.SubClasses
                 {
                     bodyName = "MoffeinClayMan",
                     overrideName = "Clay Assasin",
-                    spawnRate = ConfigLoader.ClayAssasinSpawnChance.Value,
+                    spawnRate = 100, //ConfigLoader.ClayAssasinSpawnChance.Value,
                     variantTier = MonsterVariantTier.Uncommon,
                     sizeModifier = MV.GroundSizeModifier(0.75f),
                     healthMultiplier = 1.0f,
                     moveSpeedMultiplier = 1.2f,
                     attackSpeedMultiplier = 1.0f,
-                    damageMultiplier = 1.0f,
+                    damageMultiplier = 0.25f,
                     armorMultiplier = 1f,
                     armorBonus = -25f,
-                    customInventory = MV.SimpleInventory("ITEM_MVP_HEMORRAGE_ON_HIT"),
+                    customInventory = MV.SimpleInventory("CritGlasses", 10),
                     meshReplacement = null,
                     materialReplacement = MV.MultiMaterialReplacement(new Dictionary<int, Material> { { 0, spectralMat }, { 1, spectralMat }, { 2, spectralMat } }),
-                    skillReplacement = null,
+                    skillReplacement = MV.PrimaryReplacement(CustomSkills.superbleedSwipeDef),
                 });
             }
             if (MainPlugin.hasAncientWisp)
@@ -1066,7 +1066,7 @@ namespace MonsterVariantsPlus.SubClasses
                 MV.AddVariant(new MonsterVariantInfo
                 {
                     bodyName = "RoboBallRedBuddy",
-                    overrideName = "Swarmer Probe",
+                    overrideName = "Quiet Swarmer Probe",
                     spawnRate = ConfigLoader.RECSwarmerProbeSpawnChance.Value,
                     variantTier = MonsterVariantTier.Uncommon,
                     sizeModifier = MV.FlyingSizeModifier(0.5f),
@@ -1085,7 +1085,7 @@ namespace MonsterVariantsPlus.SubClasses
                 MV.AddVariant(new MonsterVariantInfo
                 {
                     bodyName = "RoboBallRedBuddy",
-                    overrideName = "Gaussian Probe",
+                    overrideName = "Quiet Gaussian Probe",
                     spawnRate = ConfigLoader.RECGaussianProbeSpawnChance.Value,
                     variantTier = MonsterVariantTier.Common,
                     sizeModifier = MV.FlyingSizeModifier(1.5f),
@@ -1104,7 +1104,7 @@ namespace MonsterVariantsPlus.SubClasses
                 MV.AddVariant(new MonsterVariantInfo
                 {
                     bodyName = "RoboBallRedBuddy",
-                    overrideName = "Solus Probe MK2",
+                    overrideName = "Quiet Solus Probe MK2",
                     spawnRate = ConfigLoader.RECSolusProbeMK2SpawnChance.Value,
                     variantTier = MonsterVariantTier.Uncommon,
                     sizeModifier = MV.FlyingSizeModifier(2.0f),
@@ -1116,14 +1116,14 @@ namespace MonsterVariantsPlus.SubClasses
                     armorMultiplier = 1,
                     customInventory = null,
                     meshReplacement = null,
-                    materialReplacement = MV.SimpleMaterialReplacement(SCUMat),
+                    materialReplacement = null,
                     skillReplacement = MV.PrimaryReplacement(CustomSkills.mk2ChargeDef),
                 });
                 //Swarmer Probe Green
                 MV.AddVariant(new MonsterVariantInfo
                 {
                     bodyName = "RoboBallRedBuddy",
-                    overrideName = "Swarmer Probe",
+                    overrideName = "Delighted Swarmer Probe",
                     spawnRate = ConfigLoader.GECSwarmerProbeSpawnChance.Value,
                     variantTier = MonsterVariantTier.Uncommon,
                     sizeModifier = MV.FlyingSizeModifier(0.5f),
@@ -1142,7 +1142,7 @@ namespace MonsterVariantsPlus.SubClasses
                 MV.AddVariant(new MonsterVariantInfo
                 {
                     bodyName = "RoboBallRedBuddy",
-                    overrideName = "Gaussian Probe",
+                    overrideName = "Delighted Gaussian Probe",
                     spawnRate = ConfigLoader.GECGaussianProbeSpawnChance.Value,
                     variantTier = MonsterVariantTier.Common,
                     sizeModifier = MV.FlyingSizeModifier(1.5f),
@@ -1161,7 +1161,7 @@ namespace MonsterVariantsPlus.SubClasses
                 MV.AddVariant(new MonsterVariantInfo
                 {
                     bodyName = "RoboBallRedBuddy",
-                    overrideName = "Solus Probe MK2",
+                    overrideName = "Delighted Solus Probe MK2",
                     spawnRate = ConfigLoader.GECSolusProbeMK2SpawnChance.Value,
                     variantTier = MonsterVariantTier.Uncommon,
                     sizeModifier = MV.FlyingSizeModifier(2.0f),
@@ -1173,7 +1173,7 @@ namespace MonsterVariantsPlus.SubClasses
                     armorMultiplier = 1,
                     customInventory = null,
                     meshReplacement = null,
-                    materialReplacement = MV.SimpleMaterialReplacement(SCUMat),
+                    materialReplacement = null,
                     skillReplacement = MV.PrimaryReplacement(CustomSkills.mk2ChargeDef),
                 });
                 if (MainPlugin.hasMysticItems)
@@ -1304,10 +1304,10 @@ namespace MonsterVariantsPlus.SubClasses
             MV.SimpleItem("SecondarySkillMagazine", 2)
         };
         private static readonly ItemInfo[] ichorOverlordInventory = new ItemInfo[]
-{
+        {
             MV.SimpleItem("BleedOnHit", 5),
             MV.SimpleItem("ITEM_MVP_PULVERIZE_ON_HIT", 1)
-};
+        };
         //Method to replace a monster's primary and utility skills. used for Child.
         internal static MonsterSkillReplacement[] PrimaryUtilityReplacement(SkillDef primarySkill, SkillDef utilitySkill)
         {
